@@ -1,6 +1,8 @@
 {
-  "name": "Home Rescue Dubai",
-  "description": "Premium luxury home renovation and technical services in Dubai and across the UAE.",
+  "name": "Resqhome UAE",
+  "description": "Interior renovation and fit-out services in Dubai, UAE.",
   "requestFramePermissions": [],
-  "majorCapabilities": []
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
 }
