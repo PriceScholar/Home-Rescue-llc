@@ -24,7 +24,6 @@ import {
 } from 'lucide-react';
 import {Link} from 'react-router-dom';
 import {cn} from './lib/utils';
-import { serviceCategories } from './data/servicesData';
 import TrustSection from './components/TrustSection';
 import ServiceLocations from './components/ServiceLocations';
 import VerifiedProjects from './components/VerifiedProjects';
@@ -144,34 +143,6 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Services Section */}
-      <section className="services-grid px-4">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="services-row">
-            {serviceCategories.map((cat, i) => (
-              <div key={i} className="service-category">
-                <div className="category-header">
-                  <div className={cn("category-icon", cat.color.replace('bg-', 'style-bg-'))} style={{backgroundColor: cat.color === 'bg-brand-red' ? '#c41e3a' : cat.color === 'bg-blue-600' ? '#2563eb' : cat.color === 'bg-yellow-500' ? '#eab308' : cat.color === 'bg-brand-navy' ? '#1a3a6b' : cat.color === 'bg-brand-green' ? '#25d366' : '#666'}}>
-                    <i className={cat.icon}></i>
-                  </div>
-                  <h3 className="category-title">{cat.name}</h3>
-                </div>
-                <div className="category-divider"></div>
-                <ul className="sub-services-list">
-                  {cat.subs.map((sub: any, j) => (
-                    <li key={j}>
-                      <Link to={`/services/${sub.id}`}>
-                        <i className={cn(sub.icon, "sub-icon")}></i>
-                        <span>{sub.name}</span>
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Service Locations Showcase */}
       <ServiceLocations />
