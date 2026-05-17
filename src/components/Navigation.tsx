@@ -11,25 +11,25 @@ import {serviceCategories} from '../data/servicesData';
 
 export const TopBar = () => {
   return (
-    <div className="bg-brand-navy text-white h-10 px-8 flex justify-between items-center text-[10px] font-bold tracking-wider relative z-[120]">
-      <div className="flex gap-8 items-center h-full">
+    <div className="bg-brand-navy text-white h-auto py-2 md:h-10 px-4 md:px-8 flex flex-col md:flex-row justify-between items-center text-[9px] md:text-[10px] font-bold tracking-wider relative z-[120] gap-2 md:gap-0">
+      <div className="flex gap-4 md:gap-8 items-center">
         <div className="flex items-center gap-2 text-brand-gold">
-          <BadgeCheck className="w-3 h-3" /> 
-          <span>LICENSED DUBAI TECHNICAL SERVICES COMPANY</span>
+          <BadgeCheck className="w-3 h-3 shrink-0" /> 
+          <span className="whitespace-nowrap">LICENSED DUBAI TECHNICAL SERVICES</span>
         </div>
         <div className="hidden lg:flex items-center gap-2 opacity-80">
-          <MapPin className="w-3 h-3 text-brand-gold" />
-          <span>SERVING ALL 7 EMIRATES ACROSS UAE</span>
+          <MapPin className="w-3 h-3 text-brand-gold shrink-0" />
+          <span>SERVING ALL 7 EMIRATES</span>
         </div>
       </div>
-      <div className="flex gap-8 items-center h-full">
+      <div className="flex gap-4 md:gap-8 items-center">
         <a href="tel:+971524524295" className="flex items-center gap-2 hover:text-brand-gold transition-colors">
-          <Phone className="w-3 h-3 text-brand-gold" /> +971 52 452 4295
+          <Phone className="w-3 h-3 text-brand-gold shrink-0" /> +971 52 452 4295
         </a>
         <a href="mailto:info@homerescue.ae" className="hidden sm:flex items-center gap-2 hover:text-brand-gold transition-colors">
-          <Mail className="w-3 h-3 text-brand-gold" /> info@homerescue.ae
+          <Mail className="w-3 h-3 text-brand-gold shrink-0" /> info@homerescue.ae
         </a>
-        <div className="flex gap-4 border-l border-white/10 pl-6 h-full items-center">
+        <div className="hidden md:flex gap-4 border-l border-white/10 pl-6 h-full items-center">
           <a href="#" className="hover:text-brand-gold transition-colors"><Facebook className="w-3 h-3" /></a>
           <a href="#" className="hover:text-brand-gold transition-colors"><Instagram className="w-3 h-3" /></a>
           <a href="#" className="hover:text-brand-gold transition-colors"><Linkedin className="w-3 h-3" /></a>
@@ -57,14 +57,14 @@ export const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-white px-8 flex justify-between items-center shadow-md sticky top-0 z-[100] relative h-20">
-      <Link to="/" className="flex items-center gap-3 shrink-0">
-        <div className="w-10 h-10 bg-brand-navy rounded-lg flex items-center justify-center border-2 border-[#D9A520]">
-          <span className="text-[#D9A520] font-bold text-xl">H</span>
+    <nav className="bg-white px-4 md:px-8 flex justify-between items-center shadow-md sticky top-0 z-[100] h-16 md:h-20">
+      <Link to="/" className="flex items-center gap-2 md:gap-3 shrink-0">
+        <div className="w-8 h-8 md:w-10 md:h-10 bg-brand-navy rounded-lg flex items-center justify-center border-2 border-brand-gold">
+          <span className="text-brand-gold font-bold text-lg md:text-xl">H</span>
         </div>
         <div>
-          <h1 className="text-xl font-bold text-brand-navy tracking-tight leading-none uppercase">HOME RESCUE</h1>
-          <p className="text-[10px] text-[#D9A520] tracking-[0.2em] font-bold mt-1 uppercase">TECHNICAL SERVICES</p>
+          <h1 className="text-lg md:text-xl font-bold text-brand-navy tracking-tight leading-none uppercase">HOME RESCUE</h1>
+          <p className="text-[8px] md:text-[10px] text-brand-gold tracking-[0.2em] font-bold mt-1 uppercase">TECHNICAL SERVICES</p>
         </div>
       </Link>
 
@@ -138,8 +138,8 @@ export const Navbar = () => {
       </AnimatePresence>
 
       {/* Mobile Menu Button */}
-      <button className="lg:hidden text-brand-navy" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-        {isMenuOpen ? <X /> : <Menu />}
+      <button className="lg:hidden p-2 text-brand-navy" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+        {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
       </button>
 
       {/* Mobile Menu Overlay */}
@@ -149,19 +149,19 @@ export const Navbar = () => {
             initial={{x: isRTL ? '-100%' : '100%'}}
             animate={{x: 0}}
             exit={{x: isRTL ? '-100%' : '100%'}}
-            className="fixed inset-0 bg-white z-[110] flex flex-col p-8 overflow-y-auto"
+            className="fixed inset-0 bg-white z-[110] flex flex-col p-6 md:p-8 overflow-y-auto"
           >
-            <div className="flex justify-between items-center mb-12">
-              <Link to="/" onClick={() => setIsMenuOpen(false)} className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-brand-navy rounded-lg flex items-center justify-center border-2 border-[#D9A520]">
-                  <span className="text-[#D9A520] font-bold text-xl">H</span>
+            <div className="flex justify-between items-center mb-8 md:mb-12">
+              <Link to="/" onClick={() => setIsMenuOpen(false)} className="flex items-center gap-2 md:gap-3">
+                <div className="w-9 h-9 md:w-10 md:h-10 bg-brand-navy rounded-lg flex items-center justify-center border-2 border-brand-gold">
+                  <span className="text-brand-gold font-bold text-lg md:text-xl">H</span>
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-xl font-bold text-brand-navy leading-none">HOME RESCUE</span>
-                  <span className="text-[10px] text-[#D9A520] font-bold tracking-[0.2em]">TECHNICAL SERVICES</span>
+                  <span className="text-lg md:text-xl font-bold text-brand-navy leading-none">HOME RESCUE</span>
+                  <span className="text-[9px] md:text-[10px] text-brand-gold font-bold tracking-[0.2em]">TECHNICAL SERVICES</span>
                 </div>
               </Link>
-              <button onClick={() => setIsMenuOpen(false)}><X /></button>
+              <button onClick={() => setIsMenuOpen(false)} className="p-2"><X className="w-6 h-6" /></button>
             </div>
             
             <div className="flex flex-col gap-2 text-lg font-bold">
@@ -341,9 +341,9 @@ export const Footer = () => {
           </div>
 
           {/* Column 4: Contact Us */}
-          <div className="space-y-8 lg:pl-4">
-            <h4 className="text-md font-serif font-black mb-8 text-brand-gold uppercase tracking-widest leading-none">Contact Us</h4>
-            <div className="space-y-5">
+          <div className="space-y-6 lg:pl-4">
+            <h4 className="text-md font-serif font-black mb-6 lg:mb-8 text-brand-gold uppercase tracking-widest leading-none">Contact Us</h4>
+            <div className="space-y-4 md:space-y-5">
               <a href="tel:+971524524295" className="flex items-center gap-4 group">
                 <div className="w-9 h-9 rounded-xl bg-white/5 flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-brand-navy transition-all">
                   <Phone className="w-4 h-4" />

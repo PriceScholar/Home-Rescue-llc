@@ -68,24 +68,24 @@ const Home = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-[#08264B] via-[#08264B]/80 to-transparent"></div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-8 w-full flex flex-col lg:flex-row items-center gap-16 pt-32 pb-44">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8 w-full flex flex-col lg:flex-row items-center gap-12 lg:gap-16 pt-24 md:pt-32 pb-48 md:pb-44">
           
           {/* Left Content */}
           <motion.div 
             initial={{opacity: 0, x: -30}}
             animate={{opacity: 1, x: 0}}
             transition={{duration: 0.8}}
-            className="flex-1 space-y-10"
+            className="flex-1 space-y-6 md:space-y-10 text-center lg:text-left"
           >
-            <div className="space-y-4">
-              <span className="text-brand-gold font-black tracking-[0.25em] uppercase text-[10px] block opacity-90">Premium Technical Services</span>
-              <h1 className="text-6xl md:text-7xl lg:text-8xl font-serif font-black leading-[1.05] text-white tracking-tighter">
-                Premium Technical <br />
+            <div className="space-y-3 md:space-y-4">
+              <span className="text-brand-gold font-black tracking-[0.25em] uppercase text-[9px] md:text-[10px] block opacity-90">Premium Technical Services</span>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif font-black leading-[1.1] text-white tracking-tighter">
+                Premium Technical <br className="hidden sm:block" />
                 Solutions Across <span className="text-brand-gold">UAE</span>
               </h1>
             </div>
 
-            <div className="flex flex-wrap gap-x-5 gap-y-3 text-[11px] font-black text-white uppercase tracking-widest opacity-80">
+            <div className="flex flex-wrap justify-center lg:justify-start gap-x-4 md:gap-x-5 gap-y-2 md:gap-y-3 text-[9px] md:text-[11px] font-black text-white uppercase tracking-widest opacity-80">
               <span className="hover:text-brand-gold transition-colors cursor-default">Painting</span> <span className="text-brand-gold opacity-30">|</span>
               <span className="hover:text-brand-gold transition-colors cursor-default">AC</span> <span className="text-brand-gold opacity-30">|</span>
               <span className="hover:text-brand-gold transition-colors cursor-default">Plumbing</span> <span className="text-brand-gold opacity-30">|</span>
@@ -94,42 +94,42 @@ const Home = () => {
               <span className="hover:text-brand-gold transition-colors cursor-default">Handyman & More</span>
             </div>
 
-            <p className="text-md md:text-lg text-gray-300 max-w-lg leading-relaxed font-bold opacity-70">
+            <p className="text-sm md:text-lg text-gray-300 max-w-lg mx-auto lg:mx-0 leading-relaxed font-bold opacity-70">
               Trusted by Villas, Homes, Hotels & Commercial Properties Across Dubai and All Emirates.
             </p>
 
-            <div className="flex flex-wrap gap-5 pt-2">
+            <div className="flex flex-col sm:flex-row flex-wrap justify-center lg:justify-start gap-4 md:gap-5 pt-2">
               <button 
                 onClick={() => openBooking()}
-                className="bg-brand-gold text-brand-navy hover:bg-[#c4941c] px-10 py-5 rounded-2xl font-black text-xs uppercase tracking-widest flex items-center gap-4 shadow-[0_20px_40px_-10px_rgba(217,165,32,0.4)] transition-all active:scale-95"
+                className="bg-brand-gold text-brand-navy hover:bg-[#c4941c] px-8 md:px-10 py-4 md:py-5 rounded-2xl font-black text-[10px] md:text-xs uppercase tracking-widest flex items-center justify-center gap-4 shadow-[0_20px_40px_-10px_rgba(217,165,32,0.4)] transition-all active:scale-95"
               >
-                <i className="fa-solid fa-calendar-check text-xl"></i>
+                <i className="fa-solid fa-calendar-check text-lg md:text-xl"></i>
                 BOOK FREE INSPECTION
               </button>
               <button 
                 onClick={askExpert}
-                className="bg-[#08264B]/40 backdrop-blur-md border border-white/10 text-white hover:bg-white hover:text-brand-navy px-10 py-5 rounded-2xl font-black text-xs uppercase tracking-widest flex items-center gap-4 transition-all active:scale-95 group"
+                className="bg-[#08264B]/40 backdrop-blur-md border border-white/10 text-white hover:bg-white hover:text-brand-navy px-8 md:px-10 py-4 md:py-5 rounded-2xl font-black text-[10px] md:text-xs uppercase tracking-widest flex items-center justify-center gap-4 transition-all active:scale-95 group"
               >
                 <MessageCircle className="w-5 h-5 text-brand-gold" /> CHAT ON WHATSAPP
               </button>
             </div>
 
-            <div className="flex flex-wrap gap-x-10 gap-y-6 pt-10 border-t border-white/10">
-              <div className="flex items-center gap-2.5 text-[10px] font-black uppercase text-white tracking-widest group">
-                <Users className="w-4 h-4 text-brand-gold" />
-                Trained Professionals
+            <div className="flex flex-wrap justify-center lg:justify-start gap-x-6 md:gap-x-10 gap-y-4 md:gap-y-6 pt-8 md:pt-10 border-t border-white/10">
+              <div className="flex items-center gap-2 text-[9px] md:text-[10px] font-black uppercase text-white tracking-widest group">
+                <Users className="w-3.5 h-3.5 md:w-4 md:h-4 text-brand-gold" />
+                Professionals
               </div>
-              <div className="flex items-center gap-2.5 text-[10px] font-black uppercase text-white tracking-widest group">
-                <Clock className="w-4 h-4 text-brand-gold" />
-                On-Time Service
+              <div className="flex items-center gap-2 text-[9px] md:text-[10px] font-black uppercase text-white tracking-widest group">
+                <Clock className="w-3.5 h-3.5 md:w-4 md:h-4 text-brand-gold" />
+                On-Time
               </div>
-              <div className="flex items-center gap-2.5 text-[10px] font-black uppercase text-white tracking-widest group">
-                <ShieldCheck className="w-4 h-4 text-brand-gold" />
-                Full Satisfaction
+              <div className="flex items-center gap-2 text-[9px] md:text-[10px] font-black uppercase text-white tracking-widest group">
+                <ShieldCheck className="w-3.5 h-3.5 md:w-4 md:h-4 text-brand-gold" />
+                Guaranteed
               </div>
-              <div className="flex items-center gap-2.5 text-[10px] font-black uppercase text-white tracking-widest group">
-                <Award className="w-4 h-4 text-brand-gold" />
-                Affordable Pricing
+              <div className="flex items-center gap-2 text-[9px] md:text-[10px] font-black uppercase text-white tracking-widest group">
+                <Award className="w-3.5 h-3.5 md:w-4 md:h-4 text-brand-gold" />
+                Affordable
               </div>
             </div>
           </motion.div>
@@ -139,7 +139,7 @@ const Home = () => {
             initial={{opacity: 0, scale: 0.9}}
             animate={{opacity: 1, scale: 1}}
             transition={{duration: 0.8, delay: 0.2}}
-            className="flex-1 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3 gap-6"
+            className="flex-1 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6 w-full"
           >
             {[
               {title: 'Painting Services', icon: 'fa-solid fa-paint-roller', img: '/images/services/service-paint.jpg'},
@@ -149,15 +149,15 @@ const Home = () => {
               {title: 'Ceiling Works', icon: 'fa-solid fa-layer-group', img: '/images/services/service-ceiling.jpg'},
               {title: 'Handyman Services', icon: 'fa-solid fa-screwdriver-wrench', img: '/images/services/service-handyman.jpg'},
             ].map((s, i) => (
-              <div key={i} className="group relative aspect-square rounded-[28px] overflow-hidden shadow-2xl border border-white/5 bg-brand-navy">
+              <div key={i} className="group relative aspect-square rounded-2xl md:rounded-[28px] overflow-hidden shadow-2xl border border-white/5 bg-brand-navy">
                 <img src={s.img} alt={s.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80" />
                 <div className="absolute inset-0 bg-[#08264B]/40 group-hover:bg-transparent transition-colors" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#08264B] via-[#08264B]/20 to-transparent opacity-90" />
-                <div className="absolute bottom-0 left-0 right-0 p-5 flex items-center gap-3">
-                   <div className="w-10 h-10 rounded-xl bg-brand-gold flex items-center justify-center text-brand-navy text-[14px] shadow-lg">
+                <div className="absolute bottom-0 left-0 right-0 p-3 md:p-5 flex items-center gap-2 md:gap-3">
+                   <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg md:rounded-xl bg-brand-gold flex items-center justify-center text-brand-navy text-[12px] md:text-[14px] shadow-lg shrink-0">
                      <i className={s.icon}></i>
                    </div>
-                   <span className="text-white text-[11px] font-black uppercase tracking-widest">{s.title}</span>
+                   <span className="text-white text-[9px] md:text-[11px] font-black uppercase tracking-widest leading-tight">{s.title}</span>
                 </div>
               </div>
             ))}
@@ -165,22 +165,22 @@ const Home = () => {
         </div>
 
         {/* Stats Banner (Overlapping) */}
-        <div className="absolute -bottom-16 left-8 right-8 z-30">
-          <div className="max-w-7xl mx-auto bg-white rounded-[40px] p-10 md:p-14 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.15)] border border-gray-100/50">
-             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:divide-x divide-gray-100">
+        <div className="absolute -bottom-32 lg:-bottom-16 left-4 right-4 md:left-8 md:right-8 z-30">
+          <div className="max-w-7xl mx-auto bg-white rounded-[32px] md:rounded-[40px] p-6 md:p-10 lg:p-14 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.15)] border border-gray-100/50">
+             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:divide-x divide-gray-100">
                {[
-                 {label: 'Projects Completed', val: '1000+', icon: <Building2 />},
-                 {label: 'Happy Customers', val: '500+', icon: <Users />},
-                 {label: 'Years Experience', val: '10+', icon: <Award />},
-                 {label: 'Emirates Covered', val: '7', icon: <MapPin />},
+                 {label: 'Projects Done', val: '1000+', icon: <Building2 />},
+                 {label: 'Happy Clients', val: '500+', icon: <Users />},
+                 {label: 'Years Exp', val: '10+', icon: <Award />},
+                 {label: 'Emirates', val: '7', icon: <MapPin />},
                ].map((st, i) => (
-                 <div key={i} className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 group lg:px-8 text-center sm:text-left">
-                   <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-[28px] bg-brand-gold/5 flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-brand-navy transition-all duration-300 shrink-0 border border-brand-gold/5">
-                      {React.cloneElement(st.icon as React.ReactElement, { className: "w-8 h-8 sm:w-10 sm:h-10" })}
+                 <div key={i} className="flex flex-col sm:flex-row items-center gap-2 md:gap-6 group lg:px-4 xl:px-8 text-center sm:text-left">
+                   <div className="w-10 h-10 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-xl md:rounded-[28px] bg-brand-gold/5 flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-brand-navy transition-all duration-300 shrink-0 border border-brand-gold/5">
+                      {React.cloneElement(st.icon as React.ReactElement, { className: "w-5 h-5 md:w-8 md:h-8 lg:w-10 lg:h-10" })}
                    </div>
-                   <div className="space-y-0.5">
-                     <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-navy tracking-tighter leading-none">{st.val}</div>
-                     <div className="text-[9px] text-gray-400 font-bold uppercase tracking-[0.2em] leading-none whitespace-nowrap pt-1">{st.label}</div>
+                   <div className="space-y-0">
+                     <div className="text-xl sm:text-3xl lg:text-4xl xl:text-5xl font-black text-brand-navy tracking-tighter leading-none">{st.val}</div>
+                     <div className="text-[7px] md:text-[9px] text-gray-400 font-bold uppercase tracking-[0.2em] leading-none pt-1">{st.label}</div>
                    </div>
                  </div>
                ))}
@@ -190,23 +190,22 @@ const Home = () => {
       </section>
 
 
-      {/* Our Services Section */}
-      <section className="py-24 px-8 bg-white relative overflow-hidden">
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center space-y-4 mb-16 pt-8">
+      <section className="py-16 md:py-24 px-6 md:px-8 bg-white relative overflow-hidden">
+        <div className="max-w-7xl mx-auto relative z-10 pt-44 md:pt-0">
+          <div className="text-center space-y-3 md:space-y-4 mb-12 md:mb-16">
             <motion.div 
               initial={{opacity: 0, scale: 0.9}}
               whileInView={{opacity: 1, scale: 1}}
               className="inline-flex items-center gap-3"
             >
-              <div className="w-10 h-px bg-brand-gold"></div>
-              <span className="text-brand-gold font-black tracking-[0.4em] uppercase text-[9px]">Our Services</span>
-              <div className="w-10 h-px bg-brand-gold"></div>
+              <div className="w-8 md:w-10 h-px bg-brand-gold"></div>
+              <span className="text-brand-gold font-black tracking-[0.4em] uppercase text-[8px] md:text-[9px]">Our Services</span>
+              <div className="w-8 md:w-10 h-px bg-brand-gold"></div>
             </motion.div>
-            <h2 className="text-4xl md:text-5xl lg:text-6xl text-brand-navy font-serif tracking-tight leading-tight">Complete Solutions <br /> <span className="text-brand-gold italic">For Every Need</span></h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-brand-navy font-serif tracking-tight leading-tight">Complete Solutions <br className="hidden sm:block" /> <span className="text-brand-gold italic">For Every Need</span></h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {homeServices.map((service, i) => (
               <motion.div 
                 key={i}
@@ -214,27 +213,27 @@ const Home = () => {
                 whileInView={{opacity: 1, y: 0}}
                 transition={{delay: i * 0.1}}
                 whileHover={{y: -10}}
-                className="group bg-white rounded-[32px] overflow-hidden shadow-sm hover:shadow-2xl border border-gray-100 flex flex-col h-full transition-all duration-500"
+                className="group bg-white rounded-2xl md:rounded-[32px] overflow-hidden shadow-sm hover:shadow-2xl border border-gray-100 flex flex-col h-full transition-all duration-500"
               >
-                <div className="relative aspect-[4/3] overflow-hidden">
+                <div className="relative aspect-square sm:aspect-[4/3] overflow-hidden">
                   <img src={service.image} alt={service.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                   <div className="absolute inset-0 bg-brand-navy/10 group-hover:bg-transparent transition-colors"></div>
-                  <div className="absolute top-5 left-5">
-                    <div className="w-12 h-12 bg-white/95 backdrop-blur-md rounded-2xl flex items-center justify-center text-brand-navy shadow-lg group-hover:bg-brand-gold group-hover:text-brand-navy transition-all duration-300">
-                      <i className={cn(service.icon, "text-xl")}></i>
+                  <div className="absolute top-3 left-3 md:top-5 md:left-5">
+                    <div className="w-8 h-8 md:w-12 md:h-12 bg-white/95 backdrop-blur-md rounded-xl md:rounded-2xl flex items-center justify-center text-brand-navy shadow-lg group-hover:bg-brand-gold group-hover:text-brand-navy transition-all duration-300">
+                      <i className={cn(service.icon, "text-sm md:text-xl")}></i>
                     </div>
                   </div>
                 </div>
-                <div className="p-8 flex flex-col flex-1 gap-3">
-                  <h3 className="text-lg font-black text-brand-navy leading-tight">{service.title}</h3>
-                  <p className="text-sm text-gray-500 leading-relaxed font-medium flex-1">
+                <div className="p-4 md:p-8 flex flex-col flex-1 gap-1 md:gap-3">
+                  <h3 className="text-sm md:text-lg font-black text-brand-navy leading-tight">{service.title}</h3>
+                  <p className="hidden md:block text-sm text-gray-500 leading-relaxed font-medium flex-1">
                     {service.subtitle}
                   </p>
                   <Link 
                     to={`/services/${service.id}`}
-                    className="flex items-center gap-2 text-brand-gold font-black text-[9px] uppercase tracking-widest group-hover:gap-4 transition-all pt-4"
+                    className="flex items-center gap-1.5 md:gap-2 text-brand-gold font-black text-[8px] md:text-[9px] uppercase tracking-widest group-hover:gap-3 md:group-hover:gap-4 transition-all pt-2 md:pt-4"
                   >
-                    View Details <ArrowRight className="w-4 h-4" />
+                    Details <ArrowRight className="w-3 h-3 md:w-4 md:h-4" />
                   </Link>
                 </div>
               </motion.div>
@@ -250,32 +249,32 @@ const Home = () => {
       </section>
 
       {/* WHY CHOOSE & PROOF SECTION (New Unified Layout) */}
-      <section className="py-24 px-8 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto space-y-28">
+      <section className="py-16 md:py-24 px-6 md:px-8 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto space-y-16 md:space-y-28">
           
           {/* Why Choose Banner */}
-          <div className="bg-[#08264B] rounded-[60px] p-16 md:p-20 shadow-3xl relative overflow-hidden">
-            <div className="text-center mb-16">
-              <h2 className="text-white text-4xl md:text-5xl font-serif font-black uppercase tracking-widest">
-                Why Choose <span className="text-brand-gold">Home Rescue</span>?
+          <div className="bg-[#08264B] rounded-[40px] md:rounded-[60px] p-8 md:p-16 lg:p-20 shadow-3xl relative overflow-hidden">
+            <div className="text-center mb-10 md:mb-16">
+              <h2 className="text-white text-2xl sm:text-3xl md:text-5xl font-serif font-black uppercase tracking-widest leading-tight">
+                Why Choose <br className="sm:hidden" /> <span className="text-brand-gold">Home Rescue</span>?
               </h2>
             </div>
             
-            <div className="grid grid-cols-2 lg:grid-cols-5 gap-12 items-start">
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-8 md:gap-12 items-start">
               {[
-                { title: 'Dubai Licensed', desc: 'Legally Registered & Approved', icon: BadgeCheck },
-                { title: 'Fully Insured', desc: 'Complete Insurance Coverage', icon: ShieldCheck },
-                { title: 'Expert Technicians', desc: 'Skilled, Trained & Experienced', icon: Users },
-                { title: 'Quality Guarantee', desc: '100% Satisfaction Guaranteed', icon: Award },
-                { title: 'Always Available', desc: 'Here When You Need Us', icon: Clock },
+                { title: 'Dubai Licensed', desc: 'Legally Registered', icon: BadgeCheck },
+                { title: 'Fully Insured', desc: 'Complete Coverage', icon: ShieldCheck },
+                { title: 'Expert Team', desc: 'Skilled & Experience', icon: Users },
+                { title: 'Quality Pro', desc: '100% Guaranteed', icon: Award },
+                { title: 'Always Ready', desc: '24/7 Availability', icon: Clock },
               ].map((item, i) => (
-                <div key={i} className="flex flex-col items-center text-center gap-6 group">
-                  <div className="w-16 h-16 bg-brand-gold/10 border border-brand-gold/20 rounded-3xl flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-brand-navy transition-all duration-300">
-                    <item.icon className="w-9 h-9" />
+                <div key={i} className="flex flex-col items-center text-center gap-4 md:gap-6 group">
+                  <div className="w-12 h-12 md:w-16 md:h-16 bg-brand-gold/10 border border-brand-gold/20 rounded-2xl md:rounded-3xl flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-brand-navy transition-all duration-300">
+                    <item.icon className="w-6 h-6 md:w-9 md:h-9" />
                   </div>
-                  <div className="space-y-2">
-                    <h4 className="text-white font-black text-lg tracking-tight">{item.title}</h4>
-                    <p className="text-[11px] text-gray-400 font-bold uppercase tracking-wider leading-relaxed">{item.desc}</p>
+                  <div className="space-y-1 md:space-y-2">
+                    <h4 className="text-white font-black text-sm md:text-lg tracking-tight leading-tight">{item.title}</h4>
+                    <p className="text-[8px] md:text-[11px] text-gray-400 font-bold uppercase tracking-wider leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
               ))}
@@ -355,19 +354,19 @@ const Home = () => {
       </section>
 
       {/* Reviews Section */}
-      <section className="py-24 bg-white px-4 md:px-8 overflow-hidden">
+      <section className="py-16 md:py-24 bg-white px-6 md:px-8 overflow-hidden">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-center mb-16 gap-6">
-            <div className="flex-1"></div>
-            <h2 className="text-4xl md:text-5xl text-brand-navy font-serif font-black uppercase tracking-widest text-center flex-1">
-              What Our Clients Say
+          <div className="flex flex-col md:flex-row justify-between items-center mb-12 md:mb-16 gap-4 md:gap-6">
+            <div className="hidden md:flex flex-1"></div>
+            <h2 className="text-2xl sm:text-3xl md:text-5xl text-brand-navy font-serif font-black uppercase tracking-widest text-center flex-1">
+              Client Testimonials
             </h2>
-            <div className="flex-1 flex justify-end">
+            <div className="flex-1 flex justify-center md:justify-end">
               <div className="flex items-center gap-2.5">
                 <div className="flex gap-0.5 text-brand-gold">
-                  {[1,2,3,4,5].map(s => <Star key={s} className="w-4 h-4 fill-current" />)}
+                  {[1,2,3,4,5].map(s => <Star key={s} className="w-3 h-3 md:w-4 md:h-4 fill-current" />)}
                 </div>
-                <span className="font-black text-brand-navy text-[11px] uppercase tracking-wider">4.9/5 Rating</span>
+                <span className="font-black text-brand-navy text-[9px] md:text-[11px] uppercase tracking-wider">4.9/5 Rating</span>
               </div>
             </div>
           </div>
@@ -422,14 +421,14 @@ const Home = () => {
       </section>
 
       {/* Unified UAE & CTA Section */}
-      <section className="px-8 pb-32">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row rounded-[50px] overflow-hidden shadow-2xl border border-gray-100/10">
+      <section className="px-6 md:px-8 pb-32">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row rounded-3xl md:rounded-[50px] overflow-hidden shadow-2xl border border-gray-100/10">
           {/* Left: UAE Coverage */}
-          <div className="lg:w-1/2 bg-[#08264B] p-16 md:p-20 text-center flex flex-col justify-center gap-12">
-            <h2 className="text-white text-3xl font-serif font-black uppercase tracking-widest leading-tight">
-              Proudly Serving <br /> All 7 Emirates
+          <div className="lg:w-1/2 bg-[#08264B] p-10 md:p-16 lg:p-20 text-center flex flex-col justify-center gap-8 md:gap-12">
+            <h2 className="text-white text-2xl md:text-3xl font-serif font-black uppercase tracking-widest leading-tight">
+              Proudly Serving <br className="hidden sm:block" /> All 7 Emirates
             </h2>
-            <div className="grid grid-cols-4 md:grid-cols-7 lg:grid-cols-4 xl:grid-cols-7 gap-y-10 gap-x-6 justify-center">
+            <div className="grid grid-cols-4 sm:grid-cols-7 lg:grid-cols-4 xl:grid-cols-7 gap-y-6 md:gap-y-10 gap-x-4 md:gap-x-6 justify-center">
               {[
                 {name: 'Dubai', icon: 'fa-solid fa-hotel'},
                 {name: 'Abu Dhabi', icon: 'fa-solid fa-mosque'},
@@ -439,36 +438,36 @@ const Home = () => {
                 {name: 'Fujairah', icon: 'fa-solid fa-umbrella-beach'},
                 {name: 'UAE', icon: 'fa-solid fa-globe'}
               ].map((emirate) => (
-                <div key={emirate.name} className="flex flex-col items-center gap-4 transition-transform hover:scale-110">
-                  <div className="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center text-white/30 border border-white/5">
-                     <i className={emirate.icon} style={{fontSize: '24px'}}></i>
+                <div key={emirate.name} className="flex flex-col items-center gap-3 md:gap-4 transition-transform hover:scale-110">
+                  <div className="w-10 h-10 md:w-14 md:h-14 bg-white/5 rounded-xl md:rounded-2xl flex items-center justify-center text-white/30 border border-white/5 shrink-0">
+                     <i className={cn(emirate.icon, "text-lg md:text-2xl")}></i>
                   </div>
-                  <span className="text-[10px] text-gray-400 font-black uppercase tracking-[0.2em]">{emirate.name}</span>
+                  <span className="text-[8px] md:text-[10px] text-gray-400 font-black uppercase tracking-[0.2em]">{emirate.name}</span>
                 </div>
               ))}
             </div>
           </div>
 
           {/* Right: GET FREE QUOTE */}
-          <div className="lg:w-1/2 bg-brand-gold p-16 md:p-20 text-center flex flex-col justify-center gap-10">
-            <div className="space-y-4">
-              <h2 className="text-white text-4xl md:text-5xl lg:text-6xl font-serif font-black uppercase tracking-tighter leading-none">
-                Get Your Free <br /> Quote Today!
+          <div className="lg:w-1/2 bg-brand-gold p-10 md:p-16 lg:p-20 text-center flex flex-col justify-center gap-8 md:gap-10">
+            <div className="space-y-3 md:space-y-4">
+              <h2 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-black uppercase tracking-tighter leading-none">
+                Get Your Free <br className="hidden sm:block" /> Quote Today!
               </h2>
-              <p className="text-white font-bold text-lg max-w-md mx-auto opacity-90">
+              <p className="text-white font-bold text-sm md:text-lg max-w-md mx-auto opacity-90">
                 Professional technical services at your doorstep across UAE.
               </p>
             </div>
-            <div className="flex flex-col sm:flex-row gap-5 pt-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-4 md:gap-5 pt-2 md:pt-4 justify-center">
                <button 
                  onClick={callNow}
-                 className="bg-white text-brand-navy px-12 py-5 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-brand-navy hover:text-white transition-all shadow-xl flex items-center justify-center gap-3 active:scale-95"
+                 className="bg-white text-brand-navy px-8 md:px-12 py-4 md:py-5 rounded-2xl font-black text-[10px] md:text-xs uppercase tracking-widest hover:bg-brand-navy hover:text-white transition-all shadow-xl flex items-center justify-center gap-3 active:scale-95"
                >
                  <Phone className="w-5 h-5" /> CALL NOW
                </button>
                <button 
                  onClick={askExpert}
-                 className="bg-brand-navy text-white px-12 py-5 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-white hover:text-brand-navy transition-all shadow-xl flex items-center justify-center gap-3 active:scale-95"
+                 className="bg-brand-navy text-white px-8 md:px-12 py-4 md:py-5 rounded-2xl font-black text-[10px] md:text-xs uppercase tracking-widest hover:bg-white hover:text-brand-navy transition-all shadow-xl flex items-center justify-center gap-3 active:scale-95"
                >
                  <MessageCircle className="w-5 h-5 text-brand-gold" /> WHATSAPP US
                </button>

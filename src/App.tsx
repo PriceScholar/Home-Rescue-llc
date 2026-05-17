@@ -8,7 +8,8 @@ import About from './About';
 import Booking from './Booking';
 import Credentials from './Credentials';
 import Portfolio from './Portfolio';
-
+import FloatingWhatsApp from './components/FloatingWhatsApp';
+import Chatbot from './components/Chatbot';
 import ServiceDetail from './ServiceDetail';
 
 export default function App() {
@@ -27,6 +28,8 @@ export default function App() {
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/blog" element={<Home />} />
           </Routes>
+          <FloatingWhatsApp />
+          <Chatbot />
         </Router>
       </BookingProvider>
     </LanguageProvider>

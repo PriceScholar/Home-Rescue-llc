@@ -63,14 +63,14 @@ const ServiceDetail = () => {
       </section>
 
       {/* Hero Section */}
-      <section className="py-24 px-4 md:px-8 border-b border-gray-50">
+      <section className="py-12 md:py-24 px-6 md:px-8 border-b border-gray-50">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
             {/* Left Column: Image */}
             <motion.div 
               initial={{opacity: 0, x: -30}} 
               animate={{opacity: 1, x: 0}}
-              className="relative rounded-[2.5rem] overflow-hidden shadow-2xl bg-gray-100 aspect-[4/3] lg:aspect-auto lg:h-[600px]"
+              className="relative rounded-3xl md:rounded-[2.5rem] overflow-hidden shadow-2xl bg-gray-100 aspect-video sm:aspect-square lg:aspect-auto lg:h-[600px]"
             >
               <img 
                 src={`/images/services/subs/${serviceId}.jpg`} 
@@ -91,15 +91,15 @@ const ServiceDetail = () => {
             </motion.div>
 
             {/* Right Column: Content */}
-            <div className="space-y-10">
-              <div className="space-y-6">
+            <div className="space-y-8 md:space-y-10">
+              <div className="space-y-4 md:space-y-6">
                 <motion.div 
                   initial={{opacity: 0, y: 10}}
                   animate={{opacity: 1, y: 0}}
                   className="flex items-center gap-3"
                 >
                   <div className="w-8 h-[1px] bg-brand-red"></div>
-                  <span className="text-brand-red font-bold text-[10px] uppercase tracking-[0.3em] rounded">
+                  <span className="text-brand-red font-bold text-[9px] md:text-[10px] uppercase tracking-[0.3em] rounded">
                     Bespoke Technical Solution
                   </span>
                 </motion.div>
@@ -107,7 +107,7 @@ const ServiceDetail = () => {
                   initial={{opacity: 0, y: 20}}
                   animate={{opacity: 1, y: 0}}
                   transition={{delay: 0.1}}
-                  className="text-5xl md:text-7xl font-serif text-brand-navy leading-tight font-bold"
+                  className="text-4xl sm:text-5xl md:text-7xl font-serif text-brand-navy leading-tight font-bold"
                 >
                   {data.title}
                 </motion.h1>
@@ -115,7 +115,7 @@ const ServiceDetail = () => {
                   initial={{opacity: 0, y: 20}}
                   animate={{opacity: 1, y: 0}}
                   transition={{delay: 0.2}}
-                  className="text-gray-500 leading-relaxed text-xl font-light"
+                  className="text-gray-500 leading-relaxed text-lg md:text-xl font-light"
                 >
                   {data.description}
                 </motion.p>
@@ -126,21 +126,21 @@ const ServiceDetail = () => {
                 initial={{opacity: 0, y: 20}}
                 animate={{opacity: 1, y: 0}}
                 transition={{delay: 0.3}}
-                className="grid grid-cols-1 gap-6 pt-6 border-t border-gray-100"
+                className="grid grid-cols-1 gap-4 md:gap-6 pt-6 border-t border-gray-100"
               >
                 {[
-                  {label: 'Materials Used', value: data.material, icon: <Box className="w-4 h-4" />},
-                  {label: 'Team Expertise', value: data.technician, icon: <UserCheck className="w-4 h-4" />},
-                  {label: 'Service Guarantee', value: data.warranty, icon: <ShieldCheck className="w-4 h-4" />},
+                  {label: 'Materials', value: data.material, icon: <Box className="w-4 h-4" />},
+                  {label: 'Expertise', value: data.technician, icon: <UserCheck className="w-4 h-4" />},
+                  {label: 'Warranty', value: data.warranty, icon: <ShieldCheck className="w-4 h-4" />},
                 ].map((row, i) => (
                   <div key={i} className="flex items-center justify-between group">
-                    <div className="flex items-center gap-4">
-                      <div className="w-10 h-10 rounded-full bg-brand-cream/50 flex items-center justify-center text-brand-gold group-hover:bg-brand-navy group-hover:text-white transition-all">
+                    <div className="flex items-center gap-3 md:gap-4">
+                      <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-brand-cream/50 flex items-center justify-center text-brand-gold group-hover:bg-brand-navy group-hover:text-white transition-all">
                         {row.icon}
                       </div>
-                      <span className="text-[11px] font-bold text-gray-400 tracking-[0.2em] uppercase">{row.label}</span>
+                      <span className="text-[9px] md:text-[11px] font-bold text-gray-400 tracking-[0.2em] uppercase">{row.label}</span>
                     </div>
-                    <span className="text-sm font-bold text-brand-navy uppercase tracking-wider">{row.value}</span>
+                    <span className="text-xs md:text-sm font-bold text-brand-navy uppercase tracking-wider">{row.value}</span>
                   </div>
                 ))}
               </motion.div>
@@ -171,15 +171,15 @@ const ServiceDetail = () => {
       </section>
 
       {/* Main Services Grid */}
-      <section className="py-32 px-4 md:px-8 bg-brand-cream/10">
+      <section className="py-20 md:py-32 px-6 md:px-8 bg-brand-cream/10">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-24 space-y-4">
-            <span className="text-brand-gold font-bold tracking-[0.4em] uppercase text-[10px]">What is Included</span>
-            <h2 className="text-4xl md:text-5xl font-serif text-brand-navy font-bold">Scope of Excellence</h2>
+          <div className="text-center mb-16 md:mb-24 space-y-3 md:space-y-4">
+            <span className="text-brand-gold font-bold tracking-[0.4em] uppercase text-[9px] md:text-[10px]">What is Included</span>
+            <h2 className="text-3xl md:text-5xl font-serif text-brand-navy font-bold">Scope of Excellence</h2>
             <div className="w-24 h-[1px] bg-brand-gold mx-auto"></div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-12">
             {data.subServices.map((sub, i) => (
               <motion.div 
                 key={i} 
@@ -187,13 +187,13 @@ const ServiceDetail = () => {
                 whileInView={{opacity: 1, y: 0}}
                 viewport={{once: true}}
                 transition={{delay: i * 0.1}}
-                className="bg-white p-10 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.03)] border border-gray-100 hover:-translate-y-2 transition-all duration-500 group"
+                className="bg-white p-6 md:p-10 rounded-3xl md:rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.03)] border border-gray-100 hover:-translate-y-2 transition-all duration-500 group"
               >
-                <div className="w-16 h-16 bg-brand-cream flex items-center justify-center rounded-2xl text-brand-navy group-hover:bg-brand-navy group-hover:text-white transition-all mb-8 shadow-[0_10px_30px_rgba(0,0,0,0.05)]">
-                  <i className={cn(sub.icon, "text-2xl text-brand-gold group-hover:text-white transition-colors")}></i>
+                <div className="w-12 h-12 md:w-16 md:h-16 bg-brand-cream flex items-center justify-center rounded-xl md:rounded-2xl text-brand-navy group-hover:bg-brand-navy group-hover:text-white transition-all mb-6 md:mb-8 shadow-[0_10px_30px_rgba(0,0,0,0.05)]">
+                  <i className={cn(sub.icon, "text-xl md:text-2xl text-brand-gold group-hover:text-white transition-colors")}></i>
                 </div>
-                <h4 className="text-2xl font-serif font-bold text-brand-navy mb-4">{sub.name}</h4>
-                <p className="text-sm text-gray-500 leading-relaxed">{sub.desc}</p>
+                <h4 className="text-lg md:text-2xl font-serif font-bold text-brand-navy mb-3 md:mb-4">{sub.name}</h4>
+                <p className="text-xs md:text-sm text-gray-500 leading-relaxed">{sub.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -201,15 +201,15 @@ const ServiceDetail = () => {
       </section>
 
       {/* Process Steps */}
-      <section className="py-32 px-4 md:px-8 bg-brand-navy text-white relative overflow-hidden">
+      <section className="py-20 md:py-32 px-6 md:px-8 bg-brand-navy text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/dark-matter.png')] opacity-20"></div>
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-24 space-y-4">
-            <span className="text-brand-gold font-bold tracking-[0.4em] uppercase text-[10px] opacity-60">The Workflow</span>
-            <h2 className="text-4xl md:text-6xl font-serif font-bold">Our Technical Process</h2>
+          <div className="text-center mb-16 md:mb-24 space-y-3 md:space-y-4">
+            <span className="text-brand-gold font-bold tracking-[0.4em] uppercase text-[9px] md:text-[10px] opacity-60">The Workflow</span>
+            <h2 className="text-3xl md:text-6xl font-serif font-bold">Our Technical Process</h2>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
             {data.process.map((p, i) => (
               <motion.div 
                 key={i} 
@@ -217,15 +217,15 @@ const ServiceDetail = () => {
                 whileInView={{opacity: 1, y: 0}}
                 viewport={{once: true}}
                 transition={{delay: i * 0.1}}
-                className="relative space-y-6 pt-10"
+                className="relative space-y-4 md:space-y-6 pt-6 md:pt-10"
               >
-                <div className="text-8xl font-serif font-bold text-white/5 absolute -top-8 -left-2 z-0">{p.step}</div>
-                <div className="relative z-10 space-y-6">
-                  <div className="w-12 h-12 bg-brand-gold rounded-full flex items-center justify-center text-brand-navy font-bold shadow-xl">
-                    <CircleCheck className="w-6 h-6" />
+                <div className="text-6xl md:text-8xl font-serif font-bold text-white/5 absolute -top-4 md:-top-8 -left-2 z-0">{p.step}</div>
+                <div className="relative z-10 space-y-4 md:space-y-6">
+                  <div className="w-10 h-10 md:w-12 md:h-12 bg-brand-gold rounded-full flex items-center justify-center text-brand-navy font-bold shadow-xl">
+                    <CircleCheck className="w-5 h-5 md:w-6 md:h-6" />
                   </div>
-                  <h4 className="text-2xl font-serif font-bold">{p.title}</h4>
-                  <p className="text-white/50 text-sm leading-relaxed">{p.desc}</p>
+                  <h4 className="text-lg md:text-2xl font-serif font-bold leading-tight">{p.title}</h4>
+                  <p className="text-white/50 text-[11px] md:text-sm leading-relaxed">{p.desc}</p>
                 </div>
               </motion.div>
             ))}
@@ -286,22 +286,22 @@ const ServiceDetail = () => {
       </section>
 
       {/* FAQs */}
-      <section className="py-32 px-4 md:px-8 bg-brand-cream/20">
+      <section className="py-20 md:py-32 px-6 md:px-8 bg-brand-cream/20">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-24 space-y-4">
-            <CircleHelp className="w-16 h-16 text-brand-gold mx-auto opacity-30" />
-            <h2 className="text-4xl md:text-5xl font-serif text-brand-navy font-bold">Frequently Asked</h2>
+          <div className="text-center mb-16 md:mb-24 space-y-4">
+            <CircleHelp className="w-12 h-12 md:w-16 md:h-16 text-brand-gold mx-auto opacity-30" />
+            <h2 className="text-3xl md:text-5xl font-serif text-brand-navy font-bold">Frequently Asked</h2>
           </div>
-          <div className="space-y-6">
+          <div className="space-y-4 md:space-y-6">
             {data.faqs.map((faq, i) => (
-              <details key={i} className="group bg-white rounded-[2rem] p-8 cursor-pointer shadow-[0_10px_30px_rgba(0,0,0,0.02)] border border-gray-100">
-                <summary className="flex items-center justify-between list-none font-bold text-brand-navy text-lg pr-4">
+              <details key={i} className="group bg-white rounded-2xl md:rounded-[2rem] p-6 md:p-8 cursor-pointer shadow-[0_10px_30px_rgba(0,0,0,0.02)] border border-gray-100">
+                <summary className="flex items-center justify-between list-none font-bold text-brand-navy text-base md:text-lg pr-2 md:pr-4">
                   {faq.question}
-                  <div className="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center transition-transform group-open:rotate-180 group-open:bg-brand-navy group-open:text-white">
-                    <ChevronRight className="w-4 h-4 rotate-90" />
+                  <div className="w-7 h-7 md:w-8 md:h-8 rounded-full border border-gray-200 flex items-center justify-center transition-transform group-open:rotate-180 group-open:bg-brand-navy group-open:text-white">
+                    <ChevronRight className="w-3.5 h-3.5 md:w-4 md:h-4 rotate-90" />
                   </div>
                 </summary>
-                <div className="mt-8 text-gray-500 text-sm leading-relaxed border-t border-gray-100 pt-8 animate-in transition-all">
+                <div className="mt-6 md:mt-8 text-gray-500 text-xs md:text-sm leading-relaxed border-t border-gray-100 pt-6 md:pt-8 animate-in transition-all">
                   {faq.answer}
                 </div>
               </details>
@@ -314,18 +314,18 @@ const ServiceDetail = () => {
       <VerifiedProjects />
 
       {/* Final CTA */}
-      <section className="py-24 px-4">
-        <div className="max-w-6xl mx-auto bg-brand-navy rounded-[4rem] p-12 md:p-24 text-center text-white relative overflow-hidden shadow-2xl">
+      <section className="py-16 md:py-24 px-6 md:px-8">
+        <div className="max-w-6xl mx-auto bg-brand-navy rounded-3xl md:rounded-[4rem] p-10 md:p-24 text-center text-white relative overflow-hidden shadow-2xl">
           <div className="absolute inset-0 bg-brand-gold/5 blur-3xl rounded-full scale-150"></div>
-          <div className="relative z-10 max-w-3xl mx-auto space-y-10">
-            <h2 className="text-4xl md:text-7xl font-serif font-bold leading-tight">Elite Support for Premier Properties</h2>
-            <p className="text-xl text-white/60">Professional technical rescue at your doorstep. We service all major areas in Dubai.</p>
-            <div className="flex flex-wrap justify-center gap-6 pt-6">
+          <div className="relative z-10 max-w-3xl mx-auto space-y-8 md:space-y-10">
+            <h2 className="text-3xl md:text-7xl font-serif font-bold leading-tight">Elite Support for Premier Properties</h2>
+            <p className="text-lg md:text-xl text-white/60">Professional technical rescue at your doorstep. We service all major areas in Dubai.</p>
+            <div className="flex flex-wrap justify-center gap-4 md:gap-6 pt-4 md:pt-6">
               <button 
                 onClick={callNow}
-                className="bg-brand-red text-white px-12 py-5 rounded-full font-bold text-lg hover:bg-white hover:text-brand-navy transition-all shadow-2xl flex items-center gap-4 uppercase tracking-widest"
+                className="w-full sm:w-auto bg-brand-red text-white px-10 md:px-12 py-4 md:py-5 rounded-full font-bold text-sm md:text-lg hover:bg-white hover:text-brand-navy transition-all shadow-2xl flex items-center justify-center gap-4 uppercase tracking-widest"
               >
-                <Phone className="w-6 h-6" /> Call Direct
+                <Phone className="w-5 h-5 md:w-6 md:h-6" /> Call Direct
               </button>
             </div>
           </div>
