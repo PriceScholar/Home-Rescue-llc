@@ -72,20 +72,22 @@ const ServiceDetail = () => {
             {/* Left Column: Image with exact requested structure */}
             <div className="service-image-wrapper">
               <img 
-                src={data.image} 
+                src={`/images/services/subs/${serviceId}.jpg`} 
                 alt={data.title}
                 loading="lazy"
+                className="w-full h-full object-cover"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
-                  target.onerror = null; 
-                  target.src = 'https://placehold.co/800x600/1a3a6b/d4af37?text=Service+Image';
-                  target.classList.add('fallback-image');
+                  // If sub-service specific image fails, fallback to the one in data or placeholder
+                  if (target.src.includes('/images/services/subs/')) {
+                    target.src = data.image;
+                  } else {
+                    target.onerror = null; 
+                    target.src = 'https://placehold.co/800x600/1a3a6b/d4af37?text=Service+Image';
+                    target.classList.add('fallback-image');
+                  }
                 }}
               />
-              <div className="duration-badge">
-                <span className="label">ESTIMATE DURATION</span>
-                <span className="time">{data.estimateDuration}</span>
-              </div>
             </div>
 
             {/* Right Column: Content */}
