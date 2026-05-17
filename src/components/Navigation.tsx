@@ -1,5 +1,5 @@
 import React from 'react';
-import {Phone, Mail, MessageCircle, Menu, X, ChevronDown, ChevronRight, Facebook, Instagram, Linkedin, Send, Video, BadgeCheck, MapPin} from 'lucide-react';
+import {Phone, Mail, MessageCircle, Menu, X, ChevronDown, ChevronRight, Facebook, Instagram, Linkedin, Send, Video, BadgeCheck, MapPin, Clock, ShieldCheck} from 'lucide-react';
 import {useLanguage} from '../context/LanguageContext';
 import {Link} from 'react-router-dom';
 import {motion, AnimatePresence} from 'motion/react';
@@ -259,130 +259,172 @@ export const Navbar = () => {
 
 export const Footer = () => {
   const {t} = useLanguage();
-  const { openLicense } = useBooking();
+  const { openLicense, openBooking } = useBooking();
+
+  const socialLinks = [
+    { Icon: Facebook, href: '#' },
+    { Icon: Instagram, href: '#' },
+    { Icon: Linkedin, href: '#' },
+    { Icon: Mail, href: 'mailto:info@homerescue.ae' }
+  ];
 
   return (
-    <footer className="bg-brand-navy text-white pt-20 pb-10 px-4 md:px-8">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-        <div className="space-y-6">
-          <Link to="/" className="flex flex-col">
-            <span className="text-3xl font-serif font-bold text-white leading-none">HOME RESCUE</span>
-            <span className="text-[10px] text-brand-gold font-medium tracking-[0.2em]">TECHNICAL SERVICES</span>
-          </Link>
-          <p className="text-gray-400 text-sm leading-relaxed">
-            Dubai's premium home renovation and technical services. We specialize in maintaining the luxury and comfort of your home with certified professionals.
-          </p>
-          <div className="flex gap-4">
-            {[Facebook, Instagram, Linkedin].map((Icon, i) => (
-              <a key={i} href="#" className="w-10 h-10 rounded-full border border-gray-700 flex items-center justify-center hover:bg-brand-gold hover:border-brand-gold transition-all">
-                <Icon className="w-5 h-5" />
-              </a>
-            ))}
+    <footer className="bg-brand-navy text-white pt-16 pb-12 px-8 overflow-hidden">
+      <div className="max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 mb-16">
+          
+          {/* Column 1: Info */}
+          <div className="space-y-8 lg:col-span-1">
+            <div className="flex flex-col">
+              <div className="flex items-center gap-3">
+                 <div className="w-10 h-10 bg-brand-gold rounded-lg flex items-center justify-center border-2 border-white/20">
+                   <span className="text-brand-navy font-black text-xl">H</span>
+                 </div>
+                 <span className="text-2xl font-serif font-black text-white leading-none">HOME RESCUE</span>
+              </div>
+              <span className="text-[9px] text-brand-gold font-black tracking-[0.3em] mt-2 ml-1">TECHNICAL SERVICES</span>
+            </div>
+            <p className="text-gray-400 text-[13px] leading-relaxed font-medium opacity-80">
+              Dubai's premium home renovation and technical services. We specialize in maintaining the luxury and comfort of your home with certified professionals.
+            </p>
+            <div className="flex gap-3">
+              {socialLinks.map((item, i) => (
+                <a key={i} href={item.href} className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center hover:bg-brand-gold hover:border-brand-gold transition-all text-white hover:text-brand-navy group">
+                  <item.Icon className="w-3.5 h-3.5" />
+                </a>
+              ))}
+            </div>
           </div>
-        </div>
 
-        <div>
-          <h4 className="text-lg font-serif mb-6 text-brand-gold">Our Services</h4>
-          <ul className="space-y-3 text-sm text-gray-400">
-            {[
-              { name: 'Painting Services', id: 'painting' },
-              { name: 'AC Maintenance', id: 'ac-maintenance' },
-              { name: 'Plumbing Works', id: 'plumbing' },
-              { name: 'Electrical Works', id: 'electrical' },
-              { name: 'Tile & Marble', id: 'tile-marble' },
-              { name: 'Carpentry', id: 'carpentry' },
-              { name: 'False Ceiling', id: 'false-ceiling' },
-              { name: 'Handyman Services', id: 'handyman' }
-            ].map((service) => (
-              <li key={service.id}>
-                <Link to={`/services/${service.id}`} className="hover:text-white transition-colors cursor-pointer">
-                  • {service.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+          {/* Column 2: Our Services */}
+          <div className="lg:pl-8">
+            <h4 className="text-md font-serif font-black mb-8 text-brand-gold uppercase tracking-widest leading-none">Our Services</h4>
+            <ul className="space-y-3.5 text-[13px] text-gray-400">
+              {[
+                { name: 'Painting Services', id: 'paint-work' },
+                { name: 'AC Maintenance', id: 'ac-maintenance' },
+                { name: 'Plumbing Services', id: 'plumbing-services' },
+                { name: 'Electrical Services', id: 'electrical-services' },
+                { name: 'Ceiling Works', id: 'ceiling-work' },
+                { name: 'Handyman Services', id: 'handyman-more' },
+                { name: 'Lighting Work', id: 'lighting-work' },
+                { name: 'Home Maintenance', id: 'home-general-maintenance' }
+              ].map((s) => (
+                <li key={s.id} className="group">
+                  <Link to={`/services/${s.id}`} className="hover:text-white transition-all flex items-center gap-2.5 font-bold">
+                    <ChevronRight className="w-3.5 h-3.5 text-brand-gold/50 group-hover:text-brand-gold group-hover:translate-x-1 transition-all" /> {s.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-        <div>
-          <h4 className="text-lg font-serif mb-6 text-brand-gold">Quick Links</h4>
-          <ul className="space-y-3 text-sm text-gray-400">
-            {['Home', 'About Us', 'Services', 'Credentials', 'Our Portfolio', 'Contact Us', 'FAQs', 'Privacy Policy'].map((link) => (
-              <li key={link}>
-                <Link 
-                  to={link === 'Home' ? '/' : link === 'About Us' ? '/about' : link === 'Services' ? '/services' : link === 'Credentials' ? '/credentials' : link === 'Our Portfolio' ? '/portfolio' : link === 'Contact Us' ? '/contact' : '#'} 
-                  className="hover:text-white transition-colors cursor-pointer"
-                >
-                  • {link}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+          {/* Column 3: Quick Links */}
+          <div className="lg:pl-4">
+            <h4 className="text-md font-serif font-black mb-8 text-brand-gold uppercase tracking-widest leading-none">Quick Links</h4>
+            <ul className="space-y-3.5 text-[13px] text-gray-400">
+              {[
+                { name: 'About Us', path: '/about' },
+                { name: 'Our Portfolio', path: '/portfolio' },
+                { name: 'Credentials', path: '/credentials' },
+                { name: 'Contact Us', path: '/contact' },
+                { name: 'FAQs', path: '#' },
+                { name: 'Privacy Policy', path: '#' }
+              ].map((link) => (
+                <li key={link.name} className="group">
+                  <Link to={link.path} className="hover:text-white transition-all flex items-center gap-2.5 font-bold">
+                    <ChevronRight className="w-3.5 h-3.5 text-brand-gold/50 group-hover:text-brand-gold group-hover:translate-x-1 transition-all" /> {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
 
-        <div>
-          <h4 className="text-lg font-serif mb-6 text-brand-gold">Newsletter</h4>
-          <p className="text-sm text-gray-400 mb-4">Subscribe to get latest tips and offers.</p>
-          <div className="flex bg-white/5 p-1 rounded-lg border border-white/10 group focus-within:border-brand-gold transition-colors">
-            <input type="email" placeholder="Email Address" className="bg-transparent border-none focus:ring-0 text-sm px-3 py-2 w-full outline-none" />
-            <button className="bg-brand-gold text-brand-navy p-2 rounded-md hover:bg-white transition-colors group-hover:scale-105">
-              <Send className="w-4 h-4" />
+          {/* Column 4: Contact Us */}
+          <div className="space-y-8 lg:pl-4">
+            <h4 className="text-md font-serif font-black mb-8 text-brand-gold uppercase tracking-widest leading-none">Contact Us</h4>
+            <div className="space-y-5">
+              <a href="tel:+971524524295" className="flex items-center gap-4 group">
+                <div className="w-9 h-9 rounded-xl bg-white/5 flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-brand-navy transition-all">
+                  <Phone className="w-4 h-4" />
+                </div>
+                <div>
+                  <div className="text-[9px] text-gray-500 font-bold uppercase tracking-widest">Call Us</div>
+                  <div className="font-bold text-white text-sm">+971 52 452 4295</div>
+                </div>
+              </a>
+              <a href="mailto:info@homerescue.ae" className="flex items-center gap-4 group">
+                <div className="w-9 h-9 rounded-xl bg-white/5 flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-brand-navy transition-all">
+                  <Mail className="w-4 h-4" />
+                </div>
+                <div>
+                  <div className="text-[9px] text-gray-500 font-bold uppercase tracking-widest">Email Address</div>
+                  <div className="font-bold text-white text-sm">info@homerescue.ae</div>
+                </div>
+              </a>
+              <div className="flex items-center gap-4">
+                <div className="w-9 h-9 rounded-xl bg-white/5 flex items-center justify-center text-brand-gold">
+                  <MapPin className="w-4 h-4" />
+                </div>
+                <div>
+                  <div className="text-[9px] text-gray-500 font-bold uppercase tracking-widest">Office Location</div>
+                  <div className="font-bold text-white text-sm">Al Nahda 1, Dubai, UAE</div>
+                </div>
+              </div>
+            </div>
+            <button 
+              onClick={openBooking}
+              className="w-full bg-white text-brand-navy py-4 rounded-xl font-black text-[10px] uppercase tracking-[0.2em] hover:bg-brand-gold transition-all shadow-xl active:scale-95"
+            >
+              Book Free Inspection
             </button>
           </div>
-          <div className="mt-8 pt-8 border-t border-white/5 space-y-3">
-            <div className="flex items-center gap-3 text-sm">
-              <Phone className="w-4 h-4 text-brand-gold" /> <span>+971 52 452 4295</span>
-            </div>
-            <div className="flex items-center gap-3 text-sm">
-              <Mail className="w-4 h-4 text-brand-gold" /> <span>info@homerescue.ae</span>
+
+          {/* Column 5: License */}
+          <div className="space-y-8 lg:border-l lg:border-white/10 lg:pl-10">
+            <h4 className="text-md font-serif font-black mb-8 text-brand-gold uppercase tracking-widest leading-none">Dubai Licensed</h4>
+            <div className="space-y-6">
+              <div className="space-y-2 opacity-80">
+                <div className="text-gray-400 text-xs leading-relaxed">
+                  License No: <span className="text-white font-bold">1191464</span>
+                </div>
+                <div className="text-gray-300 text-[11px] leading-relaxed font-bold uppercase tracking-wider">
+                  Dubai Economy & Tourism (DET) <br /> Verified & Active
+                </div>
+              </div>
+              <button 
+                onClick={openLicense}
+                className="w-full border border-white/20 text-white py-4 rounded-xl font-black text-[10px] uppercase tracking-[0.2em] hover:bg-white hover:text-brand-navy transition-all active:scale-95"
+              >
+                View License
+              </button>
+              <div className="pt-4 flex items-center gap-4">
+                <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center border border-white/10 shrink-0">
+                   <ShieldCheck className="w-6 h-6 text-brand-gold" />
+                </div>
+                <div className="space-y-0.5">
+                  <div className="text-[9px] text-white font-black uppercase tracking-widest leading-none">Status</div>
+                  <div className="text-[9px] text-brand-gold font-bold uppercase tracking-widest">Fully Compliant</div>
+                  <div className="flex gap-1 pt-1">
+                    <div className="w-10 h-1.5 bg-brand-gold/30 rounded-full" />
+                    <div className="w-4 h-1.5 bg-brand-gold/30 rounded-full" />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Footer Coverage List */}
-      <div className="max-w-7xl mx-auto mb-12 p-8 bg-brand-gold/5 rounded-[24px] border border-brand-gold/10">
-        <h4 className="text-brand-gold font-bold text-sm mb-6 flex items-center gap-2 uppercase tracking-widest">
-          <i className="fa-solid fa-map-location-dot"></i> Our Service Locations
-        </h4>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {[
-            'Radisson Blu Hotel', 'Internet City', 'M Gallery Hotel', 
-            'Palm Jumeirah', 'Park Inn Hotel', 'Motor City', 
-            'Ramada Hotel', 'Downtown Dubai', 'Emaar Properties'
-          ].map((loc, i) => (
-            <div key={i} className="flex items-center gap-2 text-white/80 text-sm hover:text-brand-gold transition-colors">
-              <span className="text-brand-gold font-bold">✓</span> {loc}
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* License Info Display */}
-      <div className="max-w-7xl mx-auto mb-12">
-        <div className="bg-[#0f2545] p-6 md:p-8 rounded-[24px] border border-brand-gold/10 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-6">
-            <div className="w-16 h-16 rounded-full bg-brand-gold flex items-center justify-center text-brand-navy text-3xl shrink-0 shadow-lg shadow-brand-gold/20">
-              <i className="fa-solid fa-certificate"></i>
-            </div>
-            <div className="space-y-1 text-left">
-              <span className="block text-brand-gold text-[10px] font-bold uppercase tracking-[0.2em]">DUBAI LICENSED COMPANY</span>
-              <h4 className="text-lg font-serif text-white">Commercial License No: <span className="text-brand-gold font-mono">1191464</span></h4>
-              <p className="text-gray-400 text-xs">Registered with Dubai Economy & Tourism (DET) | Valid & Active</p>
-            </div>
+        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[9px] font-bold text-gray-500 uppercase tracking-widest">
+          <p>© {new Date().getFullYear()} Home Rescue Technical Services. All Rights Reserved.</p>
+          <div className="flex gap-6">
+             <Link to="#" className="hover:text-white transition-colors">Terms</Link>
+             <Link to="#" className="hover:text-white transition-colors">Privacy</Link>
+             <Link to="#" className="hover:text-white transition-colors">Sitemap</Link>
           </div>
-          <button 
-            onClick={openLicense}
-            className="bg-brand-gold text-brand-navy px-10 py-4 rounded-full font-bold hover:bg-white transition-all text-sm uppercase tracking-widest whitespace-nowrap active:scale-95"
-          >
-            View License
-          </button>
         </div>
-      </div>
-      
-      <div className="max-w-7xl mx-auto pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-gray-500">
-        <p>&copy; {new Date().getFullYear()} HOME RESCUE Technical Services. All Rights Reserved.</p>
-        <p>Managed by Home Rescue Dubai | Al Nahda 1, Dubai, UAE</p>
       </div>
     </footer>
   );
+
 };

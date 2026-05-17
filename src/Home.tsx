@@ -51,187 +51,188 @@ const Home = () => {
     image: serviceCategories.find(c => c.id === s.id)?.image || ''
   }));
 
-  const whyChoose = [
-    { title: 'Dubai Licensed', desc: 'Legally Registered & Approved', icon: <BadgeCheck className="w-8 h-8" /> },
-    { title: 'Fully Insured', desc: 'Complete Insurance Coverage', icon: <ShieldCheck className="w-8 h-8" /> },
-    { title: 'Expert Technicians', desc: 'Skilled, Trained & Experienced', icon: <Users className="w-8 h-8" /> },
-    { title: 'Quality Guarantee', desc: '100% Satisfaction Guaranteed', icon: <Award className="w-8 h-8" /> },
-    { title: '24/7 Support', desc: 'Always Here When You Need Us', icon: <Clock className="w-8 h-8" /> },
-  ];
-
   return (
     <div className="flex flex-col min-h-screen bg-white">
       <TopBar />
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative h-[800px] flex items-center overflow-hidden bg-brand-navy">
+      <section className="relative min-h-[780px] flex items-center overflow-hidden bg-[#08264B]">
+        {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img 
             src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=2070&auto=format&fit=crop" 
-            alt="Premium UAE Home" 
-            className="w-full h-full object-cover opacity-30 scale-105"
+            alt="Premium UAE Villa Night" 
+            className="w-full h-full object-cover opacity-30 shadow-inner"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/70 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#08264B] via-[#08264B]/80 to-transparent"></div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-8 w-full flex flex-col md:flex-row items-center gap-12 pt-20">
+        <div className="relative z-10 max-w-7xl mx-auto px-8 w-full flex flex-col lg:flex-row items-center gap-16 pt-32 pb-44">
+          
+          {/* Left Content */}
           <motion.div 
-            initial={{opacity: 0, x: -50}}
+            initial={{opacity: 0, x: -30}}
             animate={{opacity: 1, x: 0}}
             transition={{duration: 0.8}}
-            className="flex-[1.2] space-y-8"
+            className="flex-1 space-y-10"
           >
-            <div className="inline-block px-4 py-2 bg-brand-gold/10 border border-brand-gold/20 rounded-full">
-              <span className="text-brand-gold font-bold text-xs tracking-[0.2em] uppercase">Premium Technical Services</span>
+            <div className="space-y-4">
+              <span className="text-brand-gold font-black tracking-[0.25em] uppercase text-[10px] block opacity-90">Premium Technical Services</span>
+              <h1 className="text-6xl md:text-7xl lg:text-8xl font-serif font-black leading-[1.05] text-white tracking-tighter">
+                Premium Technical <br />
+                Solutions Across <span className="text-brand-gold">UAE</span>
+              </h1>
             </div>
-            <h1 className="text-5xl md:text-8xl font-serif leading-tight text-white tracking-tight">
-              Premium Technical <br />
-              <span className="text-brand-gold italic">Solutions Across UAE</span>
-            </h1>
-            <div className="flex flex-wrap gap-x-4 gap-y-2 text-sm font-bold text-gray-300 uppercase tracking-widest border-l-2 border-brand-gold pl-6">
-              <span>Painting</span>
-              <span className="text-brand-gold opacity-50">|</span>
-              <span>AC</span>
-              <span className="text-brand-gold opacity-50">|</span>
-              <span>Plumbing</span>
-              <span className="text-brand-gold opacity-50">|</span>
-              <span>Electrical</span>
-              <span className="text-brand-gold opacity-50">|</span>
-              <span>Ceiling</span>
-              <span className="text-brand-gold opacity-50">|</span>
-              <span>Handyman & More</span>
+
+            <div className="flex flex-wrap gap-x-5 gap-y-3 text-[11px] font-black text-white uppercase tracking-widest opacity-80">
+              <span className="hover:text-brand-gold transition-colors cursor-default">Painting</span> <span className="text-brand-gold opacity-30">|</span>
+              <span className="hover:text-brand-gold transition-colors cursor-default">AC</span> <span className="text-brand-gold opacity-30">|</span>
+              <span className="hover:text-brand-gold transition-colors cursor-default">Plumbing</span> <span className="text-brand-gold opacity-30">|</span>
+              <span className="hover:text-brand-gold transition-colors cursor-default">Electrical</span> <span className="text-brand-gold opacity-30">|</span>
+              <span className="hover:text-brand-gold transition-colors cursor-default">Ceiling</span> <span className="text-brand-gold opacity-30">|</span>
+              <span className="hover:text-brand-gold transition-colors cursor-default">Handyman & More</span>
             </div>
-            <p className="text-xl text-gray-400 max-w-xl leading-relaxed">
+
+            <p className="text-md md:text-lg text-gray-300 max-w-lg leading-relaxed font-bold opacity-70">
               Trusted by Villas, Homes, Hotels & Commercial Properties Across Dubai and All Emirates.
             </p>
-            <div className="flex flex-wrap gap-4 pt-6">
+
+            <div className="flex flex-wrap gap-5 pt-2">
               <button 
                 onClick={() => openBooking()}
-                className="bg-brand-red text-white hover:bg-white hover:text-brand-navy px-10 py-5 text-sm font-black rounded-xl transition-all flex items-center gap-3 shadow-2xl shadow-brand-red/20 group"
+                className="bg-brand-gold text-brand-navy hover:bg-[#c4941c] px-10 py-5 rounded-2xl font-black text-xs uppercase tracking-widest flex items-center gap-4 shadow-[0_20px_40px_-10px_rgba(217,165,32,0.4)] transition-all active:scale-95"
               >
-                <i className="fa-solid fa-calendar-check text-lg"></i>
+                <i className="fa-solid fa-calendar-check text-xl"></i>
                 BOOK FREE INSPECTION
               </button>
               <button 
                 onClick={askExpert}
-                className="bg-white/5 border-2 border-white/10 backdrop-blur-md text-white hover:bg-white hover:text-brand-navy px-10 py-5 text-sm font-black rounded-xl transition-all flex items-center gap-3 group"
+                className="bg-[#08264B]/40 backdrop-blur-md border border-white/10 text-white hover:bg-white hover:text-brand-navy px-10 py-5 rounded-2xl font-black text-xs uppercase tracking-widest flex items-center gap-4 transition-all active:scale-95 group"
               >
-                <MessageCircle className="w-6 h-6 text-brand-gold group-hover:text-brand-navy" /> CHAT ON WHATSAPP
+                <MessageCircle className="w-5 h-5 text-brand-gold" /> CHAT ON WHATSAPP
               </button>
             </div>
-            <div className="flex flex-wrap gap-8 pt-8 border-t border-white/10">
-              <div className="flex items-center gap-3 text-[10px] font-black uppercase tracking-widest text-gray-300">
-                <CircleCheck className="w-5 h-5 text-brand-gold" /> Trained Professionals
+
+            <div className="flex flex-wrap gap-x-10 gap-y-6 pt-10 border-t border-white/10">
+              <div className="flex items-center gap-2.5 text-[10px] font-black uppercase text-white tracking-widest group">
+                <Users className="w-4 h-4 text-brand-gold" />
+                Trained Professionals
               </div>
-              <div className="flex items-center gap-3 text-[10px] font-black uppercase tracking-widest text-gray-300">
-                <Clock className="w-5 h-5 text-brand-gold" /> On-Time Service
+              <div className="flex items-center gap-2.5 text-[10px] font-black uppercase text-white tracking-widest group">
+                <Clock className="w-4 h-4 text-brand-gold" />
+                On-Time Service
               </div>
-              <div className="flex items-center gap-3 text-[10px] font-black uppercase tracking-widest text-gray-300">
-                <Award className="w-5 h-5 text-brand-gold" /> Satisfaction Guaranteed
+              <div className="flex items-center gap-2.5 text-[10px] font-black uppercase text-white tracking-widest group">
+                <ShieldCheck className="w-4 h-4 text-brand-gold" />
+                Full Satisfaction
               </div>
-              <div className="flex items-center gap-3 text-[10px] font-black uppercase tracking-widest text-gray-300">
-                <div className="w-5 h-5 rounded-full bg-brand-gold text-brand-navy flex items-center justify-center text-[8px] font-bold">$</div> Affordable Pricing
+              <div className="flex items-center gap-2.5 text-[10px] font-black uppercase text-white tracking-widest group">
+                <Award className="w-4 h-4 text-brand-gold" />
+                Affordable Pricing
               </div>
             </div>
           </motion.div>
 
+          {/* Right Service Grid */}
           <motion.div 
             initial={{opacity: 0, scale: 0.9}}
             animate={{opacity: 1, scale: 1}}
             transition={{duration: 0.8, delay: 0.2}}
-            className="hidden xl:grid grid-cols-2 gap-4 flex-1 h-[500px]"
+            className="flex-1 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3 gap-6"
           >
             {[
-              {id: 'paint-work', title: 'Painting Services', icon: 'fa-solid fa-paint-roller'},
-              {id: 'ac-maintenance', title: 'AC Maintenance', icon: 'fa-solid fa-snowflake'},
-              {id: 'plumbing-services', title: 'Plumbing Services', icon: 'fa-solid fa-droplet'},
-              {id: 'electrical-services', title: 'Electrical Works', icon: 'fa-solid fa-bolt'},
-              {id: 'ceiling-work', title: 'Ceiling Works', icon: 'fa-solid fa-layer-group'},
-              {id: 'handyman-more', title: 'Handyman Services', icon: 'fa-solid fa-screwdriver-wrench'},
+              {title: 'Painting Services', icon: 'fa-solid fa-paint-roller', img: '/images/services/service-paint.jpg'},
+              {title: 'AC Maintenance', icon: 'fa-solid fa-snowflake', img: '/images/services/service-ac.jpg'},
+              {title: 'Plumbing Services', icon: 'fa-solid fa-droplet', img: '/images/services/service-plumbing.jpg'},
+              {title: 'Electrical Services', icon: 'fa-solid fa-bolt', img: '/images/services/service-electrical.jpg'},
+              {title: 'Ceiling Works', icon: 'fa-solid fa-layer-group', img: '/images/services/service-ceiling.jpg'},
+              {title: 'Handyman Services', icon: 'fa-solid fa-screwdriver-wrench', img: '/images/services/service-handyman.jpg'},
             ].map((s, i) => (
-              <div key={i} className="group relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
-                <img 
-                  src={serviceCategories.find(c => c.id === s.id)?.image} 
-                  alt={s.title} 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
-                />
-                <div className="absolute inset-0 bg-brand-navy opacity-40 group-hover:opacity-20 transition-opacity" />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-transparent to-transparent opacity-80" />
-                <div className="absolute bottom-4 left-4 right-4 flex items-center gap-3">
-                  <div className="w-8 h-8 bg-brand-gold rounded-lg flex items-center justify-center shadow-lg shrink-0">
-                    <i className={cn(s.icon, "text-brand-navy text-sm")}></i>
-                  </div>
-                  <h3 className="text-white font-bold text-[10px] uppercase tracking-[0.1em]">{s.title}</h3>
+              <div key={i} className="group relative aspect-square rounded-[28px] overflow-hidden shadow-2xl border border-white/5 bg-brand-navy">
+                <img src={s.img} alt={s.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80" />
+                <div className="absolute inset-0 bg-[#08264B]/40 group-hover:bg-transparent transition-colors" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#08264B] via-[#08264B]/20 to-transparent opacity-90" />
+                <div className="absolute bottom-0 left-0 right-0 p-5 flex items-center gap-3">
+                   <div className="w-10 h-10 rounded-xl bg-brand-gold flex items-center justify-center text-brand-navy text-[14px] shadow-lg">
+                     <i className={s.icon}></i>
+                   </div>
+                   <span className="text-white text-[11px] font-black uppercase tracking-widest">{s.title}</span>
                 </div>
               </div>
             ))}
           </motion.div>
         </div>
-      </section>
 
-      {/* Trust Stats Bar */}
-      <section className="relative z-20 -mt-16 px-8">
-        <div className="max-w-7xl mx-auto bg-white rounded-[40px] shadow-2xl p-10 border border-gray-100 backdrop-blur-md">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 divide-x-0 lg:divide-x divide-gray-100">
-            {stats.map((stat, i) => (
-              <div key={i} className="flex flex-col md:flex-row items-center justify-center gap-5 text-center md:text-left px-4">
-                <div className="w-16 h-16 bg-brand-gold/5 rounded-[22px] flex items-center justify-center text-brand-gold border border-brand-gold/10">
-                  {stat.icon}
-                </div>
-                <div>
-                  <div className="text-4xl font-black text-brand-navy tracking-tight">{stat.value}</div>
-                  <div className="text-[10px] uppercase tracking-[0.2em] text-gray-400 font-black mt-1">{stat.label}</div>
-                </div>
-              </div>
-            ))}
+        {/* Stats Banner (Overlapping) */}
+        <div className="absolute -bottom-16 left-8 right-8 z-30">
+          <div className="max-w-7xl mx-auto bg-white rounded-[40px] p-10 md:p-14 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.15)] border border-gray-100/50">
+             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:divide-x divide-gray-100">
+               {[
+                 {label: 'Projects Completed', val: '1000+', icon: <Building2 />},
+                 {label: 'Happy Customers', val: '500+', icon: <Users />},
+                 {label: 'Years Experience', val: '10+', icon: <Award />},
+                 {label: 'Emirates Covered', val: '7', icon: <MapPin />},
+               ].map((st, i) => (
+                 <div key={i} className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 group lg:px-8 text-center sm:text-left">
+                   <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-[28px] bg-brand-gold/5 flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-brand-navy transition-all duration-300 shrink-0 border border-brand-gold/5">
+                      {React.cloneElement(st.icon as React.ReactElement, { className: "w-8 h-8 sm:w-10 sm:h-10" })}
+                   </div>
+                   <div className="space-y-0.5">
+                     <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-brand-navy tracking-tighter leading-none">{st.val}</div>
+                     <div className="text-[9px] text-gray-400 font-bold uppercase tracking-[0.2em] leading-none whitespace-nowrap pt-1">{st.label}</div>
+                   </div>
+                 </div>
+               ))}
+             </div>
           </div>
         </div>
       </section>
 
+
       {/* Our Services Section */}
-      <section className="py-32 px-8 bg-white relative overflow-hidden">
+      <section className="py-24 px-8 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center space-y-6 mb-24">
+          <div className="text-center space-y-4 mb-16 pt-8">
             <motion.div 
               initial={{opacity: 0, scale: 0.9}}
               whileInView={{opacity: 1, scale: 1}}
               className="inline-flex items-center gap-3"
             >
-              <div className="w-12 h-px bg-brand-gold"></div>
-              <span className="text-brand-gold font-black tracking-[0.4em] uppercase text-[10px]">Our Services</span>
-              <div className="w-12 h-px bg-brand-gold"></div>
+              <div className="w-10 h-px bg-brand-gold"></div>
+              <span className="text-brand-gold font-black tracking-[0.4em] uppercase text-[9px]">Our Services</span>
+              <div className="w-10 h-px bg-brand-gold"></div>
             </motion.div>
-            <h2 className="text-5xl md:text-6xl text-brand-navy font-serif tracking-tight">Complete Solutions <br /> <span className="text-brand-gold italic">For Every Need</span></h2>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl text-brand-navy font-serif tracking-tight leading-tight">Complete Solutions <br /> <span className="text-brand-gold italic">For Every Need</span></h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {homeServices.map((service, i) => (
               <motion.div 
                 key={i}
                 initial={{opacity: 0, y: 30}}
                 whileInView={{opacity: 1, y: 0}}
                 transition={{delay: i * 0.1}}
-                whileHover={{y: -12}}
-                className="group bg-white rounded-[40px] overflow-hidden shadow-sm hover:shadow-2xl border border-gray-100 transition-all duration-500"
+                whileHover={{y: -10}}
+                className="group bg-white rounded-[32px] overflow-hidden shadow-sm hover:shadow-2xl border border-gray-100 flex flex-col h-full transition-all duration-500"
               >
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img src={service.image} alt={service.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                   <div className="absolute inset-0 bg-brand-navy/10 group-hover:bg-transparent transition-colors"></div>
-                  <div className="absolute top-6 left-6">
-                    <div className="w-14 h-14 bg-white/95 backdrop-blur-md rounded-2xl flex items-center justify-center text-brand-navy shadow-xl group-hover:bg-brand-gold group-hover:text-brand-navy transition-colors">
-                      <i className={cn(service.icon, "text-2xl")}></i>
+                  <div className="absolute top-5 left-5">
+                    <div className="w-12 h-12 bg-white/95 backdrop-blur-md rounded-2xl flex items-center justify-center text-brand-navy shadow-lg group-hover:bg-brand-gold group-hover:text-brand-navy transition-all duration-300">
+                      <i className={cn(service.icon, "text-xl")}></i>
                     </div>
                   </div>
                 </div>
-                <div className="p-10 space-y-4">
-                  <h3 className="text-xl font-black text-brand-navy leading-tight">{service.title}</h3>
-                  <p className="text-sm text-gray-500 leading-relaxed font-medium">
+                <div className="p-8 flex flex-col flex-1 gap-3">
+                  <h3 className="text-lg font-black text-brand-navy leading-tight">{service.title}</h3>
+                  <p className="text-sm text-gray-500 leading-relaxed font-medium flex-1">
                     {service.subtitle}
                   </p>
                   <Link 
                     to={`/services/${service.id}`}
-                    className="flex items-center gap-3 text-brand-gold font-black text-[10px] uppercase tracking-widest group-hover:gap-5 transition-all pt-4"
+                    className="flex items-center gap-2 text-brand-gold font-black text-[9px] uppercase tracking-widest group-hover:gap-4 transition-all pt-4"
                   >
                     View Details <ArrowRight className="w-4 h-4" />
                   </Link>
@@ -240,251 +241,239 @@ const Home = () => {
             ))}
           </div>
 
-          <div className="mt-20 text-center">
-            <Link to="/services" className="bg-brand-navy text-white px-16 py-6 rounded-2xl font-black text-sm uppercase tracking-[0.2em] hover:bg-brand-gold hover:text-brand-navy transition-all shadow-xl shadow-brand-navy/20 flex items-center gap-4 mx-auto w-fit">
-              VIEW ALL SERVICES <ArrowRight className="w-5 h-5" />
+          <div className="mt-16 text-center">
+            <Link to="/services" className="bg-brand-navy text-white px-12 py-5 rounded-2xl font-black text-xs uppercase tracking-[0.2em] hover:bg-brand-gold hover:text-brand-navy transition-all shadow-xl shadow-brand-navy/10 flex items-center gap-4 mx-auto w-fit active:scale-95">
+              VIEW ALL SERVICES <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* Why Choose Home Rescue */}
-      <section className="py-32 bg-brand-navy text-white px-8 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5 pointer-events-none">
-          <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <path d="M0 100 Q 50 0 100 100" fill="none" stroke="white" strokeWidth="0.1" />
-          </svg>
-        </div>
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center mb-24">
-            <div className="space-y-10">
-              <div className="space-y-4">
-                <span className="text-brand-gold font-black tracking-[0.4em] uppercase text-[10px]">Why Choose Home Rescue?</span>
-                <h2 className="text-5xl md:text-7xl font-serif leading-tight">Expert Technical <br />Solutions You <span className="text-brand-gold italic">Can Trust</span></h2>
-              </div>
-              <p className="text-xl text-gray-400 font-medium leading-relaxed max-w-xl">
-                At Home Rescue, we combine local expertise with international standards to provide premium technical services across all 7 emirates.
-              </p>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-10 pt-6">
-                {whyChoose.map((item, i) => (
-                  <motion.div 
-                    key={i} 
-                    initial={{opacity: 0, y: 20}}
-                    whileInView={{opacity: 1, y: 0}}
-                    transition={{delay: i * 0.1}}
-                    className="flex gap-6 group"
-                  >
-                    <div className="w-16 h-16 bg-white/5 border border-white/10 rounded-2xl flex items-center justify-center text-brand-gold shrink-0 group-hover:bg-brand-gold group-hover:text-brand-navy transition-all duration-300">
-                      <div className="w-8 h-8">{item.icon}</div>
+      {/* WHY CHOOSE & PROOF SECTION (New Unified Layout) */}
+      <section className="py-24 px-8 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto space-y-28">
+          
+          {/* Why Choose Banner */}
+          <div className="bg-[#08264B] rounded-[60px] p-16 md:p-20 shadow-3xl relative overflow-hidden">
+            <div className="text-center mb-16">
+              <h2 className="text-white text-4xl md:text-5xl font-serif font-black uppercase tracking-widest">
+                Why Choose <span className="text-brand-gold">Home Rescue</span>?
+              </h2>
+            </div>
+            
+            <div className="grid grid-cols-2 lg:grid-cols-5 gap-12 items-start">
+              {[
+                { title: 'Dubai Licensed', desc: 'Legally Registered & Approved', icon: BadgeCheck },
+                { title: 'Fully Insured', desc: 'Complete Insurance Coverage', icon: ShieldCheck },
+                { title: 'Expert Technicians', desc: 'Skilled, Trained & Experienced', icon: Users },
+                { title: 'Quality Guarantee', desc: '100% Satisfaction Guaranteed', icon: Award },
+                { title: 'Always Available', desc: 'Here When You Need Us', icon: Clock },
+              ].map((item, i) => (
+                <div key={i} className="flex flex-col items-center text-center gap-6 group">
+                  <div className="w-16 h-16 bg-brand-gold/10 border border-brand-gold/20 rounded-3xl flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-brand-navy transition-all duration-300">
+                    <item.icon className="w-9 h-9" />
+                  </div>
+                  <div className="space-y-2">
+                    <h4 className="text-white font-black text-lg tracking-tight">{item.title}</h4>
+                    <p className="text-[11px] text-gray-400 font-bold uppercase tracking-wider leading-relaxed">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Double Column: Work & Projects */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
+            
+            {/* Before / After Our Work */}
+            <div className="bg-white rounded-[60px] p-10 md:p-14 border border-gray-100 shadow-sm flex flex-col items-center h-full">
+              <h3 className="text-brand-navy text-3xl md:text-4xl font-serif font-black mb-10 md:mb-12 uppercase tracking-tighter text-center">
+                Before / After Our Work
+              </h3>
+              
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 w-full mb-10 md:mb-12 flex-1">
+                {[
+                  { title: 'Wall Painting', img: 'https://images.unsplash.com/photo-1562259949-e8e7689d7828?q=80&w=600&fit=crop' },
+                  { title: 'AC Services', img: 'https://images.unsplash.com/photo-1581094271901-8022df4466f9?q=80&w=600&fit=crop' },
+                  { title: 'Bath Repair', img: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=600&fit=crop' },
+                  { title: 'Ceiling Fix', img: 'https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?q=80&w=600&fit=crop' }
+                ].map((work, i) => (
+                  <div key={i} className="space-y-4">
+                    <div className="aspect-[4/5.5] rounded-[24px] md:rounded-[32px] overflow-hidden relative shadow-lg group">
+                      <img src={work.img} alt={work.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                      <div className="absolute bottom-2 left-2 right-2 md:bottom-3 md:left-3 md:right-3 flex justify-between gap-1">
+                        <span className="bg-white/90 backdrop-blur-sm text-brand-navy text-[7px] md:text-[9px] font-black uppercase px-2 py-0.5 md:py-1 rounded-lg">Before</span>
+                        <span className="bg-brand-gold text-brand-navy text-[7px] md:text-[9px] font-black uppercase px-2 py-0.5 md:py-1 rounded-lg">After</span>
+                      </div>
                     </div>
-                    <div className="space-y-1 pt-1">
-                      <h4 className="font-black text-lg tracking-tight">{item.title}</h4>
-                      <p className="text-xs text-gray-500 font-bold uppercase tracking-widest">{item.desc}</p>
-                    </div>
-                  </motion.div>
+                    <p className="text-[9px] md:text-[11px] font-black text-brand-navy text-center uppercase tracking-[0.1em]">{work.title}</p>
+                  </div>
                 ))}
               </div>
+              
+              <Link to="/portfolio" className="bg-brand-navy text-white px-10 py-4 md:px-12 md:py-5 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-brand-gold hover:text-brand-navy transition-all flex items-center gap-4 shadow-xl shadow-brand-navy/10 mt-auto">
+                VIEW TRANSFORMATIONS <ArrowRight className="w-4 h-4 md:w-5 md:h-5 text-brand-gold" />
+              </Link>
             </div>
-            <div className="relative group">
-              <div className="aspect-[4/5] overflow-hidden rounded-[60px] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.5)] border border-white/10 relative z-10">
-                <img 
-                  src="https://images.unsplash.com/photo-1581094288338-2314dddb7ece?q=80&w=2070&auto=format&fit=crop" 
-                  alt="Expert Technician" 
-                  className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" 
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/80 via-transparent to-transparent" />
-              </div>
-              <motion.div 
-                animate={{y: [0, -20, 0]}}
-                transition={{duration: 4, repeat: Infinity, ease: "easeInOut"}}
-                className="absolute -bottom-12 -left-12 bg-white p-12 rounded-[40px] shadow-2xl z-20 hidden md:block border-8 border-brand-navy"
-              >
-                <div className="text-6xl font-black text-brand-navy mb-2 tracking-tighter">10+</div>
-                <div className="text-[10px] font-black uppercase tracking-[0.3em] text-brand-gold">Years Excellence</div>
-              </motion.div>
-              <div className="absolute -top-10 -right-10 w-40 h-40 bg-brand-gold/10 rounded-full blur-3xl -z-10 group-hover:scale-150 transition-transform duration-1000"></div>
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Before / After Section */}
-      <section className="py-32 px-8 bg-brand-cream relative overflow-hidden">
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center space-y-6 mb-24">
-            <span className="text-brand-gold font-black tracking-[0.4em] uppercase text-[10px]">Our Work</span>
-            <h2 className="text-5xl md:text-6xl text-brand-navy font-serif">Before / After Our Work</h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              {title: 'Wall Painting', image: 'https://images.unsplash.com/photo-1562259949-e8e7689d7828?q=80&w=1200&fit=crop'},
-              {title: 'AC Installation', image: 'https://images.unsplash.com/photo-1581094271901-8022df4466f9?q=80&w=1200&fit=crop'},
-              {title: 'Bathroom Renovation', image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1200&fit=crop'},
-              {title: 'Ceiling Work', image: 'https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?q=80&w=1200&fit=crop'}
-            ].map((work, i) => (
-              <div key={i} className="group relative aspect-[3/4] rounded-[40px] overflow-hidden bg-brand-navy shadow-xl border border-white/5">
-                <img src={work.image} alt={work.title} className="w-full h-full object-cover opacity-70 transition-transform duration-1000 group-hover:scale-110" />
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-brand-navy/40 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-10 space-y-6">
-                  <div className="flex justify-between items-center">
-                    <span className="px-4 py-1.5 bg-white/10 backdrop-blur-md border border-white/20 rounded-full text-[9px] font-black text-white uppercase tracking-widest">Before</span>
-                    <div className="w-10 h-px bg-white/20"></div>
-                    <span className="px-4 py-1.5 bg-brand-gold rounded-full text-[9px] font-black text-brand-navy uppercase tracking-widest shadow-lg shadow-brand-gold/30">After</span>
+            {/* Verified Corporate Projects */}
+            <div className="bg-white rounded-[60px] p-10 md:p-14 border border-gray-100 shadow-sm flex flex-col items-center h-full">
+              <h3 className="text-brand-navy text-3xl md:text-4xl font-serif font-black mb-10 md:mb-12 uppercase tracking-tighter text-center">
+                Corporate Portfolio
+              </h3>
+              
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 w-full mb-10 md:mb-12 flex-1">
+                {[
+                  { title: 'Radisson Blu', sub: 'Dubai Deira', img: '/park-inn-po.jpg' },
+                  { title: 'M Gallery', sub: 'Palm Jumeirah', img: '/m-gallery-po.jpg' },
+                  { title: 'Emaar Villas', sub: 'Dubai Hills', img: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=600&fit=crop' },
+                  { title: 'Nakheel Mall', sub: 'Palm Jumeirah', img: 'https://images.unsplash.com/photo-1518684079-3c830dcef090?q=80&w=600&fit=crop' }
+                ].map((proj, i) => (
+                  <div key={i} className="space-y-4">
+                    <div className="aspect-[4/5.5] rounded-[24px] md:rounded-[32px] overflow-hidden relative shadow-lg group">
+                      <img src={proj.img} alt={proj.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
+                        onError={(e) => { (e.target as HTMLImageElement).src = `https://placehold.co/400x550/08264B/D9A520?text=${encodeURIComponent(proj.title)}` }}
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                      <div className="absolute bottom-2 left-2 right-2 md:bottom-3 md:left-3 md:right-3 flex flex-col gap-0.5">
+                        <span className="text-white text-[8px] md:text-[10px] font-black uppercase tracking-wider leading-none">{proj.title}</span>
+                        <span className="text-brand-gold text-[7px] md:text-[8px] font-bold uppercase tracking-widest">{proj.sub}</span>
+                      </div>
+                    </div>
                   </div>
-                  <h4 className="text-white font-black text-xl tracking-tight">{work.title}</h4>
-                </div>
+                ))}
               </div>
-            ))}
-          </div>
-          
-          <div className="mt-20 text-center">
-            <Link to="/portfolio" className="btn-outline inline-flex px-14 py-6 uppercase tracking-[0.2em] text-xs font-black rounded-2xl border-2">
-              VIEW MORE TRANSFORMATIONS <ChevronRight className="w-5 h-5 ml-2" />
-            </Link>
+              
+              <Link to="/portfolio" className="bg-brand-navy text-white px-10 py-4 md:px-12 md:py-5 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-brand-gold hover:text-brand-navy transition-all flex items-center gap-4 shadow-xl shadow-brand-navy/10 mt-auto">
+                VIEW ALL PROJECTS <ArrowRight className="w-4 h-4 md:w-5 md:h-5 text-brand-gold" />
+              </Link>
+            </div>
+
           </div>
         </div>
       </section>
-
-      {/* Verified Corporate Projects */}
-      <VerifiedProjects />
 
       {/* Reviews Section */}
-      <section className="py-32 bg-white px-4 md:px-8 overflow-hidden">
+      <section className="py-24 bg-white px-4 md:px-8 overflow-hidden">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-24 gap-12">
-            <div className="space-y-6 max-w-xl text-center md:text-left">
-              <span className="text-brand-gold font-black tracking-[0.4em] uppercase text-[10px]">What Our Clients Say</span>
-              <h2 className="text-5xl md:text-6xl text-brand-navy font-serif tracking-tight">Real Stories From <span className="text-brand-gold italic">Real Customers</span></h2>
-            </div>
-            <div className="flex items-center gap-5 bg-brand-cream border border-brand-gold/20 px-8 py-5 rounded-[24px] shadow-sm">
-              <div className="flex gap-1.5 text-brand-gold">
-                {[1,2,3,4,5].map(s => <Star key={s} className="w-4 h-4 fill-current" />)}
+          <div className="flex flex-col md:flex-row justify-between items-center mb-16 gap-6">
+            <div className="flex-1"></div>
+            <h2 className="text-4xl md:text-5xl text-brand-navy font-serif font-black uppercase tracking-widest text-center flex-1">
+              What Our Clients Say
+            </h2>
+            <div className="flex-1 flex justify-end">
+              <div className="flex items-center gap-2.5">
+                <div className="flex gap-0.5 text-brand-gold">
+                  {[1,2,3,4,5].map(s => <Star key={s} className="w-4 h-4 fill-current" />)}
+                </div>
+                <span className="font-black text-brand-navy text-[11px] uppercase tracking-wider">4.9/5 Rating</span>
               </div>
-              <span className="font-black text-brand-navy tracking-tight">4.9/5 Average Rating</span>
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-             {[
-               {name: 'Sarah Johnson', loc: 'Palm Jumeirah, Dubai', text: 'Home Rescue completely transformed my villa. The wall painting was flawless and the technicians were extremely professional.'},
-               {name: 'Ahmed Al Mansoori', loc: 'Khalifa City, Abu Dhabi', text: 'Had a major AC leakage in the middle of the night. Their emergency repair team arrived within 45 minutes. Superb service!'},
-               {name: 'Michael Brown', loc: 'Al Majaz, Sharjah', text: 'High quality tile works for my bathroom. They were very clean and finished on time. Highly recommended.'}
-             ].map((review, i) => (
+          <div className="relative">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {[
+                {name: 'Sarah Johnson', loc: 'Palm Jumeirah, Dubai', text: 'Home Rescue completely transformed my villa. The wall painting was flawless and the technicians were extremely professional.'},
+                {name: 'Ahmed Al Mansoori', loc: 'Khalifa City, Abu Dhabi', text: 'Had a major AC leakage in the middle of the night. Their emergency team arrived within 45 minutes. Superb service!'},
+                {name: 'Michael Brown', loc: 'Al Majaz, Sharjah', text: 'High quality tile works for my bathroom. They were very clean and finished on time. Highly recommended.'}
+              ].map((review, i) => (
                 <motion.div 
                   key={i}
                   initial={{opacity: 0, y: 20}}
                   whileInView={{opacity: 1, y: 0}}
                   transition={{delay: i * 0.1}}
-                  whileHover={{y: -12}}
-                  className="bg-brand-cream p-12 rounded-[48px] border border-brand-gold/10 relative group transition-all duration-500 shadow-sm hover:shadow-xl"
+                  className="bg-white p-8 px-10 rounded-[40px] shadow-sm border border-gray-100 flex flex-col h-full gap-6"
                 >
-                  <Quote className="absolute top-10 right-10 w-16 h-16 text-brand-gold opacity-5 group-hover:opacity-10 transition-opacity" />
-                  <div className="flex gap-1.5 mb-8 text-brand-gold">
-                    {[1, 2, 3, 4, 5].map(s => <Star key={s} className="w-3.5 h-3.5 fill-current" />)}
+                  <div className="flex items-center gap-4">
+                    <img src={`https://i.pravatar.cc/150?u=${review.name}`} alt={review.name} className="w-14 h-14 rounded-2xl object-cover border-2 border-brand-gold/10" />
+                    <div className="flex gap-0.5 text-brand-gold">
+                      {[1, 2, 3, 4, 5].map(s => <Star key={s} className="w-3 h-3 fill-current" />)}
+                    </div>
                   </div>
-                  <p className="text-gray-600 mb-10 text-[18px] leading-relaxed font-serif">"{review.text}"</p>
-                  <div className="flex items-center gap-5 pt-4 border-t border-brand-gold/10">
-                    <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center font-bold text-brand-navy shadow-lg overflow-hidden border-2 border-brand-gold/20">
-                      <img src={`https://i.pravatar.cc/150?u=${review.name}`} alt={review.name} className="w-full h-full object-cover" />
-                    </div>
-                    <div className="space-y-1">
-                      <div className="font-black text-brand-navy tracking-tight">{review.name}</div>
-                      <div className="text-[9px] text-brand-gold uppercase font-black tracking-widest">{review.loc}</div>
-                    </div>
+                  <p className="text-gray-600 text-[14px] leading-relaxed font-medium flex-1 italic opacity-90">"{review.text}"</p>
+                  <div className="pt-4 border-t border-gray-50">
+                    <div className="font-black text-brand-navy text-sm uppercase tracking-tight">{review.name}</div>
+                    <div className="text-[9px] text-gray-400 font-black uppercase tracking-[0.15em] pt-0.5">{review.loc}</div>
                   </div>
                 </motion.div>
-             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* UAE Service Coverage Area Section */}
-      <section className="py-32 bg-brand-navy text-white px-8 overflow-hidden relative">
-        <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <img 
-            src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=2070&auto=format&fit=crop" 
-            alt="Dubai Skyline" 
-            className="w-full h-full object-cover" 
-          />
-        </div>
-        <div className="max-w-7xl mx-auto relative z-10 text-center space-y-24">
-          <div className="space-y-6 max-w-3xl mx-auto">
-             <div className="inline-flex items-center gap-3">
-                <div className="w-12 h-px bg-brand-gold"></div>
-                <span className="text-brand-gold font-black tracking-[0.4em] uppercase text-[10px]">UAE Wide Service</span>
-                <div className="w-12 h-px bg-brand-gold"></div>
-             </div>
-             <h2 className="text-5xl md:text-6xl font-serif tracking-tight">Proudly Serving <span className="text-brand-gold italic">All 7 Emirates</span></h2>
-             <p className="text-gray-400 text-lg font-medium">Professional technical services available across the entire United Arab Emirates.</p>
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-6">
-            {[
-              {name: 'Dubai', icon: 'fa-solid fa-hotel'},
-              {name: 'Abu Dhabi', icon: 'fa-solid fa-mosque'},
-              {name: 'Sharjah', icon: 'fa-solid fa-landmark'},
-              {name: 'Ajman', icon: 'fa-solid fa-ship'},
-              {name: 'RAK', icon: 'fa-solid fa-mountain-sun'},
-              {name: 'Fujairah', icon: 'fa-solid fa-umbrella-beach'},
-              {name: 'UAE', icon: 'fa-solid fa-globe'}
-            ].map((emirate, i) => (
-              <motion.div 
-                key={emirate.name}
-                initial={{opacity: 0, scale: 0.8}}
-                whileInView={{opacity: 1, scale: 1}}
-                transition={{delay: i * 0.05}}
-                whileHover={{y: -12, backgroundColor: '#D9A520', color: '#08264B'}}
-                className="flex flex-col items-center gap-6 p-10 bg-white/5 border border-white/10 rounded-[40px] transition-all duration-500 group"
-              >
-                <div className="w-20 h-20 rounded-full bg-white/10 flex items-center justify-center text-3xl group-hover:bg-brand-navy group-hover:text-white transition-all duration-500 shadow-xl">
-                  <i className={emirate.icon}></i>
-                </div>
-                <span className="font-black text-xs uppercase tracking-[0.2em]">{emirate.name}</span>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Final CTA Section */}
-      <section className="py-32 bg-white px-8 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto">
-          <motion.div 
-            initial={{opacity: 0, y: 50}}
-            whileInView={{opacity: 1, y: 0}}
-            viewport={{once: true}}
-            className="bg-brand-gold rounded-[60px] p-16 md:p-28 overflow-hidden relative shadow-[0_50px_100px_-30px_rgba(217,165,32,0.4)] flex flex-col xl:flex-row items-center justify-between gap-16"
-          >
-            <div className="absolute inset-0 opacity-10 pointer-events-none">
-              <img 
-                 src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=2070&auto=format&fit=crop" 
-                 className="w-full h-full object-cover mix-blend-overlay" 
-                 alt="Background" 
-              />
+              ))}
             </div>
-            <div className="relative z-10 space-y-8 text-brand-navy text-center xl:text-left flex-1">
-              <div className="inline-block px-4 py-2 bg-brand-navy/10 rounded-full text-[10px] font-black uppercase tracking-widest">Limited Time Offer</div>
-              <h2 className="text-5xl md:text-8xl font-serif font-black leading-[1.1] tracking-tighter shrink-0">Get Your Free <br /> <span className="italic opacity-80">Quote Today!</span></h2>
-              <p className="text-xl font-bold opacity-80 flex items-center gap-3 justify-center xl:justify-start">
-                <span className="w-8 h-px bg-brand-navy/30"></span> 
+            {/* Carousel Controls */}
+            <div className="absolute top-1/2 -left-12 -translate-y-1/2 hidden xl:block">
+               <button className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-brand-navy hover:bg-brand-navy hover:text-white transition-all">
+                 <i className="fa-solid fa-chevron-left"></i>
+               </button>
+            </div>
+            <div className="absolute top-1/2 -right-12 -translate-y-1/2 hidden xl:block">
+               <button className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-brand-navy hover:bg-brand-navy hover:text-white transition-all">
+                 <i className="fa-solid fa-chevron-right"></i>
+               </button>
+            </div>
+            {/* Dots */}
+            <div className="flex justify-center gap-2 mt-12">
+               <div className="w-2 h-2 rounded-full bg-brand-gold"></div>
+               <div className="w-2 h-2 rounded-full bg-gray-200"></div>
+               <div className="w-2 h-2 rounded-full bg-gray-200"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Unified UAE & CTA Section */}
+      <section className="px-8 pb-32">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row rounded-[50px] overflow-hidden shadow-2xl border border-gray-100/10">
+          {/* Left: UAE Coverage */}
+          <div className="lg:w-1/2 bg-[#08264B] p-16 md:p-20 text-center flex flex-col justify-center gap-12">
+            <h2 className="text-white text-3xl font-serif font-black uppercase tracking-widest leading-tight">
+              Proudly Serving <br /> All 7 Emirates
+            </h2>
+            <div className="grid grid-cols-4 md:grid-cols-7 lg:grid-cols-4 xl:grid-cols-7 gap-y-10 gap-x-6 justify-center">
+              {[
+                {name: 'Dubai', icon: 'fa-solid fa-hotel'},
+                {name: 'Abu Dhabi', icon: 'fa-solid fa-mosque'},
+                {name: 'Sharjah', icon: 'fa-solid fa-landmark'},
+                {name: 'Ajman', icon: 'fa-solid fa-ship'},
+                {name: 'RAK', icon: 'fa-solid fa-mountain-sun'},
+                {name: 'Fujairah', icon: 'fa-solid fa-umbrella-beach'},
+                {name: 'UAE', icon: 'fa-solid fa-globe'}
+              ].map((emirate) => (
+                <div key={emirate.name} className="flex flex-col items-center gap-4 transition-transform hover:scale-110">
+                  <div className="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center text-white/30 border border-white/5">
+                     <i className={emirate.icon} style={{fontSize: '24px'}}></i>
+                  </div>
+                  <span className="text-[10px] text-gray-400 font-black uppercase tracking-[0.2em]">{emirate.name}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Right: GET FREE QUOTE */}
+          <div className="lg:w-1/2 bg-brand-gold p-16 md:p-20 text-center flex flex-col justify-center gap-10">
+            <div className="space-y-4">
+              <h2 className="text-white text-4xl md:text-5xl lg:text-6xl font-serif font-black uppercase tracking-tighter leading-none">
+                Get Your Free <br /> Quote Today!
+              </h2>
+              <p className="text-white font-bold text-lg max-w-md mx-auto opacity-90">
                 Professional technical services at your doorstep across UAE.
               </p>
             </div>
-            <div className="relative z-10 flex flex-col sm:flex-row gap-6 shrink-0 w-full xl:w-auto">
+            <div className="flex flex-col sm:flex-row gap-5 pt-4 justify-center">
                <button 
                  onClick={callNow}
-                 className="bg-brand-navy text-white hover:bg-white hover:text-brand-navy px-12 py-7 rounded-2xl font-black text-lg transition-all flex items-center justify-center gap-4 shadow-2xl active:scale-95 group"
+                 className="bg-white text-brand-navy px-12 py-5 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-brand-navy hover:text-white transition-all shadow-xl flex items-center justify-center gap-3 active:scale-95"
                >
-                 <Phone className="w-7 h-7 group-hover:animate-bounce" /> CALL NOW
+                 <Phone className="w-5 h-5" /> CALL NOW
                </button>
                <button 
                  onClick={askExpert}
-                 className="bg-white text-brand-navy hover:bg-brand-navy hover:text-white px-12 py-7 rounded-2xl font-black text-lg transition-all flex items-center justify-center gap-4 shadow-2xl active:scale-95 group"
+                 className="bg-brand-navy text-white px-12 py-5 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-white hover:text-brand-navy transition-all shadow-xl flex items-center justify-center gap-3 active:scale-95"
                >
-                 <MessageCircle className="w-7 h-7 text-brand-green group-hover:text-white" /> WHATSAPP US
+                 <MessageCircle className="w-5 h-5 text-brand-gold" /> WHATSAPP US
                </button>
             </div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
