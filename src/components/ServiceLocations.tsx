@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { useBooking } from './BookingModal';
-import { Hotel, Umbrella, Car, Building, Building2, ShieldCheck, CalendarCheck, MapPin, ChevronRight, CheckCircle2 } from 'lucide-react';
+import { Hotel, Umbrella, Car, Building, Building2, ShieldCheck, CalendarCheck, MapPin, ChevronRight, CircleCheck } from 'lucide-react';
 
 const ServiceLocations: React.FC = () => {
   const { openBooking, askExpert } = useBooking();
@@ -210,7 +210,7 @@ const ServiceLocations: React.FC = () => {
                   {loc.area}
                 </p>
                 <div className="pt-4 border-t border-gray-100 flex items-center gap-2 text-brand-green font-bold text-xs uppercase tracking-wider">
-                  <CheckCircle2 className="w-4 h-4" />
+                  <CircleCheck className="w-4 h-4" />
                   Service Completed
                 </div>
               </div>

@@ -1,21 +1,22 @@
 import React from 'react';
 import {TopBar, Navbar, Footer} from './components/Navigation';
 import {motion} from 'motion/react';
-import {Paintbrush, Wind, Droplets, Zap, Grid2X2, Hammer, ChevronRight, PenTool, Layout} from 'lucide-react';
+import {Paintbrush, Wind, Droplets, Zap, Grid2x2, Hammer, ChevronRight, PenTool, Layout} from 'lucide-react';
 import {Link} from 'react-router-dom';
 import {useBooking} from './components/BookingModal';
 
 const Services = () => {
   const { openBooking } = useBooking();
   const categories = [
-    {id: 'paint', name: 'Painting Services', icon: Paintbrush, image: '/images/services/service-paint.jpg', desc: 'Premium interior and exterior painting services with high-quality industrial grade materials.', subs: ['Villa Painting', 'Apartment Painting', 'Office Painting', 'Wall Paper Fixing']},
-    {id: 'ac', name: 'AC Maintenance', icon: Wind, image: '/images/services/service-ac.jpg', desc: 'Complete AC cooling solutions, cleaning, and preventative maintenance for Dubai heat.', subs: ['Duct Cleaning', 'Gas Refilling', 'Compressor Repair', 'Filter Cleaning']},
-    {id: 'plumbing', name: 'Plumbing Works', icon: Droplets, image: '/images/services/service-plumbing.jpg', desc: 'Expert plumbing repairs, leak detection, and sanitary installations for luxury properties.', subs: ['Leak Detection', 'Pipe Repair', 'Bathroom Fitting', 'Water Heater Repair']},
-    {id: 'electrical', name: 'Electrical Works', icon: Zap, image: '/images/services/service-electrical.jpg', desc: 'DEWA certified electrical maintenance and smart home installations.', subs: ['Wiring Works', 'Light Installation', 'MCB Repair', 'Short Circuit Fix']},
-    {id: 'tile', name: 'Tile & Marble', icon: Grid2X2, image: '/images/services/service-tile.jpg', desc: 'Premium tile fixing and marble polishing to give your floor a royal look.', subs: ['Tile Fixing', 'Grouting Work', 'Marble Polish', 'Epoxy Flooring']},
-    {id: 'handyman', name: 'Handyman Services', icon: Hammer, image: '/images/services/service-handyman.jpg', desc: 'Professional handyman for all your home improvements and quick fixes.', subs: ['TV Mounting', 'Curtain Hanging', 'Furniture Assembly', 'Door Repair']},
-    {id: 'ceiling', name: 'Ceiling & Gypsum', icon: Layout, image: '/images/services/service-ceiling.jpg', desc: 'Modern gypsum and false ceiling designs for elegant interiors.', subs: ['Gypsum Board', '60x60 Ceiling', 'Cove Lighting', 'Gypsum Partition', 'Cornice Work', 'Ceiling Repair']},
-    {id: 'wooden', name: 'Wooden Flooring', icon: PenTool, image: 'https://images.unsplash.com/photo-1581850518316-ab508a5065a7?q=80&w=2070&auto=format&fit=crop', desc: 'Luxury parquet and wooden flooring installation and maintenance.', subs: ['Parquet Install', 'Laminate Flooring', 'Wooden Polish', 'Vinyl Planks']}
+    {id: 'paint-work', name: 'Painting Services', icon: Paintbrush, image: '/images/services/service-paint.jpg', desc: 'Premium interior and exterior painting services with high-quality industrial grade materials.', subs: ['Villa Painting', 'Interior Painting', 'Exterior Painting', 'Texture Painting']},
+    {id: 'ac-maintenance', name: 'AC Maintenance', icon: Wind, image: '/images/services/service-ac.jpg', desc: 'Complete AC cooling solutions, cleaning, and preventative maintenance for Dubai heat.', subs: ['Emergency AC Repair', 'New AC Installation', 'AC Ducting', 'Gas Refilling']},
+    {id: 'plumbing-services', name: 'Plumbing Works', icon: Droplets, image: '/images/services/service-plumbing.jpg', desc: 'Expert plumbing repairs, leak detection, and sanitary installations for luxury properties.', subs: ['Sanitary Services', 'Leakage Repair', 'Bathroom Fitting', 'Water Heaters']},
+    {id: 'electrical-services', name: 'Electrical Works', icon: Zap, image: '/images/services/service-electrical.jpg', desc: 'DEWA certified electrical maintenance and smart home installations.', subs: ['Home Wiring', 'Interior/Exterior Light', 'Circuit Breakers', 'Dewa Approvals']},
+    {id: 'tile-wooden', name: 'Tile & Wooden', icon: Grid2x2, image: '/images/services/service-tile.jpg', desc: 'Premium tile fixing and marble polishing to give your floor a royal look.', subs: ['Marble Installation', 'Granite Work', 'Porcelain Tiles', 'Interlock Stones']},
+    {id: 'handyman-more', name: 'Handyman & More', icon: Hammer, image: '/images/services/service-handyman.jpg', desc: 'Professional handyman for all your home improvements and quick fixes.', subs: ['TV Installation', 'Curtain Hanging', 'Furniture Assembly', 'Door Repair']},
+    {id: 'ceiling-work', name: 'Ceiling & Gypsum', icon: Layout, image: '/images/services/service-ceiling.jpg', desc: 'Modern gypsum and false ceiling designs for elegant interiors.', subs: ['Gypsum Ceiling', 'False Ceiling', 'POP Design', 'Cove Lighting']},
+    {id: 'lighting-work', name: 'Lighting Work', icon: Zap, image: '/images/services/subs/lighting.jpg', desc: 'Specialized lighting solutions, chandeliers installation, and smart home lighting setup.', subs: ['LED Installation', 'Chandelier Hanging', 'Outdoor Lights', 'Smart Setup']},
+    {id: 'home-general-maintenance', name: 'Home General Maintenance', icon: PenTool, image: 'https://images.unsplash.com/photo-1581850518316-ab508a5065a7?q=80&w=2070&auto=format&fit=crop', desc: 'Regular preventive maintenance and small repairs to keep your property in top condition.', subs: ['Preventive Checks', 'Minor Plumbing', 'Wall Repair', 'Property Upkeep']}
   ];
 
   return (

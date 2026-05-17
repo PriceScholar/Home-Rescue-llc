@@ -120,21 +120,59 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, preSelecte
     notes: ''
   });
   const [isSuccess, setIsSuccess] = useState(false);
+  const [errors, setErrors] = useState<string[]>([]);
 
   useEffect(() => {
     if (isOpen) {
       setStep(1);
       setIsSuccess(false);
+      setErrors([]);
       
       if (preSelectedService) {
-        const foundCat = serviceCategories.find(cat => 
-          cat.subs.some(sub => sub.name === preSelectedService)
-        );
-        if (foundCat) {
+        let foundCategory: string | undefined;
+        let foundService: string | undefined;
+
+        // Normalize preSelectedService for easier matching (e.g. handle "Wall Painting - Package Name")
+        const cleanName = preSelectedService.split(' - ')[0].trim().toLowerCase();
+
+        // 1. Try to find a sub-service match first (highest priority)
+        for (const cat of serviceCategories) {
+          const matchingSub = cat.subs.find(sub => 
+            sub.name.toLowerCase() === cleanName || 
+            sub.id.toLowerCase() === cleanName
+          );
+          if (matchingSub) {
+            foundCategory = cat.name;
+            foundService = matchingSub.name;
+            break;
+          }
+        }
+
+        // 2. If not found, try to find a category match (checking name, id, and common titles)
+        if (!foundCategory) {
+          const cat = serviceCategories.find(c => 
+            c.name.toLowerCase() === cleanName || 
+            c.id.toLowerCase() === cleanName || 
+            (c.id === 'paint-work' && cleanName === 'painting services') ||
+            (c.id === 'electrical-services' && cleanName === 'electrical works') ||
+            (c.id === 'ceiling-work' && cleanName === 'ceiling works') ||
+            (c.id === 'handyman-more' && cleanName === 'handyman services') ||
+            (c.id === 'home-general-maintenance' && cleanName === 'home maintenance')
+          );
+          if (cat) {
+            foundCategory = cat.name;
+            // Pre-select the first sub-service if none found, to make "Continue" work easier
+            if (cat.subs && cat.subs.length > 0) {
+              foundService = cat.subs[0].name;
+            }
+          }
+        }
+
+        if (foundCategory) {
           setFormData(prev => ({ 
             ...prev, 
-            category: foundCat.name, 
-            service: preSelectedService 
+            category: foundCategory || '', 
+            service: foundService || '' 
           }));
         }
       } else {
@@ -142,19 +180,30 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, preSelecte
       }
 
       // Set min date to today
-      const today = new Date().toISOString().split('T')[0];
-      const dateInput = document.getElementById('preferredDate') as HTMLInputElement;
-      if (dateInput) dateInput.setAttribute('min', today);
+      setTimeout(() => {
+        const today = new Date().toISOString().split('T')[0];
+        const dateInput = document.getElementById('date') as HTMLInputElement;
+        if (dateInput) dateInput.setAttribute('min', today);
+      }, 0);
     }
   }, [isOpen, preSelectedService]);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { id, value } = e.target;
-    setFormData(prev => ({ ...prev, [id]: value }));
     
-    if (id === 'serviceCategory') {
-      setFormData(prev => ({ ...prev, category: value, service: '' }));
-    }
+    setFormData(prev => {
+      const next = { ...prev, [id]: value };
+      
+      // If we change category from the dropdown, sync the category field and reset service
+      if (id === 'serviceCategory') {
+        next.category = value;
+        // Find the first sub service and pre-select it
+        const cat = serviceCategories.find(c => c.name === value);
+        next.service = (cat && cat.subs.length > 0) ? cat.subs[0].name : '';
+      }
+      
+      return next;
+    });
   };
 
   const handleRadioChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -162,33 +211,43 @@ const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, preSelecte
   };
 
   const nextStep = () => {
-    if (validateStep()) setStep(s => s + 1);
+    const stepErrors = validateStep();
+    if (stepErrors.length === 0) {
+      setErrors([]);
+      setStep(s => s + 1);
+    } else {
+      setErrors(stepErrors);
+    }
   };
 
-  const prevStep = () => setStep(s => s - 1);
+  const prevStep = () => {
+    setErrors([]);
+    setStep(s => s - 1);
+  };
 
   const validateStep = () => {
+    const newErrors: string[] = [];
     if (step === 1) {
-      if (!formData.category || !formData.service || !formData.urgency) {
-        alert('Please fill all required fields');
-        return false;
-      }
+      if (!formData.category) newErrors.push('Please select a service category');
+      if (!formData.service) newErrors.push('Please select a specific service');
+      if (!formData.urgency) newErrors.push('Please select urgency level');
     } else if (step === 2) {
-      if (!formData.name || !formData.phone || !formData.emirate || !formData.address) {
-        alert('Please fill all required fields');
-        return false;
-      }
+      if (!formData.name) newErrors.push('Name is required');
+      if (!formData.phone) newErrors.push('Phone number is required');
+      if (!formData.emirate) newErrors.push('Please select your emirate');
+      if (!formData.address) newErrors.push('Address is required');
     }
-    return true;
+    return newErrors;
   };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.date || !formData.time) {
-      alert('Please select a date and time');
+      setErrors(['Please select both a preferred date and time']);
       return;
     }
 
+    setErrors([]);
     const message = `*🏠 NEW BOOKING - HOME RESCUE*
 
 ━━━━━━━━━━━━━━━━━━━━━
@@ -300,6 +359,23 @@ Thank you!`;
                   </div>
 
                   <form onSubmit={handleSubmit} className="space-y-6">
+                    {errors.length > 0 && (
+                      <motion.div 
+                        initial={{ opacity: 0, y: -10 }} 
+                        animate={{ opacity: 1, y: 0 }}
+                        className="bg-red-50 border-l-4 border-red-500 p-4 rounded-r-xl mb-6"
+                      >
+                        <div className="flex gap-2">
+                          <i className="fa-solid fa-triangle-exclamation text-red-500 mt-1"></i>
+                          <div className="space-y-1">
+                            {errors.map((err, i) => (
+                              <p key={i} className="text-red-700 text-xs font-bold uppercase tracking-wider">{err}</p>
+                            ))}
+                          </div>
+                        </div>
+                      </motion.div>
+                    )}
+
                     {step === 1 && (
                       <motion.div initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} className="space-y-6">
                         <div className="space-y-2">

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ShieldCheck, MapPin, CheckCircle2, X, ExternalLink } from 'lucide-react';
+import { ShieldCheck, MapPin, CircleCheck, X, ExternalLink } from 'lucide-react';
 
 const VerifiedProjects = () => {
   const [selectedImg, setSelectedImg] = useState<string | null>(null);
@@ -77,7 +77,7 @@ const VerifiedProjects = () => {
                   }}
                 />
                 <div className="absolute top-6 left-6 bg-brand-green text-white px-4 py-2 rounded-full text-[10px] font-bold tracking-widest flex items-center gap-2 shadow-lg z-10">
-                  <CheckCircle2 className="w-4 h-4" /> VERIFIED
+                  <CircleCheck className="w-4 h-4" /> VERIFIED
                 </div>
                 <div className="absolute inset-0 bg-brand-navy/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-sm z-20">
                   <div className="bg-white/10 p-4 rounded-full border border-white/20">

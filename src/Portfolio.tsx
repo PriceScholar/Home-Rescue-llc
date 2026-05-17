@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { TopBar, Navbar, Footer } from './components/Navigation';
 import { useBooking } from './components/BookingModal';
+import { cn } from './lib/utils';
+import { Link } from 'react-router-dom';
 import VerifiedProjects from './components/VerifiedProjects';
 import { 
   Hotel, 
@@ -13,9 +15,9 @@ import {
   ShieldCheck, 
   Award, 
   CalendarCheck,
-  CheckCircle2,
   Trophy,
-  History
+  History,
+  CircleCheck
 } from 'lucide-react';
 
 interface Project {
@@ -145,22 +147,24 @@ const Portfolio = () => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-white">
       <TopBar />
       <Navbar />
 
-      <section className="py-24 bg-gradient-to-b from-[#faf8f3] to-white min-h-screen px-4 md:px-8">
+      <section className="py-24 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
           
           {/* Hero Section */}
-          <div className="text-center mb-16 space-y-6">
-            <motion.span 
+          <div className="text-center mb-20 space-y-6">
+            <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="inline-block bg-brand-gold text-brand-navy px-6 py-2 rounded-full text-xs font-bold tracking-[0.2em] shadow-lg shadow-brand-gold/20"
+              className="flex items-center justify-center gap-3 mb-2"
             >
-              OUR WORK
-            </motion.span>
+              <div className="w-12 h-[1px] bg-brand-gold"></div>
+              <span className="text-brand-gold font-bold uppercase tracking-[0.4em] text-[10px]">Case Studies</span>
+              <div className="w-12 h-[1px] bg-brand-gold"></div>
+            </motion.div>
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -175,103 +179,90 @@ const Portfolio = () => {
               transition={{ delay: 0.2 }}
               className="text-gray-600 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed"
             >
-              Showcasing our trusted partnerships with Dubai's leading hotels and prestigious developments.
+              Discover the standard of technical excellence we bring to Dubai's most prestigious landmarks, luxury hotels, and residential developments.
             </motion.p>
           </div>
 
-          {/* Filter Tabs */}
-          <div className="flex flex-wrap justify-center gap-3 mb-16">
+          {/* Filter Tabs - Redefined for Luxury */}
+          <div className="flex flex-wrap justify-center items-center gap-4 mb-20 border-b border-gray-100 pb-8">
             {[
-              { id: 'all', label: 'All Projects', icon: <Layout className="w-4 h-4" />, count: 9 },
-              { id: 'hotels', label: 'Hotels', icon: <Hotel className="w-4 h-4" />, count: 4 },
-              { id: 'locations', label: 'Premium Locations', icon: <MapPin className="w-4 h-4" />, count: 4 },
-              { id: 'developers', label: 'Developers', icon: <Building2 className="w-4 h-4" />, count: 1 }
+              { id: 'all', label: 'All Excellence', icon: <Layout className="w-4 h-4" /> },
+              { id: 'hotels', label: 'Luxury Hotels', icon: <Hotel className="w-4 h-4" /> },
+              { id: 'locations', label: 'Premium Locations', icon: <MapPin className="w-4 h-4" /> },
+              { id: 'developers', label: 'Corporate Partners', icon: <Building2 className="w-4 h-4" /> }
             ].map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setFilter(tab.id as any)}
-                className={`
-                  flex items-center gap-2 px-6 py-3.5 rounded-full text-sm font-bold transition-all duration-300 border-2
-                  ${filter === tab.id 
-                    ? 'bg-brand-navy text-white border-brand-navy shadow-xl shadow-brand-navy/20 scale-105' 
-                    : 'bg-white text-gray-500 border-gray-100 hover:border-brand-gold hover:text-brand-navy hover:-translate-y-0.5'}
-                `}
+                className={cn(
+                  "flex items-center gap-3 px-8 py-3 rounded-full text-[11px] font-bold uppercase tracking-widest transition-all duration-300",
+                  filter === tab.id 
+                    ? 'bg-brand-navy text-white shadow-xl translate-y-[-2px]' 
+                    : 'bg-transparent text-gray-500 hover:text-brand-navy border border-transparent hover:border-gray-200'
+                )}
               >
                 {tab.icon}
-                {tab.label} ({tab.count})
+                {tab.label}
               </button>
             ))}
           </div>
 
           {/* Portfolio Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 mb-32">
             <AnimatePresence mode="popLayout">
               {filteredProjects.map((project) => (
                 <motion.div
                   key={project.id}
                   layout
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, scale: 0.9 }}
-                  whileHover={{ y: -10 }}
-                  className={`
-                    group bg-white rounded-[30px] overflow-hidden shadow-xl border-2 transition-all relative
-                    ${project.featured ? 'border-brand-gold/30' : 'border-transparent'}
-                    ${project.large ? 'lg:col-span-3' : ''}
-                  `}
-                >
-                  {project.featured && (
-                    <div className={`
-                      absolute top-5 left-0 px-5 py-2 rounded-r-xl text-[10px] font-bold tracking-widest z-20 shadow-lg
-                      ${project.featuredColor === 'gold' ? 'bg-brand-gold text-brand-navy' : 'bg-brand-red text-white'}
-                    `}>
-                      {project.featured}
-                    </div>
+                  className={cn(
+                    "group relative bg-white rounded-[2rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.04)] border border-gray-100 flex flex-col",
+                    project.large && "lg:col-span-2 lg:flex-row"
                   )}
-
-                  <div className={`relative ${project.large ? 'h-[400px]' : 'h-[250px]'} overflow-hidden bg-gray-100`}>
+                >
+                  <div className={cn(
+                    "relative overflow-hidden bg-gray-100",
+                    project.large ? "lg:w-3/5 h-[450px]" : "h-[300px]"
+                  )}>
                     <img 
                       src={project.image} 
                       alt={project.name}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                       loading="lazy"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.onerror = null;
-                        target.src = `https://placehold.co/1200x800/1a3a6b/d4af37?text=${encodeURIComponent(project.name)}`;
-                      }}
                     />
-                    <div className="absolute inset-0 bg-brand-navy/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-sm">
-                      <button 
-                        onClick={() => openProjectDetail(project.id)}
-                        className="bg-brand-gold text-brand-navy px-8 py-3.5 rounded-full font-bold flex items-center gap-2 hover:scale-105 active:scale-95 transition-all shadow-xl"
-                      >
-                        <Eye className="w-5 h-5" /> View Details
-                      </button>
-                    </div>
-                    <div className="absolute top-5 right-5 w-11 h-11 rounded-full bg-brand-navy/90 backdrop-blur-md border border-brand-gold text-brand-gold flex items-center justify-center font-serif text-lg font-bold z-10">
-                      {project.number}
+                    <div className="absolute inset-0 bg-brand-navy/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center backdrop-blur-sm">
+                       <button 
+                         onClick={() => openProjectDetail(project.id)}
+                         className="bg-white text-brand-navy px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-brand-gold hover:text-white transition-all shadow-2xl"
+                       >
+                         View Details
+                       </button>
                     </div>
                   </div>
 
-                  <div className="p-8">
-                    <span className="inline-block bg-brand-red/10 text-brand-red px-3 py-1 rounded-full text-[10px] font-bold tracking-widest mb-3 uppercase">
-                      {project.type}
-                    </span>
-                    <h3 className="text-2xl font-serif font-bold text-brand-navy mb-2 group-hover:text-brand-red transition-colors">
-                      {project.name}
-                    </h3>
-                    <p className="flex items-center gap-2 text-gray-500 text-sm mb-4">
-                      <MapPin className="w-4 h-4 text-brand-red" />
-                      {project.area}
-                    </p>
-                    
-                    <div className="pt-4 border-t border-gray-100 flex flex-wrap gap-2">
-                      {project.services.map((service, i) => (
-                        <span key={i} className="bg-brand-cream/50 text-brand-navy px-3 py-1 rounded-lg text-xs font-bold whitespace-nowrap">
-                          {service}
-                        </span>
-                      ))}
+                  <div className={cn(
+                    "p-10 flex flex-col justify-between flex-1",
+                    project.large && "lg:w-2/5"
+                  )}>
+                    <div className="space-y-4">
+                      <div className="flex items-center justify-between">
+                        <span className="text-brand-red font-bold text-[10px] uppercase tracking-widest">{project.type}</span>
+                        <span className="text-gray-300 font-serif italic">No. {project.number}</span>
+                      </div>
+                      <h3 className="text-3xl font-serif font-bold text-brand-navy leading-tight">{project.name}</h3>
+                      <div className="flex items-center gap-2 text-gray-500 text-sm">
+                        <MapPin className="w-3 h-3 text-brand-gold" />
+                        {project.area}
+                      </div>
+                      <div className="pt-6 flex flex-wrap gap-2">
+                        {project.services.map((s, idx) => (
+                           <span key={idx} className="bg-brand-cream/50 text-brand-navy text-[10px] font-bold px-3 py-1 rounded-md border border-brand-gold/10 uppercase tracking-tighter">
+                             {s}
+                           </span>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </motion.div>
@@ -279,62 +270,44 @@ const Portfolio = () => {
             </AnimatePresence>
           </div>
 
-          {/* Detailed Proof Section */}
-          <VerifiedProjects />
-
-          {/* Stats Bar */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-24">
+          {/* Stats Bar Integrated */}
+          <div className="py-24 border-y border-gray-100 grid grid-cols-2 lg:grid-cols-4 gap-12 mb-32">
             {[
-              { icon: <Hotel className="w-8 h-8" />, value: '4', label: 'Premium Hotels' },
-              { icon: <MapPin className="w-8 h-8" />, value: '9', label: 'Premium Locations' },
-              { icon: <CheckCircle2 className="w-8 h-8" />, value: '500+', label: 'Projects Done' },
-              { icon: <History className="w-8 h-8" />, value: '10+', label: 'Years Experience' }
+              { label: 'Hotels Served', value: '4+', icon: 'fa-solid fa-hotel' },
+              { label: 'Prime Areas', value: '15+', icon: 'fa-solid fa-map-location-dot' },
+              { label: 'Projects Done', value: '5000+', icon: 'fa-solid fa-check-double' },
+              { label: 'Client Retention', value: '98%', icon: 'fa-solid fa-heart-circle-check' }
             ].map((stat, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                whileHover={{ y: -5 }}
-                className="bg-white p-8 rounded-[24px] text-center shadow-lg border-t-4 border-brand-gold"
-              >
-                <div className="text-brand-gold mb-4 flex justify-center">{stat.icon}</div>
-                <div className="text-4xl font-serif font-bold text-brand-navy mb-1">{stat.value}</div>
-                <div className="text-[10px] text-gray-400 font-bold uppercase tracking-widest">{stat.label}</div>
-              </motion.div>
+              <div key={i} className="text-center space-y-4">
+                <i className={cn(stat.icon, "text-3xl text-brand-gold opacity-50")}></i>
+                <div>
+                  <div className="text-4xl font-serif font-bold text-brand-navy">{stat.value}</div>
+                  <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400">{stat.label}</div>
+                </div>
+              </div>
             ))}
           </div>
 
-          {/* CTA Section */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            className="bg-brand-navy rounded-[30px] p-8 md:p-14 text-center text-white relative overflow-hidden shadow-2xl shadow-brand-navy/30"
-          >
-            <div className="absolute top-0 right-0 w-80 h-80 bg-brand-gold/10 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
-            <div className="relative z-10 space-y-8">
-              <h2 className="text-3xl md:text-5xl font-serif font-bold">Want to Be Our Next Success Story?</h2>
-              <p className="text-white/80 text-lg max-w-2xl mx-auto leading-relaxed">
-                Experience the same premium service that Dubai's top hotels and developers trust for their prestigious projects.
-              </p>
-              <div className="flex flex-wrap justify-center gap-4 pt-4">
-                <button 
-                  onClick={() => openBooking()}
-                  className="bg-brand-red text-white px-10 py-5 rounded-full font-bold hover:scale-105 transition-all shadow-xl shadow-brand-red/30 flex items-center gap-3 text-lg"
-                >
-                  <CalendarCheck className="w-6 h-6" /> Book Service Now
-                </button>
-                <button 
-                  onClick={() => askExpert()}
-                  className="bg-brand-green text-white px-10 py-5 rounded-full font-bold hover:scale-105 transition-all shadow-xl shadow-brand-green/30 flex items-center gap-3 text-lg"
-                >
-                  <i className="fa-brands fa-whatsapp text-2xl"></i> WhatsApp Us
-                </button>
-              </div>
-            </div>
-          </motion.div>
+          <VerifiedProjects />
+
+          {/* Luxury CTA */}
+          <section className="py-24 mt-20">
+             <div className="bg-brand-navy rounded-[3.5rem] p-12 md:p-24 relative overflow-hidden text-center text-white">
+                <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/dark-matter.png')] opacity-20"></div>
+                <div className="relative z-10 space-y-8 max-w-3xl mx-auto">
+                   <h2 className="text-4xl md:text-6xl font-serif font-bold leading-tight">Start Your Own Transformation</h2>
+                   <p className="text-xl text-white/70">Join the elite list of Dubai properties maintained by Home Rescue Technical Services.</p>
+                   <div className="flex flex-wrap justify-center gap-6 pt-6">
+                      <button 
+                        onClick={() => openBooking()}
+                        className="bg-brand-red text-white px-12 py-5 rounded-full font-bold text-lg uppercase tracking-widest hover:scale-105 transition-all shadow-2xl shadow-brand-red/30"
+                      >
+                        Book Free Inspection
+                      </button>
+                   </div>
+                </div>
+             </div>
+          </section>
 
         </div>
       </section>

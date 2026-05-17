@@ -1,48 +1,42 @@
 import React from 'react';
-import {Phone, Mail, MessageCircle, Menu, X, ChevronDown, ChevronRight, Facebook, Instagram, Linkedin, Send, Video} from 'lucide-react';
+import {Phone, Mail, MessageCircle, Menu, X, ChevronDown, ChevronRight, Facebook, Instagram, Linkedin, Send, Video, BadgeCheck, MapPin} from 'lucide-react';
 import {useLanguage} from '../context/LanguageContext';
 import {Link} from 'react-router-dom';
 import {motion, AnimatePresence} from 'motion/react';
 import {cn} from '../lib/utils';
 import { useBooking } from './BookingModal';
 import CoverageBanner from './CoverageBanner';
-import {ServicesMegaMenu, serviceCategories} from './ServicesMegaMenu';
+import {ServicesMegaMenu} from './ServicesMegaMenu';
+import {serviceCategories} from '../data/servicesData';
 
 export const TopBar = () => {
-  const {language, setLanguage} = useLanguage();
-  
   return (
-    <>
-      <CoverageBanner />
-      <div className="bg-brand-navy text-white py-2 px-8 flex justify-between items-center text-xs border-b border-brand-gold/30">
-      <div className="flex gap-6">
-        <a href="tel:+971524524295" className="flex items-center gap-2 hover:text-brand-gold transition-colors">
-          <Phone className="w-3 h-3" /> +971 52 452 4295
-        </a>
-        <a href="mailto:info@homerescue.ae" className="flex items-center gap-2 hover:text-brand-gold transition-colors">
-          <Mail className="w-3 h-3" /> info@homerescue.ae
-        </a>
+    <div className="bg-brand-navy text-white h-10 px-8 flex justify-between items-center text-[10px] font-bold tracking-wider relative z-[120]">
+      <div className="flex gap-8 items-center h-full">
+        <div className="flex items-center gap-2 text-brand-gold">
+          <BadgeCheck className="w-3 h-3" /> 
+          <span>LICENSED DUBAI TECHNICAL SERVICES COMPANY</span>
+        </div>
+        <div className="hidden lg:flex items-center gap-2 opacity-80">
+          <MapPin className="w-3 h-3 text-brand-gold" />
+          <span>SERVING ALL 7 EMIRATES ACROSS UAE</span>
+        </div>
       </div>
-      <div className="flex items-center gap-6">
-        <span className="opacity-80 hidden md:block">Mon-Sat | 9:00 AM – 6:00 PM</span>
-        <div className="flex gap-4 border-l border-white/20 pl-4">
-          <button 
-            onClick={() => setLanguage('EN')}
-            className={cn("hover:text-brand-gold transition-colors font-bold", language === 'EN' ? "text-brand-gold" : "opacity-50")}
-          >
-            EN
-          </button>
-          <button 
-            onClick={() => setLanguage('AR')}
-            className={cn("hover:text-brand-gold transition-colors font-bold", language === 'AR' ? "text-brand-gold" : "opacity-50")}
-          >
-            العربية
-          </button>
+      <div className="flex gap-8 items-center h-full">
+        <a href="tel:+971524524295" className="flex items-center gap-2 hover:text-brand-gold transition-colors">
+          <Phone className="w-3 h-3 text-brand-gold" /> +971 52 452 4295
+        </a>
+        <a href="mailto:info@homerescue.ae" className="hidden sm:flex items-center gap-2 hover:text-brand-gold transition-colors">
+          <Mail className="w-3 h-3 text-brand-gold" /> info@homerescue.ae
+        </a>
+        <div className="flex gap-4 border-l border-white/10 pl-6 h-full items-center">
+          <a href="#" className="hover:text-brand-gold transition-colors"><Facebook className="w-3 h-3" /></a>
+          <a href="#" className="hover:text-brand-gold transition-colors"><Instagram className="w-3 h-3" /></a>
+          <a href="#" className="hover:text-brand-gold transition-colors"><Linkedin className="w-3 h-3" /></a>
         </div>
       </div>
     </div>
-  </>
-);
+  );
 };
 
 export const Navbar = () => {
@@ -58,6 +52,7 @@ export const Navbar = () => {
     {name: t('nav_about'), path: '/about'},
     {name: 'Credentials', path: '/credentials'},
     {name: t('nav_portfolio'), path: '/portfolio'},
+    {name: 'Blog', path: '#'},
     {name: t('nav_contact'), path: '/contact'},
   ];
 
@@ -197,7 +192,7 @@ export const Navbar = () => {
                                   >
                                     <div className="flex items-center gap-2">
                                       <div className="w-6 h-6 rounded flex items-center justify-center" style={{backgroundColor: cat.color}}>
-                                        {React.cloneElement(cat.icon as React.ReactElement, { className: 'w-3 h-3 text-white' })}
+                                        <i className={cn(cat.icon as string, "text-[10px] text-white")}></i>
                                       </div>
                                       {cat.name}
                                     </div>

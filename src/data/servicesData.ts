@@ -111,10 +111,58 @@ export const servicesData: Record<string, ServiceData> = {
     ],
     faqs: [], reviews: []
   },
+  'enamel-painting': {
+    id: 'enamel-painting',
+    title: 'Enamel Painting',
+    tagline: 'PREMIUM WOOD & METAL FINISHING',
+    description: 'Specialized enamel painting for wooden doors, cabinets, and metal gates. High-gloss and semi-gloss finishes available.',
+    image: 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=800&h=800&fit=crop',
+    estimateDuration: '2 Days',
+    material: 'High-Gloss Enamel',
+    technician: 'Finish Specialists',
+    warranty: '1-Year Warranty',
+    subServices: [], process: [], packages: [], faqs: [], reviews: []
+  },
+  'protective-coating': {
+    id: 'protective-coating',
+    title: 'Protective Coating',
+    tagline: 'SPECIALIZED SURFACE PROTECTION',
+    description: 'Anti-carbonation and waterproof coatings for villas. Protects your building from humidity and salt air.',
+    image: 'https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=800&h=800&fit=crop',
+    estimateDuration: '3-5 Days',
+    material: 'Jotun Jotashield',
+    technician: 'Coating Experts',
+    warranty: '5-Year Warranty',
+    subServices: [], process: [], packages: [], faqs: [], reviews: []
+  },
+  'villa-painting': {
+    id: 'villa-painting',
+    title: 'Villa Painting',
+    tagline: 'LUXURY HOME FINISHING',
+    description: 'Complete interior and exterior painting for luxury villas. We handle everything from walls to ceilings and decorative finishes.',
+    image: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=800&fit=crop',
+    estimateDuration: '5-10 Days',
+    material: 'Jotun Fenomastic',
+    technician: 'Villa Team',
+    warranty: '2-Year Warranty',
+    subServices: [], process: [], packages: [], faqs: [], reviews: []
+  },
+  'office-painting': {
+    id: 'office-painting',
+    title: 'Office Painting',
+    tagline: 'COMMERCIAL PAINT SOLUTIONS',
+    description: 'Quick and professional painting for office spaces. Odorless paint options so you can resume work the same day.',
+    image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&h=800&fit=crop',
+    estimateDuration: '1-3 Days',
+    material: 'Odorless Interior Paint',
+    technician: 'Commericial Painters',
+    warranty: '1-Year Warranty',
+    subServices: [], process: [], packages: [], faqs: [], reviews: []
+  },
 
   // --- AC SERVICES ---
-  'ac-repair': {
-    id: 'ac-repair',
+  'emergency-ac-repair': {
+    id: 'emergency-ac-repair',
     title: 'Emergency AC Repair',
     tagline: 'TECHNICAL SERVICE DETAIL',
     description: '24/7 emergency AC repair for any breakdowns. We handle gas leaks, capacitor failures, and compressor issues instantly.',
@@ -129,8 +177,8 @@ export const servicesData: Record<string, ServiceData> = {
     ],
     faqs: [], reviews: []
   },
-  'ac-installation': {
-    id: 'ac-installation',
+  'new-ac-installation': {
+    id: 'new-ac-installation',
     title: 'New AC Installation',
     tagline: 'TECHNICAL SERVICE DETAIL',
     description: 'Professional installation of Split, Window, and Duct-type AC units. We ensure proper vacuuming and leak-free copper piping.',
@@ -159,8 +207,8 @@ export const servicesData: Record<string, ServiceData> = {
     ],
     faqs: [], reviews: []
   },
-  'ac-maintenance': {
-    id: 'ac-maintenance',
+  'ac-maintenance-service': {
+    id: 'ac-maintenance-service',
     title: 'AC Maintenance',
     tagline: 'TECHNICAL SERVICE DETAIL',
     description: 'Standard AC maintenance including coil cleaning, filter wash, and gas level checks. Recommended every 4 months for UAE homes.',
@@ -189,10 +237,34 @@ export const servicesData: Record<string, ServiceData> = {
     ],
     faqs: [], reviews: []
   },
+  'ac-gas-refilling': {
+    id: 'ac-gas-refilling',
+    title: 'AC Gas Refilling',
+    tagline: 'COOLING RESTORATION',
+    description: 'Top-up of R410a or R22 refrigerant gas to restore AC cooling. We fix the leak before refilling.',
+    image: 'https://images.unsplash.com/photo-1631545806609-26d2b1f4f5e6?w=800&h=800&fit=crop',
+    estimateDuration: '1-2 Hours',
+    material: 'R410A / R22 Gas',
+    technician: 'HVAC Specialists',
+    warranty: 'Season Guarantee',
+    subServices: [], process: [], packages: [], faqs: [], reviews: []
+  },
+  'ac-filter-replacement': {
+    id: 'ac-filter-replacement',
+    title: 'AC Filter Replacement',
+    tagline: 'AIR QUALITY IMPROVEMENT',
+    description: 'Replacing dirty and damaged AC filters to improve air hygiene and airflow efficiency.',
+    image: 'https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=800&h=800&fit=crop',
+    estimateDuration: '30 Mins',
+    material: 'High-Density Filters',
+    technician: 'Maintenance Techs',
+    warranty: 'Quality Assured',
+    subServices: [], process: [], packages: [], faqs: [], reviews: []
+  },
 
   // --- PLUMBING ---
-  'sanitary': {
-    id: 'sanitary',
+  'sanitary-services': {
+    id: 'sanitary-services',
     title: 'Sanitary Services',
     tagline: 'TECHNICAL SERVICE DETAIL',
     description: 'Expert installation and repair of toilets, washbasins, and sanitary fixtures. We fix flush issues and install luxury bathroom fittings.',
@@ -206,8 +278,8 @@ export const servicesData: Record<string, ServiceData> = {
     ],
     faqs: [], reviews: []
   },
-  'drainage': {
-    id: 'drainage',
+  'drainage-cleaning': {
+    id: 'drainage-cleaning',
     title: 'Drainage Cleaning',
     tagline: 'TECHNICAL SERVICE DETAIL',
     description: 'Unblocking floor traps, kitchen sinks, and main manholes using industrial-grade snake machines and hydro-jetters.',
@@ -328,8 +400,8 @@ export const servicesData: Record<string, ServiceData> = {
     ],
     faqs: [], reviews: []
   },
-  'lighting': {
-    id: 'lighting',
+  'interior-exterior-light': {
+    id: 'interior-exterior-light',
     title: 'Lighting Installation',
     tagline: 'TECHNICAL SERVICE DETAIL',
     description: 'Expert spotlight, LED strip, and chandeliers installation. We design indoor and outdoor lighting layouts for luxury homes.',
@@ -373,8 +445,8 @@ export const servicesData: Record<string, ServiceData> = {
     ],
     faqs: [], reviews: []
   },
-  'smart-home': {
-    id: 'smart-home',
+  'smart-home-solutions': {
+    id: 'smart-home-solutions',
     title: 'Smart Home Solutions',
     tagline: 'TECHNICAL SERVICE DETAIL',
     description: 'Smart Wi-Fi switches, curtain controls, and doorbell installations. Control your home via Alexa or Google Home.',
@@ -388,8 +460,8 @@ export const servicesData: Record<string, ServiceData> = {
     ],
     faqs: [], reviews: []
   },
-  'chandelier': {
-    id: 'chandelier',
+  'chandelier-install': {
+    id: 'chandelier-install',
     title: 'Chandelier Install',
     tagline: 'TECHNICAL SERVICE DETAIL',
     description: 'Hanging heavy chandeliers safely with reinforced ceiling supports. Expert assembly of crystal and modern lighting fixtures.',
@@ -792,13 +864,443 @@ export const servicesData: Record<string, ServiceData> = {
     ],
     faqs: [], reviews: []
   },
+  'gypsum-ceiling': {
+    id: 'gypsum-ceiling',
+    title: 'Gypsum Ceiling',
+    tagline: 'PREMIUM FALSE CEILING',
+    description: 'Standard gypsum board ceiling with flawless white finish or decorative layers.',
+    image: '/images/services/subs/gypsum-board.jpg',
+    estimateDuration: '2-4 Days',
+    material: 'USG Boral',
+    technician: 'Gypsum Masons',
+    warranty: '2-Year Warranty',
+    subServices: [], process: [], packages: [], faqs: [], reviews: []
+  },
+  'false-ceiling': {
+    id: 'false-ceiling',
+    title: 'False Ceiling',
+    tagline: 'LUXURY INTERIOR CEILING',
+    description: 'Designing and installing luxury false ceilings with integrated lighting pockets and modern layouts.',
+    image: 'https://images.unsplash.com/photo-1615873966503-87a760f2524a?w=800&h=800&fit=crop',
+    estimateDuration: '3-5 Days',
+    material: 'Knauf Materials',
+    technician: 'Ceiling Artisans',
+    warranty: '3-Year Warranty',
+    subServices: [], process: [], packages: [], faqs: [], reviews: []
+  },
+  'pop-design': {
+    id: 'pop-design',
+    title: 'POP Design',
+    tagline: 'TRADITIONAL DECORATIVE CEILING',
+    description: 'Expert Plaster of Paris designs for traditional and royal looks. Hand-crafted moldings and patterns.',
+    image: 'https://images.unsplash.com/photo-1615873968403-89e068629265?w=800&h=800&fit=crop',
+    estimateDuration: '4-7 Days',
+    material: 'Premium POP mix',
+    technician: 'Plaster Artists',
+    warranty: '1-Year Warranty',
+    subServices: [], process: [], packages: [], faqs: [], reviews: []
+  },
+  'cove-ceiling': {
+    id: 'cove-ceiling',
+    title: 'Cove Ceiling',
+    tagline: 'AMBIENT LIGHTING DESIGN',
+    description: 'Ceiling design specifically shaped for hidden cove lighting. Creates a warm glow in halls and bedrooms.',
+    image: '/images/services/subs/cove-lighting-design.jpg',
+    estimateDuration: '2-3 Days',
+    material: 'Gypsum & Metal G.I',
+    technician: 'Framing Experts',
+    warranty: '2-Year Warranty',
+    subServices: [], process: [], packages: [], faqs: [], reviews: []
+  },
+  'ceiling-painting': {
+    id: 'ceiling-painting',
+    title: 'Ceiling Painting',
+    tagline: 'FRESH WHITE FINISH',
+    description: 'Professional ceiling painting using non-drip paints to brighten up your rooms.',
+    image: 'https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=800&h=800&fit=crop',
+    estimateDuration: '1 Day',
+    material: 'Acrylic Flat Paint',
+    technician: 'Professional Painters',
+    warranty: '2-Year Warranty',
+    subServices: [], process: [], packages: [], faqs: [], reviews: []
+  },
+  'partition-work': {
+    id: 'partition-work',
+    title: 'Partition Work',
+    tagline: 'GYPSUM WALL SOLUTIONS',
+    description: 'Quick gypsum partition walls for home room division or office cabins. Sound insulation included.',
+    image: '/images/services/subs/gypsum-partition.jpg',
+    estimateDuration: '2-3 Days',
+    material: '75mm Studs / 12.5mm Board',
+    technician: 'Partition Crew',
+    warranty: 'Workmanship Warranty',
+    subServices: [], process: [], packages: [], faqs: [], reviews: []
+  },
+  'custom-ceiling-design': {
+    id: 'custom-ceiling-design',
+    title: 'Custom Ceiling Design',
+    tagline: 'BESPOKE INTERIOR LUXURY',
+    description: 'Unique, high-end ceiling designs tailored to your villa\'s architecture. 3D designs visualized first.',
+    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=800&fit=crop',
+    estimateDuration: '1-2 Weeks',
+    material: 'Hybrid Materials',
+    technician: 'Master Designers',
+    warranty: 'Full Project Warranty',
+    subServices: [], process: [], packages: [], faqs: [], reviews: []
+  },
+
+  // --- TILE & WOODEN ---
+  'marble-installation': {
+    id: 'marble-installation',
+    title: 'Marble Installation',
+    tagline: 'PREMIUM STONE CRAFTSMANSHIP',
+    description: 'Expert marble fixing with book-matching and diamond polishing for luxury properties.',
+    image: 'https://images.unsplash.com/photo-1615873968403-89e068629265?w=800&h=800&fit=crop',
+    estimateDuration: '3-7 Days',
+    material: 'Italian/Spanish Marble',
+    technician: 'Marble Artisans',
+    warranty: '2-Year Warranty',
+    subServices: [], process: [], packages: [], faqs: [], reviews: []
+  },
+  'granite-work': {
+    id: 'granite-work',
+    title: 'Granite Work',
+    tagline: 'DURABLE STONE SOLUTIONS',
+    description: 'Heavy-duty granite installation for countertops and stairs. Heat and scratch resistant.',
+    image: 'https://images.unsplash.com/photo-1556909114-44e3e9399a2f?w=800&h=800&fit=crop',
+    estimateDuration: '2-4 Days',
+    material: 'Premium Granite',
+    technician: 'Stone Specialists',
+    warranty: 'Lifetime Durability',
+    subServices: [], process: [], packages: [], faqs: [], reviews: []
+  },
+  'porcelain-tiles': {
+    id: 'porcelain-tiles',
+    title: 'Porcelain Tiles',
+    tagline: 'MODERN FLOORING SOLUTIONS',
+    description: 'Precision porcelain and ceramic tile fixing with perfect leveling and zero gaps.',
+    image: 'https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=800&h=800&fit=crop',
+    estimateDuration: '2-5 Days',
+    material: 'High-Grade Porcelain',
+    technician: 'Master Tilers',
+    warranty: '1-Year Warranty',
+    subServices: [], process: [], packages: [], faqs: [], reviews: []
+  },
+  'interlock-stones': {
+    id: 'interlock-stones',
+    title: 'Interlock Stones',
+    tagline: 'OUTDOOR PAVING EXPERTS',
+    description: 'Luxury interlock design for driveways and pathways. Professional soil compaction included.',
+    image: 'https://images.unsplash.com/photo-1604709177225-055f99402ea3?w=800&h=800&fit=crop',
+    estimateDuration: '3 Days',
+    material: 'Interlock Blocks',
+    technician: 'Masonry Team',
+    warranty: '2-Year Warranty',
+    subServices: [], process: [], packages: [], faqs: [], reviews: []
+  },
+  'pergola-design': {
+    id: 'pergola-design',
+    title: 'Pergola Design',
+    tagline: 'CUSTOM WOODEN STRUCTURES',
+    description: 'Building elegant wooden pergolas for gardens and rooftops. Termite-proof treated wood.',
+    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&h=800&fit=crop',
+    estimateDuration: '4-7 Days',
+    material: 'Meranti / Teak',
+    technician: 'Master Carpenters',
+    warranty: '3-Year Warranty',
+    subServices: [], process: [], packages: [], faqs: [], reviews: []
+  },
+  'gazebo-construction': {
+    id: 'gazebo-construction',
+    title: 'Gazebo Construction',
+    tagline: 'OUTDOOR LUXURY LIVING',
+    description: 'Bespoke gazebo construction with roof tiling and integrated lighting.',
+    image: 'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=800&h=800&fit=crop',
+    estimateDuration: '1 Week',
+    material: 'Solid Wood & Tiles',
+    technician: 'Carpentry Team',
+    warranty: '3-Year Warranty',
+    subServices: [], process: [], packages: [], faqs: [], reviews: []
+  },
+  // Removed duplicate wooden-doors
+  // Removed duplicate outdoor-kitchen
+  // Removed duplicate furniture-install
+  'tv-installation': {
+    id: 'tv-installation',
+    title: 'TV Installation',
+    tagline: 'SECURE WALL MOUNTING',
+    description: 'Professional TV mounting on any wall with wire concealment options.',
+    image: 'https://images.unsplash.com/photo-1593784991095-a205069470b6?w=800&h=800&fit=crop',
+    estimateDuration: '1 Hour',
+    material: 'Heavy-Duty Bracket',
+    technician: 'Media Techs',
+    warranty: 'Mounting Warranty',
+    subServices: [], process: [], packages: [], faqs: [], reviews: []
+  },
+  'drilling-hanging': {
+    id: 'drilling-hanging',
+    title: 'Drilling & Hanging',
+    tagline: 'PRECISE WALL FIXTURES',
+    description: 'Precise drilling for mirrors, paintings, and shelving without damaging pipes/wires.',
+    image: 'https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=800&h=800&fit=crop',
+    estimateDuration: '1-3 Hours',
+    material: 'Industrial Plugs',
+    technician: 'Expert Handyman',
+    warranty: 'Service Guarantee',
+    subServices: [], process: [], packages: [], faqs: [], reviews: []
+  },
+  'curtains-blinds': {
+    id: 'curtains-blinds',
+    title: 'Curtains & Blinds',
+    tagline: 'WINDOW TREATMENT INSTALL',
+    description: 'Installation of all types of curtains, rods, and roller blinds.',
+    image: 'https://images.unsplash.com/photo-1505691938895-1758d7feb511?w=800&h=800&fit=crop',
+    estimateDuration: '2 Hours',
+    material: 'Sturdy Rods/Tracks',
+    technician: 'Window Techs',
+    warranty: 'Service Warranty',
+    subServices: [], process: [], packages: [], faqs: [], reviews: []
+  },
+  'door-lock-repair': {
+    id: 'door-lock-repair',
+    title: 'Door Lock Repair',
+    tagline: 'SECURITY LOCK SOLUTIONS',
+    description: 'Repairing jammed locks and installing new high-security lock systems.',
+    image: 'https://images.unsplash.com/photo-1565374395542-0ce18882c857?w=800&h=800&fit=crop',
+    estimateDuration: '1 Hour',
+    material: 'Solid Brass Locks',
+    technician: 'Locksmiths',
+    warranty: '1-Year Hardware',
+    subServices: [], process: [], packages: [], faqs: [], reviews: []
+  },
+  // Removed duplicate kitchen-hood
+  'drain-unblocking': {
+    id: 'drain-unblocking',
+    title: 'Drain Unblocking',
+    tagline: 'QUICK CLOG REMOVAL',
+    description: 'Professional clearing of kitchen, bathroom, and yard drain blockages.',
+    image: 'https://images.unsplash.com/photo-1607472586893-edb57bdc0e39?w=800&h=800&fit=crop',
+    estimateDuration: '1-2 Hours',
+    material: 'De-clogging Agents',
+    technician: 'Plumbing Team',
+    warranty: '90-Day Guarantee',
+    subServices: [], process: [], packages: [], faqs: [], reviews: []
+  },
+  'cctv-drain-check': {
+    id: 'cctv-drain-check',
+    title: 'CCTV Drain Check',
+    tagline: 'VISUAL DRAIN INSPECTION',
+    description: 'Advanced camera inspection of drains to find deep blocks or pipe cracks.',
+    image: 'https://images.unsplash.com/photo-1558002038-bb4237b54e8b?w=800&h=800&fit=crop',
+    estimateDuration: '2 Hours',
+    material: 'Digital Report',
+    technician: 'Technical Team',
+    warranty: 'Diagnosis Report',
+    subServices: [], process: [], packages: [], faqs: [], reviews: []
+  },
+
+  // --- LIGHTING WORK ---
+  'led-light-installation': {
+    id: 'led-light-installation',
+    title: 'LED Light Installation',
+    tagline: 'EFFECIENT LIGHTING SETUP',
+    description: 'Upgrading your space with energy-efficient LED panels and strips.',
+    image: '/images/services/subs/lighting.jpg',
+    estimateDuration: '2-4 Hours',
+    material: 'Philips/Osram LED',
+    technician: 'Electrician Team',
+    warranty: '1-Year Warranty',
+    subServices: [], process: [], packages: [], faqs: [], reviews: []
+  },
+  'chandelier-installation': {
+    id: 'chandelier-installation',
+    title: 'Chandelier Installation',
+    tagline: 'LUXURY FIXTURE MOUNTING',
+    description: 'Expert handling and mounting of heavy crystal and modern chandeliers.',
+    image: '/images/services/subs/chandelier.jpg',
+    estimateDuration: '3-5 Hours',
+    material: 'Reinforced Mounts',
+    technician: 'Fixture Specialists',
+    warranty: 'Mounting Guarantee',
+    subServices: [], process: [], packages: [], faqs: [], reviews: []
+  },
+  'spotlights': {
+    id: 'spotlights',
+    title: 'Spotlights',
+    tagline: 'FOCUSED LIGHTING SOLUTIONS',
+    description: 'Installation of adjustable and fixed spotlights for art and decor highlights.',
+    image: 'https://images.unsplash.com/photo-1565636192335-c4a04eb0f12d?w=800&h=800&fit=crop',
+    estimateDuration: '2-4 Hours',
+    material: 'Dimmable Spots',
+    technician: 'Lighting Techs',
+    warranty: '1-Year Warranty',
+    subServices: [], process: [], packages: [], faqs: [], reviews: []
+  },
+  'cove-lighting': {
+    id: 'cove-lighting',
+    title: 'Cove Lighting',
+    tagline: 'HIDDEN AMBIENCE LIGHTS',
+    description: 'Professional layout for hidden ceiling LED strips to create soft ambient light.',
+    image: '/images/services/subs/cove-lighting-design.jpg',
+    estimateDuration: '2-4 Hours',
+    material: 'High-Lumen Strips',
+    technician: 'LED Specialists',
+    warranty: '1-Year Warranty',
+    subServices: [], process: [], packages: [], faqs: [], reviews: []
+  },
+  'outdoor-lighting': {
+    id: 'outdoor-lighting',
+    title: 'Outdoor Lighting',
+    tagline: 'EXTERIOR ILLUMINATION',
+    description: 'Enhance your villa facade and garden with weather-proof outdoor lighting.',
+    image: 'https://images.unsplash.com/photo-1565636192335-c4a04eb0f12d?w=800&h=800&fit=crop',
+    estimateDuration: '4-8 Hours',
+    material: 'IP65 Rated Fixtures',
+    technician: 'Outdoor Electricians',
+    warranty: '1-Year Warranty',
+    subServices: [], process: [], packages: [], faqs: [], reviews: []
+  },
+  'decorative-lighting': {
+    id: 'decorative-lighting',
+    title: 'Decorative Lighting',
+    tagline: 'AESTHETIC LIGHT SOLUTIONS',
+    description: 'Wall sconces, floor lamps, and unique lighting installations for aesthetic appeal.',
+    image: 'https://images.unsplash.com/photo-1565636192335-c4a04eb0f12d?w=800&h=800&fit=crop',
+    estimateDuration: '2 Hours',
+    material: 'Designer Fixtures',
+    technician: 'Style Electricians',
+    warranty: 'Service Warranty',
+    subServices: [], process: [], packages: [], faqs: [], reviews: []
+  },
+  'smart-lighting': {
+    id: 'smart-lighting',
+    title: 'Smart Lighting',
+    tagline: 'INTELLIGENT HOME LIGHTS',
+    description: 'Control your lighting via phone or voice with smart switches and app integration.',
+    image: '/images/services/subs/smart-home.jpg',
+    estimateDuration: '4 Hours',
+    material: 'Smart Hubs/Switches',
+    technician: 'Smart Tech Team',
+    warranty: 'App Support',
+    subServices: [], process: [], packages: [], faqs: [], reviews: []
+  },
+  'light-repair': {
+    id: 'light-repair',
+    title: 'Light Repair',
+    tagline: 'FIXTURE TROUBLESHOOTING',
+    description: 'Fixing flickering lights, faulty drivers, and wiring issues in light fixtures.',
+    image: 'https://images.unsplash.com/photo-1581092335397-9583eb92d232?w=800&h=800&fit=crop',
+    estimateDuration: '1 Hour',
+    material: 'Drivers/Ballasts',
+    technician: 'Safety Electricians',
+    warranty: 'Fix Warranty',
+    subServices: [], process: [], packages: [], faqs: [], reviews: []
+  },
+
+  // --- GENERAL MAINTENANCE ---
+  'preventive-maintenance': {
+    id: 'preventive-maintenance',
+    title: 'Preventive Maintenance',
+    tagline: 'PROACTIVE HOME CARE',
+    description: 'Periodic checks of AC, plumbing, and electrical systems to prevent major breakdowns.',
+    image: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&h=800&fit=crop',
+    estimateDuration: '4 Hours',
+    material: 'Audit Report',
+    technician: 'Maintenance Team',
+    warranty: 'Peace of Mind',
+    subServices: [], process: [], packages: [], faqs: [], reviews: []
+  },
+  'door-window-repair': {
+    id: 'door-window-repair',
+    title: 'Door/Window Repair',
+    tagline: 'FULL ENTRANCE UPKEEP',
+    description: 'Fixing hinges, handles, and glass alignment for doors and windows.',
+    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=800&fit=crop',
+    estimateDuration: '2 Hours',
+    material: 'Standard Hardware',
+    technician: 'Expert Handyman',
+    warranty: 'Service Warranty',
+    subServices: [], process: [], packages: [], faqs: [], reviews: []
+  },
+  'minor-plumbing': {
+    id: 'minor-plumbing',
+    title: 'Minor Plumbing',
+    tagline: 'QUICK FAUCET & LEAK FIX',
+    description: 'Fast fix for leaky taps, running toilets, and minor drainage issues.',
+    image: '/images/services/subs/sanitary.jpg',
+    estimateDuration: '1-2 Hours',
+    material: 'Washers/Sealants',
+    technician: 'Basic Plumbers',
+    warranty: 'Fix Guarantee',
+    subServices: [], process: [], packages: [], faqs: [], reviews: []
+  },
+  'minor-electrical': {
+    id: 'minor-electrical',
+    title: 'Minor Electrical',
+    tagline: 'FAST SOCKET & SWITCH FIX',
+    description: 'Replacing faulty switches, sockets, and basic light bulb changes.',
+    image: '/images/services/subs/circuit-breakers.jpg',
+    estimateDuration: '1 Hour',
+    material: 'Schneider Switches',
+    technician: 'Safety Electrician',
+    warranty: 'Service Warranty',
+    subServices: [], process: [], packages: [], faqs: [], reviews: []
+  },
+  'wall-repair': {
+    id: 'wall-repair',
+    title: 'Wall Repair',
+    tagline: 'PLASTER & CRACK FIXING',
+    description: 'Patching holes and cracks in drywall or masonry before painting.',
+    image: '/images/services/subs/gypsum-partition.jpg',
+    estimateDuration: '2 Hours',
+    material: 'Joint Compound',
+    technician: 'Patchwork Artist',
+    warranty: 'Finish Warranty',
+    subServices: [], process: [], packages: [], faqs: [], reviews: []
+  },
+  'silicone-sealant': {
+    id: 'silicone-sealant',
+    title: 'Silicone Sealant',
+    tagline: 'WATERTIGHT JOINT FIXING',
+    description: 'Applying anti-fungus silicone to bathtubs, sinks, and windows.',
+    image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=800&h=800&fit=crop',
+    estimateDuration: '1-2 Hours',
+    material: 'GP/Anti-Fungal Silicone',
+    technician: 'Sealing Techs',
+    warranty: '1-Year Warranty',
+    subServices: [], process: [], packages: [], faqs: [], reviews: []
+  },
+  'fixture-replacement': {
+    id: 'fixture-replacement',
+    title: 'Fixture Replacement',
+    tagline: 'HOME APPLIANCE SETUP',
+    description: 'Replacing old faucets, towel rails, and small home fixtures.',
+    image: '/images/services/subs/bathroom-plumbing.jpg',
+    estimateDuration: '1 Hour',
+    material: 'Mounting Screws',
+    technician: 'Handy Team',
+    warranty: 'Service Warranty',
+    subServices: [], process: [], packages: [], faqs: [], reviews: []
+  },
+  'property-upkeep': {
+    id: 'property-upkeep',
+    title: 'Property Upkeep',
+    tagline: 'FULL VILLA MANAGEMENT',
+    description: 'Continuous maintenance of property to retain its value and beauty.',
+    image: 'https://images.unsplash.com/photo-1572883454114-1cf0031ede2a?w=800&h=800&fit=crop',
+    estimateDuration: 'Monthly',
+    material: 'Full Service',
+    technician: 'Professional Fleet',
+    warranty: 'Asset Preservation',
+    subServices: [], process: [], packages: [], faqs: [], reviews: []
+  },
 
   // --- CATEGORY LANDING PAGES ---
-  'paint': {
-    id: 'paint',
+  'paint-work': {
+    id: 'paint-work',
     title: 'Painting Services',
     tagline: 'PREMIUM FINISHING SOLUTIONS',
-    description: 'From luxury villa interiors to robust exterior facades, our expert painters deliver flawless results with high-quality materials.',
+    description: 'Expert interior and exterior painting services with high-quality industrial grade materials.',
     image: '/images/services/service-paint.jpg',
     estimateDuration: 'Varies',
     material: 'Jotun / Berger',
@@ -812,11 +1314,11 @@ export const servicesData: Record<string, ServiceData> = {
     ],
     process: [], packages: [], faqs: [], reviews: []
   },
-  'ac': {
-    id: 'ac',
+  'ac-maintenance': {
+    id: 'ac-maintenance',
     title: 'AC Maintenance',
     tagline: 'COOLING SPECIALISTS',
-    description: 'Complete AC solutions including repair, new installation, and duct cleaning to ensure maximum efficiency in Dubai heat.',
+    description: 'Complete AC solutions including repair, new installation, and duct cleaning to ensure maximum efficiency.',
     image: '/images/services/service-ac.jpg',
     estimateDuration: 'Varies',
     material: 'OEM Spares',
@@ -830,11 +1332,11 @@ export const servicesData: Record<string, ServiceData> = {
     ],
     process: [], packages: [], faqs: [], reviews: []
   },
-  'plumbing': {
-    id: 'plumbing',
-    title: 'Plumbing Works',
+  'plumbing-services': {
+    id: 'plumbing-services',
+    title: 'Plumbing Services',
     tagline: 'LEAK-FREE SOLUTIONS',
-    description: 'Trusted plumbing services for luxury properties. We handle everything from minor leaks to major bathroom renovations.',
+    description: 'Trusted plumbing services for luxury properties. We handle everything from minor leaks to major renovations.',
     image: '/images/services/service-plumbing.jpg',
     estimateDuration: 'Varies',
     material: 'PPR / PEX Pipes',
@@ -848,9 +1350,9 @@ export const servicesData: Record<string, ServiceData> = {
     ],
     process: [], packages: [], faqs: [], reviews: []
   },
-  'electrical': {
-    id: 'electrical',
-    title: 'Electrical Works',
+  'electrical-services': {
+    id: 'electrical-services',
+    title: 'Electrical Services',
     tagline: 'POWER & SAFETY EXPERTS',
     description: 'DEWA certified electrical maintenance and smart home installations. Ensuring your home is safe and efficient.',
     image: '/images/services/service-electrical.jpg',
@@ -866,11 +1368,11 @@ export const servicesData: Record<string, ServiceData> = {
     ],
     process: [], packages: [], faqs: [], reviews: []
   },
-  'ceiling': {
-    id: 'ceiling',
-    title: 'Ceiling & Gypsum',
+  'ceiling-work': {
+    id: 'ceiling-work',
+    title: 'Ceiling Work',
     tagline: 'INTERIOR CEILING SPECIALISTS',
-    description: 'Elegant false ceiling designs and partition works. We transform your interiors with modern gypsum boards and decorative moldings.',
+    description: 'Elegant false ceiling designs and partition works. We transform your interiors with modern gypsum boards.',
     image: '/images/services/service-ceiling.jpg',
     estimateDuration: 'Varies',
     material: 'Knauf Gypsum',
@@ -884,11 +1386,11 @@ export const servicesData: Record<string, ServiceData> = {
     ],
     process: [], packages: [], faqs: [], reviews: []
   },
-  'tile': {
-    id: 'tile',
-    title: 'Tile & Marble',
+  'tile-wooden': {
+    id: 'tile-wooden',
+    title: 'Tile & Wooden',
     tagline: 'FLOORING ARTISANS',
-    description: 'Premium tile fixing and marble polishing services. We give your floors a royal look with precision craftsmanship.',
+    description: 'Premium tile fixing and marble polishing services. We give your floors a royal look.',
     image: '/images/services/service-tile.jpg',
     estimateDuration: 'Varies',
     material: 'Ardex Adhesive',
@@ -902,11 +1404,11 @@ export const servicesData: Record<string, ServiceData> = {
     ],
     process: [], packages: [], faqs: [], reviews: []
   },
-  'handyman': {
-    id: 'handyman',
-    title: 'Handyman Services',
+  'handyman-more': {
+    id: 'handyman-more',
+    title: 'Handyman & More',
     tagline: 'QUICK HOME FIXES',
-    description: 'Professional handyman for all your home improvements. TV mounting, furniture assembly, and basic repairs at your doorstep.',
+    description: 'Professional handyman for all your home improvements. TV mounting and furniture assembly.',
     image: '/images/services/service-handyman.jpg',
     estimateDuration: 'Hourly',
     material: 'Standard Fixings',
@@ -919,113 +1421,220 @@ export const servicesData: Record<string, ServiceData> = {
       {name: 'Lock Repair', icon: 'fa-solid fa-lock', desc: 'Security locks fix.'}
     ],
     process: [], packages: [], faqs: [], reviews: []
+  },
+  'lighting-work': {
+    id: 'lighting-work',
+    title: 'Lighting Work',
+    tagline: 'ILLUMINATION EXPERTS',
+    description: 'Specialized lighting solutions for home and offices. From LED upgrades to luxury chandeliers.',
+    image: '/images/services/service-lighting.jpg',
+    estimateDuration: 'Varies',
+    material: 'LED Systems',
+    technician: 'Lighting Electricians',
+    warranty: '1-Year Warranty',
+    subServices: [
+      {name: 'LED Install', icon: 'fa-solid fa-lightbulb', desc: 'Energy efficient lighting.'},
+      {name: 'Outdoor Lighting', icon: 'fa-solid fa-sun', desc: 'Garden & facade lights.'}
+    ],
+    process: [], packages: [], faqs: [], reviews: []
+  },
+  'home-general-maintenance': {
+    id: 'home-general-maintenance',
+    title: 'Home General Maintenance',
+    tagline: 'FULL PROPERTY UPKEEP',
+    description: 'Comprehensive property maintenance for villas and apartments. We keep your house in top condition.',
+    image: '/images/services/service-maintenance.jpg',
+    estimateDuration: 'Annual/Visit',
+    material: 'Maintenance Spares',
+    technician: 'Multi-Skilled Team',
+    warranty: 'Quality Assurance',
+    subServices: [
+      {name: 'Preventive', icon: 'fa-solid fa-shield-halved', desc: 'Stops issues before they happen.'},
+      {name: 'Emergency', icon: 'fa-solid fa-truck-fast', desc: 'Quick response for home fixes.'}
+    ],
+    process: [], packages: [], faqs: [], reviews: []
   }
-
-};
+}
 
 export const serviceCategories = [
   {
     name: 'Paint Work', 
+    id: 'paint-work',
     icon: 'fa-solid fa-paint-roller', 
-    color: 'bg-brand-red',
+    color: '#08264B',
+    activeColor: '#EEF6FF',
+    description: 'Professional painting solutions for homes and businesses. From surface preparation to the perfect finish, we deliver quality, durability and beauty that lasts.',
     image: '/images/services/service-paint.jpg',
+    promoTitle: 'Beautiful Finishes For Every Space',
     subs: [
-      {name: 'Wall Painting', id: 'wall-painting', icon: 'fa-solid fa-brush'},
-      {name: 'Interior Painting', id: 'interior-painting', icon: 'fa-solid fa-house-chimney-window'},
-      {name: 'Exterior Painting', id: 'exterior-painting', icon: 'fa-solid fa-building'},
-      {name: 'Texture Painting', id: 'texture-painting', icon: 'fa-solid fa-fill-drip'}
+      {name: 'Wall Painting', id: 'wall-painting', icon: 'fa-solid fa-brush', desc: 'Smooth and flawless wall finishes.'},
+      {name: 'Interior Painting', id: 'interior-painting', icon: 'fa-solid fa-house-chimney-window', desc: 'Elegant interiors that reflect you.'},
+      {name: 'Exterior Painting', id: 'exterior-painting', icon: 'fa-solid fa-building', desc: 'Weather-resistant exterior paints.'},
+      {name: 'Texture Painting', id: 'texture-painting', icon: 'fa-solid fa-fill-drip', desc: 'Stylish textures for stunning walls.'},
+      {name: 'Enamel Painting', id: 'enamel-painting', icon: 'fa-solid fa-paint-roller', desc: 'Premium enamel for long-lasting shine.'},
+      {name: 'Protective Coating', id: 'protective-coating', icon: 'fa-solid fa-shield', desc: 'Coatings that protect and extend life.'},
+      {name: 'Villa Painting', id: 'villa-painting', icon: 'fa-solid fa-house-user', desc: 'Complete painting for luxury villas.'},
+      {name: 'Office Painting', id: 'office-painting', icon: 'fa-solid fa-briefcase', desc: 'Neat, professional office finishes.'}
     ]
   },
   {
     name: 'AC Maintenance', 
+    id: 'ac-maintenance',
     icon: 'fa-solid fa-snowflake', 
-    color: 'bg-blue-600',
+    color: '#2563eb',
+    activeColor: '#EEF6FF',
+    description: 'Keep your spaces cool and comfortable with our professional AC maintenance and installation services. Fast, reliable and energy-efficient solutions tailored for your needs.',
     image: '/images/services/service-ac.jpg',
+    promoTitle: 'Reliable Cooling All Year Round',
     subs: [
-      {name: 'Emergency AC Repair', id: 'ac-repair', icon: 'fa-solid fa-screwdriver-wrench'},
-      {name: 'New AC Installation', id: 'ac-installation', icon: 'fa-solid fa-fan'},
-      {name: 'AC Ducting', id: 'ac-ducting', icon: 'fa-solid fa-wind'},
-      {name: 'Duct Type AC Install', id: 'duct-ac-install', icon: 'fa-solid fa-air-freshener'},
-      {name: 'Chilled Water AC', id: 'chilled-water-ac', icon: 'fa-solid fa-temperature-low'},
-      {name: 'AC Annual Contracts', id: 'ac-contracts', icon: 'fa-solid fa-file-contract'}
+      {name: 'Emergency AC Repair', id: 'emergency-ac-repair', icon: 'fa-solid fa-screwdriver-wrench', desc: 'Quick response for all AC issues.'},
+      {name: 'New AC Installation', id: 'new-ac-installation', icon: 'fa-solid fa-fan', desc: 'Expert installation, all brands.'},
+      {name: 'AC Ducting', id: 'ac-ducting', icon: 'fa-solid fa-wind', desc: 'Custom ducting solutions.'},
+      {name: 'Duct Type AC Install', id: 'duct-type-ac-install', icon: 'fa-solid fa-air-freshener', desc: 'Efficient duct type AC setup.'},
+      {name: 'Chilled Water AC', id: 'chilled-water-ac', icon: 'fa-solid fa-temperature-low', desc: 'Centralized cooling systems.'},
+      {name: 'AC Annual Contracts', id: 'ac-contracts', icon: 'fa-solid fa-file-contract', desc: 'Planned maintenance and care.'},
+      {name: 'AC Gas Refilling', id: 'ac-gas-refilling', icon: 'fa-solid fa-gas-pump', desc: 'R22 / R410A gas refilling.'},
+      {name: 'AC Filter Replacement', id: 'ac-filter-replacement', icon: 'fa-solid fa-filter', desc: 'Clean air, better performance.'}
     ]
   },
   {
     name: 'Plumbing Services', 
+    id: 'plumbing-services',
     icon: 'fa-solid fa-droplet', 
-    color: 'bg-brand-red',
+    color: '#D61F45',
+    activeColor: '#EEF6FF',
+    description: 'From minor repairs to complete installations, our expert plumbers deliver reliable, high-quality solutions to keep your water systems running smoothly and your home leak-free.',
     image: '/images/services/service-plumbing.jpg',
+    promoTitle: 'Fast Plumbing Support When You Need It',
     subs: [
-      {name: 'Sanitary Services', id: 'sanitary', icon: 'fa-solid fa-toilet'},
-      {name: 'Drainage Cleaning', id: 'drainage', icon: 'fa-solid fa-sink'},
-      {name: 'Leakage Repair', id: 'leakage-repair', icon: 'fa-solid fa-faucet-drip'},
-      {name: 'Water Heaters', id: 'water-heaters', icon: 'fa-solid fa-fire'},
-      {name: 'Bathroom Plumbing', id: 'bathroom-plumbing', icon: 'fa-solid fa-bath'},
-      {name: 'Kitchen Plumbing', id: 'kitchen-plumbing', icon: 'fa-solid fa-faucet'},
-      {name: 'Pipe Installation', id: 'pipe-installation', icon: 'fa-solid fa-layered-group'},
-      {name: 'Emergency Plumbing', id: 'emergency-plumbing', icon: 'fa-solid fa-headset'}
+      {name: 'Sanitary Services', id: 'sanitary-services', icon: 'fa-solid fa-toilet', desc: 'Complete sanitary fitting and repair services.'},
+      {name: 'Drainage Cleaning', id: 'drainage-cleaning', icon: 'fa-solid fa-sink', desc: 'Professional cleaning for clear and odor-free drains.'},
+      {name: 'Leakage Repair', id: 'leakage-repair', icon: 'fa-solid fa-faucet-drip', desc: 'Quick detection and repair of all kinds of leaks.'},
+      {name: 'Water Heaters', id: 'water-heaters', icon: 'fa-solid fa-fire', desc: 'Installation, repair and maintenance of water heaters.'},
+      {name: 'Bathroom Plumbing', id: 'bathroom-plumbing', icon: 'fa-solid fa-bath', desc: 'Expert plumbing for bathrooms and accessories.'},
+      {name: 'Kitchen Plumbing', id: 'kitchen-plumbing', icon: 'fa-solid fa-faucet', desc: 'Sink, faucet and pipe solutions for your kitchen.'},
+      {name: 'Pipe Installation', id: 'pipe-installation', icon: 'fa-solid fa-layered-group', desc: 'High-quality pipe installation for long-lasting performance.'},
+      {name: 'Emergency Plumbing', id: 'emergency-plumbing', icon: 'fa-solid fa-headset', desc: '24/7 emergency plumbing support when you need it most.'}
     ]
   },
   {
     name: 'Electrical Services', 
+    id: 'electrical-services',
     icon: 'fa-solid fa-bolt', 
-    color: 'bg-yellow-500',
+    color: '#D9A520',
+    activeColor: '#EEF6FF',
+    description: 'Expert electrical works and safe installations for homes and businesses. From wiring and lighting to smart solutions, we deliver reliable, efficient and code-compliant services you can trust.',
     image: '/images/services/service-electrical.jpg',
+    promoTitle: 'Safe Power Solutions For Every Property',
     subs: [
-      {name: 'Electrical Contracting', id: 'electrical-contracting', icon: 'fa-solid fa-plug'},
-      {name: 'Interior/Exterior Light', id: 'lighting', icon: 'fa-solid fa-lightbulb'},
-      {name: 'Home Wiring', id: 'home-wiring', icon: 'fa-solid fa-network-wired'},
-      {name: 'Circuit Breakers', id: 'circuit-breakers', icon: 'fa-solid fa-power-off'},
-      {name: 'Smart Home Solutions', id: 'smart-home', icon: 'fa-solid fa-house-laptop'},
-      {name: 'Office Electrical', id: 'office-electrical', icon: 'fa-solid fa-building'},
-      {name: 'DEWA Approvals', id: 'dewa', icon: 'fa-solid fa-clipboard-check'},
-      {name: 'Chandelier Install', id: 'chandelier', icon: 'fa-solid fa-gem'}
-    ]
-  },
-  {
-    name: 'Ceiling & Gypsum', 
-    icon: 'fa-solid fa-layer-group', 
-    color: 'bg-brand-navy',
-    image: '/images/services/service-ceiling.jpg',
-    subs: [
-      {name: 'Gypsum Board', id: 'gypsum-board', icon: 'fa-solid fa-border-none'},
-      {name: '60x60 Grid Ceiling', id: 'grid-ceiling', icon: 'fa-solid fa-th'},
-      {name: 'Cove Lighting', id: 'cove-lighting-design', icon: 'fa-solid fa-lightbulb'},
-      {name: 'Gypsum Partition', id: 'gypsum-partition', icon: 'fa-solid fa-columns'},
-      {name: 'Cornice Work', id: 'cornice-work', icon: 'fa-solid fa-scroll'},
-      {name: 'Ceiling Repair', id: 'ceiling-repair', icon: 'fa-solid fa-hammer'}
+      {name: 'Electrical Contracting', id: 'electrical-contracting', icon: 'fa-solid fa-plug', desc: 'Complete electrical contracting for new and existing projects.'},
+      {name: 'Interior / Exterior Light', id: 'interior-exterior-light', icon: 'fa-solid fa-lightbulb', desc: 'Installation of indoor, outdoor and decorative lighting.'},
+      {name: 'Home Wiring', id: 'home-wiring', icon: 'fa-solid fa-network-wired', desc: 'Safe and reliable home wiring and rewiring services.'},
+      {name: 'Circuit Breakers', id: 'circuit-breakers', icon: 'fa-solid fa-power-off', desc: 'MCB, RCD installation and electrical panel upgrades.'},
+      {name: 'Smart Home Solutions', id: 'smart-home-solutions', icon: 'fa-solid fa-house-laptop', desc: 'Smart switches, automation and energy management.'},
+      {name: 'Office Electrical', id: 'office-electrical', icon: 'fa-solid fa-building', desc: 'Complete electrical solutions for offices and commercial spaces.'},
+      {name: 'DEWA Approvals', id: 'dewa', icon: 'fa-solid fa-clipboard-check', desc: 'DEWA submissions and approvals for electrical installations.'},
+      {name: 'Chandelier Install', id: 'chandelier-install', icon: 'fa-solid fa-gem', desc: 'Professional chandelier installation and setup.'}
     ]
   },
   {
     name: 'Tile & Wooden', 
+    id: 'tile-wooden',
     icon: 'fa-solid fa-border-all', 
-    color: 'bg-brand-navy',
+    color: '#08264B',
+    activeColor: '#EEF6FF',
+    description: 'Expert tile, marble and woodwork solutions that bring elegance, strength and lasting value to your spaces — inside and out.',
     image: '/images/services/service-tile.jpg',
+    promoTitle: 'Premium Surfaces Built To Last',
     subs: [
-      {name: 'Marble Installation', id: 'marble', icon: 'fa-solid fa-chess-board'},
-      {name: 'Granite Work', id: 'granite', icon: 'fa-solid fa-mountain'},
-      {name: 'Porcelain Tiles', id: 'porcelain', icon: 'fa-solid fa-grip'},
-      {name: 'Interlock Stones', id: 'interlock', icon: 'fa-solid fa-puzzle-piece'},
-      {name: 'Pergola Design', id: 'pergola', icon: 'fa-solid fa-tree'},
-      {name: 'Gazebo Construction', id: 'gazebo', icon: 'fa-solid fa-umbrella-beach'},
-      {name: 'Wooden Doors', id: 'wooden-doors', icon: 'fa-solid fa-door-open'},
-      {name: 'Outdoor Kitchen', id: 'outdoor-kitchen', icon: 'fa-solid fa-kitchen-set'}
+      {name: 'Marble Installation', id: 'marble', icon: 'fa-solid fa-chess-board', desc: 'Premium marble fitting with flawless finishing.'},
+      {name: 'Granite Work', id: 'granite', icon: 'fa-solid fa-mountain', desc: 'Granite cutting, fitting and polishing.'},
+      {name: 'Porcelain Tiles', id: 'porcelain', icon: 'fa-solid fa-grip', desc: 'High-quality porcelain tiles for modern spaces.'},
+      {name: 'Interlock Stones', id: 'interlock', icon: 'fa-solid fa-puzzle-piece', desc: 'Durable interlock solutions for driveways and yards.'},
+      {name: 'Pergola Design', id: 'pergola', icon: 'fa-solid fa-tree', desc: 'Stylish and durable pergola designs for outdoors.'},
+      {name: 'Wooden Doors', id: 'wooden-doors', icon: 'fa-solid fa-door-open', desc: 'Custom wooden doors crafted with precision.'},
+      {name: 'Gazebo Construction', id: 'gazebo', icon: 'fa-solid fa-umbrella-beach', desc: 'Beautiful and sturdy gazebos built to last.'},
+      {name: 'Outdoor Kitchen', id: 'outdoor-kitchen', icon: 'fa-solid fa-kitchen-set', desc: 'Functional and stylish outdoor kitchen setups.'}
     ]
   },
   {
     name: 'Handyman & More', 
+    id: 'handyman-more',
     icon: 'fa-solid fa-screwdriver-wrench', 
-    color: 'bg-brand-green',
+    color: '#25D366',
+    activeColor: '#EEF6FF',
+    description: 'Quick installation and repair support for everyday tasks around your home or office. Professional, reliable and done right the first time.',
     image: '/images/services/service-handyman.jpg',
+    promoTitle: 'Reliable Help For Everyday Jobs',
     subs: [
-      {name: 'Furniture Install', id: 'furniture-install', icon: 'fa-solid fa-couch'},
-      {name: 'TV Installation', id: 'tv-install', icon: 'fa-solid fa-tv'},
-      {name: 'Drilling & Hanging', id: 'drilling', icon: 'fa-solid fa-screwdriver'},
-      {name: 'Curtains & Blinds', id: 'curtains', icon: 'fa-solid fa-window-maximize'},
-      {name: 'Door Lock Repair', id: 'door-lock', icon: 'fa-solid fa-lock'},
-      {name: 'Kitchen Hood', id: 'kitchen-hood', icon: 'fa-solid fa-utensils'},
-      {name: 'Drain Unblocking', id: 'drain-unblock', icon: 'fa-solid fa-water'},
-      {name: 'CCTV Drain Check', id: 'cctv-drain', icon: 'fa-solid fa-video'}
+      {name: 'Furniture Install', id: 'furniture-install', icon: 'fa-solid fa-couch', desc: 'Assemble and install all types of furniture.'},
+      {name: 'TV Installation', id: 'tv-install', icon: 'fa-solid fa-tv', desc: 'Wall-mounting and setup for all TV types.'},
+      {name: 'Drilling & Hanging', id: 'drilling', icon: 'fa-solid fa-screwdriver', desc: 'Safe drilling and hanging for wall-mounted items.'},
+      {name: 'Curtains & Blinds', id: 'curtains', icon: 'fa-solid fa-window-maximize', desc: 'Install curtain rods, rails and window blinds.'},
+      {name: 'Door Lock Repair', id: 'door-lock', icon: 'fa-solid fa-lock', desc: 'Repair and replace door locks and handles.'},
+      {name: 'Kitchen Hood', id: 'kitchen-hood', icon: 'fa-solid fa-utensils', desc: 'Installation and basic maintenance support.'},
+      {name: 'Drain Unblocking', id: 'drain-unblock', icon: 'fa-solid fa-water', desc: 'Fast drain clearing for sinks, showers and more.'},
+      {name: 'CCTV Drain Check', id: 'cctv-drain', icon: 'fa-solid fa-video', desc: 'Camera inspection for drain blockages and issues.'}
+    ]
+  },
+  {
+    name: 'Lighting Work',
+    id: 'lighting-work',
+    icon: 'fa-solid fa-lightbulb',
+    color: '#EAB308',
+    activeColor: '#EEF6FF',
+    description: 'Enhance the beauty and functionality of your space with our expert lighting solutions. From modern designs to energy-efficient installations, we create the perfect ambiance for every need.',
+    image: '/images/services/service-lighting.jpg',
+    promoTitle: 'Bright Ideas For Every Interior',
+    subs: [
+      {name: 'LED Light Installation', id: 'led-light-installation', icon: 'fa-solid fa-bolt', desc: 'Energy-efficient LED lighting setup.'},
+      {name: 'Chandelier Installation', id: 'chandelier-installation', icon: 'fa-solid fa-gem', desc: 'Elegant chandelier installation.'},
+      {name: 'Spotlights', id: 'spotlights', icon: 'fa-solid fa-circle-dot', desc: 'Precise spotlight installation.'},
+      {name: 'Cove Lighting', id: 'cove-lighting', icon: 'fa-solid fa-lightbulb', desc: 'Beautiful ambient cove lighting.'},
+      {name: 'Outdoor Lighting', id: 'outdoor-lighting', icon: 'fa-solid fa-sun', desc: 'Weatherproof outdoor lighting.'},
+      {name: 'Decorative Lighting', id: 'decorative-lighting', icon: 'fa-solid fa-star', desc: 'Stylish lights for every space.'},
+      {name: 'Smart Lighting', id: 'smart-lighting', icon: 'fa-solid fa-wifi', desc: 'Smart lighting for modern living.'},
+      {name: 'Light Repair', id: 'light-repair', icon: 'fa-solid fa-wrench', desc: 'Repair and fix all types of lights.'}
+    ]
+  },
+  {
+    name: 'Ceiling Work', 
+    id: 'ceiling-work',
+    icon: 'fa-solid fa-layer-group', 
+    color: '#08264B',
+    activeColor: '#EEF6FF',
+    description: 'We specialize in gypsum, false ceiling and ceiling finishing work that enhances the look and feel of your interiors with precision, creativity and long-lasting quality.',
+    image: '/images/services/service-ceiling.jpg',
+    promoTitle: 'Elegant Ceiling Designs With Fine Finishing',
+    subs: [
+      {name: 'Gypsum Ceiling', id: 'gypsum-ceiling', icon: 'fa-solid fa-border-none', desc: 'Smooth and elegant gypsum ceilings for a modern look.'},
+      {name: 'False Ceiling', id: 'false-ceiling', icon: 'fa-solid fa-th', desc: 'Stylish false ceilings tailored to your space.'},
+      {name: 'POP Design', id: 'pop-design', icon: 'fa-solid fa-palette', desc: 'Decorative POP designs for beautiful ceiling finishes.'},
+      {name: 'Cove Ceiling', id: 'cove-ceiling', icon: 'fa-solid fa-lightbulb', desc: 'Indirect lighting ceilings for a soft and premium ambiance.'},
+      {name: 'Ceiling Repair', id: 'ceiling-repair', icon: 'fa-solid fa-hammer', desc: 'Fix cracks, dents and damages for a flawless finish.'},
+      {name: 'Ceiling Painting', id: 'ceiling-painting', icon: 'fa-solid fa-paint-roller', desc: 'Neat and professional ceiling painting services.'},
+      {name: 'Partition Work', id: 'partition-work', icon: 'fa-solid fa-columns', desc: 'Gypsum partition walls for smart space division.'},
+      {name: 'Custom Ceiling Design', id: 'custom-ceiling-design', icon: 'fa-solid fa-pen-nib', desc: 'Bespoke ceiling designs crafted as per your vision.'}
+    ]
+  },
+  {
+    name: 'Home General Maintenance',
+    id: 'home-general-maintenance',
+    icon: 'fa-solid fa-house-circle-check',
+    color: '#08264B',
+    activeColor: '#EEF6FF',
+    description: 'Routine upkeep and minor repair services to keep your home safe, comfortable and in perfect shape. Ideal for villas, townhouses and apartments.',
+    image: '/images/services/service-maintenance.jpg',
+    promoTitle: 'Complete Care For Your Home',
+    subs: [
+      {name: 'Preventive Maintenance', id: 'preventive-maintenance', icon: 'fa-solid fa-shield-halved', desc: 'Regular inspections and upkeep to prevent future issues.'},
+      {name: 'Door & Window Repair', id: 'door-window-repair', icon: 'fa-solid fa-door-closed', desc: 'Adjust, repair or replace doors, locks and window fittings.'},
+      {name: 'Minor Plumbing', id: 'minor-plumbing', icon: 'fa-solid fa-droplet', desc: 'Fix leaks, replace fittings and resolve minor plumbing issues.'},
+      {name: 'Minor Electrical', id: 'minor-electrical', icon: 'fa-solid fa-bolt', desc: 'Fix switches, sockets, lights and other minor electrical issues.'},
+      {name: 'Wall Repair', id: 'wall-repair', icon: 'fa-solid fa-trowel', desc: 'Patch holes, cracks and restore wall surfaces.'},
+      {name: 'Silicone & Sealant', id: 'silicone-sealant', icon: 'fa-solid fa-broom', desc: 'Apply or replace silicone and sealants for a watertight finish.'},
+      {name: 'Fixture Replacement', id: 'fixture-replacement', icon: 'fa-solid fa-faucet', desc: 'Replace worn-out fixtures and improve home functionality.'},
+      {name: 'Property Upkeep', id: 'property-upkeep', icon: 'fa-solid fa-house-medical', desc: 'General home upkeep for a clean, safe and well-maintained space.'}
     ]
   }
 ];

@@ -9,14 +9,15 @@ import {
   Box, 
   MessageCircle, 
   Phone,
-  CheckCircle2,
+  CircleCheck,
   ChevronRight,
   PlusCircle,
-  HelpCircle,
+  CircleHelp,
   Star,
   Quote
 } from 'lucide-react';
 import { TopBar, Navbar, Footer } from './components/Navigation';
+import VerifiedProjects from './components/VerifiedProjects';
 import { servicesData } from './data/servicesData';
 import { cn } from './lib/utils';
 import { useLanguage } from './context/LanguageContext';
@@ -30,13 +31,15 @@ const ServiceDetail = () => {
 
   if (!data) {
     return (
-      <div className="min-h-screen flex flex-col">
+      <div className="min-h-screen flex flex-col bg-white">
         <TopBar />
         <Navbar />
-        <div className="flex-1 flex flex-col items-center justify-center p-8 text-center bg-brand-cream">
-          <h1 className="text-4xl font-serif text-brand-navy mb-4">Service Details Coming Soon</h1>
-          <p className="text-gray-500 mb-8 max-w-md">We are currently updating our portfolio. Please contact us directly for inquiries about this service.</p>
-          <Link to="/services" className="btn-primary">BACK TO SERVICES</Link>
+        <div className="flex-1 flex flex-col items-center justify-center p-20 text-center">
+          <h1 className="text-5xl font-serif text-brand-navy mb-6">Service Excellence</h1>
+          <p className="text-gray-500 mb-10 max-w-md leading-relaxed">We are currently refining the details for this technical specialty to ensure a premium experience. Please contact us directly for an immediate expert consultation.</p>
+          <Link to="/" className="bg-brand-navy text-white px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-brand-gold transition-all">
+            Return Home
+          </Link>
         </div>
         <Footer />
       </div>
@@ -44,33 +47,31 @@ const ServiceDetail = () => {
   }
 
   return (
-    <div className="flex flex-col min-h-screen bg-brand-cream">
+    <div className="flex flex-col min-h-screen bg-white">
       <TopBar />
       <Navbar />
 
-      {/* Breadcrumb & Navigation */}
-      <section className="bg-white py-6 px-4 md:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-wrap items-center gap-2 text-xs md:text-sm text-gray-400 mb-6">
-            <Link to="/" className="hover:text-brand-red transition-colors">Home</Link>
-            <ChevronRight className="w-3 h-3" />
-            <Link to="/services" className="hover:text-brand-red transition-colors">Services</Link>
-            <ChevronRight className="w-3 h-3" />
-            <span className="text-brand-navy font-bold">{data.title}</span>
-          </div>
-          
-          <Link to="/services" className="inline-flex items-center gap-2 text-brand-red font-bold text-sm hover:gap-3 transition-all mb-8">
-            <ChevronLeft className={cn("w-4 h-4", isRTL && "rotate-180")} /> BACK TO CATEGORY
-          </Link>
+      {/* Breadcrumb - Minimalist Luxury Style */}
+      <section className="bg-brand-cream/30 py-4 px-4 md:px-8 border-b border-gray-100">
+        <div className="max-w-7xl mx-auto flex items-center gap-2 text-gray-400 text-[10px] font-bold uppercase tracking-widest">
+          <Link to="/" className="hover:text-brand-gold transition-colors">Home</Link>
+          <ChevronRight className="w-3 h-3 opacity-30" />
+          <Link to="/services" className="hover:text-brand-gold transition-colors">Services</Link>
+          <ChevronRight className="w-3 h-3 opacity-30" />
+          <span className="text-brand-navy">{data.title}</span>
         </div>
       </section>
 
-      {/* Hero Section - 50/50 Split */}
-      <section className="pb-24 px-4 md:px-8 bg-white">
+      {/* Hero Section */}
+      <section className="py-24 px-4 md:px-8 border-b border-gray-50">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            {/* Left Column: Image with exact requested structure */}
-            <div className="service-image-wrapper">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            {/* Left Column: Image */}
+            <motion.div 
+              initial={{opacity: 0, x: -30}} 
+              animate={{opacity: 1, x: 0}}
+              className="relative rounded-[2.5rem] overflow-hidden shadow-2xl bg-gray-100 aspect-[4/3] lg:aspect-auto lg:h-[600px]"
+            >
               <img 
                 src={`/images/services/subs/${serviceId}.jpg`} 
                 alt={data.title}
@@ -78,86 +79,121 @@ const ServiceDetail = () => {
                 className="w-full h-full object-cover"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
-                  // If sub-service specific image fails, fallback to the one in data or placeholder
                   if (target.src.includes('/images/services/subs/')) {
-                    target.src = data.image;
+                    target.src = data.image || "https://images.unsplash.com/photo-1581244277943-fe4a9c777189?auto=format&fit=crop&q=80&w=1200";
                   } else {
                     target.onerror = null; 
-                    target.src = 'https://placehold.co/800x600/1a3a6b/d4af37?text=Service+Image';
-                    target.classList.add('fallback-image');
+                    target.src = 'https://placehold.co/800x600/1a3a6b/ffffff?text=Premium+Service';
                   }
                 }}
               />
-            </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+            </motion.div>
 
             {/* Right Column: Content */}
-            <div className="flex flex-col justify-center space-y-8">
-              <div className="space-y-4">
-                <span className="inline-block px-3 py-1 bg-brand-red text-white text-[10px] font-bold uppercase tracking-[0.2em] rounded">
-                  TECHNICAL SERVICE DETAIL
-                </span>
-                <h1 className="text-5xl md:text-6xl font-serif text-brand-navy leading-tight">{data.title}</h1>
-                <p className="text-brand-gray leading-relaxed text-lg">{data.description}</p>
+            <div className="space-y-10">
+              <div className="space-y-6">
+                <motion.div 
+                  initial={{opacity: 0, y: 10}}
+                  animate={{opacity: 1, y: 0}}
+                  className="flex items-center gap-3"
+                >
+                  <div className="w-8 h-[1px] bg-brand-red"></div>
+                  <span className="text-brand-red font-bold text-[10px] uppercase tracking-[0.3em] rounded">
+                    Bespoke Technical Solution
+                  </span>
+                </motion.div>
+                <motion.h1 
+                  initial={{opacity: 0, y: 20}}
+                  animate={{opacity: 1, y: 0}}
+                  transition={{delay: 0.1}}
+                  className="text-5xl md:text-7xl font-serif text-brand-navy leading-tight font-bold"
+                >
+                  {data.title}
+                </motion.h1>
+                <motion.p 
+                  initial={{opacity: 0, y: 20}}
+                  animate={{opacity: 1, y: 0}}
+                  transition={{delay: 0.2}}
+                  className="text-gray-500 leading-relaxed text-xl font-light"
+                >
+                  {data.description}
+                </motion.p>
               </div>
 
-              <div className="space-y-0 border-y border-gray-100 py-4">
+              {/* Technical Specs - Clean Luxury Table */}
+              <motion.div 
+                initial={{opacity: 0, y: 20}}
+                animate={{opacity: 1, y: 0}}
+                transition={{delay: 0.3}}
+                className="grid grid-cols-1 gap-6 pt-6 border-t border-gray-100"
+              >
                 {[
-                  {label: 'STANDARD MATERIAL', value: data.material},
-                  {label: 'TECHNICIANS', value: data.technician},
-                  {label: 'WARRANTY', value: data.warranty},
+                  {label: 'Materials Used', value: data.material, icon: <Box className="w-4 h-4" />},
+                  {label: 'Team Expertise', value: data.technician, icon: <UserCheck className="w-4 h-4" />},
+                  {label: 'Service Guarantee', value: data.warranty, icon: <ShieldCheck className="w-4 h-4" />},
                 ].map((row, i) => (
-                  <div key={i} className={cn(
-                    "flex flex-col sm:flex-row sm:items-center justify-between py-4",
-                    i !== 2 && "border-b border-gray-50"
-                  )}>
-                    <span className="text-[11px] font-bold text-gray-400 tracking-widest uppercase mb-1 sm:mb-0">{row.label}</span>
-                    <span className="text-sm font-bold text-brand-navy uppercase">{row.value}</span>
+                  <div key={i} className="flex items-center justify-between group">
+                    <div className="flex items-center gap-4">
+                      <div className="w-10 h-10 rounded-full bg-brand-cream/50 flex items-center justify-center text-brand-gold group-hover:bg-brand-navy group-hover:text-white transition-all">
+                        {row.icon}
+                      </div>
+                      <span className="text-[11px] font-bold text-gray-400 tracking-[0.2em] uppercase">{row.label}</span>
+                    </div>
+                    <span className="text-sm font-bold text-brand-navy uppercase tracking-wider">{row.value}</span>
                   </div>
                 ))}
-              </div>
+              </motion.div>
 
-              <div className="flex flex-col sm:flex-row gap-6 pt-4">
+              {/* CTAs */}
+              <motion.div 
+                initial={{opacity: 0, y: 20}}
+                animate={{opacity: 1, y: 0}}
+                transition={{delay: 0.4}}
+                className="flex flex-col sm:flex-row gap-4 pt-8"
+              >
                 <button 
                   onClick={() => openBooking(data.title)}
-                  className="flex-1 bg-brand-red text-white px-8 py-5 rounded-full font-bold shadow-xl hover:bg-brand-navy transition-all flex items-center justify-center gap-3"
+                  className="flex-1 bg-brand-navy text-white px-10 py-5 rounded-full font-bold shadow-2xl hover:bg-brand-red transition-all flex items-center justify-center gap-3 uppercase text-xs tracking-widest"
                 >
-                  <PlusCircle className="w-5 h-5" /> ADD TO MY BOOKING
+                   Book Free Inspection
                 </button>
                 <button 
                   onClick={() => askExpert(data.title)}
-                  className="flex-1 bg-brand-green text-white px-8 py-5 rounded-full font-bold shadow-xl hover:opacity-90 transition-all flex items-center justify-center gap-3"
+                  className="flex-1 bg-brand-green text-white px-10 py-5 rounded-full font-bold shadow-2xl hover:shadow-brand-green/20 transition-all flex items-center justify-center gap-3 uppercase text-xs tracking-widest"
                 >
-                  <MessageCircle className="w-5 h-5" /> ASK EXPERT
+                  <i className="fa-brands fa-whatsapp text-2xl"></i> WhatsApp Expert
                 </button>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Sub Services Grid */}
-      <section className="py-24 px-4 md:px-8 bg-white">
+      {/* Main Services Grid */}
+      <section className="py-32 px-4 md:px-8 bg-brand-cream/10">
         <div className="max-w-7xl mx-auto">
-          <div className="mb-16">
-            <h2 className="text-3xl font-serif text-brand-navy mb-4">What's Included</h2>
-            <div className="w-20 h-1 bg-brand-gold rounded-full"></div>
+          <div className="text-center mb-24 space-y-4">
+            <span className="text-brand-gold font-bold tracking-[0.4em] uppercase text-[10px]">What is Included</span>
+            <h2 className="text-4xl md:text-5xl font-serif text-brand-navy font-bold">Scope of Excellence</h2>
+            <div className="w-24 h-[1px] bg-brand-gold mx-auto"></div>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             {data.subServices.map((sub, i) => (
               <motion.div 
                 key={i} 
                 initial={{opacity: 0, y: 20}}
                 whileInView={{opacity: 1, y: 0}}
                 viewport={{once: true}}
-                className="flex items-start gap-4 p-6 rounded-2xl border border-gray-100 hover:border-brand-gold/30 hover:bg-brand-cream transition-all group"
+                transition={{delay: i * 0.1}}
+                className="bg-white p-10 rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.03)] border border-gray-100 hover:-translate-y-2 transition-all duration-500 group"
               >
-                <div className="p-3 bg-brand-navy/5 rounded-xl text-brand-gold group-hover:bg-brand-navy group-hover:text-white transition-all w-12 h-12 flex items-center justify-center shrink-0">
-                  <i className={cn(sub.icon, "text-xl")}></i>
+                <div className="w-16 h-16 bg-brand-cream flex items-center justify-center rounded-2xl text-brand-navy group-hover:bg-brand-navy group-hover:text-white transition-all mb-8 shadow-[0_10px_30px_rgba(0,0,0,0.05)]">
+                  <i className={cn(sub.icon, "text-2xl text-brand-gold group-hover:text-white transition-colors")}></i>
                 </div>
-                <div>
-                  <h4 className="font-bold text-brand-navy mb-1">{sub.name}</h4>
-                  <p className="text-xs text-gray-500 leading-relaxed">{sub.desc}</p>
-                </div>
+                <h4 className="text-2xl font-serif font-bold text-brand-navy mb-4">{sub.name}</h4>
+                <p className="text-sm text-gray-500 leading-relaxed">{sub.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -165,132 +201,131 @@ const ServiceDetail = () => {
       </section>
 
       {/* Process Steps */}
-      <section className="py-24 px-4 md:px-8 bg-brand-navy text-white overflow-hidden relative">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-brand-gold/10 rounded-full blur-[120px] -z-0"></div>
+      <section className="py-32 px-4 md:px-8 bg-brand-navy text-white relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/dark-matter.png')] opacity-20"></div>
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-16 space-y-4">
-            <h2 className="text-4xl font-serif">How We Do It</h2>
-            <p className="text-gray-400 max-w-xl mx-auto">Our systematic approach ensures quality and reliability in every technical task.</p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {data.process.map((p, i) => (
-              <div key={i} className="relative group p-8 bg-white/5 border border-white/10 rounded-3xl hover:bg-brand-gold transition-all duration-500">
-                <span className="absolute top-6 right-8 text-6xl font-serif font-black text-white/5 group-hover:text-brand-navy/10 transition-colors">{p.step}</span>
-                <PlusCircle className="w-8 h-8 text-brand-gold mb-6 group-hover:text-brand-navy transition-colors" />
-                <h4 className="text-xl font-bold mb-3 group-hover:text-brand-navy transition-colors">{p.title}</h4>
-                <p className="text-sm text-gray-400 group-hover:text-brand-navy/80 transition-colors leading-relaxed">{p.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing Packages - Service Specific */}
-      <section className="py-24 px-4 md:px-8 bg-brand-cream border-t border-gray-100">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <span className="text-brand-red font-bold text-sm uppercase tracking-widest mb-2 block">PRICING</span>
-            <h2 className="text-4xl md:text-5xl text-brand-navy font-serif font-bold">Service Packages</h2>
+          <div className="text-center mb-24 space-y-4">
+            <span className="text-brand-gold font-bold tracking-[0.4em] uppercase text-[10px] opacity-60">The Workflow</span>
+            <h2 className="text-4xl md:text-6xl font-serif font-bold">Our Technical Process</h2>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {data.packages.map((pkg, i) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+            {data.process.map((p, i) => (
               <motion.div 
-                key={i}
-                whileHover={{y: -10}}
-                className={cn(
-                  "rounded-[30px] p-12 shadow-xl border border-gray-100 flex flex-col items-center text-center transition-all",
-                  pkg.recommended ? "text-white bg-brand-red" : "text-brand-red bg-white"
-                )}
+                key={i} 
+                initial={{opacity: 0, y: 20}}
+                whileInView={{opacity: 1, y: 0}}
+                viewport={{once: true}}
+                transition={{delay: i * 0.1}}
+                className="relative space-y-6 pt-10"
               >
-                <h3 className="text-2xl font-bold mb-2 uppercase tracking-wide">{pkg.name}</h3>
-                <div className="text-4xl font-black mb-8">{pkg.price}</div>
-                <div className="space-y-4 mb-12 flex-1 w-full border-t border-current/10 pt-8">
-                  {pkg.features.map((f, j) => (
-                    <div key={j} className="flex items-center justify-center gap-2 text-sm font-medium">
-                      <CheckCircle2 className="w-4 h-4 shrink-0" /> {f}
-                    </div>
-                  ))}
+                <div className="text-8xl font-serif font-bold text-white/5 absolute -top-8 -left-2 z-0">{p.step}</div>
+                <div className="relative z-10 space-y-6">
+                  <div className="w-12 h-12 bg-brand-gold rounded-full flex items-center justify-center text-brand-navy font-bold shadow-xl">
+                    <CircleCheck className="w-6 h-6" />
+                  </div>
+                  <h4 className="text-2xl font-serif font-bold">{p.title}</h4>
+                  <p className="text-white/50 text-sm leading-relaxed">{p.desc}</p>
                 </div>
-                <button 
-                  onClick={() => openBooking(`${data.title} - ${pkg.name}`)}
-                  className={cn(
-                    "px-8 py-3 rounded-full font-bold text-sm tracking-widest transition-all w-full",
-                    pkg.recommended ? "bg-white text-brand-red hover:bg-gray-100" : "bg-brand-red text-white hover:bg-brand-navy"
-                  )}
-                >
-                  BOOK NOW
-                </button>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
+      {/* Pricing Packages */}
+      <section className="py-32 px-4 md:px-8 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto text-center mb-24 space-y-4">
+          <span className="text-brand-red font-black tracking-[0.3em] uppercase text-xs">Clear Investment</span>
+          <h2 className="text-4xl md:text-5xl font-serif text-brand-navy font-bold">Standardized Pricing</h2>
+        </div>
+        
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 px-4">
+          {data.packages.map((pkg, i) => (
+            <motion.div 
+              key={i}
+              initial={{opacity: 0, y: 30}}
+              whileInView={{opacity: 1, y: 0}}
+              viewport={{once: true}}
+              transition={{delay: i * 0.1}}
+              className={cn(
+                "rounded-[3rem] p-12 relative flex flex-col items-center transition-all duration-700",
+                pkg.recommended 
+                  ? "bg-brand-navy text-white shadow-2xl scale-105 z-10 overflow-hidden" 
+                  : "bg-white text-brand-navy shadow-xl border border-gray-100"
+              )}
+            >
+              {pkg.recommended && (
+                <div className="absolute top-0 right-0 bg-brand-gold text-brand-navy px-8 py-3 rounded-bl-[2rem] font-bold text-[10px] uppercase tracking-widest">
+                  Premier Choice
+                </div>
+              )}
+              <h3 className="text-2xl font-serif font-bold mb-6 text-brand-gold uppercase tracking-widest">{pkg.name}</h3>
+              <div className="flex items-end gap-2 mb-10">
+                <span className="text-5xl font-serif font-black">{pkg.price}</span>
+              </div>
+              <div className="space-y-5 mb-12 flex-1 w-full border-t border-brand-gold/10 pt-10">
+                {pkg.features.map((f, j) => (
+                  <div key={j} className="flex items-center justify-center gap-3 text-sm font-medium opacity-80">
+                    <CircleCheck className="w-4 h-4 text-brand-gold shrink-0" /> {f}
+                  </div>
+                ))}
+              </div>
+              <button 
+                onClick={() => openBooking(`${data.title} - ${pkg.name}`)}
+                className={cn(
+                  "px-10 py-5 rounded-full font-bold text-[11px] uppercase tracking-[0.3em] transition-all w-full shadow-xl",
+                  pkg.recommended ? "bg-white text-brand-navy hover:bg-brand-gold" : "bg-brand-navy text-white hover:bg-brand-red"
+                )}
+              >
+                Request Proposal
+              </button>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
       {/* FAQs */}
-      <section className="py-24 px-4 md:px-8 bg-white">
+      <section className="py-32 px-4 md:px-8 bg-brand-cream/20">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16 space-y-4">
-            <HelpCircle className="w-12 h-12 text-brand-gold mx-auto" />
-            <h2 className="text-4xl font-serif text-brand-navy">Service FAQs</h2>
+          <div className="text-center mb-24 space-y-4">
+            <CircleHelp className="w-16 h-16 text-brand-gold mx-auto opacity-30" />
+            <h2 className="text-4xl md:text-5xl font-serif text-brand-navy font-bold">Frequently Asked</h2>
           </div>
-          <div className="space-y-4">
+          <div className="space-y-6">
             {data.faqs.map((faq, i) => (
-              <details key={i} className="group bg-brand-cream rounded-2xl p-6 cursor-pointer border border-transparent hover:border-brand-gold/20 transition-all">
-                <summary className="flex items-center justify-between list-none font-bold text-brand-navy">
+              <details key={i} className="group bg-white rounded-[2rem] p-8 cursor-pointer shadow-[0_10px_30px_rgba(0,0,0,0.02)] border border-gray-100">
+                <summary className="flex items-center justify-between list-none font-bold text-brand-navy text-lg pr-4">
                   {faq.question}
-                  <ChevronRight className="w-5 h-5 text-brand-gold transition-transform group-open:rotate-90" />
+                  <div className="w-8 h-8 rounded-full border border-gray-200 flex items-center justify-center transition-transform group-open:rotate-180 group-open:bg-brand-navy group-open:text-white">
+                    <ChevronRight className="w-4 h-4 rotate-90" />
+                  </div>
                 </summary>
-                <p className="mt-4 text-gray-500 text-sm leading-relaxed border-t border-gray-200/50 pt-4">
+                <div className="mt-8 text-gray-500 text-sm leading-relaxed border-t border-gray-100 pt-8 animate-in transition-all">
                   {faq.answer}
-                </p>
+                </div>
               </details>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Reviews Specific to Service */}
-      <section className="py-24 bg-brand-navy/5 px-4 md:px-8">
-         <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl font-serif text-brand-navy text-center mb-16 italic">What our clients say about this service</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {data.reviews.map((rev, i) => (
-                <div key={i} className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 flex flex-col items-center text-center">
-                  <div className="flex gap-1 mb-6">
-                    {[1,2,3,4,5].map(s => <Star key={s} className="w-4 h-4 fill-brand-gold text-brand-gold" />)}
-                  </div>
-                  <Quote className="w-8 h-8 text-brand-gold opacity-20 mb-4" />
-                  <p className="text-gray-600 mb-8 italic">"{rev.text}"</p>
-                  <div>
-                    <div className="font-bold text-brand-navy">{rev.name}</div>
-                    <div className="text-[10px] text-brand-gold font-bold uppercase tracking-widest">{rev.location}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-         </div>
-      </section>
+      {/* Proof Section */}
+      <VerifiedProjects />
 
-      {/* CTA */}
-      <section className="py-24 px-4 md:px-8 bg-white">
-        <div className="max-w-6xl mx-auto bg-brand-red rounded-[50px] p-12 text-center text-white space-y-8 relative overflow-hidden">
-          <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
-          <div className="relative z-10 max-w-2xl mx-auto space-y-6">
-            <h2 className="text-4xl md:text-5xl font-serif">Ready to book this service?</h2>
-            <p className="text-lg opacity-90">Talk to our experts today for a free on-site consultation and instant personalized quote.</p>
-            <div className="flex flex-wrap justify-center gap-4 pt-4">
+      {/* Final CTA */}
+      <section className="py-24 px-4">
+        <div className="max-w-6xl mx-auto bg-brand-navy rounded-[4rem] p-12 md:p-24 text-center text-white relative overflow-hidden shadow-2xl">
+          <div className="absolute inset-0 bg-brand-gold/5 blur-3xl rounded-full scale-150"></div>
+          <div className="relative z-10 max-w-3xl mx-auto space-y-10">
+            <h2 className="text-4xl md:text-7xl font-serif font-bold leading-tight">Elite Support for Premier Properties</h2>
+            <p className="text-xl text-white/60">Professional technical rescue at your doorstep. We service all major areas in Dubai.</p>
+            <div className="flex flex-wrap justify-center gap-6 pt-6">
               <button 
                 onClick={callNow}
-                className="bg-white text-brand-red px-10 py-5 rounded-full font-bold text-xl hover:bg-brand-navy hover:text-white transition-all shadow-xl flex items-center gap-3"
+                className="bg-brand-red text-white px-12 py-5 rounded-full font-bold text-lg hover:bg-white hover:text-brand-navy transition-all shadow-2xl flex items-center gap-4 uppercase tracking-widest"
               >
-                <Phone className="w-6 h-6" /> CALL NOW
-              </button>
-              <button 
-                onClick={() => askExpert(data.title)}
-                className="bg-brand-green text-white px-10 py-5 rounded-full font-bold text-xl hover:scale-105 transition-all shadow-xl flex items-center gap-3"
-              >
-                <MessageCircle className="w-6 h-6" /> WHATSAPP
+                <Phone className="w-6 h-6" /> Call Direct
               </button>
             </div>
           </div>
