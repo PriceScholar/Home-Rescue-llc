@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { TopBar, Navbar, Footer } from './components/Navigation';
 import { useBooking } from './components/BookingModal';
+import VerifiedProjects from './components/VerifiedProjects';
 import { 
   Hotel, 
   MapPin, 
@@ -58,9 +59,9 @@ const projects: Project[] = [
     name: 'M Gallery Hotel',
     category: 'hotels',
     type: 'LUXURY HOTEL',
-    area: 'Dubai',
-    services: ['Renovation', 'Paint', 'Tile Work'],
-    image: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&h=600&fit=crop'
+    area: 'Palm Jumeirah',
+    services: ['Grouting', 'Tile Work', 'Removal of Grout'],
+    image: '/work-site.jpg'
   },
   {
     id: 'palm',
@@ -277,6 +278,9 @@ const Portfolio = () => {
               ))}
             </AnimatePresence>
           </div>
+
+          {/* Detailed Proof Section */}
+          <VerifiedProjects />
 
           {/* Stats Bar */}
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-24">

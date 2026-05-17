@@ -29,9 +29,9 @@ const ServiceLocations: React.FC = () => {
       id: 3,
       name: 'M Gallery Hotel',
       type: 'LUXURY HOTEL',
-      area: 'Dubai',
+      area: 'Palm Jumeirah',
       icon: <Hotel className="w-6 h-6" />,
-      image: 'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=600&h=400&fit=crop',
+      image: '/work-site.jpg',
       delay: 0.3
     },
     {

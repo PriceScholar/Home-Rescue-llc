@@ -2,7 +2,8 @@ import React from 'react';
 import {TopBar, Navbar, Footer} from './components/Navigation';
 import {motion} from 'motion/react';
 import {CheckCircle2, Clock, MapPin, Award, Users, Star, ChevronLeft, ShieldCheck} from 'lucide-react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import VerifiedProjects from './components/VerifiedProjects';
 
 const About = () => {
   return (
@@ -61,6 +62,9 @@ const About = () => {
            </div>
         </div>
       </section>
+
+      {/* Verified Projects Section for Trust */}
+      <VerifiedProjects />
 
       <section className="py-24 bg-brand-navy text-white px-4">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">

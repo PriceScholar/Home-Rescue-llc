@@ -27,6 +27,7 @@ import {cn} from './lib/utils';
 import { serviceCategories } from './data/servicesData';
 import TrustSection from './components/TrustSection';
 import ServiceLocations from './components/ServiceLocations';
+import VerifiedProjects from './components/VerifiedProjects';
 
 const Home = () => {
   const {t, isRTL} = useLanguage();
@@ -174,6 +175,9 @@ const Home = () => {
 
       {/* Service Locations Showcase */}
       <ServiceLocations />
+
+      {/* Verified Corporate Projects */}
+      <VerifiedProjects />
 
       {/* Pricing Packages - EXACT Layout from Image 3 */}
       <section className="py-24 bg-brand-cream px-8">
