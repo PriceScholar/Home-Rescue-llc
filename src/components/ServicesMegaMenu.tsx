@@ -33,7 +33,7 @@ export const serviceCategories: ServiceCategory[] = [
     color: '#C9153B',
     activeColor: '#EEF6FF',
     description: 'Professional painting solutions for homes and businesses. From surface preparation to the perfect finish, we deliver quality, durability and beauty that lasts.',
-    image: 'https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=800&q=80',
+    image: '/images/services/service-paint.jpg',
     promoTitle: 'Beautiful Finishes For Every Space',
     subs: [
       { name: 'Wall Painting', id: 'wall-painting', icon: <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center"><PaintRoller className="w-4 h-4 text-blue-600" /></div>, desc: 'Smooth and flawless wall finishes.' },
@@ -52,7 +52,7 @@ export const serviceCategories: ServiceCategory[] = [
     color: '#2563eb',
     activeColor: '#EEF6FF',
     description: 'Keep your spaces cool and comfortable with our professional AC maintenance and installation services. Fast, reliable and energy-efficient solutions tailored for your needs.',
-    image: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80',
+    image: '/images/services/service-ac.jpg',
     promoTitle: 'Reliable Cooling All Year Round',
     subs: [
       { name: 'Emergency AC Repair', id: 'ac-repair', icon: <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center"><Wrench className="w-4 h-4 text-blue-600" /></div>, desc: 'Quick response for all AC issues.' },
@@ -71,7 +71,7 @@ export const serviceCategories: ServiceCategory[] = [
     color: '#C9153B',
     activeColor: '#EEF6FF',
     description: 'From minor repairs to complete installations, our expert plumbers deliver reliable, high-quality solutions to keep your water systems running smoothly and your home leak-free.',
-    image: 'https://images.unsplash.com/photo-1585999928141-b27c4f7c0fc1?w=800&q=80',
+    image: '/images/services/service-plumbing.jpg',
     promoTitle: 'Fast Plumbing Support When You Need It',
     subs: [
       { name: 'Sanitary Services', id: 'sanitary', icon: <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center"><Droplets className="w-4 h-4 text-blue-600" /></div>, desc: 'Complete sanitary fitting and repair services.' },
@@ -90,7 +90,7 @@ export const serviceCategories: ServiceCategory[] = [
     color: '#D9A520',
     activeColor: '#EEF6FF',
     description: 'Expert electrical works and safe installations for homes and businesses. From wiring and lighting to smart solutions, we deliver reliable, efficient and code-compliant services you can trust.',
-    image: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80',
+    image: '/images/services/service-electrical.jpg',
     promoTitle: 'Safe Power Solutions For Every Property',
     subs: [
       { name: 'Electrical Contracting', id: 'electrical-contracting', icon: <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center"><Bolt className="w-4 h-4 text-blue-600" /></div>, desc: 'Complete electrical contracting for new and existing projects.' },
@@ -109,7 +109,7 @@ export const serviceCategories: ServiceCategory[] = [
     color: '#071E3D',
     activeColor: '#EEF6FF',
     description: 'Expert tile, marble and woodwork solutions that bring elegance, strength and lasting value to your spaces — inside and out.',
-    image: 'https://images.unsplash.com/photo-1615873968403-89e068629265?w=800&q=80',
+    image: '/images/services/service-tile.jpg',
     promoTitle: 'Premium Surfaces Built To Last',
     subs: [
       { name: 'Marble Installation', id: 'marble', icon: <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center"><Grid3X3 className="w-4 h-4 text-blue-600" /></div>, desc: 'Premium marble fitting with flawless finishing.' },
@@ -128,7 +128,7 @@ export const serviceCategories: ServiceCategory[] = [
     color: '#10b981',
     activeColor: '#EEF6FF',
     description: 'Quick installation and repair support for everyday tasks around your home or office. Professional, reliable and done right the first time.',
-    image: 'https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=800&q=80',
+    image: '/images/services/service-handyman.jpg',
     promoTitle: 'Reliable Help For Everyday Jobs',
     subs: [
       { name: 'Furniture Install', id: 'furniture-install', icon: <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center"><Wrench className="w-4 h-4 text-blue-600" /></div>, desc: 'Assemble and install all types of furniture.' },
@@ -147,7 +147,7 @@ export const serviceCategories: ServiceCategory[] = [
     color: '#a855f7',
     activeColor: '#EEF6FF',
     description: 'Enhance the beauty and functionality of your space with our expert lighting solutions. From modern designs to energy-efficient installations, we create the perfect ambiance for every need.',
-    image: 'https://images.unsplash.com/photo-1565636192335-c4a04eb0f12d?w=800&q=80',
+    image: '/images/services/service-lighting.jpg',
     promoTitle: 'Bright Ideas For Every Interior',
     subs: [
       { name: 'LED Light Installation', id: 'led-lighting', icon: <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center"><Bolt className="w-4 h-4 text-blue-600" /></div>, desc: 'Energy-efficient LED lighting setup.' },
@@ -166,7 +166,7 @@ export const serviceCategories: ServiceCategory[] = [
     color: '#f97316',
     activeColor: '#EEF6FF',
     description: 'We specialize in gypsum, false ceiling and ceiling finishing work that enhances the look and feel of your interiors with precision, creativity and long-lasting quality.',
-    image: 'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0?w=800&q=80',
+    image: '/images/services/service-ceiling.jpg',
     promoTitle: 'Elegant Ceiling Designs With Fine Finishing',
     subs: [
       { name: 'Gypsum Ceiling', id: 'gypsum-ceiling', icon: <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center"><Grid3X3 className="w-4 h-4 text-blue-600" /></div>, desc: 'Smooth and elegant gypsum ceilings for a modern look.' },
@@ -185,7 +185,7 @@ export const serviceCategories: ServiceCategory[] = [
     color: '#14b8a6',
     activeColor: '#EEF6FF',
     description: 'Routine upkeep and minor repair services to keep your home safe, comfortable and in perfect shape. Ideal for villas, townhouses and apartments.',
-    image: 'https://images.unsplash.com/photo-1549517045-bc93ec0042f5?w=800&q=80',
+    image: '/images/services/service-maintenance.jpg',
     promoTitle: 'Complete Care For Your Home',
     subs: [
       { name: 'Preventive Maintenance', id: 'preventive-maintenance', icon: <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center"><Calendar className="w-4 h-4 text-blue-600" /></div>, desc: 'Regular inspections and upkeep to prevent future issues.' },
@@ -214,12 +214,7 @@ export const ServicesMegaMenu = ({ onClose, callNow, openConsultation }: Service
       initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 10 }}
-      className="fixed left-1/2 -translate-x-1/2 w-[1400px] max-w-[95vw] bg-white rounded-[24px] shadow-[0_30px_60px_rgba(0,0,0,0.2)] border border-gray-100 overflow-hidden mt-4 transform-gpu antialiased"
-      style={{ 
-        backfaceVisibility: 'hidden',
-        WebkitFontSmoothing: 'antialiased',
-        textRendering: 'optimizeLegibility'
-      }}
+      className="fixed left-1/2 -translate-x-1/2 w-[1400px] max-w-[95vw] bg-white rounded-[24px] shadow-[0_30px_60px_rgba(0,0,0,0.2)] border border-gray-100 overflow-hidden mt-4"
     >
       <div className="flex h-[620px] will-change-transform">
         {/* Left Sidebar Category Menu */}
@@ -297,7 +292,7 @@ export const ServicesMegaMenu = ({ onClose, callNow, openConsultation }: Service
         </div>
 
         {/* Right Promotional CTA Card */}
-        <div className="w-[420px] p-8 bg-brand-navy relative overflow-hidden flex flex-col">
+        <div className="w-[420px] p-8 bg-brand-navy relative overflow-hidden flex flex-col items-center justify-center">
           {/* Subtle Dotted Pattern */}
           <div className="absolute top-0 right-0 w-32 h-32 opacity-10 pointer-events-none" 
             style={{ 
@@ -306,52 +301,13 @@ export const ServicesMegaMenu = ({ onClose, callNow, openConsultation }: Service
             }} 
           />
           
-          <div className="relative z-10 flex flex-col h-full translate-z-0">
-            <div className="aspect-[16/10] rounded-2xl overflow-hidden mb-8 border-2 border-white/10 group shadow-2xl shrink-0">
+          <div className="relative z-10 w-full h-full flex items-center justify-center">
+            <div className="w-full h-full rounded-2xl overflow-hidden border border-white/5 group shadow-2xl bg-white/2">
               <img 
                 src={activeCategory.image} 
                 alt={activeCategory.name} 
-                className="w-full h-full object-cover transition-transform duration-1000" 
+                className="w-full h-full object-contain image-render-auto" 
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/90 via-brand-navy/20 to-transparent" />
-            </div>
-            
-            <div className="min-h-[90px] mb-6">
-              <h3 className="text-2xl font-serif font-bold text-white mb-3 leading-tight tracking-tight">
-                {activeCategory.promoTitle}
-              </h3>
-              <div className="w-16 h-1 bg-[#D9A520]" />
-            </div>
-            
-            <div className="flex items-center gap-4 mb-8 bg-white/5 p-4 rounded-2xl border border-white/10 shrink-0">
-              <div className="w-10 h-10 rounded-full bg-[#D9A520]/20 flex items-center justify-center text-[#D9A520]">
-                <Headphones className="w-5 h-5" />
-              </div>
-              <div className="flex-1">
-                <p className="text-white font-bold text-xs uppercase tracking-wider">Help Available 24/7</p>
-                <p className="text-gray-400 text-[11px] font-medium">Free estimates and same-day support</p>
-              </div>
-            </div>
-
-            <div className="space-y-4 mt-auto">
-              <button 
-                onClick={() => {
-                  onClose();
-                  callNow();
-                }}
-                className="w-full bg-[#F3B51B] text-brand-navy font-black py-4 rounded-xl hover:bg-white transition-all flex items-center justify-center gap-3 shadow-[0_10px_20px_rgba(243,181,27,0.2)]"
-              >
-                <Calendar className="w-5 h-5" /> BOOK SERVICE NOW
-              </button>
-              <button 
-                onClick={() => {
-                  onClose();
-                  openConsultation();
-                }}
-                className="w-full border-2 border-[#D9A520] text-[#D9A520] font-bold py-4 rounded-xl hover:bg-white/5 transition-all flex items-center justify-center gap-3"
-              >
-                <Video className="w-5 h-5" /> FREE CONSULTATION
-              </button>
             </div>
           </div>
         </div>
