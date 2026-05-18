@@ -52,7 +52,7 @@ export const Navbar = () => {
     {name: t('nav_about'), path: '/about'},
     {name: 'Credentials', path: '/credentials'},
     {name: t('nav_portfolio'), path: '/portfolio'},
-    {name: 'Blog', path: '#'},
+    {name: 'Blog', path: '/blog'},
     {name: t('nav_contact'), path: '/contact'},
   ];
 
@@ -328,7 +328,7 @@ export const Footer = () => {
                 { name: 'Our Portfolio', path: '/portfolio' },
                 { name: 'Credentials', path: '/credentials' },
                 { name: 'Contact Us', path: '/contact' },
-                { name: 'FAQs', path: '#' },
+                { name: 'Our Blog', path: '/blog' },
                 { name: 'Privacy Policy', path: '#' }
               ].map((link) => (
                 <li key={link.name} className="group">

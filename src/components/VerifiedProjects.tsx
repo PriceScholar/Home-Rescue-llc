@@ -53,17 +53,17 @@ const VerifiedProjects = () => {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-16">
           {projects.map((proj, i) => (
             <motion.div
               key={proj.id}
               initial={{ opacity: 0, x: i % 2 === 0 ? -30 : 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               whileHover={{ y: -10 }}
-              className="bg-brand-cream/30 rounded-[40px] border-2 border-brand-gold/10 overflow-hidden shadow-xl flex flex-col"
+              className="bg-brand-cream/30 rounded-3xl md:rounded-[40px] border-2 border-brand-gold/10 overflow-hidden shadow-xl flex flex-col"
             >
               <div 
-                className="relative h-[450px] overflow-hidden group cursor-zoom-in" 
+                className="relative h-[300px] md:h-[450px] overflow-hidden group cursor-zoom-in" 
                 onClick={() => setSelectedImg(proj.image)}
               >
                 <img 

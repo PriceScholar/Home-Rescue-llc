@@ -191,7 +191,7 @@ const Home = () => {
 
 
       <section className="py-16 md:py-24 px-6 md:px-8 bg-white relative overflow-hidden">
-        <div className="max-w-7xl mx-auto relative z-10 pt-44 md:pt-0">
+        <div className="max-w-7xl mx-auto relative z-10 pt-56 md:pt-0">
           <div className="text-center space-y-3 md:space-y-4 mb-12 md:mb-16">
             <motion.div 
               initial={{opacity: 0, scale: 0.9}}
@@ -299,7 +299,12 @@ const Home = () => {
                 ].map((work, i) => (
                   <div key={i} className="space-y-4">
                     <div className="aspect-[4/5.5] rounded-[24px] md:rounded-[32px] overflow-hidden relative shadow-lg group">
-                      <img src={work.img} alt={work.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                      <img 
+                        src={work.img} 
+                        alt={work.title} 
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
+                        onError={(e) => { (e.target as HTMLImageElement).src = `https://placehold.co/400x550/08264B/D9A520?text=${encodeURIComponent(work.title)}` }}
+                      />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                       <div className="absolute bottom-2 left-2 right-2 md:bottom-3 md:left-3 md:right-3 flex justify-between gap-1">
                         <span className="bg-white/90 backdrop-blur-sm text-brand-navy text-[7px] md:text-[9px] font-black uppercase px-2 py-0.5 md:py-1 rounded-lg">Before</span>

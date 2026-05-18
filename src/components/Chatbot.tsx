@@ -221,7 +221,7 @@ const Chatbot: React.FC = () => {
         onClick={() => setIsOpen(!isOpen)}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        className={`w-16 h-16 rounded-full flex items-center justify-center text-2xl shadow-2xl transition-all relative ${
+        className={`w-14 h-14 md:w-16 md:h-16 rounded-full flex items-center justify-center text-xl md:text-2xl shadow-2xl transition-all relative ${
           isOpen ? 'bg-brand-red text-white' : 'bg-brand-navy text-white'
         }`}
       >
@@ -230,7 +230,7 @@ const Chatbot: React.FC = () => {
         ) : (
           <>
             <i className="fa-solid fa-message"></i>
-            <span className="absolute -top-1 -right-1 w-5 h-5 bg-brand-red text-white text-[10px] font-bold rounded-full flex items-center justify-center border-2 border-white animate-bounce">
+            <span className="absolute -top-0.5 -right-0.5 w-4 h-4 md:w-5 md:h-5 bg-brand-red text-white text-[8px] md:text-[10px] font-bold rounded-full flex items-center justify-center border-2 border-white animate-bounce">
               1
             </span>
           </>
