@@ -1,4 +1,4 @@
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import {BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
 import {LanguageProvider} from './context/LanguageContext';
 import {BookingProvider} from './components/BookingModal';
 import Home from './Home';
@@ -20,6 +20,7 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/services" element={<Services />} /> 
+            <Route path="/service" element={<Navigate to="/services" replace />} />
             <Route path="/services/:serviceId" element={<ServiceDetail />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
@@ -27,6 +28,8 @@ export default function App() {
             <Route path="/credentials" element={<Credentials />} />
             <Route path="/portfolio" element={<Portfolio />} />
             <Route path="/blog" element={<Home />} />
+            {/* Catch-all route to redirect back to home if a link is broken */}
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
           <FloatingWhatsApp />
           <Chatbot />
