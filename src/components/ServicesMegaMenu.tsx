@@ -116,15 +116,8 @@ export const ServicesMegaMenu = ({ onClose, callNow, openConsultation }: Service
               <img 
                 src={activeCategory.image} 
                 alt={activeCategory.name} 
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105" 
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-navy via-transparent to-transparent opacity-80"></div>
-              <div className="absolute bottom-8 left-8 right-8 text-white">
-                <h3 className="text-2xl font-serif font-bold mb-2">{activeCategory.promoTitle}</h3>
-                <Link to="/services" className="text-brand-gold font-bold text-sm flex items-center gap-2 hover:gap-3 justify-center transition-all">
-                  EXPLORE ALL SERVICES <ArrowRight className="w-4 h-4" />
-                </Link>
-              </div>
             </div>
           </div>
         </div>

@@ -1314,24 +1314,6 @@ export const servicesData: Record<string, ServiceData> = {
     ],
     process: [], packages: [], faqs: [], reviews: []
   },
-  'ac-maintenance': {
-    id: 'ac-maintenance',
-    title: 'AC Maintenance',
-    tagline: 'COOLING SPECIALISTS',
-    description: 'Complete AC solutions including repair, new installation, and duct cleaning to ensure maximum efficiency.',
-    image: '/images/services/service-ac.jpg',
-    estimateDuration: 'Varies',
-    material: 'OEM Spares',
-    technician: 'HVAC Experts',
-    warranty: '90-Day Service Warranty',
-    subServices: [
-       {name: 'Emergency Repair', icon: 'fa-solid fa-screwdriver-wrench', desc: '24/7 breakdown fix.'},
-       {name: 'Installation', icon: 'fa-solid fa-fan', desc: 'New unit setup.'},
-       {name: 'Duct Cleaning', icon: 'fa-solid fa-wind', desc: 'Air quality improvement.'},
-       {name: 'Contractual', icon: 'fa-solid fa-file-contract', desc: 'Annual maintenance.'}
-    ],
-    process: [], packages: [], faqs: [], reviews: []
-  },
   'plumbing-services': {
     id: 'plumbing-services',
     title: 'Plumbing Services',

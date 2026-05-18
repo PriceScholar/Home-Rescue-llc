@@ -15,8 +15,8 @@ const Services = () => {
     {id: 'tile-wooden', name: 'Tile & Wooden', icon: Grid2x2, image: '/images/services/service-tile.jpg', desc: 'Premium tile fixing and marble polishing to give your floor a royal look.', subs: ['Marble Installation', 'Granite Work', 'Porcelain Tiles', 'Interlock Stones']},
     {id: 'handyman-more', name: 'Handyman & More', icon: Hammer, image: '/images/services/service-handyman.jpg', desc: 'Professional handyman for all your home improvements and quick fixes.', subs: ['TV Installation', 'Curtain Hanging', 'Furniture Assembly', 'Door Repair']},
     {id: 'ceiling-work', name: 'Ceiling & Gypsum', icon: Layout, image: '/images/services/service-ceiling.jpg', desc: 'Modern gypsum and false ceiling designs for elegant interiors.', subs: ['Gypsum Ceiling', 'False Ceiling', 'POP Design', 'Cove Lighting']},
-    {id: 'lighting-work', name: 'Lighting Work', icon: Zap, image: '/images/services/subs/lighting.jpg', desc: 'Specialized lighting solutions, chandeliers installation, and smart home lighting setup.', subs: ['LED Installation', 'Chandelier Hanging', 'Outdoor Lights', 'Smart Setup']},
-    {id: 'home-general-maintenance', name: 'Home General Maintenance', icon: PenTool, image: 'https://images.unsplash.com/photo-1581850518316-ab508a5065a7?q=80&w=2070&auto=format&fit=crop', desc: 'Regular preventive maintenance and small repairs to keep your property in top condition.', subs: ['Preventive Checks', 'Minor Plumbing', 'Wall Repair', 'Property Upkeep']}
+    {id: 'lighting-work', name: 'Lighting Work', icon: Zap, image: '/images/services/service-lighting.jpg', desc: 'Specialized lighting solutions, chandeliers installation, and smart home lighting setup.', subs: ['LED Installation', 'Chandelier Hanging', 'Outdoor Lights', 'Smart Setup']},
+    {id: 'home-general-maintenance', name: 'Home General Maintenance', icon: PenTool, image: '/images/services/service-maintenance.jpg', desc: 'Regular preventive maintenance and small repairs to keep your property in top condition.', subs: ['Preventive Checks', 'Minor Plumbing', 'Wall Repair', 'Property Upkeep']}
   ];
 
   return (
@@ -45,7 +45,7 @@ const Services = () => {
               className="bg-white rounded-[30px] overflow-hidden shadow-sm border border-gray-100 flex flex-col lg:flex-row min-h-[400px] hover:shadow-2xl transition-all"
             >
               <div className="lg:w-2/5 relative h-64 lg:h-auto">
-                <img src={cat.image} alt={cat.name} className="w-full h-full object-cover" />
+                <img src={cat.image} alt={cat.name} className="w-full h-full object-contain" />
                 <div className="absolute inset-0 bg-brand-navy/20"></div>
               </div>
               <div className="lg:w-3/5 p-8 md:p-12 flex flex-col justify-center">
