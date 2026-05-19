@@ -11,7 +11,7 @@ const VerifiedProjects = () => {
       location: "Dubai Motor City",
       project: "Hotel bathroom renovation project",
       services: ["Guest Room Washroom", "Grouting", "Washbasin", "Shower Area"],
-      image: "/park-inn-po.jpg",
+      image: "/park-inn-po-1.jpg",
       id: "park-inn"
     },
     {
@@ -19,7 +19,7 @@ const VerifiedProjects = () => {
       location: "Palm Jumeirah",
       project: "Grouting work project",
       services: ["Tile Grouting", "Removal & New Grout", "Luxury Refurbishment"],
-      image: "/m-gallery-po.jpg",
+      image: "/m-gallery-po-1.jpg",
       id: "m-gallery"
     }
   ];

@@ -329,8 +329,8 @@ const Home = () => {
               
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 w-full mb-10 md:mb-12 flex-1">
                 {[
-                  { title: 'Radisson Blu', sub: 'Dubai Deira', img: '/park-inn-po.jpg' },
-                  { title: 'M Gallery', sub: 'Palm Jumeirah', img: '/m-gallery-po.jpg' },
+                  { title: 'Radisson Blu', sub: 'Dubai Deira', img: '/park-inn-po-1.jpg' },
+                  { title: 'M Gallery', sub: 'Palm Jumeirah', img: '/m-gallery-po-1.jpg' },
                   { title: 'Emaar Villas', sub: 'Dubai Hills', img: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=600&fit=crop' },
                   { title: 'Nakheel Mall', sub: 'Palm Jumeirah', img: 'https://images.unsplash.com/photo-1518684079-3c830dcef090?q=80&w=600&fit=crop' }
                 ].map((proj, i) => (
