@@ -21,6 +21,30 @@ const VerifiedProjects = () => {
       services: ["Tile Grouting", "Removal & New Grout", "Luxury Refurbishment"],
       image: "/m-gallery-po-1.jpg",
       id: "m-gallery"
+    },
+    {
+      hotel: "RAMADA by WYNDHAM Downtown Dubai",
+      location: "Downtown Dubai",
+      project: "Kitchen AC repairing project",
+      services: ["AC Repairing", "Kitchen AC", "Hotel Maintenance"],
+      image: "/ramada-ac-repair-po.jpg",
+      id: "ramada-kitchen-ac"
+    },
+    {
+      hotel: "RAMADA by WYNDHAM Downtown Dubai",
+      location: "Downtown Dubai",
+      project: "Floor gutter repair and tile damage replacement project",
+      services: ["Floor Gutter Repair", "Tile Damage Replacement", "Hotel Maintenance"],
+      image: "/ramada-gutter-tile-po.jpg",
+      id: "ramada-gutter-tile"
+    },
+    {
+      hotel: "RAMADA by WYNDHAM Downtown Dubai",
+      location: "Downtown Dubai",
+      project: "Cafeteria AC repairing project",
+      services: ["AC Repairing", "Cafeteria AC", "Hotel Maintenance"],
+      image: "/ramada-cafeteria-ac-po.jpg",
+      id: "ramada-cafeteria-ac"
     }
   ];
 
@@ -53,7 +77,7 @@ const VerifiedProjects = () => {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 mb-16">
           {projects.map((proj, i) => (
             <motion.div
               key={proj.id}
