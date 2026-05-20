@@ -231,6 +231,11 @@ const Portfolio = () => {
                       alt={project.name}
                       className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
                       loading="lazy"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.onerror = null;
+                        target.src = `https://placehold.co/400x550/08264B/D9A520?text=${encodeURIComponent(project.name)}`;
+                      }}
                     />
                     <div className="absolute inset-0 bg-brand-navy/60 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center backdrop-blur-sm">
                        <button 

@@ -177,6 +177,8 @@ const ServiceLocations: React.FC = () => {
                     target.onerror = null;
                     if (loc.name === 'Internet City') {
                       target.src = 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&h=600&fit=crop';
+                    } else if (loc.name === 'M Gallery Hotel') {
+                      target.src = 'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop';
                     } else if (loc.name === 'Palm Jumeirah') {
                       target.src = 'https://images.unsplash.com/photo-1546412414-e1885259563a?w=800&h=600&fit=crop';
                     } else {
