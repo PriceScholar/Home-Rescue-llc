@@ -4,6 +4,7 @@ import {LanguageProvider} from './context/LanguageContext';
 import {BookingProvider} from './components/BookingModal';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 import Chatbot from './components/Chatbot';
+import { StickyMobileBar } from './components/StickyMobileBar';
 
 // Lazy loading major pages
 const Home = lazy(() => import('./Home'));
@@ -44,6 +45,7 @@ export default function App() {
           </Suspense>
           <FloatingWhatsApp />
           <Chatbot />
+          <StickyMobileBar />
         </Router>
       </BookingProvider>
     </LanguageProvider>

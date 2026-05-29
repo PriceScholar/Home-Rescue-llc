@@ -25,9 +25,17 @@ import VerifiedProjects from './components/VerifiedProjects';
 import { serviceCategories } from './data/servicesData';
 
 
+// EDIT: replace with real customer reviews
+const testimonials = [
+  {name: 'Sarah Johnson', loc: 'Palm Jumeirah, Dubai', text: 'Home Rescue completely transformed my villa. The wall painting was flawless and the technicians were extremely professional.'},
+  {name: 'Ahmed Al Mansoori', loc: 'Khalifa City, Abu Dhabi', text: 'Had a major AC leakage in the middle of the night. Their emergency team arrived within 45 minutes. Superb service!'},
+  {name: 'Michael Brown', loc: 'Al Majaz, Sharjah', text: 'High quality tile works for my bathroom. They were very clean and finished on time. Highly recommended.'}
+];
+
 const Home = () => {
   const {t} = useLanguage();
-  const { openBooking, callNow, askExpert, openConsultation } = useBooking();
+  const { openBooking, callNow, askExpert, openConsultation, openLicense } = useBooking();
+  const [openFaq, setOpenFaq] = React.useState<number | null>(null);
 
   const stats = [
     {label: 'Projects Completed', value: '1000+', icon: <Building2 className="w-6 h-6" />},
@@ -85,15 +93,6 @@ const Home = () => {
               </h1>
             </div>
 
-            <div className="flex flex-wrap justify-center lg:justify-start gap-x-4 md:gap-x-5 gap-y-2 md:gap-y-3 text-[9px] md:text-[11px] font-black text-white uppercase tracking-widest opacity-80">
-              <span className="hover:text-brand-gold transition-colors cursor-default">Painting</span> <span className="text-brand-gold opacity-30">|</span>
-              <span className="hover:text-brand-gold transition-colors cursor-default">AC</span> <span className="text-brand-gold opacity-30">|</span>
-              <span className="hover:text-brand-gold transition-colors cursor-default">Plumbing</span> <span className="text-brand-gold opacity-30">|</span>
-              <span className="hover:text-brand-gold transition-colors cursor-default">Electrical</span> <span className="text-brand-gold opacity-30">|</span>
-              <span className="hover:text-brand-gold transition-colors cursor-default">Ceiling</span> <span className="text-brand-gold opacity-30">|</span>
-              <span className="hover:text-brand-gold transition-colors cursor-default">Handyman & More</span>
-            </div>
-
             <p className="text-sm md:text-lg text-gray-300 max-w-lg mx-auto lg:mx-0 leading-relaxed font-bold opacity-70">
               Trusted by Villas, Homes, Hotels & Commercial Properties Across Dubai and All Emirates.
             </p>
@@ -112,6 +111,18 @@ const Home = () => {
               >
                 <MessageCircle className="w-5 h-5 text-brand-gold" /> CHAT ON WHATSAPP
               </button>
+            </div>
+
+            {/* Emergency & Reassurance Badges */}
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-1 text-white text-[10px] md:text-xs uppercase tracking-wider font-bold select-none">
+              <div className="bg-[#C9153B] text-white px-4 py-2 rounded-full border border-red-500/20 flex items-center gap-2 animate-pulse shadow-md">
+                <span className="w-2 h-2 rounded-full bg-white block"></span>
+                <span>24/7 Emergency · Technician at your door in 1–2 hours</span>
+              </div>
+              <div className="text-brand-gold flex items-center gap-2 px-3 py-2 bg-white/5 rounded-full border border-white/5">
+                <ShieldCheck className="w-4 h-4 text-brand-gold" />
+                <span>Free inspection · No hidden charges</span>
+              </div>
             </div>
 
             <div className="flex flex-wrap justify-center lg:justify-start gap-x-6 md:gap-x-10 gap-y-4 md:gap-y-6 pt-8 md:pt-10 border-t border-white/10">
@@ -189,9 +200,80 @@ const Home = () => {
         </div>
       </section>
 
+      {/* How It Works Section */}
+      <section className="py-16 md:py-24 px-6 md:px-8 bg-[#faf9f6]/30 border-b border-gray-50 relative">
+        <div className="max-w-7xl mx-auto pt-56 lg:pt-40 relative z-10">
+          <div className="text-center space-y-3 md:space-y-4 mb-12 md:mb-16">
+            <span className="text-brand-gold font-black tracking-[0.4em] uppercase text-[8px] md:text-[9px] block">3 SIMPLE STEPS</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl text-brand-navy font-serif font-black uppercase tracking-tight">
+              How It <span className="text-brand-gold italic">Works</span>
+            </h2>
+            <div className="w-16 h-1 bg-brand-gold mx-auto"></div>
+          </div>
 
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+            {/* Step 1 */}
+            <div className="bg-white rounded-[32px] p-8 md:p-10 border border-gray-100 shadow-sm flex flex-col items-center text-center relative group hover:shadow-xl transition-all duration-300">
+              <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-brand-gold text-brand-navy font-black flex items-center justify-center text-lg border-4 border-white shadow-md select-none">
+                1
+              </div>
+              <div className="w-16 h-16 rounded-2xl bg-brand-gold/5 flex items-center justify-center text-brand-gold mb-6 group-hover:bg-brand-gold group-hover:text-brand-navy transition-all duration-300">
+                <MessageCircle className="w-8 h-8" />
+              </div>
+              <h3 className="text-lg font-black text-brand-navy mb-4 uppercase">Book online or WhatsApp</h3>
+              <p className="text-sm text-gray-500 leading-relaxed font-bold opacity-70 mb-6 flex-1">
+                Fill out our quick form or instantly chat with our team on WhatsApp to schedule your visit.
+              </p>
+              <div className="flex gap-2 w-full mt-auto">
+                <button onClick={() => openBooking()} className="flex-1 bg-brand-navy text-white text-[10px] font-black uppercase tracking-widest py-3 px-2 rounded-xl hover:bg-brand-gold hover:text-brand-navy transition-all duration-300 cursor-pointer">
+                  Book Form
+                </button>
+                <button onClick={askExpert} className="flex-1 border-2 border-brand-gold text-brand-navy text-[10px] font-black uppercase tracking-widest py-2.5 px-2 rounded-xl hover:bg-brand-gold transition-all duration-300 flex items-center justify-center gap-1 cursor-pointer">
+                  WhatsApp
+                </button>
+              </div>
+            </div>
+
+            {/* Step 2 */}
+            <div className="bg-white rounded-[32px] p-8 md:p-10 border border-gray-100 shadow-sm flex flex-col items-center text-center relative group hover:shadow-xl transition-all duration-300">
+              <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-brand-gold text-brand-navy font-black flex items-center justify-center text-lg border-4 border-white shadow-md select-none">
+                2
+              </div>
+              <div className="w-16 h-16 rounded-2xl bg-brand-gold/5 flex items-center justify-center text-brand-gold mb-6 group-hover:bg-brand-gold group-hover:text-brand-navy transition-all duration-300">
+                <Clock className="w-8 h-8" />
+              </div>
+              <h3 className="text-lg font-black text-brand-navy mb-4 uppercase">Verified Tech Arrives</h3>
+              <p className="text-sm text-gray-500 leading-relaxed font-bold opacity-70 mb-6 flex-1">
+                Our certified specialist arrives at your doorstep in 1–2 hours with all necessary tools.
+              </p>
+              <button onClick={() => openBooking()} className="w-full bg-[#08264B]/5 hover:bg-brand-gold hover:text-brand-navy text-brand-navy font-black text-[10px] uppercase tracking-widest py-3.5 rounded-xl transition-all duration-300 mt-auto cursor-pointer">
+                Track / Request Call
+              </button>
+            </div>
+
+            {/* Step 3 */}
+            <div className="bg-white rounded-[32px] p-8 md:p-10 border border-gray-100 shadow-sm flex flex-col items-center text-center relative group hover:shadow-xl transition-all duration-300">
+              <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-brand-gold text-brand-navy font-black flex items-center justify-center text-lg border-4 border-white shadow-md select-none">
+                3
+              </div>
+              <div className="w-16 h-16 rounded-2xl bg-brand-gold/5 flex items-center justify-center text-brand-gold mb-6 group-hover:bg-brand-gold group-hover:text-brand-navy transition-all duration-300">
+                <ShieldCheck className="w-8 h-8" />
+              </div>
+              <h3 className="text-lg font-black text-brand-navy mb-4 uppercase">Job done & Guaranteed</h3>
+              <p className="text-sm text-gray-500 leading-relaxed font-bold opacity-70 mb-6 flex-1">
+                We complete the job efficiently, leave your space pristine, backed by our 100% guarantee.
+              </p>
+              <button onClick={callNow} className="w-full bg-brand-gold text-brand-navy font-black text-[10px] uppercase tracking-widest py-3.5 rounded-xl transition-all duration-300 mt-auto shadow-md cursor-pointer">
+                Call Emergency 24/7
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Services Section */}
       <section className="py-16 md:py-24 px-6 md:px-8 bg-white relative overflow-hidden">
-        <div className="max-w-7xl mx-auto relative z-10 pt-56 md:pt-0">
+        <div className="max-w-7xl mx-auto relative z-10 pt-8 md:pt-0">
           <div className="text-center space-y-3 md:space-y-4 mb-12 md:mb-16">
             <motion.div 
               initial={{opacity: 0, scale: 0.9}}
@@ -248,6 +330,51 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Transparent Starting Prices Section */}
+      <section className="py-16 md:py-24 px-6 md:px-8 bg-brand-cream/5 border-t border-b border-gray-100">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center space-y-3 md:space-y-4 mb-12 md:mb-16">
+            <span className="text-brand-gold font-black tracking-[0.4em] uppercase text-[8px] md:text-[9px] block">CLEAR ESTIMATES</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl text-brand-navy font-serif font-black uppercase tracking-tight">
+              Transparent Starting <span className="text-brand-gold italic">Prices</span>
+            </h2>
+            <p className="text-xs md:text-sm text-gray-500 font-bold uppercase tracking-widest">NO SURPRISES. NO HIDDEN EXTRA COSTS.</p>
+            <div className="w-16 h-1 bg-brand-gold mx-auto"></div>
+          </div>
+
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-12">
+            {[
+              { title: 'AC Services', price: 'AED 99', desc: 'Starting from, includes basic checking & mini servicing' },
+              { title: 'Plumbing Works', price: 'AED 150', desc: 'Starting from, includes leak diagnostics/fitting fix' },
+              { title: 'Painting Works', price: 'AED 200', desc: 'Starting from, room-based or selective wall works font-medium' },
+              { title: 'Electrical Works', price: 'AED 200', desc: 'Starting from, power diagnostics/fitting fixtures' },
+            ].map((p, i) => (
+              <div key={i} className="bg-white rounded-[32px] p-6 md:p-8 border border-gray-100 shadow-sm flex flex-col items-center text-center group hover:border-brand-gold transition-colors duration-300">
+                <h4 className="text-sm md:text-base font-black text-brand-navy uppercase tracking-wide mb-2">{p.title}</h4>
+                <div className="text-3xl md:text-4xl font-serif font-black text-brand-gold mb-3">{p.price}</div>
+                <p className="text-[10px] md:text-xs text-gray-400 font-bold tracking-tight uppercase leading-relaxed mt-2 select-none">
+                  {p.desc}
+                </p>
+              </div>
+            ))}
+          </div>
+
+          <div className="bg-brand-navy text-white rounded-[40px] p-8 md:p-12 text-center max-w-4xl mx-auto border border-white/5 shadow-2xl relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-32 h-32 opacity-10 pointer-events-none" style={{ backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)", backgroundSize: "12px 12px" }}></div>
+            <p className="text-sm md:text-lg font-black tracking-wide text-brand-gold uppercase mb-4">★ Quality Handyman Reassurance</p>
+            <h3 className="text-xl md:text-2xl font-serif font-black uppercase mb-6 leading-relaxed">
+              Final Price After Free Inspection — <span className="text-brand-gold">No Hidden Charges.</span>
+            </h3>
+            <button 
+              onClick={() => openBooking()} 
+              className="bg-brand-gold text-brand-navy font-black text-xs uppercase tracking-[0.2em] py-4.5 px-10 rounded-2xl hover:bg-[#c4941c] transition-all shadow-xl shadow-yellow-500/10 active:scale-95 cursor-pointer"
+            >
+              Get a Free Quote
+            </button>
+          </div>
+        </div>
+      </section>
+
       {/* WHY CHOOSE & PROOF SECTION (New Unified Layout) */}
       <section className="py-16 md:py-24 px-6 md:px-8 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto space-y-16 md:space-y-28">
@@ -262,18 +389,28 @@ const Home = () => {
             
             <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-8 md:gap-12 items-start">
               {[
-                { title: 'Dubai Licensed', desc: 'Legally Registered', icon: BadgeCheck },
-                { title: 'Fully Insured', desc: 'Complete Coverage', icon: ShieldCheck },
+                { title: 'Dubai Licensed', desc: 'Legally Registered', icon: BadgeCheck, onClick: openLicense },
+                { title: 'Fully Insured', desc: 'Complete Coverage', icon: ShieldCheck, onClick: openLicense },
                 { title: 'Expert Team', desc: 'Skilled & Experience', icon: Users },
                 { title: 'Quality Pro', desc: '100% Guaranteed', icon: Award },
                 { title: 'Always Ready', desc: '24/7 Availability', icon: Clock },
               ].map((item, i) => (
-                <div key={i} className="flex flex-col items-center text-center gap-4 md:gap-6 group">
+                <div 
+                  key={i}
+                  onClick={item.onClick}
+                  className={cn(
+                    "flex flex-col items-center text-center gap-4 md:gap-6 group transition-all",
+                    item.onClick && "cursor-pointer hover:scale-105"
+                  )}
+                >
                   <div className="w-12 h-12 md:w-16 md:h-16 bg-brand-gold/10 border border-brand-gold/20 rounded-2xl md:rounded-3xl flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-brand-navy transition-all duration-300">
                     <item.icon className="w-6 h-6 md:w-9 md:h-9" />
                   </div>
                   <div className="space-y-1 md:space-y-2">
-                    <h4 className="text-white font-black text-sm md:text-lg tracking-tight leading-tight">{item.title}</h4>
+                    <h4 className="text-white font-black text-sm md:text-lg tracking-tight leading-tight flex flex-col items-center">
+                      <span>{item.title}</span>
+                      {item.onClick && <span className="text-[9px] text-brand-gold font-bold italic tracking-wider uppercase mt-1">(View Proof)</span>}
+                    </h4>
                     <p className="text-[8px] md:text-[11px] text-gray-400 font-bold uppercase tracking-wider leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
@@ -378,11 +515,7 @@ const Home = () => {
 
           <div className="relative">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {[
-                {name: 'Sarah Johnson', loc: 'Palm Jumeirah, Dubai', text: 'Home Rescue completely transformed my villa. The wall painting was flawless and the technicians were extremely professional.'},
-                {name: 'Ahmed Al Mansoori', loc: 'Khalifa City, Abu Dhabi', text: 'Had a major AC leakage in the middle of the night. Their emergency team arrived within 45 minutes. Superb service!'},
-                {name: 'Michael Brown', loc: 'Al Majaz, Sharjah', text: 'High quality tile works for my bathroom. They were very clean and finished on time. Highly recommended.'}
-              ].map((review, i) => (
+              {testimonials.map((review, i) => (
                 <motion.div 
                   key={i}
                   initial={{opacity: 0, y: 20}}
@@ -421,6 +554,85 @@ const Home = () => {
                <div className="w-2 h-2 rounded-full bg-gray-200"></div>
                <div className="w-2 h-2 rounded-full bg-gray-200"></div>
             </div>
+
+            <div className="mt-12 text-center">
+              <a 
+                href="[FILL: your Google Business reviews URL]" 
+                target="_blank" 
+                referrerPolicy="no-referrer"
+                className="inline-flex items-center gap-3 bg-white border border-gray-200 hover:border-brand-gold text-brand-navy hover:text-brand-gold px-8 py-4 rounded-2xl font-black text-xs uppercase tracking-widest transition-all shadow-sm hover:shadow-md cursor-pointer active:scale-95"
+              >
+                <i className="fa-brands fa-google text-brand-gold"></i>
+                Read all reviews on Google
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Accordion Section */}
+      <section className="py-16 md:py-24 px-6 md:px-8 bg-[#faf9f6]/35 border-t border-b border-gray-100">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center space-y-3 md:space-y-4 mb-12 md:mb-16">
+            <span className="text-brand-gold font-black tracking-[0.4em] uppercase text-[8px] md:text-[9px] block">GOT QUESTIONS?</span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl text-brand-navy font-serif font-black uppercase tracking-tight">
+              Frequently Asked <span className="text-brand-gold italic">Questions</span>
+            </h2>
+            <div className="w-16 h-1 bg-brand-gold mx-auto"></div>
+          </div>
+
+          <div className="space-y-4">
+            {[
+              {
+                q: "What is your response time for emergencies?",
+                a: "For emergency bookings, our certified technicians are dispatched instantly and typically arrive at your doorstep anywhere in Dubai within 1 to 2 hours."
+              },
+              {
+                q: "Which areas in the UAE do you cover?",
+                a: "We proudly serve residential and commercial clients across all 7 Emirates of the UAE, including Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Fujairah, and Umm Al Quwain."
+              },
+              {
+                q: "Are you licensed and insured?",
+                a: "Yes, Home Rescue is fully legally registered and licensed under the Dubai Department of Economy and Tourism (DET), and we hold comprehensive public liability insurance so your property is 100% covered."
+              },
+              {
+                q: "Do you bring your own tools and materials?",
+                a: "Yes, our maintenance specialists arrive in fully-equipped service vehicles stocked with professional tools and standard consumables. We can also procure high-quality materials and parts with full manufacturer warranties on your behalf."
+              },
+              {
+                q: "What payment methods do you accept?",
+                a: "We offer flexible, convenient payment options including Cash, credit/debit Card payments, and direct online Bank Transfers. All invoices are provided digitally with transparent breakdowns."
+              },
+              {
+                q: "Is there any warranty or guarantee on your work?",
+                a: "Absolutely. All our services are backed by a robust 100% quality guarantee. If you encounter any issues with the completed work, contact our 24/7 helpline and we will resolve it promptly at zero additional cost."
+              }
+            ].map((item, idx) => {
+              const isOpen = openFaq === idx;
+              return (
+                <div key={idx} className="border border-gray-100 rounded-[24px] overflow-hidden bg-[#fafafa]">
+                  <button
+                    onClick={() => setOpenFaq(isOpen ? null : idx)}
+                    className="w-full flex items-center justify-between p-6 text-left font-black text-brand-navy text-sm md:text-base tracking-tight hover:text-brand-gold transition-colors duration-200 outline-none cursor-pointer"
+                  >
+                    <span className="uppercase">{item.q}</span>
+                    <span className="text-brand-gold text-lg md:text-xl font-black shrink-0 ml-4">
+                      {isOpen ? "−" : "+"}
+                    </span>
+                  </button>
+                  <div
+                    className={cn(
+                      "transition-all duration-300 ease-in-out overflow-hidden",
+                      isOpen ? "max-h-[300px] border-t border-gray-100/50" : "max-h-0"
+                    )}
+                  >
+                    <div className="p-6 text-xs md:text-sm text-gray-500 leading-relaxed font-bold bg-white">
+                      {item.a}
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>

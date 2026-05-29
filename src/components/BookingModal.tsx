@@ -581,7 +581,7 @@ Thank you!`;
                   </motion.div>
                   <h2 className="text-4xl font-serif font-bold text-brand-navy mb-4">Booking Confirmed!</h2>
                   <p className="text-gray-600 mb-8 max-w-md mx-auto">
-                    Your request has been sent! We will contact you on WhatsApp within 30 minutes to confirm your scheduled visit.
+                    Tap send in WhatsApp to confirm — we'll reply within 30 minutes.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <a 

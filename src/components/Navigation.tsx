@@ -40,7 +40,7 @@ export const TopBar = () => {
 };
 
 export const Navbar = () => {
-  const {t, isRTL} = useLanguage();
+  const {t, isRTL, language, setLanguage} = useLanguage();
   const { callNow, askExpert, openConsultation } = useBooking();
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const [isServicesOpen, setIsServicesOpen] = React.useState(false);
@@ -105,6 +105,26 @@ export const Navbar = () => {
           </div>
         ))}
         <div className="flex items-center gap-3 ml-4">
+          <div className="flex items-center gap-1 border border-gray-100 rounded-full p-0.5 bg-gray-50/50 mr-2 shrink-0 select-none">
+            <button
+              onClick={() => setLanguage('EN')}
+              className={cn(
+                "px-2.5 py-1 rounded-full text-[10px] font-black tracking-wider transition-all cursor-pointer",
+                language === 'EN' ? "bg-brand-navy text-white shadow-sm" : "text-gray-500 hover:text-brand-navy"
+              )}
+            >
+              EN
+            </button>
+            <button
+              onClick={() => setLanguage('AR')}
+              className={cn(
+                "px-2.5 py-1 rounded-full text-[10px] font-black tracking-wider transition-all cursor-pointer",
+                language === 'AR' ? "bg-brand-navy text-white shadow-sm" : "text-gray-500 hover:text-brand-navy"
+              )}
+            >
+              العربية
+            </button>
+          </div>
           <button 
             onClick={openConsultation}
             className="border-2 border-[#C9153B] text-[#C9153B] px-5 py-2.5 rounded-full hover:bg-[#C9153B] hover:text-white transition-all text-xs font-bold flex items-center gap-2"
@@ -229,6 +249,29 @@ export const Navbar = () => {
               ))}
               
               <div className="mt-8 flex flex-col gap-4 pb-12">
+                <div className="flex items-center justify-between border border-gray-100 rounded-2xl p-2 bg-gray-50/50 mb-2">
+                  <span className="text-xs font-black text-brand-navy uppercase tracking-widest pl-2">Choose Language</span>
+                  <div className="flex items-center gap-1">
+                    <button
+                      onClick={() => setLanguage('EN')}
+                      className={cn(
+                        "px-4 py-2 rounded-xl text-xs font-black transition-all cursor-pointer",
+                        language === 'EN' ? "bg-brand-navy text-white shadow" : "text-gray-500 hover:text-brand-navy"
+                      )}
+                    >
+                      English
+                    </button>
+                    <button
+                      onClick={() => setLanguage('AR')}
+                      className={cn(
+                        "px-4 py-2 rounded-xl text-xs font-black transition-all cursor-pointer",
+                        language === 'AR' ? "bg-brand-navy text-white shadow" : "text-gray-500 hover:text-brand-navy"
+                      )}
+                    >
+                      العربية
+                    </button>
+                  </div>
+                </div>
                 <button 
                   onClick={() => {
                     setIsMenuOpen(false);
