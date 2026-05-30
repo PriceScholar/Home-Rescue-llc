@@ -74,8 +74,6 @@ export const Navbar = () => {
           <div 
             key={link.name} 
             className="flex items-center h-full group"
-            onMouseEnter={() => link.dropdown && setIsServicesOpen(true)}
-            onMouseLeave={() => link.dropdown && setIsServicesOpen(false)}
           >
             {link.dropdown ? (
               <div 
@@ -143,17 +141,20 @@ export const Navbar = () => {
       {/* Mega Menu Overlay */}
       <AnimatePresence>
         {isServicesOpen && (
-          <div 
-            className="absolute top-full left-0 right-0 z-[110]"
-            onMouseEnter={() => setIsServicesOpen(true)}
-            onMouseLeave={() => setIsServicesOpen(false)}
-          >
-            <ServicesMegaMenu 
-              onClose={() => setIsServicesOpen(false)} 
-              callNow={callNow}
-              openConsultation={openConsultation}
+          <>
+            {/* Click-outside backdrop */}
+            <div 
+              className="fixed inset-0 z-[105]" 
+              onClick={() => setIsServicesOpen(false)} 
             />
-          </div>
+            <div className="absolute top-full left-0 right-0 z-[110]">
+              <ServicesMegaMenu 
+                onClose={() => setIsServicesOpen(false)} 
+                callNow={callNow}
+                openConsultation={openConsultation}
+              />
+            </div>
+          </>
         )}
       </AnimatePresence>
 

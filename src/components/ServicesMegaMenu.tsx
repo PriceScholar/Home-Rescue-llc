@@ -30,7 +30,7 @@ export const ServicesMegaMenu = ({ onClose, callNow, openConsultation }: Service
           {serviceCategories.map((category) => (
             <button
               key={category.name}
-              onMouseEnter={() => setActiveCategory(category)}
+              onClick={() => setActiveCategory(category)}
               className={cn(
                 "w-full flex items-center justify-between px-6 py-4 transition-colors relative group outline-none",
                 activeCategory.name === category.name 
