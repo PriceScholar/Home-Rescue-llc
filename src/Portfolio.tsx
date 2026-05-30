@@ -171,14 +171,15 @@ const Portfolio = () => {
               <span className="text-brand-gold font-bold uppercase tracking-[0.4em] text-[10px]">Case Studies</span>
               <div className="w-12 h-[1px] bg-brand-gold"></div>
             </motion.div>
-            <motion.h1 
+            <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-brand-navy max-w-4xl mx-auto"
             >
-              Our projects & portfolio — Dubai home services
-            </motion.h1>
+              <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-brand-navy max-w-4xl mx-auto">
+                Our projects & portfolio — Dubai home services
+              </h1>
+            </motion.div>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}

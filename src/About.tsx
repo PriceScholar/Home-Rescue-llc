@@ -38,14 +38,15 @@ const About = () => {
             <span className="text-brand-gold font-bold uppercase tracking-[0.4em] text-[9px] md:text-[10px]">Since 2014</span>
             <div className="w-8 md:w-12 h-[1px] bg-brand-gold"></div>
           </motion.div>
-          <motion.h1 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-white tracking-tight max-w-4xl mx-auto"
           >
-            About Resqhome — Premium home services in Dubai & UAE
-          </motion.h1>
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-white tracking-tight max-w-4xl mx-auto">
+              About Resqhome — Premium home services in Dubai & UAE
+            </h1>
+          </motion.div>
         </div>
       </section>
 

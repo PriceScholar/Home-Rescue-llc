@@ -48,14 +48,15 @@ const Credentials = () => {
             <span className="text-brand-gold font-bold uppercase tracking-[0.4em] text-[10px]">Official Compliance</span>
             <div className="w-12 h-[1px] bg-brand-gold"></div>
           </motion.div>
-          <motion.h1 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight max-w-4xl mx-auto"
           >
-            Our credentials & licenses — Dubai home services
-          </motion.h1>
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight max-w-4xl mx-auto">
+              Our credentials & licenses — Dubai home services
+            </h1>
+          </motion.div>
           <motion.p 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
