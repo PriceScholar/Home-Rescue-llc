@@ -557,7 +557,7 @@ const Home = () => {
 
             <div className="mt-12 text-center">
               <a 
-                href="[FILL: your Google Business reviews URL]" 
+                href="https://www.google.com/search?q=Resqhome+UAE+Dubai" 
                 target="_blank" 
                 referrerPolicy="no-referrer"
                 className="inline-flex items-center gap-3 bg-white border border-gray-200 hover:border-brand-gold text-brand-navy hover:text-brand-gold px-8 py-4 rounded-2xl font-black text-xs uppercase tracking-widest transition-all shadow-sm hover:shadow-md cursor-pointer active:scale-95"
