@@ -94,6 +94,7 @@ const VerifiedProjects = () => {
                   src={proj.image} 
                   alt={proj.hotel} 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.onerror = null;

@@ -25,6 +25,7 @@ const Services = () => {
       <Helmet>
         <title>All Home Maintenance Services in Dubai | Resqhome</title>
         <meta name="description" content="Browse all services — AC repair, plumbing, electrical, painting, ceiling, tile, handyman. Trusted UAE technicians, transparent pricing." />
+        <link rel="canonical" href="https://resqhome.ae/services" />
       </Helmet>
       <TopBar />
       <Navbar />
@@ -50,7 +51,7 @@ const Services = () => {
               className="bg-white rounded-[30px] overflow-hidden shadow-sm border border-gray-100 flex flex-col lg:flex-row min-h-[400px] hover:shadow-2xl transition-all"
             >
               <div className="lg:w-2/5 relative h-64 lg:h-auto">
-                <img src={cat.image} alt={cat.name} className="w-full h-full object-contain" />
+                <img src={cat.image} alt={cat.name} className="w-full h-full object-contain" loading="lazy" />
                 <div className="absolute inset-0 bg-brand-navy/20"></div>
               </div>
               <div className="lg:w-3/5 p-8 md:p-12 flex flex-col justify-center">

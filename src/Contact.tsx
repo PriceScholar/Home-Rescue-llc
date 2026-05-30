@@ -18,6 +18,7 @@ const Contact = () => {
       <Helmet>
         <title>Contact Resqhome — 24/7 Home Services Dubai</title>
         <meta name="description" content="Call +971 52 452 4295 or WhatsApp anytime for home maintenance across Dubai and the UAE." />
+        <link rel="canonical" href="https://resqhome.ae/contact" />
       </Helmet>
       <TopBar />
       <Navbar />

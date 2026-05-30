@@ -152,6 +152,7 @@ const Portfolio = () => {
       <Helmet>
         <title>Our Projects & Portfolio | Resqhome Dubai</title>
         <meta name="description" content="Verified home maintenance projects across the UAE — hotels, villas, offices, residential buildings." />
+        <link rel="canonical" href="https://resqhome.ae/portfolio" />
       </Helmet>
       <TopBar />
       <Navbar />
@@ -174,9 +175,9 @@ const Portfolio = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-5xl md:text-7xl font-serif font-bold text-brand-navy"
+              className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-brand-navy max-w-4xl mx-auto"
             >
-              Premium Portfolio
+              Our projects & portfolio — Dubai home services
             </motion.h1>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}

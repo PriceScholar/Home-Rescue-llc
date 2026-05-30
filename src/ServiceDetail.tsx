@@ -52,6 +52,75 @@ const ServiceDetail = () => {
       <Helmet>
         <title>{`${data.title} in Dubai & UAE | Resqhome`}</title>
         <meta name="description" content={`${data.description} Licensed Dubai technicians, fast response, transparent pricing. Book online or via WhatsApp.`} />
+        <link rel="canonical" href={`https://resqhome.ae/services/${serviceId}`} />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "name": data.title,
+            "description": data.description,
+            "provider": {
+              "@type": "LocalBusiness",
+              "name": "Resqhome UAE",
+              "image": "https://resqhome.ae/favicon-192.png",
+              "telephone": "+971524524295",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "Al Nahda",
+                "addressLocality": "Dubai",
+                "addressCountry": "AE"
+              }
+            },
+            "areaServed": [
+              { "@type": "AdministrativeArea", "name": "Dubai" },
+              { "@type": "AdministrativeArea", "name": "Abu Dhabi" },
+              { "@type": "AdministrativeArea", "name": "Sharjah" },
+              { "@type": "AdministrativeArea", "name": "Ajman" },
+              { "@type": "AdministrativeArea", "name": "Ras Al Khaimah" },
+              { "@type": "AdministrativeArea", "name": "Fujairah" },
+              { "@type": "AdministrativeArea", "name": "Umm Al Quwain" }
+            ],
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": `${data.title} Packages`,
+              "itemListElement": data.packages.map((pkg, idx) => ({
+                "@type": "Offer",
+                "itemOffered": {
+                  "@type": "Service",
+                  "name": pkg.name
+                },
+                "price": pkg.price.replace(/[^\d]/g, ""),
+                "priceCurrency": "AED"
+              }))
+            }
+          })}
+        </script>
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://resqhome.ae"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Services",
+                "item": "https://resqhome.ae/services"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": data.title,
+                "item": `https://resqhome.ae/services/${serviceId}`
+              }
+            ]
+          })}
+        </script>
       </Helmet>
       <TopBar />
       <Navbar />
@@ -80,7 +149,6 @@ const ServiceDetail = () => {
               <img 
                 src={`/images/services/subs/${serviceId}.jpg`} 
                 alt={data.title}
-                loading="lazy"
                 className="w-full h-full object-cover"
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;

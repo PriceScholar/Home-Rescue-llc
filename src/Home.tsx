@@ -65,6 +65,63 @@ const Home = () => {
       <Helmet>
         <title>Home Maintenance Services in Dubai & UAE | Resqhome</title>
         <meta name="description" content="Premium home maintenance across all 7 Emirates — AC, plumbing, electrical, painting, ceiling & handyman. Licensed, insured, 24/7. Book a free inspection." />
+        <link rel="canonical" href="https://resqhome.ae/" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "What is your response time for emergencies?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "For emergency bookings, our certified technicians are dispatched instantly and typically arrive at your doorstep anywhere in Dubai within 1 to 2 hours."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Which areas in the UAE do you cover?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We proudly serve residential and commercial clients across all 7 Emirates of the UAE, including Dubai, Abu Dhabi, Sharjah, Ajman, Ras Al Khaimah, Fujairah, and Umm Al Quwain."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Are you licensed and insured?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, Home Rescue is fully legally registered and licensed under the Dubai Department of Economy and Tourism (DET), and we hold comprehensive public liability insurance so your property is 100% covered."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do you bring your own tools and materials?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, our maintenance specialists arrive in fully-equipped service vehicles stocked with professional tools and standard consumables. We can also procure high-quality materials and parts with full manufacturer warranties on your behalf."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What payment methods do you accept?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We offer flexible, convenient payment options including Cash, credit/debit Card payments, and direct online Bank Transfers. All invoices are provided digitally with transparent breakdowns."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is there any warranty or guarantee on your work?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Absolutely. All our services are backed by a robust 100% quality guarantee. If you encounter any issues with the completed work, contact our 24/7 helpline and we will resolve it promptly at zero additional cost."
+                }
+              }
+            ]
+          })}
+        </script>
       </Helmet>
       <TopBar />
       <Navbar />
@@ -303,7 +360,7 @@ const Home = () => {
                 className="group bg-white rounded-2xl md:rounded-[32px] overflow-hidden shadow-sm hover:shadow-2xl border border-gray-100 flex flex-col h-full transition-all duration-500"
               >
                 <div className="relative aspect-square sm:aspect-[4/3] overflow-hidden">
-                  <img src={service.image} alt={service.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <img src={service.image} alt={service.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
                   <div className="absolute inset-0 bg-brand-navy/10 group-hover:bg-transparent transition-colors"></div>
                   <div className="absolute top-3 left-3 md:top-5 md:left-5">
                     <div className="w-8 h-8 md:w-12 md:h-12 bg-white/95 backdrop-blur-md rounded-xl md:rounded-2xl flex items-center justify-center text-brand-navy shadow-lg group-hover:bg-brand-gold group-hover:text-brand-navy transition-all duration-300">
@@ -446,6 +503,7 @@ const Home = () => {
                         alt={work.title} 
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
                         onError={(e) => { (e.target as HTMLImageElement).src = `https://placehold.co/400x550/08264B/D9A520?text=${encodeURIComponent(work.title)}` }}
+                        loading="lazy"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                       <div className="absolute bottom-2 left-2 right-2 md:bottom-3 md:left-3 md:right-3 flex justify-between gap-1">
@@ -480,6 +538,7 @@ const Home = () => {
                     <div className="aspect-[4/5.5] rounded-[24px] md:rounded-[32px] overflow-hidden relative shadow-lg group">
                       <img src={proj.img} alt={proj.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
                         onError={(e) => { (e.target as HTMLImageElement).src = `https://placehold.co/400x550/08264B/D9A520?text=${encodeURIComponent(proj.title)}` }}
+                        loading="lazy"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                       <div className="absolute bottom-2 left-2 right-2 md:bottom-3 md:left-3 md:right-3 flex flex-col gap-0.5">
@@ -529,7 +588,7 @@ const Home = () => {
                   className="bg-white p-8 px-10 rounded-[40px] shadow-sm border border-gray-100 flex flex-col h-full gap-6"
                 >
                   <div className="flex items-center gap-4">
-                    <img src={`https://i.pravatar.cc/150?u=${review.name}`} alt={review.name} className="w-14 h-14 rounded-2xl object-cover border-2 border-brand-gold/10" />
+                    <img src={`https://i.pravatar.cc/150?u=${review.name}`} alt={review.name} className="w-14 h-14 rounded-2xl object-cover border-2 border-brand-gold/10" loading="lazy" />
                     <div className="flex gap-0.5 text-brand-gold">
                       {[1, 2, 3, 4, 5].map(s => <Star key={s} className="w-3 h-3 fill-current" />)}
                     </div>

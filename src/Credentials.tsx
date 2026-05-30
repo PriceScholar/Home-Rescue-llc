@@ -14,6 +14,7 @@ const Credentials = () => {
       <Helmet>
         <title>Our Credentials & Licenses | Resqhome Dubai</title>
         <meta name="description" content="Dubai-licensed, fully insured, DEWA-approved. Trade licenses and insurance documentation on file." />
+        <link rel="canonical" href="https://resqhome.ae/credentials" />
       </Helmet>
       <TopBar />
       <Navbar />
@@ -51,9 +52,9 @@ const Credentials = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-5xl md:text-7xl font-serif font-bold leading-tight"
+            className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight max-w-4xl mx-auto"
           >
-            Trust & Compliance
+            Our credentials & licenses — Dubai home services
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 30 }}

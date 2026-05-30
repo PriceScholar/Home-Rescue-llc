@@ -19,6 +19,7 @@ const Booking = () => {
       <Helmet>
         <title>Book a Free Inspection | Resqhome Dubai</title>
         <meta name="description" content="Book a free home maintenance inspection — AC, plumbing, electrical and more. No obligation, same-day response." />
+        <link rel="canonical" href="https://resqhome.ae/booking" />
       </Helmet>
       <TopBar />
       <Navbar />

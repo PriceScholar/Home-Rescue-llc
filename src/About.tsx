@@ -13,6 +13,7 @@ const About = () => {
       <Helmet>
         <title>About Resqhome — Premium Home Services Dubai</title>
         <meta name="description" content="Licensed and insured home maintenance company in Dubai serving all 7 Emirates. 1000+ projects, 500+ customers." />
+        <link rel="canonical" href="https://resqhome.ae/about" />
       </Helmet>
       <TopBar />
       <Navbar />
@@ -41,9 +42,9 @@ const About = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-4xl md:text-7xl font-serif font-bold text-white tracking-tight"
+            className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold text-white tracking-tight max-w-4xl mx-auto"
           >
-            Our Story
+            About Resqhome — Premium home services in Dubai & UAE
           </motion.h1>
         </div>
       </section>
@@ -71,6 +72,7 @@ const About = () => {
                   src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?q=80&w=2080&auto=format&fit=crop" 
                   alt="Our Craftsmanship" 
                   className="w-full h-full object-cover"
+                  loading="lazy"
                 />
               </div>
               <div className="absolute -top-6 -left-6 md:-top-10 md:-left-10 w-48 h-48 md:w-64 md:h-64 bg-brand-gold/5 rounded-full blur-3xl -z-0"></div>
