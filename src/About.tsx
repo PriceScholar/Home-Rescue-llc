@@ -1,4 +1,5 @@
 import React from 'react';
+import {Helmet} from 'react-helmet-async';
 import {TopBar, Navbar, Footer} from './components/Navigation';
 import {motion} from 'motion/react';
 import {CircleCheck, Clock, MapPin, Award, Users, Star, ChevronLeft, ShieldCheck} from 'lucide-react';
@@ -9,6 +10,10 @@ import VerifiedProjects from './components/VerifiedProjects';
 const About = () => {
   return (
     <div className="flex flex-col min-h-screen bg-white">
+      <Helmet>
+        <title>About Resqhome — Premium Home Services Dubai | UAE</title>
+        <meta name="description" content="Licensed and insured home maintenance company in Dubai serving all 7 Emirates. 1000+ projects, 500+ happy customers, 10+ years." />
+      </Helmet>
       <TopBar />
       <Navbar />
 

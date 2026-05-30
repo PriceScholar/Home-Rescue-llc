@@ -1,4 +1,5 @@
 import React from 'react';
+import {Helmet} from 'react-helmet-async';
 import {TopBar, Navbar, Footer} from './components/Navigation';
 import {motion} from 'motion/react';
 import {Phone, Mail, MapPin, Send, MessageCircle, Clock} from 'lucide-react';
@@ -14,6 +15,10 @@ const Contact = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <Helmet>
+        <title>Contact Resqhome — 24/7 Home Services Dubai</title>
+        <meta name="description" content="Call +971 52 452 4295 or WhatsApp anytime for home maintenance across Dubai and UAE." />
+      </Helmet>
       <TopBar />
       <Navbar />
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import {Helmet} from 'react-helmet-async';
 import {TopBar, Navbar, Footer} from './components/Navigation';
 import {motion} from 'motion/react';
 import {Paintbrush, Wind, Droplets, Zap, Grid2x2, Hammer, ChevronRight, PenTool, Layout} from 'lucide-react';
@@ -21,6 +22,10 @@ const Services = () => {
 
   return (
     <div className="flex flex-col min-h-screen">
+      <Helmet>
+        <title>All Home Maintenance Services in Dubai | Resqhome</title>
+        <meta name="description" content="Browse all home maintenance services — AC repair, plumbing, electrical, painting, ceiling, tile, handyman and more. Trusted UAE technicians, transparent pricing." />
+      </Helmet>
       <TopBar />
       <Navbar />
 

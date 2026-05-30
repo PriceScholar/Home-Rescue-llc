@@ -1,4 +1,5 @@
 import React from 'react';
+import {Helmet} from 'react-helmet-async';
 import { TopBar, Navbar, Footer } from './components/Navigation';
 import { motion } from 'motion/react';
 import { useBooking } from './components/BookingModal';
@@ -10,6 +11,10 @@ const Credentials = () => {
 
   return (
     <div className="flex flex-col min-h-screen bg-white">
+      <Helmet>
+        <title>Our Credentials & Licenses | Resqhome Dubai</title>
+        <meta name="description" content="Dubai-licensed, fully insured home maintenance company. DEWA-approved electricians, trade licenses, insurance documentation." />
+      </Helmet>
       <TopBar />
       <Navbar />
 

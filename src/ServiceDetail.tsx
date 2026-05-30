@@ -1,4 +1,5 @@
 import React from 'react';
+import {Helmet} from 'react-helmet-async';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { 
@@ -48,6 +49,10 @@ const ServiceDetail = () => {
 
   return (
     <div className="flex flex-col min-h-screen bg-white">
+      <Helmet>
+        <title>{`${data.title} in Dubai & UAE | Resqhome`}</title>
+        <meta name="description" content={`${data.description} Licensed Dubai technicians, fast response, transparent pricing. Book online or via WhatsApp.`} />
+      </Helmet>
       <TopBar />
       <Navbar />
 

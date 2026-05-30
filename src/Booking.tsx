@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import {Helmet} from 'react-helmet-async';
 import { useNavigate } from 'react-router-dom';
 import { useBooking } from './components/BookingModal';
 import { TopBar, Navbar, Footer } from './components/Navigation';
@@ -15,6 +16,10 @@ const Booking = () => {
 
   return (
     <div className="flex flex-col min-h-screen bg-brand-cream">
+      <Helmet>
+        <title>Book a Free Inspection | Resqhome Home Services Dubai</title>
+        <meta name="description" content="Book free home maintenance inspection — AC, plumbing, electrical and more. No obligation. Same-day response." />
+      </Helmet>
       <TopBar />
       <Navbar />
       <div className="flex-1 flex flex-col items-center justify-center p-8 text-center pt-32 pb-64">

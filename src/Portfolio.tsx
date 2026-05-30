@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {Helmet} from 'react-helmet-async';
 import { motion, AnimatePresence } from 'motion/react';
 import { TopBar, Navbar, Footer } from './components/Navigation';
 import { useBooking } from './components/BookingModal';
@@ -148,6 +149,10 @@ const Portfolio = () => {
 
   return (
     <div className="flex flex-col min-h-screen bg-white">
+      <Helmet>
+        <title>Our Projects & Portfolio | Resqhome Dubai</title>
+        <meta name="description" content="Verified home maintenance projects across the UAE — hotels, villas, offices, residential buildings." />
+      </Helmet>
       <TopBar />
       <Navbar />
 

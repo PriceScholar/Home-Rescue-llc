@@ -1,4 +1,5 @@
 import React from 'react';
+import {Helmet} from 'react-helmet-async';
 import {motion} from 'motion/react';
 import {TopBar, Navbar, Footer} from './components/Navigation';
 import {useLanguage} from './context/LanguageContext';
@@ -61,6 +62,10 @@ const Home = () => {
 
   return (
     <div className="flex flex-col min-h-screen bg-white">
+      <Helmet>
+        <title>Home Maintenance Services in Dubai & UAE | Resqhome</title>
+        <meta name="description" content="Premium home maintenance across all 7 Emirates — AC, plumbing, electrical, painting, ceiling & handyman. Licensed, insured, 24/7. Book a free inspection." />
+      </Helmet>
       <TopBar />
       <Navbar />
 
