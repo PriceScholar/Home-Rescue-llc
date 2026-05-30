@@ -13,7 +13,7 @@ const Credentials = () => {
     <div className="flex flex-col min-h-screen bg-white">
       <Helmet>
         <title>Our Credentials & Licenses | Resqhome Dubai</title>
-        <meta name="description" content="Dubai-licensed, fully insured home maintenance company. DEWA-approved electricians, trade licenses, insurance documentation." />
+        <meta name="description" content="Dubai-licensed, fully insured, DEWA-approved. Trade licenses and insurance documentation on file." />
       </Helmet>
       <TopBar />
       <Navbar />

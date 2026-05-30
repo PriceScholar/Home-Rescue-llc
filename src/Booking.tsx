@@ -17,8 +17,8 @@ const Booking = () => {
   return (
     <div className="flex flex-col min-h-screen bg-brand-cream">
       <Helmet>
-        <title>Book a Free Inspection | Resqhome Home Services Dubai</title>
-        <meta name="description" content="Book free home maintenance inspection — AC, plumbing, electrical and more. No obligation. Same-day response." />
+        <title>Book a Free Inspection | Resqhome Dubai</title>
+        <meta name="description" content="Book a free home maintenance inspection — AC, plumbing, electrical and more. No obligation, same-day response." />
       </Helmet>
       <TopBar />
       <Navbar />

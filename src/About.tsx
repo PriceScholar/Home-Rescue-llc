@@ -11,8 +11,8 @@ const About = () => {
   return (
     <div className="flex flex-col min-h-screen bg-white">
       <Helmet>
-        <title>About Resqhome — Premium Home Services Dubai | UAE</title>
-        <meta name="description" content="Licensed and insured home maintenance company in Dubai serving all 7 Emirates. 1000+ projects, 500+ happy customers, 10+ years." />
+        <title>About Resqhome — Premium Home Services Dubai</title>
+        <meta name="description" content="Licensed and insured home maintenance company in Dubai serving all 7 Emirates. 1000+ projects, 500+ customers." />
       </Helmet>
       <TopBar />
       <Navbar />

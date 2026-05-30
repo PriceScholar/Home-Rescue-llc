@@ -24,7 +24,7 @@ const Services = () => {
     <div className="flex flex-col min-h-screen">
       <Helmet>
         <title>All Home Maintenance Services in Dubai | Resqhome</title>
-        <meta name="description" content="Browse all home maintenance services — AC repair, plumbing, electrical, painting, ceiling, tile, handyman and more. Trusted UAE technicians, transparent pricing." />
+        <meta name="description" content="Browse all services — AC repair, plumbing, electrical, painting, ceiling, tile, handyman. Trusted UAE technicians, transparent pricing." />
       </Helmet>
       <TopBar />
       <Navbar />
