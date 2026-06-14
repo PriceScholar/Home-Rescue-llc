@@ -28,7 +28,25 @@ const ServiceDetail = () => {
   const { serviceId } = useParams<{ serviceId: string }>();
   const { isRTL } = useLanguage();
   const { openBooking, askExpert, callNow } = useBooking();
-  const data = serviceId ? servicesData[serviceId] : null;
+  const rawData = serviceId ? servicesData[serviceId] : null;
+
+  // Graceful fallback for all service data fields to prevent errors on incomplete/sub-service items
+  const data = rawData ? {
+    id: rawData.id || serviceId || "service",
+    title: rawData.title || "Premium Service",
+    tagline: rawData.tagline || "TECHNICAL SERVICE DETAIL",
+    description: rawData.description || "Premium home services in Dubai & UAE. Licensed Dubai technicians, fast response, transparent pricing. Book today.",
+    image: rawData.image || "https://images.unsplash.com/photo-1581244277943-fe4a9c777189?auto=format&fit=crop&q=80&w=1200",
+    estimateDuration: rawData.estimateDuration || "Flexible Duration",
+    material: rawData.material || "Premium Approved Materials",
+    technician: rawData.technician || "Certified Dubai Technicians",
+    warranty: rawData.warranty || "Satisfaction Warranty Included",
+    subServices: rawData.subServices || [],
+    process: rawData.process || [],
+    packages: rawData.packages || [],
+    faqs: rawData.faqs || [],
+    reviews: rawData.reviews || []
+  } : null;
 
   if (!data) {
     return (
@@ -47,12 +65,85 @@ const ServiceDetail = () => {
     );
   }
 
+  // Robust resolver for finding a sub-service key by its name
+  const getSubServiceId = (subName: string): string | null => {
+    const cleanSubName = subName.trim().toLowerCase();
+    
+    const customMapping: Record<string, string> = {
+      'interior/exterior': 'interior-painting',
+      'wallpaper fix': 'villa-painting',
+      'sanitary fix': 'sanitary-services',
+      'leak detection': 'leakage-repair',
+      'drain cleaning': 'drainage-cleaning',
+      'fault repair': 'circuit-breakers',
+      'contracting': 'electrical-contracting',
+      'lighting': 'interior-exterior-light',
+      'smart home': 'smart-home-solutions',
+      'emergency': 'emergency-ac-repair',
+      'new installation': 'new-ac-installation',
+      'ac ducting': 'ac-ducting',
+      'ac gas repair': 'ac-gas-refilling',
+      'duct type install': 'duct-type-ac-install',
+      'ceiling repair': 'ceiling-repair',
+      'false ceiling': 'false-ceiling',
+      'pop design': 'pop-design',
+      'cove design': 'cove-ceiling',
+      'marble work': 'marble-installation',
+      'granite work': 'granite-work',
+      'porcelain tiles': 'porcelain-tiles',
+      'interlock stone': 'interlock-stones',
+      'pergola': 'pergola-design',
+      'gazebo': 'gazebo-construction',
+      'outdoor kitchen': 'outdoor-kitchen',
+      'wooden doors': 'wooden-doors',
+      'tv installation': 'tv-installation',
+      'drilling hanging': 'drilling-hanging',
+      'curtain blinds': 'curtains-blinds',
+      'door lock repair': 'door-lock-repair',
+      'specialty lighting': 'led-light-installation',
+      'outdoor lighting': 'outdoor-lighting',
+      'decorative light': 'decorative-lighting',
+      'smart lights': 'smart-lighting',
+      'preventive': 'preventive-maintenance',
+      'wall repair': 'wall-repair',
+      'minor repair': 'minor-plumbing',
+      'light repair': 'light-repair',
+    };
+
+    if (customMapping[cleanSubName]) {
+      return customMapping[cleanSubName];
+    }
+
+    const matchedKey = Object.keys(servicesData).find(key => {
+      const s = servicesData[key];
+      return s.title.toLowerCase().trim() === cleanSubName;
+    });
+    
+    if (matchedKey) return matchedKey;
+
+    const slugified = cleanSubName
+      .replace(/[^a-z0-9\s-]/g, '')
+      .replace(/\s+/g, '-');
+    
+    if (servicesData[slugified]) {
+      return slugified;
+    }
+
+    const looseMatchedKey = Object.keys(servicesData).find(key => {
+      const s = servicesData[key];
+      const sTitle = s.title.toLowerCase();
+      return sTitle.includes(cleanSubName) || cleanSubName.includes(sTitle);
+    });
+
+    return looseMatchedKey || null;
+  };
+
   return (
     <div className="flex flex-col min-h-screen bg-white">
       <Helmet>
         <title>{`${data.title} in Dubai & UAE | Resqhome`}</title>
-        <meta name="description" content={`${data.description} Licensed Dubai technicians, fast response, transparent pricing. Book online or via WhatsApp.`} />
-        <link rel="canonical" href={`https://resqhome.ae/services/${serviceId}`} />
+        <meta name="description" content={`${data.description} Licensed Dubai technicians, fast response, transparent pricing. Book today.`} />
+        <link rel="canonical" href={`https://resqhome.ae/services/${data.id}`} />
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -116,7 +207,7 @@ const ServiceDetail = () => {
                 "@type": "ListItem",
                 "position": 3,
                 "name": data.title,
-                "item": `https://resqhome.ae/services/${serviceId}`
+                "item": `https://resqhome.ae/services/${data.id}`
               }
             ]
           })}
@@ -147,7 +238,7 @@ const ServiceDetail = () => {
               className="relative rounded-3xl md:rounded-[2.5rem] overflow-hidden shadow-2xl bg-gray-100 aspect-video sm:aspect-square lg:aspect-auto lg:h-[600px]"
             >
               <img 
-                src={`/images/services/subs/${serviceId}.jpg`} 
+                src={`/images/services/subs/${data.id}.jpg`} 
                 alt={data.title}
                 className="w-full h-full object-cover"
                 onError={(e) => {
@@ -253,22 +344,38 @@ const ServiceDetail = () => {
           </div>
           
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-12">
-            {data.subServices.map((sub, i) => (
-              <motion.div 
-                key={i} 
-                initial={{opacity: 0, y: 20}}
-                whileInView={{opacity: 1, y: 0}}
-                viewport={{once: true}}
-                transition={{delay: i * 0.1}}
-                className="bg-white p-6 md:p-10 rounded-3xl md:rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.03)] border border-gray-100 hover:-translate-y-2 transition-all duration-500 group"
-              >
-                <div className="w-12 h-12 md:w-16 md:h-16 bg-brand-cream flex items-center justify-center rounded-xl md:rounded-2xl text-brand-navy group-hover:bg-brand-navy group-hover:text-white transition-all mb-6 md:mb-8 shadow-[0_10px_30px_rgba(0,0,0,0.05)]">
-                  <i className={cn(sub.icon, "text-xl md:text-2xl text-brand-gold group-hover:text-white transition-colors")}></i>
+            {data.subServices.map((sub, i) => {
+              const subId = getSubServiceId(sub.name);
+              const cardContent = (
+                <motion.div 
+                  initial={{opacity: 0, y: 20}}
+                  whileInView={{opacity: 1, y: 0}}
+                  viewport={{once: true}}
+                  transition={{delay: i * 0.1}}
+                  className="bg-white p-6 md:p-10 rounded-3xl md:rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.03)] border border-gray-100 hover:-translate-y-2 transition-all duration-500 h-full group"
+                >
+                  <div className="w-12 h-12 md:w-16 md:h-16 bg-brand-cream flex items-center justify-center rounded-xl md:rounded-2xl text-brand-navy group-hover:bg-brand-navy group-hover:text-white transition-all mb-6 md:mb-8 shadow-[0_10px_30px_rgba(0,0,0,0.05)]">
+                    <i className={cn(sub.icon, "text-xl md:text-2xl text-brand-gold group-hover:text-white transition-colors")}></i>
+                  </div>
+                  <h4 className="text-lg md:text-2xl font-serif font-bold text-brand-navy mb-3 md:mb-4">{sub.name}</h4>
+                  <p className="text-xs md:text-sm text-gray-500 leading-relaxed">{sub.desc}</p>
+                </motion.div>
+              );
+
+              if (subId) {
+                return (
+                  <Link key={i} to={`/services/${subId}`} className="block h-full">
+                    {cardContent}
+                  </Link>
+                );
+              }
+
+              return (
+                <div key={i} className="h-full">
+                  {cardContent}
                 </div>
-                <h4 className="text-lg md:text-2xl font-serif font-bold text-brand-navy mb-3 md:mb-4">{sub.name}</h4>
-                <p className="text-xs md:text-sm text-gray-500 leading-relaxed">{sub.desc}</p>
-              </motion.div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

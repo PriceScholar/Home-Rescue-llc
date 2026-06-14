@@ -6,6 +6,48 @@ import {Paintbrush, Wind, Droplets, Zap, Grid2x2, Hammer, ChevronRight, PenTool,
 import {Link} from 'react-router-dom';
 import {useBooking} from './components/BookingModal';
 
+const getSubId = (name: string): string => {
+  const map: Record<string, string> = {
+    'Villa Painting': 'villa-painting',
+    'Interior Painting': 'interior-painting',
+    'Exterior Painting': 'exterior-painting',
+    'Texture Painting': 'texture-painting',
+    'Emergency AC Repair': 'emergency-ac-repair',
+    'New AC Installation': 'new-ac-installation',
+    'AC Ducting': 'ac-ducting',
+    'Gas Refilling': 'ac-gas-refilling',
+    'Sanitary Services': 'sanitary-services',
+    'Leakage Repair': 'leakage-repair',
+    'Bathroom Fitting': 'bathroom-plumbing',
+    'Water Heaters': 'water-heaters',
+    'Home Wiring': 'home-wiring',
+    'Interior/Exterior Light': 'interior-exterior-light',
+    'Circuit Breakers': 'circuit-breakers',
+    'Dewa Approvals': 'dewa',
+    'Marble Installation': 'marble-installation',
+    'Granite Work': 'granite-work',
+    'Porcelain Tiles': 'porcelain-tiles',
+    'Interlock Stones': 'interlock-stones',
+    'TV Installation': 'tv-installation',
+    'Curtain Hanging': 'curtains-blinds',
+    'Furniture Assembly': 'furniture-install',
+    'Door Repair': 'door-lock-repair',
+    'Gypsum Ceiling': 'gypsum-ceiling',
+    'False Ceiling': 'false-ceiling',
+    'POP Design': 'pop-design',
+    'Cove Lighting': 'cove-lighting',
+    'LED Installation': 'led-light-installation',
+    'Chandelier Hanging': 'chandelier-installation',
+    'Outdoor Lights': 'outdoor-lighting',
+    'Smart Setup': 'smart-lighting',
+    'Preventive Checks': 'preventive-maintenance',
+    'Minor Plumbing': 'minor-plumbing',
+    'Wall Repair': 'wall-repair',
+    'Property Upkeep': 'property-upkeep'
+  };
+  return map[name] || name.toLowerCase().replace(/\s+/g, '-');
+};
+
 const Services = () => {
   const { openBooking } = useBooking();
   const categories = [
@@ -60,12 +102,19 @@ const Services = () => {
                 <p className="text-gray-600 mb-8 max-w-xl leading-relaxed">{cat.desc}</p>
                 
                 <div className="grid grid-cols-2 gap-4 mb-10">
-                   {cat.subs.map(sub => (
-                     <div key={sub} className="flex items-center gap-2 text-sm text-gray-500">
-                       <div className="w-1.5 h-1.5 bg-brand-gold rounded-full"></div>
-                       {sub}
-                     </div>
-                   ))}
+                   {cat.subs.map(sub => {
+                     const subId = getSubId(sub);
+                     return (
+                       <Link 
+                         key={sub} 
+                         to={`/services/${subId}`}
+                         className="flex items-center gap-2 text-sm text-gray-500 hover:text-brand-gold transition-colors duration-200 group/sub"
+                       >
+                         <div className="w-1.5 h-1.5 bg-brand-gold rounded-full group-hover/sub:scale-125 transition-transform"></div>
+                         <span className="border-b border-transparent group-hover/sub:border-brand-gold/40">{sub}</span>
+                       </Link>
+                     );
+                   })}
                 </div>
 
                 <div className="flex flex-wrap gap-4">
