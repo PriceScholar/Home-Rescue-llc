@@ -131,12 +131,15 @@ const Home = () => {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2070&auto=format&fit=crop" 
-            alt="Premium modern UAE home interior" 
-            className="w-full h-full object-cover opacity-65 shadow-inner"
+            src="/work_site_1.png" 
+            alt="Premium luxury Dubai villa interior with Burj Khalifa view" 
+            className="w-full h-full object-cover opacity-95 object-center md:object-right transition-opacity duration-500"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#08264B] via-[#08264B]/50 to-[#08264B]/20"></div>
+          {/* Gradient to ensure readability on the left while letting the high-end right skyline view pop */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#08264B]/95 via-[#08264B]/65 to-transparent"></div>
+          {/* Bottom fade into the dark section of the page */}
+          <div className="absolute inset-0 bg-gradient-to-t from-[#08264B] via-transparent to-transparent opacity-70"></div>
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8 w-full flex flex-col lg:flex-row items-center gap-8 lg:gap-12 pt-8 md:pt-12 pb-24 md:pb-32 lg:pb-28">
@@ -146,17 +149,17 @@ const Home = () => {
             initial={{opacity: 0, x: -30}}
             animate={{opacity: 1, x: 0}}
             transition={{duration: 0.8}}
-            className="flex-1 space-y-6 md:space-y-10 text-center lg:text-left"
+            className="flex-1 space-y-6 md:space-y-10 text-center lg:text-left bg-[#08264B]/20 lg:bg-transparent p-4 md:p-6 lg:p-0 rounded-3xl backdrop-blur-[1px] lg:backdrop-blur-0"
           >
             <div className="space-y-3 md:space-y-4">
-              <span className="text-brand-gold font-black tracking-[0.25em] uppercase text-[9px] md:text-[10px] block opacity-90">Premium Technical Services</span>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif font-black leading-[1.1] text-white tracking-tighter">
+              <span className="text-brand-gold font-black tracking-[0.25em] uppercase text-[9px] md:text-[10px] block opacity-95 drop-shadow">Premium Technical Services</span>
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif font-black leading-[1.1] text-white tracking-tighter drop-shadow-xl">
                 Premium Technical <br className="hidden sm:block" />
                 Solutions Across <span className="text-brand-gold">UAE</span>
               </h1>
             </div>
 
-            <p className="text-sm md:text-lg text-gray-300 max-w-lg mx-auto lg:mx-0 leading-relaxed font-bold opacity-70">
+            <p className="text-sm md:text-lg text-gray-200 max-w-lg mx-auto lg:mx-0 leading-relaxed font-bold drop-shadow-sm">
               Trusted by Villas, Homes, Hotels & Commercial Properties Across Dubai and All Emirates.
             </p>
 

@@ -13,7 +13,7 @@ interface BookingContextType {
   isOpen: boolean;
   isConsultationOpen: boolean;
   isLicenseOpen: boolean;
-  openBooking: (serviceName?: string) => void;
+  openBooking: (serviceName?: string, isBookNow?: boolean) => void;
   closeBooking: () => void;
   openConsultation: () => void;
   closeConsultation: () => void;
@@ -36,9 +36,11 @@ export const BookingProvider: React.FC<{ children: React.ReactNode }> = ({ child
   const [isConsultationOpen, setIsConsultationOpen] = useState(false);
   const [isLicenseOpen, setIsLicenseOpen] = useState(false);
   const [preSelectedService, setPreSelectedService] = useState<string | undefined>(undefined);
+  const [isBookNowMode, setIsBookNowMode] = useState(false);
 
-  const openBooking = (serviceName?: string) => {
+  const openBooking = (serviceName?: string, isBookNow?: boolean) => {
     setPreSelectedService(serviceName);
+    setIsBookNowMode(!!isBookNow);
     setIsOpen(true);
   };
 
@@ -83,6 +85,7 @@ export const BookingProvider: React.FC<{ children: React.ReactNode }> = ({ child
         isOpen={isOpen} 
         onClose={closeBooking} 
         preSelectedService={preSelectedService} 
+        isBookNowMode={isBookNowMode}
       />
       <ConsultationModal 
         isOpen={isConsultationOpen}
@@ -101,9 +104,27 @@ interface BookingModalProps {
   isOpen: boolean;
   onClose: () => void;
   preSelectedService?: string;
+  isBookNowMode?: boolean;
 }
 
-const BookingModal: React.FC<BookingModalProps> = ({ isOpen, onClose, preSelectedService }) => {
+const BookingModal: React.FC<BookingModalProps> = ({ 
+  isOpen, 
+  onClose, 
+  preSelectedService,
+  isBookNowMode = false
+}) => {
+  const isAcOrPlumbingQuery = 
+    isBookNowMode ||
+    (preSelectedService ? (
+      preSelectedService.toLowerCase().includes('ac') || 
+      preSelectedService.toLowerCase().includes('plumb')
+    ) : false) ||
+    window.location.pathname.includes('ac-') ||
+    window.location.pathname.includes('-ac') ||
+    window.location.pathname.includes('plumb') ||
+    window.location.pathname.includes('drain') ||
+    window.location.pathname.includes('leak');
+
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
     category: '',
@@ -388,9 +409,21 @@ Thank you!`;
                             required
                           >
                             <option value="">-- Choose Category --</option>
-                            {serviceCategories.map(cat => (
-                              <option key={cat.name} value={cat.name}>{cat.name}</option>
-                            ))}
+                            {serviceCategories
+                              .filter(cat => {
+                                if (!isAcOrPlumbingQuery) {
+                                  const isAcOrPlumb = 
+                                    cat.id === 'ac-maintenance' || 
+                                    cat.id === 'plumbing-services' || 
+                                    cat.name.toLowerCase().includes('ac') || 
+                                    cat.name.toLowerCase().includes('plumb');
+                                  return !isAcOrPlumb;
+                                }
+                                return true;
+                              })
+                              .map(cat => (
+                                <option key={cat.name} value={cat.name}>{cat.name}</option>
+                              ))}
                           </select>
                         </div>
 

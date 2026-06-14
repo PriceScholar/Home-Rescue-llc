@@ -1,7 +1,7 @@
 import React from 'react';
 import {Phone, Mail, MessageCircle, Menu, X, ChevronDown, ChevronRight, Facebook, Instagram, Linkedin, Send, Video, BadgeCheck, MapPin, Clock, ShieldCheck} from 'lucide-react';
 import {useLanguage} from '../context/LanguageContext';
-import {Link} from 'react-router-dom';
+import {Link, useLocation} from 'react-router-dom';
 import {motion, AnimatePresence} from 'motion/react';
 import {cn} from '../lib/utils';
 import { useBooking } from './BookingModal';
@@ -304,6 +304,14 @@ export const Navbar = () => {
 export const Footer = () => {
   const {t} = useLanguage();
   const { openLicense, openBooking } = useBooking();
+  const location = useLocation();
+
+  const isAcOrPlumbingPath = 
+    location.pathname.includes('ac-') || 
+    location.pathname.includes('-ac') || 
+    location.pathname.includes('plumbing-') || 
+    location.pathname.includes('drain') || 
+    location.pathname.includes('leak');
 
   const socialLinks = [
     { Icon: Facebook, href: '#' },
@@ -417,10 +425,10 @@ export const Footer = () => {
               </div>
             </div>
             <button 
-              onClick={openBooking}
+              onClick={() => openBooking(undefined, isAcOrPlumbingPath)}
               className="w-full bg-white text-brand-navy py-4 rounded-xl font-black text-[10px] uppercase tracking-[0.2em] hover:bg-brand-gold transition-all shadow-xl active:scale-95"
             >
-              Book Free Inspection
+              {isAcOrPlumbingPath ? "Book Now" : "Book Free Inspection"}
             </button>
           </div>
 

@@ -24,6 +24,28 @@ import { cn } from './lib/utils';
 import { useLanguage } from './context/LanguageContext';
 import { useBooking } from './components/BookingModal';
 
+const isAcOrPlumbing = (id: string, title?: string): boolean => {
+  const lowerId = (id || '').toLowerCase();
+  const lowerTitle = (title || '').toLowerCase();
+  return (
+    lowerId.includes('ac-') ||
+    lowerId.includes('-ac') ||
+    lowerId === 'ac' ||
+    lowerId.includes('plumb') ||
+    lowerId.includes('drain') ||
+    lowerId.includes('leak') ||
+    lowerId.includes('water-heater') ||
+    lowerId.includes('sanitary') ||
+    lowerTitle.includes('ac ') ||
+    lowerTitle.includes(' ac') ||
+    lowerTitle === 'ac' ||
+    lowerTitle.includes('air cond') ||
+    lowerTitle.includes('plumbing') ||
+    lowerTitle.includes('leak') ||
+    lowerTitle.includes('drain')
+  );
+};
+
 const ServiceDetail = () => {
   const { serviceId } = useParams<{ serviceId: string }>();
   const { isRTL } = useLanguage();
@@ -317,10 +339,10 @@ const ServiceDetail = () => {
                 className="flex flex-col sm:flex-row gap-4 pt-8"
               >
                 <button 
-                  onClick={() => openBooking(data.title)}
+                  onClick={() => openBooking(data.title, isAcOrPlumbing(data.id, data.title))}
                   className="flex-1 bg-brand-navy text-white px-10 py-5 rounded-full font-bold shadow-2xl hover:bg-brand-red transition-all flex items-center justify-center gap-3 uppercase text-xs tracking-widest"
                 >
-                   Book Free Inspection
+                   {isAcOrPlumbing(data.id, data.title) ? "Book Now" : "Book Free Inspection"}
                 </button>
                 <button 
                   onClick={() => askExpert(data.title)}
