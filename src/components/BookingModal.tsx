@@ -145,6 +145,30 @@ const BookingModal: React.FC<BookingModalProps> = ({
   const [isSuccess, setIsSuccess] = useState(false);
   const [errors, setErrors] = useState<string[]>([]);
 
+  const selectedServices = formData.service
+    ? formData.service.split(', ').map(s => s.trim()).filter(Boolean)
+    : [];
+
+  const toggleService = (serviceName: string) => {
+    let newSelected: string[];
+    if (selectedServices.includes(serviceName)) {
+      newSelected = selectedServices.filter(s => s !== serviceName);
+    } else {
+      newSelected = [...selectedServices, serviceName];
+    }
+    setFormData(prev => ({
+      ...prev,
+      service: newSelected.join(', ')
+    }));
+  };
+
+  const clearAllServices = () => {
+    setFormData(prev => ({
+      ...prev,
+      service: ''
+    }));
+  };
+
   useEffect(() => {
     if (isOpen) {
       setStep(1);
@@ -220,9 +244,7 @@ const BookingModal: React.FC<BookingModalProps> = ({
       // If we change category from the dropdown, sync the category field and reset service
       if (id === 'serviceCategory') {
         next.category = value;
-        // Find the first sub service and pre-select it
-        const cat = serviceCategories.find(c => c.name === value);
-        next.service = (cat && cat.subs.length > 0) ? cat.subs[0].name : '';
+        next.service = '';
       }
       
       return next;
@@ -431,19 +453,60 @@ Thank you!`;
 
                         <div className="space-y-2">
                           <label className="text-sm font-bold text-brand-navy uppercase tracking-wider block">Specific Service *</label>
-                          <select 
-                            id="service" 
-                            className="w-full p-4 bg-gray-50 border-2 border-gray-100 rounded-xl focus:border-brand-red outline-none transition-all"
-                            value={formData.service}
-                            onChange={handleInputChange}
-                            required
-                            disabled={!formData.category}
-                          >
-                            <option value="">-- Select Service --</option>
-                            {subServices.map(sub => (
-                              <option key={sub.name} value={sub.name}>{sub.name}</option>
-                            ))}
-                          </select>
+                          {!formData.category ? (
+                            <div className="w-full p-4 bg-gray-50 border-2 border-dashed border-gray-200 rounded-xl text-center text-gray-400 text-sm font-medium">
+                              -- Please select a service category first --
+                            </div>
+                          ) : (
+                            <>
+                              <div className="space-y-2 max-h-[220px] overflow-y-auto p-2 bg-gray-50 border-2 border-gray-100 rounded-xl">
+                                {subServices.map(sub => {
+                                  const isChecked = selectedServices.includes(sub.name);
+                                  return (
+                                    <label 
+                                      key={sub.name} 
+                                      className={cn(
+                                        "flex items-center gap-3 p-3 rounded-xl border-2 cursor-pointer transition-all hover:bg-white",
+                                        isChecked 
+                                          ? "bg-white border-brand-gold text-brand-navy shadow-sm" 
+                                          : "border-transparent text-gray-600 hover:border-gray-200"
+                                      )}
+                                    >
+                                      <div className={cn(
+                                        "w-5 h-5 rounded border-2 flex items-center justify-center transition-all shrink-0",
+                                        isChecked 
+                                          ? "bg-brand-gold border-brand-gold text-white" 
+                                          : "border-gray-300 bg-white"
+                                      )}>
+                                        {isChecked && <i className="fa-solid fa-check text-[10px]"></i>}
+                                      </div>
+                                      <span className="text-sm font-bold select-none">{sub.name}</span>
+                                      <input 
+                                        type="checkbox"
+                                        className="sr-only"
+                                        checked={isChecked}
+                                        onChange={() => toggleService(sub.name)}
+                                      />
+                                    </label>
+                                  );
+                                })}
+                              </div>
+                              <div className="flex items-center justify-between px-2 pt-1 text-xs">
+                                <span className="font-bold text-brand-navy">
+                                  {selectedServices.length} {selectedServices.length === 1 ? 'Service' : 'Services'} Selected
+                                </span>
+                                {selectedServices.length > 0 && (
+                                  <button
+                                    type="button"
+                                    onClick={clearAllServices}
+                                    className="text-brand-red hover:text-brand-navy font-black uppercase tracking-wider cursor-pointer transition-colors"
+                                  >
+                                    Clear All
+                                  </button>
+                                )}
+                              </div>
+                            </>
+                          )}
                         </div>
 
                         <div className="space-y-4">
