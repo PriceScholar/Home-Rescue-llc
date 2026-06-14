@@ -228,7 +228,7 @@ const ServiceDetail = () => {
       </section>
 
       {/* Hero Section */}
-      <section className="py-8 md:py-12 px-6 md:px-8 border-b border-gray-50">
+      <section className="py-12 md:py-12 px-6 md:px-8 border-b border-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-8 lg:gap-10 items-center">
             {/* Left Column: Image */}
@@ -494,7 +494,7 @@ const ServiceDetail = () => {
       <VerifiedProjects />
 
       {/* Final CTA */}
-      <section className="py-8 md:py-12 px-6 md:px-8">
+      <section className="py-12 md:py-12 px-6 md:px-8">
         <div className="max-w-6xl mx-auto bg-brand-navy rounded-3xl md:rounded-[4rem] p-6 md:p-12 text-center text-white relative overflow-hidden shadow-2xl">
           <div className="absolute inset-0 bg-brand-gold/5 blur-3xl rounded-full scale-150"></div>
           <div className="relative z-10 max-w-3xl mx-auto space-y-8 md:space-y-10">

@@ -131,18 +131,15 @@ const Home = () => {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2071&auto=format&fit=crop" 
-            alt="Premium UAE Villa Night" 
-            className="w-full h-full object-cover opacity-85 object-right-top transition-opacity duration-500"
+            src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=2070&auto=format&fit=crop" 
+            alt="Premium modern UAE home interior" 
+            className="w-full h-full object-cover opacity-65 shadow-inner"
             referrerPolicy="no-referrer"
           />
-          {/* Main readability gradient: deep dark brand navy on the left fading beautifully towards the right */}
-          <div className="absolute inset-0 bg-gradient-to-r from-[#08264B] via-[#08264B]/95 lg:via-[#08264B]/70 to-[#08264B]/20 lg:to-transparent"></div>
-          {/* Bottom subtle ambient gradient to blend with stats bar */}
-          <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#08264B] to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#08264B] via-[#08264B]/50 to-[#08264B]/20"></div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8 w-full flex flex-col lg:flex-row items-center gap-8 lg:gap-12 pt-8 md:pt-12 pb-10 md:pb-12">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8 w-full flex flex-col lg:flex-row items-center gap-8 lg:gap-12 pt-8 md:pt-12 pb-24 md:pb-32 lg:pb-28">
           
           {/* Left Content */}
           <motion.div 
@@ -244,35 +241,35 @@ const Home = () => {
             ))}
           </motion.div>
         </div>
-
-        {/* Stats Banner (Overlapping) */}
-        <div className="absolute -bottom-20 lg:-bottom-12 left-4 right-4 md:left-8 md:right-8 z-30">
-          <div className="max-w-7xl mx-auto bg-white rounded-[32px] md:rounded-[40px] p-5 md:p-8 lg:p-10 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.15)] border border-gray-100/50">
-             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:divide-x divide-gray-100">
-               {[
-                 {label: 'Projects Done', val: '1000+', icon: <Building2 />},
-                 {label: 'Happy Clients', val: '500+', icon: <Users />},
-                 {label: 'Years Exp', val: '10+', icon: <Award />},
-                 {label: 'Emirates', val: '7', icon: <MapPin />},
-               ].map((st, i) => (
-                 <div key={i} className="flex flex-col sm:flex-row items-center gap-2 md:gap-6 group lg:px-4 xl:px-8 text-center sm:text-left">
-                   <div className="w-10 h-10 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-xl md:rounded-[28px] bg-brand-gold/5 flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-brand-navy transition-all duration-300 shrink-0 border border-brand-gold/5">
-                      {React.cloneElement(st.icon as React.ReactElement, { className: "w-5 h-5 md:w-8 md:h-8 lg:w-10 lg:h-10" })}
-                   </div>
-                   <div className="space-y-0">
-                     <div className="text-xl sm:text-3xl lg:text-4xl xl:text-5xl font-black text-brand-navy tracking-tighter leading-none">{st.val}</div>
-                     <div className="text-[7px] md:text-[9px] text-gray-400 font-bold uppercase tracking-[0.2em] leading-none pt-1">{st.label}</div>
-                   </div>
-                 </div>
-               ))}
-             </div>
-          </div>
-        </div>
       </section>
 
+      {/* Stats Banner (Overlapping) */}
+      <div className="relative -mt-16 md:-mt-24 lg:-mt-20 left-0 right-0 z-30 px-4 md:px-8">
+        <div className="max-w-7xl mx-auto bg-white rounded-[32px] md:rounded-[40px] p-5 md:p-8 lg:p-10 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.15)] border border-gray-100/50">
+           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:divide-x divide-gray-100">
+             {[
+               {label: 'Projects Done', val: '1000+', icon: <Building2 />},
+               {label: 'Happy Clients', val: '500+', icon: <Users />},
+               {label: 'Years Exp', val: '10+', icon: <Award />},
+               {label: 'Emirates', val: '7', icon: <MapPin />},
+             ].map((st, i) => (
+               <div key={i} className="flex flex-col sm:flex-row items-center gap-2 md:gap-6 group lg:px-4 xl:px-8 text-center sm:text-left">
+                 <div className="w-10 h-10 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-xl md:rounded-[28px] bg-brand-gold/5 flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-brand-navy transition-all duration-300 shrink-0 border border-brand-gold/5">
+                    {React.cloneElement(st.icon as React.ReactElement, { className: "w-5 h-5 md:w-8 md:h-8 lg:w-10 lg:h-10" })}
+                 </div>
+                 <div className="space-y-0">
+                   <div className="text-xl sm:text-3xl lg:text-4xl xl:text-5xl font-black text-brand-navy tracking-tighter leading-none">{st.val}</div>
+                   <div className="text-[7px] md:text-[9px] text-gray-400 font-bold uppercase tracking-[0.2em] leading-none pt-1">{st.label}</div>
+                 </div>
+               </div>
+             ))}
+           </div>
+        </div>
+      </div>
+
       {/* How It Works Section */}
-      <section className="py-8 md:py-12 px-6 md:px-8 bg-[#faf9f6]/30 border-b border-gray-50 relative">
-        <div className="max-w-7xl mx-auto pt-36 lg:pt-28 relative z-10">
+      <section className="py-12 md:py-12 px-6 md:px-8 bg-[#faf9f6]/30 border-b border-gray-50 relative">
+        <div className="max-w-7xl mx-auto pt-10 md:pt-14 relative z-10">
           <div className="text-center space-y-2 md:space-y-3 mb-8 md:mb-10">
             <span className="text-brand-gold font-black tracking-[0.4em] uppercase text-[8px] md:text-[9px] block">3 SIMPLE STEPS</span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl text-brand-navy font-serif font-black uppercase tracking-tight">
@@ -342,7 +339,7 @@ const Home = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-8 md:py-12 px-6 md:px-8 bg-white relative overflow-hidden">
+      <section className="py-12 md:py-12 px-6 md:px-8 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10 pt-8 md:pt-0">
           <div className="text-center space-y-2 md:space-y-3 mb-8 md:mb-10">
             <motion.div 
@@ -401,7 +398,7 @@ const Home = () => {
       </section>
 
       {/* Transparent Starting Prices Section */}
-      <section className="py-8 md:py-12 px-6 md:px-8 bg-brand-cream/5 border-t border-b border-gray-100">
+      <section className="py-12 md:py-12 px-6 md:px-8 bg-brand-cream/5 border-t border-b border-gray-100">
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-2 md:space-y-3 mb-8 md:mb-10">
             <span className="text-brand-gold font-black tracking-[0.4em] uppercase text-[8px] md:text-[9px] block">CLEAR ESTIMATES</span>
@@ -446,7 +443,7 @@ const Home = () => {
       </section>
 
       {/* WHY CHOOSE & PROOF SECTION (New Unified Layout) */}
-      <section className="py-8 md:py-12 px-6 md:px-8 bg-white overflow-hidden">
+      <section className="py-12 md:py-12 px-6 md:px-8 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto space-y-6 md:space-y-10">
           
           {/* Why Choose Banner */}
@@ -568,7 +565,7 @@ const Home = () => {
       </section>
 
       {/* Reviews Section */}
-      <section className="py-8 md:py-12 bg-white px-6 md:px-8 overflow-hidden">
+      <section className="py-12 md:py-12 bg-white px-6 md:px-8 overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center mb-8 md:mb-10 gap-4 md:gap-6">
             <div className="hidden md:flex flex-1"></div>
@@ -643,7 +640,7 @@ const Home = () => {
       </section>
 
       {/* FAQ Accordion Section */}
-      <section className="py-8 md:py-12 px-6 md:px-8 bg-[#faf9f6]/35 border-t border-b border-gray-100">
+      <section className="py-12 md:py-12 px-6 md:px-8 bg-[#faf9f6]/35 border-t border-b border-gray-100">
         <div className="max-w-4xl mx-auto">
           <div className="text-center space-y-2 md:space-y-3 mb-8 md:mb-10">
             <span className="text-brand-gold font-black tracking-[0.4em] uppercase text-[8px] md:text-[9px] block">GOT QUESTIONS?</span>
