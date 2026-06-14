@@ -40,9 +40,9 @@ const TrustSection: React.FC = () => {
   ];
 
   return (
-    <section id="trust-credentials" className="py-24 bg-gradient-to-br from-brand-cream/50 to-white overflow-hidden">
+    <section id="trust-credentials" className="py-10 md:py-14 bg-gradient-to-br from-brand-cream/50 to-white overflow-hidden">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16 space-y-4">
+        <div className="text-center mb-6 md:mb-8 space-y-4">
           <motion.span 
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}

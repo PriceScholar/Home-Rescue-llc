@@ -61,7 +61,7 @@ const Home = () => {
   }));
 
   return (
-    <div className="flex flex-col min-h-screen bg-white">
+    <div className="flex flex-col bg-white">
       <Helmet>
         <title>Home Maintenance Services in Dubai & UAE | Resqhome</title>
         <meta name="description" content="Premium home maintenance across all 7 Emirates — AC, plumbing, electrical, painting, ceiling & handyman. Licensed, insured, 24/7. Book a free inspection." />
@@ -127,18 +127,22 @@ const Home = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="relative min-h-[780px] flex items-center overflow-hidden bg-[#08264B]">
+      <section className="relative min-h-[500px] md:min-h-[600px] flex items-center overflow-hidden bg-[#08264B]">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=2070&auto=format&fit=crop" 
+            src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?q=80&w=2071&auto=format&fit=crop" 
             alt="Premium UAE Villa Night" 
-            className="w-full h-full object-cover opacity-30 shadow-inner"
+            className="w-full h-full object-cover opacity-85 object-right-top transition-opacity duration-500"
+            referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#08264B] via-[#08264B]/80 to-transparent"></div>
+          {/* Main readability gradient: deep dark brand navy on the left fading beautifully towards the right */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#08264B] via-[#08264B]/95 lg:via-[#08264B]/70 to-[#08264B]/20 lg:to-transparent"></div>
+          {/* Bottom subtle ambient gradient to blend with stats bar */}
+          <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#08264B] to-transparent"></div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8 w-full flex flex-col lg:flex-row items-center gap-12 lg:gap-16 pt-24 md:pt-32 pb-48 md:pb-44">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8 w-full flex flex-col lg:flex-row items-center gap-8 lg:gap-12 pt-8 md:pt-12 pb-10 md:pb-12">
           
           {/* Left Content */}
           <motion.div 
@@ -149,7 +153,7 @@ const Home = () => {
           >
             <div className="space-y-3 md:space-y-4">
               <span className="text-brand-gold font-black tracking-[0.25em] uppercase text-[9px] md:text-[10px] block opacity-90">Premium Technical Services</span>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif font-black leading-[1.1] text-white tracking-tighter">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif font-black leading-[1.1] text-white tracking-tighter">
                 Premium Technical <br className="hidden sm:block" />
                 Solutions Across <span className="text-brand-gold">UAE</span>
               </h1>
@@ -162,14 +166,14 @@ const Home = () => {
             <div className="flex flex-col sm:flex-row flex-wrap justify-center lg:justify-start gap-4 md:gap-5 pt-2">
               <button 
                 onClick={() => openBooking()}
-                className="bg-brand-gold text-brand-navy hover:bg-[#c4941c] px-8 md:px-10 py-4 md:py-5 rounded-2xl font-black text-[10px] md:text-xs uppercase tracking-widest flex items-center justify-center gap-4 shadow-[0_20px_40px_-10px_rgba(217,165,32,0.4)] transition-all active:scale-95"
+                className="bg-brand-gold text-brand-navy hover:bg-[#c4941c] px-6 md:px-8 py-3 md:py-4 rounded-2xl font-black text-[10px] md:text-xs uppercase tracking-widest flex items-center justify-center gap-4 shadow-[0_20px_40px_-10px_rgba(217,165,32,0.4)] transition-all active:scale-95"
               >
                 <i className="fa-solid fa-calendar-check text-lg md:text-xl"></i>
                 BOOK FREE INSPECTION
               </button>
               <button 
                 onClick={askExpert}
-                className="bg-[#08264B]/40 backdrop-blur-md border border-white/10 text-white hover:bg-white hover:text-brand-navy px-8 md:px-10 py-4 md:py-5 rounded-2xl font-black text-[10px] md:text-xs uppercase tracking-widest flex items-center justify-center gap-4 transition-all active:scale-95 group"
+                className="bg-[#08264B]/40 backdrop-blur-md border border-white/10 text-white hover:bg-white hover:text-brand-navy px-6 md:px-8 py-3 md:py-4 rounded-2xl font-black text-[10px] md:text-xs uppercase tracking-widest flex items-center justify-center gap-4 transition-all active:scale-95 group"
               >
                 <MessageCircle className="w-5 h-5 text-brand-gold" /> CHAT ON WHATSAPP
               </button>
@@ -215,14 +219,18 @@ const Home = () => {
             className="flex-1 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6 w-full"
           >
             {[
-              {title: 'Painting Services', icon: 'fa-solid fa-paint-roller', img: '/images/services/service-paint.jpg'},
-              {title: 'AC Maintenance', icon: 'fa-solid fa-snowflake', img: '/images/services/service-ac.jpg'},
-              {title: 'Plumbing Services', icon: 'fa-solid fa-droplet', img: '/images/services/service-plumbing.jpg'},
-              {title: 'Electrical Services', icon: 'fa-solid fa-bolt', img: '/images/services/service-electrical.jpg'},
-              {title: 'Ceiling Works', icon: 'fa-solid fa-layer-group', img: '/images/services/service-ceiling.jpg'},
-              {title: 'Handyman Services', icon: 'fa-solid fa-screwdriver-wrench', img: '/images/services/service-handyman.jpg'},
+              {title: 'Painting Services', icon: 'fa-solid fa-paint-roller', img: '/images/services/service-paint.jpg', link: '/services/paint-work'},
+              {title: 'AC Maintenance', icon: 'fa-solid fa-snowflake', img: '/images/services/service-ac.jpg', link: '/services/ac-maintenance'},
+              {title: 'Plumbing Services', icon: 'fa-solid fa-droplet', img: '/images/services/service-plumbing.jpg', link: '/services/plumbing-services'},
+              {title: 'Electrical Services', icon: 'fa-solid fa-bolt', img: '/images/services/service-electrical.jpg', link: '/services/electrical-services'},
+              {title: 'Ceiling Works', icon: 'fa-solid fa-layer-group', img: '/images/services/service-ceiling.jpg', link: '/services/ceiling-work'},
+              {title: 'Handyman Services', icon: 'fa-solid fa-screwdriver-wrench', img: '/images/services/service-handyman.jpg', link: '/services/handyman-more'},
             ].map((s, i) => (
-              <div key={i} className="group relative aspect-square rounded-2xl md:rounded-[28px] overflow-hidden shadow-2xl border border-white/5 bg-brand-navy">
+              <Link 
+                key={i} 
+                to={s.link}
+                className="group relative aspect-square rounded-2xl md:rounded-[28px] overflow-hidden shadow-2xl border border-white/5 bg-brand-navy block transform hover:-translate-y-1 transition-all duration-300"
+              >
                 <img src={s.img} alt={s.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80" />
                 <div className="absolute inset-0 bg-[#08264B]/40 group-hover:bg-transparent transition-colors" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#08264B] via-[#08264B]/20 to-transparent opacity-90" />
@@ -232,14 +240,14 @@ const Home = () => {
                    </div>
                    <span className="text-white text-[9px] md:text-[11px] font-black uppercase tracking-widest leading-tight">{s.title}</span>
                 </div>
-              </div>
+              </Link>
             ))}
           </motion.div>
         </div>
 
         {/* Stats Banner (Overlapping) */}
-        <div className="absolute -bottom-32 lg:-bottom-16 left-4 right-4 md:left-8 md:right-8 z-30">
-          <div className="max-w-7xl mx-auto bg-white rounded-[32px] md:rounded-[40px] p-6 md:p-10 lg:p-14 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.15)] border border-gray-100/50">
+        <div className="absolute -bottom-20 lg:-bottom-12 left-4 right-4 md:left-8 md:right-8 z-30">
+          <div className="max-w-7xl mx-auto bg-white rounded-[32px] md:rounded-[40px] p-5 md:p-8 lg:p-10 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.15)] border border-gray-100/50">
              <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:divide-x divide-gray-100">
                {[
                  {label: 'Projects Done', val: '1000+', icon: <Building2 />},
@@ -263,9 +271,9 @@ const Home = () => {
       </section>
 
       {/* How It Works Section */}
-      <section className="py-16 md:py-24 px-6 md:px-8 bg-[#faf9f6]/30 border-b border-gray-50 relative">
-        <div className="max-w-7xl mx-auto pt-56 lg:pt-40 relative z-10">
-          <div className="text-center space-y-3 md:space-y-4 mb-12 md:mb-16">
+      <section className="py-8 md:py-12 px-6 md:px-8 bg-[#faf9f6]/30 border-b border-gray-50 relative">
+        <div className="max-w-7xl mx-auto pt-36 lg:pt-28 relative z-10">
+          <div className="text-center space-y-2 md:space-y-3 mb-8 md:mb-10">
             <span className="text-brand-gold font-black tracking-[0.4em] uppercase text-[8px] md:text-[9px] block">3 SIMPLE STEPS</span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl text-brand-navy font-serif font-black uppercase tracking-tight">
               How It <span className="text-brand-gold italic">Works</span>
@@ -334,9 +342,9 @@ const Home = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-16 md:py-24 px-6 md:px-8 bg-white relative overflow-hidden">
+      <section className="py-8 md:py-12 px-6 md:px-8 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10 pt-8 md:pt-0">
-          <div className="text-center space-y-3 md:space-y-4 mb-12 md:mb-16">
+          <div className="text-center space-y-2 md:space-y-3 mb-8 md:mb-10">
             <motion.div 
               initial={{opacity: 0, scale: 0.9}}
               whileInView={{opacity: 1, scale: 1}}
@@ -346,7 +354,7 @@ const Home = () => {
               <span className="text-brand-gold font-black tracking-[0.4em] uppercase text-[8px] md:text-[9px]">Our Services</span>
               <div className="w-8 md:w-10 h-px bg-brand-gold"></div>
             </motion.div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-brand-navy font-serif tracking-tight leading-tight">Complete Solutions <br className="hidden sm:block" /> <span className="text-brand-gold italic">For Every Need</span></h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-brand-navy font-serif tracking-tight leading-tight">Complete Solutions <br className="hidden sm:block" /> <span className="text-brand-gold italic">For Every Need</span></h2>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
@@ -385,7 +393,7 @@ const Home = () => {
           </div>
 
           <div className="mt-16 text-center">
-            <Link to="/services" className="bg-brand-navy text-white px-12 py-5 rounded-2xl font-black text-xs uppercase tracking-[0.2em] hover:bg-brand-gold hover:text-brand-navy transition-all shadow-xl shadow-brand-navy/10 flex items-center gap-4 mx-auto w-fit active:scale-95">
+            <Link to="/services" className="bg-brand-navy text-white px-9 py-4 rounded-2xl font-black text-xs uppercase tracking-[0.2em] hover:bg-brand-gold hover:text-brand-navy transition-all shadow-xl shadow-brand-navy/10 flex items-center gap-4 mx-auto w-fit active:scale-95">
               VIEW ALL SERVICES <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -393,9 +401,9 @@ const Home = () => {
       </section>
 
       {/* Transparent Starting Prices Section */}
-      <section className="py-16 md:py-24 px-6 md:px-8 bg-brand-cream/5 border-t border-b border-gray-100">
+      <section className="py-8 md:py-12 px-6 md:px-8 bg-brand-cream/5 border-t border-b border-gray-100">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center space-y-3 md:space-y-4 mb-12 md:mb-16">
+          <div className="text-center space-y-2 md:space-y-3 mb-8 md:mb-10">
             <span className="text-brand-gold font-black tracking-[0.4em] uppercase text-[8px] md:text-[9px] block">CLEAR ESTIMATES</span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl text-brand-navy font-serif font-black uppercase tracking-tight">
               Transparent Starting <span className="text-brand-gold italic">Prices</span>
@@ -429,7 +437,7 @@ const Home = () => {
             </h3>
             <button 
               onClick={() => openBooking()} 
-              className="bg-brand-gold text-brand-navy font-black text-xs uppercase tracking-[0.2em] py-4.5 px-10 rounded-2xl hover:bg-[#c4941c] transition-all shadow-xl shadow-yellow-500/10 active:scale-95 cursor-pointer"
+              className="bg-brand-gold text-brand-navy font-black text-xs uppercase tracking-[0.2em] py-3.5 px-8 rounded-2xl hover:bg-[#c4941c] transition-all shadow-xl shadow-yellow-500/10 active:scale-95 cursor-pointer"
             >
               Get a Free Quote
             </button>
@@ -438,18 +446,18 @@ const Home = () => {
       </section>
 
       {/* WHY CHOOSE & PROOF SECTION (New Unified Layout) */}
-      <section className="py-16 md:py-24 px-6 md:px-8 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto space-y-16 md:space-y-28">
+      <section className="py-8 md:py-12 px-6 md:px-8 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto space-y-6 md:space-y-10">
           
           {/* Why Choose Banner */}
-          <div className="bg-[#08264B] rounded-[40px] md:rounded-[60px] p-8 md:p-16 lg:p-20 shadow-3xl relative overflow-hidden">
-            <div className="text-center mb-10 md:mb-16">
-              <h2 className="text-white text-2xl sm:text-3xl md:text-5xl font-serif font-black uppercase tracking-widest leading-tight">
+          <div className="bg-[#08264B] rounded-[40px] md:rounded-[60px] p-5 md:p-8 lg:p-10 shadow-3xl relative overflow-hidden">
+            <div className="text-center mb-4 md:mb-6">
+              <h2 className="text-white text-xl sm:text-2xl md:text-4xl font-serif font-black uppercase tracking-widest leading-tight">
                 Why Choose <br className="sm:hidden" /> <span className="text-brand-gold">Home Rescue</span>?
               </h2>
             </div>
             
-            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-8 md:gap-12 items-start">
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8 items-start">
               {[
                 { title: 'Dubai Licensed', desc: 'Legally Registered', icon: BadgeCheck, onClick: openLicense },
                 { title: 'Fully Insured', desc: 'Complete Coverage', icon: ShieldCheck, onClick: openLicense },
@@ -484,12 +492,12 @@ const Home = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             
             {/* Before / After Our Work */}
-            <div className="bg-white rounded-[60px] p-10 md:p-14 border border-gray-100 shadow-sm flex flex-col items-center h-full">
-              <h3 className="text-brand-navy text-3xl md:text-4xl font-serif font-black mb-10 md:mb-12 uppercase tracking-tighter text-center">
+            <div className="bg-white rounded-[60px] p-5 md:p-8 border border-gray-100 shadow-sm flex flex-col items-center h-full">
+              <h3 className="text-brand-navy text-2xl md:text-3xl font-serif font-black mb-6 md:mb-8 uppercase tracking-tighter text-center">
                 Before / After Our Work
               </h3>
               
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 w-full mb-10 md:mb-12 flex-1">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 w-full mb-6 md:mb-8 flex-1">
                 {[
                   { title: 'Wall Painting', img: 'https://images.unsplash.com/photo-1562259949-e8e7689d7828?q=80&w=600&fit=crop' },
                   { title: 'AC Services', img: 'https://images.unsplash.com/photo-1581094271901-8022df4466f9?q=80&w=600&fit=crop' },
@@ -522,12 +530,12 @@ const Home = () => {
             </div>
 
             {/* Verified Corporate Projects */}
-            <div className="bg-white rounded-[60px] p-10 md:p-14 border border-gray-100 shadow-sm flex flex-col items-center h-full">
-              <h3 className="text-brand-navy text-3xl md:text-4xl font-serif font-black mb-10 md:mb-12 uppercase tracking-tighter text-center">
+            <div className="bg-white rounded-[60px] p-5 md:p-8 border border-gray-100 shadow-sm flex flex-col items-center h-full">
+              <h3 className="text-brand-navy text-2xl md:text-3xl font-serif font-black mb-6 md:mb-8 uppercase tracking-tighter text-center">
                 Corporate Portfolio
               </h3>
               
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 w-full mb-10 md:mb-12 flex-1">
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 w-full mb-6 md:mb-8 flex-1">
                 {[
                   { title: 'Radisson Blu', sub: 'Dubai Deira', img: '/park-inn-po-1.jpg' },
                   { title: 'M Gallery', sub: 'Palm Jumeirah', img: '/m-gallery-po-1.jpg' },
@@ -560,11 +568,11 @@ const Home = () => {
       </section>
 
       {/* Reviews Section */}
-      <section className="py-16 md:py-24 bg-white px-6 md:px-8 overflow-hidden">
+      <section className="py-8 md:py-12 bg-white px-6 md:px-8 overflow-hidden">
         <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-center mb-12 md:mb-16 gap-4 md:gap-6">
+          <div className="flex flex-col md:flex-row justify-between items-center mb-8 md:mb-10 gap-4 md:gap-6">
             <div className="hidden md:flex flex-1"></div>
-            <h2 className="text-2xl sm:text-3xl md:text-5xl text-brand-navy font-serif font-black uppercase tracking-widest text-center flex-1">
+            <h2 className="text-xl sm:text-2xl md:text-4xl text-brand-navy font-serif font-black uppercase tracking-widest text-center flex-1">
               Client Testimonials
             </h2>
             <div className="flex-1 flex justify-center md:justify-end">
@@ -585,7 +593,7 @@ const Home = () => {
                   initial={{opacity: 0, y: 20}}
                   whileInView={{opacity: 1, y: 0}}
                   transition={{delay: i * 0.1}}
-                  className="bg-white p-8 px-10 rounded-[40px] shadow-sm border border-gray-100 flex flex-col h-full gap-6"
+                  className="bg-white p-5 md:p-8 rounded-[40px] shadow-sm border border-gray-100 flex flex-col h-full gap-4"
                 >
                   <div className="flex items-center gap-4">
                     <img src={`https://i.pravatar.cc/150?u=${review.name}`} alt={review.name} className="w-14 h-14 rounded-2xl object-cover border-2 border-brand-gold/10" loading="lazy" />
@@ -624,7 +632,7 @@ const Home = () => {
                 href="https://www.google.com/search?q=Resqhome+UAE+Dubai" 
                 target="_blank" 
                 referrerPolicy="no-referrer"
-                className="inline-flex items-center gap-3 bg-white border border-gray-200 hover:border-brand-gold text-brand-navy hover:text-brand-gold px-8 py-4 rounded-2xl font-black text-xs uppercase tracking-widest transition-all shadow-sm hover:shadow-md cursor-pointer active:scale-95"
+                className="inline-flex items-center gap-3 bg-white border border-gray-200 hover:border-brand-gold text-brand-navy hover:text-brand-gold px-6 py-3 rounded-2xl font-black text-xs uppercase tracking-widest transition-all shadow-sm hover:shadow-md cursor-pointer active:scale-95"
               >
                 <i className="fa-brands fa-google text-brand-gold"></i>
                 Read all reviews on Google
@@ -635,11 +643,11 @@ const Home = () => {
       </section>
 
       {/* FAQ Accordion Section */}
-      <section className="py-16 md:py-24 px-6 md:px-8 bg-[#faf9f6]/35 border-t border-b border-gray-100">
+      <section className="py-8 md:py-12 px-6 md:px-8 bg-[#faf9f6]/35 border-t border-b border-gray-100">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center space-y-3 md:space-y-4 mb-12 md:mb-16">
+          <div className="text-center space-y-2 md:space-y-3 mb-8 md:mb-10">
             <span className="text-brand-gold font-black tracking-[0.4em] uppercase text-[8px] md:text-[9px] block">GOT QUESTIONS?</span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl text-brand-navy font-serif font-black uppercase tracking-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl text-brand-navy font-serif font-black uppercase tracking-tight">
               Frequently Asked <span className="text-brand-gold italic">Questions</span>
             </h2>
             <div className="w-16 h-1 bg-brand-gold mx-auto"></div>
@@ -702,10 +710,10 @@ const Home = () => {
       </section>
 
       {/* Unified UAE & CTA Section */}
-      <section className="px-6 md:px-8 pb-32">
+      <section className="px-6 md:px-8 pb-10 md:pb-14">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row rounded-3xl md:rounded-[50px] overflow-hidden shadow-2xl border border-gray-100/10">
           {/* Left: UAE Coverage */}
-          <div className="lg:w-1/2 bg-[#08264B] p-10 md:p-16 lg:p-20 text-center flex flex-col justify-center gap-8 md:gap-12">
+          <div className="lg:w-1/2 bg-[#08264B] p-5 md:p-8 lg:p-10 text-center flex flex-col justify-center gap-6 md:gap-8">
             <h2 className="text-white text-2xl md:text-3xl font-serif font-black uppercase tracking-widest leading-tight">
               Proudly Serving <br className="hidden sm:block" /> All 7 Emirates
             </h2>
@@ -730,9 +738,9 @@ const Home = () => {
           </div>
 
           {/* Right: GET FREE QUOTE */}
-          <div className="lg:w-1/2 bg-brand-gold p-10 md:p-16 lg:p-20 text-center flex flex-col justify-center gap-8 md:gap-10">
-            <div className="space-y-3 md:space-y-4">
-              <h2 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-black uppercase tracking-tighter leading-none">
+          <div className="lg:w-1/2 bg-brand-gold p-5 md:p-8 lg:p-10 text-center flex flex-col justify-center gap-6 md:gap-8">
+            <div className="space-y-2 md:space-y-3">
+              <h2 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-black uppercase tracking-tighter leading-none">
                 Get Your Free <br className="hidden sm:block" /> Quote Today!
               </h2>
               <p className="text-white font-bold text-sm md:text-lg max-w-md mx-auto opacity-90">
@@ -742,13 +750,13 @@ const Home = () => {
             <div className="flex flex-col sm:flex-row gap-4 md:gap-5 pt-2 md:pt-4 justify-center">
                <button 
                  onClick={callNow}
-                 className="bg-white text-brand-navy px-8 md:px-12 py-4 md:py-5 rounded-2xl font-black text-[10px] md:text-xs uppercase tracking-widest hover:bg-brand-navy hover:text-white transition-all shadow-xl flex items-center justify-center gap-3 active:scale-95"
+                 className="bg-white text-brand-navy px-6 md:px-9 py-3 md:py-4 rounded-2xl font-black text-[10px] md:text-xs uppercase tracking-widest hover:bg-brand-navy hover:text-white transition-all shadow-xl flex items-center justify-center gap-3 active:scale-95"
                >
                  <Phone className="w-5 h-5" /> CALL NOW
                </button>
                <button 
                  onClick={askExpert}
-                 className="bg-brand-navy text-white px-8 md:px-12 py-4 md:py-5 rounded-2xl font-black text-[10px] md:text-xs uppercase tracking-widest hover:bg-white hover:text-brand-navy transition-all shadow-xl flex items-center justify-center gap-3 active:scale-95"
+                 className="bg-brand-navy text-white px-6 md:px-9 py-3 md:py-4 rounded-2xl font-black text-[10px] md:text-xs uppercase tracking-widest hover:bg-white hover:text-brand-navy transition-all shadow-xl flex items-center justify-center gap-3 active:scale-95"
                >
                  <MessageCircle className="w-5 h-5 text-brand-gold" /> WHATSAPP US
                </button>

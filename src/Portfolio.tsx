@@ -148,7 +148,7 @@ const Portfolio = () => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-white">
+    <div className="flex flex-col bg-white">
       <Helmet>
         <title>Our Projects & Portfolio | Resqhome Dubai</title>
         <meta name="description" content="Verified home maintenance projects across the UAE — hotels, villas, offices, residential buildings." />
@@ -157,11 +157,11 @@ const Portfolio = () => {
       <TopBar />
       <Navbar />
 
-      <section className="py-24 px-4 md:px-8">
+      <section className="py-10 md:py-14 px-4 md:px-8">
         <div className="max-w-7xl mx-auto">
           
           {/* Hero Section */}
-          <div className="text-center mb-20 space-y-6">
+          <div className="text-center mb-6 md:mb-8 space-y-6">
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -191,7 +191,7 @@ const Portfolio = () => {
           </div>
 
           {/* Filter Tabs - Redefined for Luxury */}
-          <div className="flex flex-wrap justify-center items-center gap-4 mb-20 border-b border-gray-100 pb-8">
+          <div className="flex flex-wrap justify-center items-center gap-4 mb-6 md:mb-8 border-b border-gray-100 pb-8">
             {[
               { id: 'all', label: 'All Excellence', icon: <Layout className="w-4 h-4" /> },
               { id: 'hotels', label: 'Luxury Hotels', icon: <Hotel className="w-4 h-4" /> },
@@ -255,7 +255,7 @@ const Portfolio = () => {
                   </div>
 
                   <div className={cn(
-                    "p-10 flex flex-col justify-between flex-1",
+                    "p-5 md:p-8 flex flex-col justify-between flex-1",
                     project.large && "lg:w-2/5"
                   )}>
                     <div className="space-y-4">
@@ -283,7 +283,7 @@ const Portfolio = () => {
           </div>
 
           {/* Stats Bar Integrated */}
-          <div className="py-24 border-y border-gray-100 grid grid-cols-2 lg:grid-cols-4 gap-12 mb-32">
+          <div className="py-10 md:py-14 border-y border-gray-100 grid grid-cols-2 lg:grid-cols-4 gap-5 md:gap-8 mb-12 md:mb-16">
             {[
               { label: 'Hotels Served', value: '4+', icon: 'fa-solid fa-hotel' },
               { label: 'Prime Areas', value: '15+', icon: 'fa-solid fa-map-location-dot' },
@@ -303,8 +303,8 @@ const Portfolio = () => {
           <VerifiedProjects />
 
           {/* Luxury CTA */}
-          <section className="py-24 mt-20">
-             <div className="bg-brand-navy rounded-[3.5rem] p-12 md:p-24 relative overflow-hidden text-center text-white">
+          <section className="py-10 md:py-14 mt-20">
+             <div className="bg-brand-navy rounded-[3.5rem] p-6 md:p-12 relative overflow-hidden text-center text-white">
                 <div className="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/dark-matter.png')] opacity-20"></div>
                 <div className="relative z-10 space-y-8 max-w-3xl mx-auto">
                    <h2 className="text-4xl md:text-6xl font-serif font-bold leading-tight">Start Your Own Transformation</h2>
@@ -312,7 +312,7 @@ const Portfolio = () => {
                    <div className="flex flex-wrap justify-center gap-6 pt-6">
                       <button 
                         onClick={() => openBooking()}
-                        className="bg-brand-red text-white px-12 py-5 rounded-full font-bold text-lg uppercase tracking-widest hover:scale-105 transition-all shadow-2xl shadow-brand-red/30"
+                        className="bg-brand-red text-white px-9 py-4 rounded-full font-bold text-lg uppercase tracking-widest hover:scale-105 transition-all shadow-2xl shadow-brand-red/30"
                       >
                         Book Free Inspection
                       </button>

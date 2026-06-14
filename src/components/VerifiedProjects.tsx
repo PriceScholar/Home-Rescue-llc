@@ -49,9 +49,9 @@ const VerifiedProjects = () => {
   ];
 
   return (
-    <section className="py-24 bg-white px-8 border-t border-gray-100">
+    <section className="py-10 md:py-14 bg-white px-8 border-t border-gray-100">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16 space-y-4">
+        <div className="text-center mb-6 md:mb-8 space-y-4">
           <motion.div 
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -77,7 +77,7 @@ const VerifiedProjects = () => {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 mb-6 md:mb-8">
           {projects.map((proj, i) => (
             <motion.div
               key={proj.id}
@@ -138,7 +138,7 @@ const VerifiedProjects = () => {
           ))}
         </div>
 
-        <div className="bg-brand-navy p-10 rounded-[30px] border border-brand-gold/20 relative overflow-hidden text-center md:text-left">
+        <div className="bg-brand-navy p-6 md:p-8 rounded-[30px] border border-brand-gold/20 relative overflow-hidden text-center md:text-left">
           <div className="absolute top-0 right-0 w-64 h-64 bg-brand-gold/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
           <div className="relative z-10 flex flex-col md:flex-row items-center justify-between gap-8">
             <div className="space-y-4 max-w-2xl">

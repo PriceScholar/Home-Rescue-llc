@@ -50,10 +50,10 @@ const ServiceDetail = () => {
 
   if (!data) {
     return (
-      <div className="min-h-screen flex flex-col bg-white">
+      <div className="flex flex-col bg-white">
         <TopBar />
         <Navbar />
-        <div className="flex-1 flex flex-col items-center justify-center p-20 text-center">
+        <div className="flex-1 flex flex-col items-center justify-center p-6 md:p-10 text-center">
           <h1 className="text-5xl font-serif text-brand-navy mb-6">Service Excellence</h1>
           <p className="text-gray-500 mb-10 max-w-md leading-relaxed">We are currently refining the details for this technical specialty to ensure a premium experience. Please contact us directly for an immediate expert consultation.</p>
           <Link to="/" className="bg-brand-navy text-white px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-brand-gold transition-all">
@@ -139,7 +139,7 @@ const ServiceDetail = () => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-white">
+    <div className="flex flex-col bg-white">
       <Helmet>
         <title>{`${data.title} in Dubai & UAE | Resqhome`}</title>
         <meta name="description" content={`${data.description} Licensed Dubai technicians, fast response, transparent pricing. Book today.`} />
@@ -228,9 +228,9 @@ const ServiceDetail = () => {
       </section>
 
       {/* Hero Section */}
-      <section className="py-12 md:py-24 px-6 md:px-8 border-b border-gray-50">
+      <section className="py-8 md:py-12 px-6 md:px-8 border-b border-gray-50">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 md:gap-8 lg:gap-10 items-center">
             {/* Left Column: Image */}
             <motion.div 
               initial={{opacity: 0, x: -30}} 
@@ -335,15 +335,15 @@ const ServiceDetail = () => {
       </section>
 
       {/* Main Services Grid */}
-      <section className="py-20 md:py-32 px-6 md:px-8 bg-brand-cream/10">
+      <section className="py-10 md:py-14 px-6 md:px-8 bg-brand-cream/10">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16 md:mb-24 space-y-3 md:space-y-4">
+          <div className="text-center mb-6 md:mb-10 space-y-3 md:space-y-4">
             <span className="text-brand-gold font-bold tracking-[0.4em] uppercase text-[9px] md:text-[10px]">What is Included</span>
             <h2 className="text-3xl md:text-5xl font-serif text-brand-navy font-bold">Scope of Excellence</h2>
             <div className="w-24 h-[1px] bg-brand-gold mx-auto"></div>
           </div>
           
-          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-12">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8">
             {data.subServices.map((sub, i) => {
               const subId = getSubServiceId(sub.name);
               const cardContent = (
@@ -352,7 +352,7 @@ const ServiceDetail = () => {
                   whileInView={{opacity: 1, y: 0}}
                   viewport={{once: true}}
                   transition={{delay: i * 0.1}}
-                  className="bg-white p-6 md:p-10 rounded-3xl md:rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.03)] border border-gray-100 hover:-translate-y-2 transition-all duration-500 h-full group"
+                  className="bg-white p-5 md:p-8 rounded-3xl md:rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.03)] border border-gray-100 hover:-translate-y-2 transition-all duration-500 h-full group"
                 >
                   <div className="w-12 h-12 md:w-16 md:h-16 bg-brand-cream flex items-center justify-center rounded-xl md:rounded-2xl text-brand-navy group-hover:bg-brand-navy group-hover:text-white transition-all mb-6 md:mb-8 shadow-[0_10px_30px_rgba(0,0,0,0.05)]">
                     <i className={cn(sub.icon, "text-xl md:text-2xl text-brand-gold group-hover:text-white transition-colors")}></i>
@@ -381,15 +381,15 @@ const ServiceDetail = () => {
       </section>
 
       {/* Process Steps */}
-      <section className="py-20 md:py-32 px-6 md:px-8 bg-brand-navy text-white relative overflow-hidden">
+      <section className="py-10 md:py-14 px-6 md:px-8 bg-brand-navy text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/dark-matter.png')] opacity-20"></div>
         <div className="max-w-7xl mx-auto relative z-10">
-          <div className="text-center mb-16 md:mb-24 space-y-3 md:space-y-4">
+          <div className="text-center mb-6 md:mb-10 space-y-3 md:space-y-4">
             <span className="text-brand-gold font-bold tracking-[0.4em] uppercase text-[9px] md:text-[10px] opacity-60">The Workflow</span>
             <h2 className="text-3xl md:text-6xl font-serif font-bold">Our Technical Process</h2>
           </div>
           
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {data.process.map((p, i) => (
               <motion.div 
                 key={i} 
@@ -414,13 +414,13 @@ const ServiceDetail = () => {
       </section>
 
       {/* Pricing Packages */}
-      <section className="py-32 px-4 md:px-8 bg-white overflow-hidden">
-        <div className="max-w-7xl mx-auto text-center mb-24 space-y-4">
+      <section className="py-10 md:py-14 px-4 md:px-8 bg-white overflow-hidden">
+        <div className="max-w-7xl mx-auto text-center mb-8 md:mb-10 space-y-4">
           <span className="text-brand-red font-black tracking-[0.3em] uppercase text-xs">Clear Investment</span>
           <h2 className="text-4xl md:text-5xl font-serif text-brand-navy font-bold">Standardized Pricing</h2>
         </div>
         
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 px-4">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-8 px-4">
           {data.packages.map((pkg, i) => (
             <motion.div 
               key={i}
@@ -429,7 +429,7 @@ const ServiceDetail = () => {
               viewport={{once: true}}
               transition={{delay: i * 0.1}}
               className={cn(
-                "rounded-[3rem] p-12 relative flex flex-col items-center transition-all duration-700",
+                "rounded-[3rem] p-6 md:p-8 relative flex flex-col items-center transition-all duration-700",
                 pkg.recommended 
                   ? "bg-brand-navy text-white shadow-2xl scale-105 z-10 overflow-hidden" 
                   : "bg-white text-brand-navy shadow-xl border border-gray-100"
@@ -466,9 +466,9 @@ const ServiceDetail = () => {
       </section>
 
       {/* FAQs */}
-      <section className="py-20 md:py-32 px-6 md:px-8 bg-brand-cream/20">
+      <section className="py-10 md:py-14 px-6 md:px-8 bg-brand-cream/20">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16 md:mb-24 space-y-4">
+          <div className="text-center mb-6 md:mb-10 space-y-4">
             <CircleHelp className="w-12 h-12 md:w-16 md:h-16 text-brand-gold mx-auto opacity-30" />
             <h2 className="text-3xl md:text-5xl font-serif text-brand-navy font-bold">Frequently Asked</h2>
           </div>
@@ -494,8 +494,8 @@ const ServiceDetail = () => {
       <VerifiedProjects />
 
       {/* Final CTA */}
-      <section className="py-16 md:py-24 px-6 md:px-8">
-        <div className="max-w-6xl mx-auto bg-brand-navy rounded-3xl md:rounded-[4rem] p-10 md:p-24 text-center text-white relative overflow-hidden shadow-2xl">
+      <section className="py-8 md:py-12 px-6 md:px-8">
+        <div className="max-w-6xl mx-auto bg-brand-navy rounded-3xl md:rounded-[4rem] p-6 md:p-12 text-center text-white relative overflow-hidden shadow-2xl">
           <div className="absolute inset-0 bg-brand-gold/5 blur-3xl rounded-full scale-150"></div>
           <div className="relative z-10 max-w-3xl mx-auto space-y-8 md:space-y-10">
             <h2 className="text-3xl md:text-7xl font-serif font-bold leading-tight">Elite Support for Premier Properties</h2>
@@ -503,7 +503,7 @@ const ServiceDetail = () => {
             <div className="flex flex-wrap justify-center gap-4 md:gap-6 pt-4 md:pt-6">
               <button 
                 onClick={callNow}
-                className="w-full sm:w-auto bg-brand-red text-white px-10 md:px-12 py-4 md:py-5 rounded-full font-bold text-sm md:text-lg hover:bg-white hover:text-brand-navy transition-all shadow-2xl flex items-center justify-center gap-4 uppercase tracking-widest"
+                className="w-full sm:w-auto bg-brand-red text-white px-7 md:px-9 py-3 md:py-4 rounded-full font-bold text-sm md:text-lg hover:bg-white hover:text-brand-navy transition-all shadow-2xl flex items-center justify-center gap-4 uppercase tracking-widest"
               >
                 <Phone className="w-5 h-5 md:w-6 md:h-6" /> Call Direct
               </button>

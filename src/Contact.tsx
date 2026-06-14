@@ -14,7 +14,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col">
       <Helmet>
         <title>Contact Resqhome — 24/7 Home Services Dubai</title>
         <meta name="description" content="Call +971 52 452 4295 or WhatsApp anytime for home maintenance across Dubai and the UAE." />
@@ -23,7 +23,7 @@ const Contact = () => {
       <TopBar />
       <Navbar />
 
-      <section className="bg-brand-navy py-16 md:py-24 text-center px-6 md:px-4 relative overflow-hidden">
+      <section className="bg-brand-navy py-8 md:py-12 text-center px-6 md:px-4 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-48 h-48 md:w-64 md:h-64 bg-brand-gold/10 rounded-full blur-[80px] md:blur-[100px]"></div>
         <motion.div initial={{opacity: 0, y: 20}} animate={{opacity: 1, y: 0}} className="relative z-10 max-w-4xl mx-auto space-y-3 md:space-y-4">
            <h1 className="text-3xl sm:text-4xl md:text-6xl text-white font-serif font-bold tracking-tight uppercase">Get In Touch</h1>
@@ -31,9 +31,9 @@ const Contact = () => {
         </motion.div>
       </section>
 
-      <section className="py-16 md:py-24 px-6 md:px-8 bg-brand-cream">
+      <section className="py-8 md:py-12 px-6 md:px-8 bg-brand-cream">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-16 md:mb-24">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-6 md:mb-10">
              <motion.div whileHover={{y: -5}} className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 text-center flex flex-col items-center">
                <div className="w-12 h-12 md:w-16 md:h-16 bg-brand-navy/5 rounded-full flex items-center justify-center text-brand-navy mx-auto mb-4 md:mb-6">
                  <Phone className="w-6 h-6 md:w-8 md:h-8" />
@@ -62,7 +62,7 @@ const Contact = () => {
              </motion.div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 bg-white rounded-3xl md:rounded-[40px] p-6 md:p-16 shadow-xl border border-gray-50">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-10 bg-white rounded-3xl md:rounded-[40px] p-6 md:p-10 shadow-xl border border-gray-50">
             <div className="space-y-6 md:space-y-8">
               <div>
                 <h2 className="text-2xl md:text-4xl font-serif text-brand-navy mb-4 md:mb-6 font-bold leading-tight">Send Us A Message</h2>

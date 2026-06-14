@@ -10,7 +10,7 @@ const Credentials = () => {
   const { openLicense } = useBooking();
 
   return (
-    <div className="flex flex-col min-h-screen bg-white">
+    <div className="flex flex-col bg-white">
       <Helmet>
         <title>Our Credentials & Licenses | Resqhome Dubai</title>
         <meta name="description" content="Dubai-licensed, fully insured, DEWA-approved. Trade licenses and insurance documentation on file." />
@@ -20,7 +20,7 @@ const Credentials = () => {
       <Navbar />
 
       {/* Hero Section */}
-      <section className="bg-brand-navy py-12 px-4 md:px-8">
+      <section className="bg-brand-navy py-8 md:py-10 px-4 md:px-8">
         <div className="max-w-7xl mx-auto flex items-center gap-2 text-gray-400 text-[11px] font-bold uppercase tracking-widest">
           <Link to="/" className="hover:text-brand-gold transition-colors">Home</Link>
           <ChevronLeft className="w-3 h-3 rotate-180" />
@@ -28,7 +28,7 @@ const Credentials = () => {
         </div>
       </section>
 
-      <section className="bg-brand-navy py-24 text-white relative overflow-hidden">
+      <section className="bg-brand-navy py-10 md:py-14 text-white relative overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-brand-navy/90 mix-blend-multiply"></div>
           <img 
@@ -69,9 +69,9 @@ const Credentials = () => {
       </section>
 
       {/* Main Content */}
-      <section className="py-24 bg-white px-8">
+      <section className="py-10 md:py-14 bg-white px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-10 items-start">
             
             {/* Left: License Details */}
             <div className="space-y-12">
@@ -104,7 +104,7 @@ const Credentials = () => {
                 ))}
               </div>
 
-              <div className="bg-brand-navy p-10 rounded-[2.5rem] text-white relative overflow-hidden group shadow-2xl">
+              <div className="bg-brand-navy p-5 md:p-8 rounded-[2.5rem] text-white relative overflow-hidden group shadow-2xl">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-brand-gold/10 rounded-full translate-x-10 -translate-y-10 blur-2xl"></div>
                 <div className="relative z-10 space-y-6">
                   <div className="flex items-center gap-4">
@@ -128,7 +128,7 @@ const Credentials = () => {
 
             {/* Right: Quality Commitment */}
             <div className="space-y-12">
-              <div className="relative p-12 bg-brand-cream/10 rounded-[3rem] border-2 border-brand-gold/5 overflow-hidden">
+              <div className="relative p-6 md:p-8 bg-brand-cream/10 rounded-[3rem] border-2 border-brand-gold/5 overflow-hidden">
                  <div className="absolute top-0 right-0 w-48 h-48 bg-brand-gold/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl"></div>
                  
                  <div className="relative z-10 space-y-10">
@@ -164,7 +164,7 @@ const Credentials = () => {
                    { label: 'Trusted By', value: '1000+ Homes' },
                    { label: 'Licensed Since', value: '2014' },
                  ].map((stat, i) => (
-                   <div key={i} className="p-10 rounded-[2.5rem] border border-gray-100 text-center space-y-2 bg-white shadow-xl shadow-gray-400/5">
+                   <div key={i} className="p-5 md:p-8 rounded-[2.5rem] border border-gray-100 text-center space-y-2 bg-white shadow-xl shadow-gray-400/5">
                       <div className="text-4xl font-serif font-bold text-brand-navy">{stat.value}</div>
                       <div className="text-[10px] text-brand-gold font-bold uppercase tracking-widest">{stat.label}</div>
                    </div>

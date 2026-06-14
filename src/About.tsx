@@ -9,7 +9,7 @@ import VerifiedProjects from './components/VerifiedProjects';
 
 const About = () => {
   return (
-    <div className="flex flex-col min-h-screen bg-white">
+    <div className="flex flex-col bg-white">
       <Helmet>
         <title>About Resqhome — Premium Home Services Dubai</title>
         <meta name="description" content="Licensed and insured home maintenance company in Dubai serving all 7 Emirates. 1000+ projects, 500+ customers." />
@@ -60,7 +60,7 @@ const About = () => {
       </section>
 
       {/* Main Content */}
-      <section className="py-16 md:py-24 px-6 md:px-8">
+      <section className="py-12 md:py-16 px-6 md:px-8">
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
            <motion.div 
              initial={{opacity: 0, x: -30}} 
@@ -125,7 +125,7 @@ const About = () => {
       </section>
 
       {/* Stats Bar */}
-      <section className="py-24 bg-brand-navy text-white relative overflow-hidden">
+      <section className="py-10 md:py-14 bg-brand-navy text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
         <div className="max-w-7xl mx-auto px-4 grid grid-cols-2 lg:grid-cols-4 gap-12 relative z-10">
            {[
@@ -153,14 +153,14 @@ const About = () => {
       </section>
 
       {/* Values Section */}
-      <section className="py-20 md:py-32 px-6 md:px-8 bg-brand-cream/20">
+      <section className="py-10 md:py-14 px-6 md:px-8 bg-brand-cream/20">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12 md:mb-20 space-y-3 md:space-y-4">
+          <div className="text-center mb-6 md:mb-8 space-y-3 md:space-y-4">
             <span className="text-brand-gold font-bold tracking-[0.4em] uppercase text-[9px] md:text-[10px]">What We Stand For</span>
             <h2 className="text-3xl md:text-5xl font-serif text-brand-navy font-bold leading-tight">Our Core Philosophies</h2>
           </div>
           
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8">
              {[
                {
                  title: 'Excellence in Action', 
@@ -184,7 +184,7 @@ const About = () => {
                  whileInView={{opacity: 1, y: 0}}
                  viewport={{once: true}}
                  transition={{delay: i * 0.1}}
-                 className="bg-white p-8 md:p-12 rounded-[2rem] md:rounded-[2.5rem] shadow-[0_15px_40px_rgba(0,0,0,0.03)] border border-gray-100 relative group overflow-hidden"
+                 className="bg-white p-6 md:p-8 rounded-[2rem] md:rounded-[2.5rem] shadow-[0_15px_40px_rgba(0,0,0,0.03)] border border-gray-100 relative group overflow-hidden"
                >
                  <div className="absolute top-0 right-0 w-16 h-16 md:w-24 md:h-24 bg-brand-cream/50 rounded-bl-[2.5rem] md:rounded-bl-[4rem] flex items-center justify-center transition-all duration-500 group-hover:bg-brand-navy group-hover:text-white group-hover:w-full group-hover:h-full group-hover:rounded-none z-0">
                     <i className={cn(v.icon, "text-xl md:text-2xl text-brand-gold transition-colors group-hover:text-white")}></i>
@@ -203,14 +203,14 @@ const About = () => {
       <VerifiedProjects />
 
       {/* CTA section for About Page */}
-      <section className="py-16 md:py-24 px-6 md:px-8">
+      <section className="py-12 md:py-16 px-6 md:px-8">
         <div className="max-w-6xl mx-auto rounded-3xl md:rounded-[3rem] bg-brand-navy p-10 md:p-12 text-center text-white space-y-6 md:space-y-8 relative overflow-hidden shadow-2xl">
            <div className="absolute inset-0 bg-brand-gold/5 -skew-y-12 translate-y-20"></div>
            <div className="relative z-10 space-y-4 md:space-y-6">
               <h2 className="text-3xl md:text-6xl font-serif font-bold tracking-tight">Ready to Experience the Difference?</h2>
               <p className="text-base md:text-xl text-white/70 max-w-2xl mx-auto">Join thousands of happy homeowners who trust Home Rescue for their premium maintenance needs.</p>
               <div className="flex flex-wrap justify-center gap-4 pt-4 md:pt-6">
-                 <Link to="/contact" className="w-full sm:w-auto bg-brand-red text-white px-8 md:px-10 py-4 md:py-5 rounded-full font-bold text-sm md:text-lg hover:scale-105 transition-all shadow-xl shadow-brand-red/20 uppercase tracking-widest">
+                 <Link to="/contact" className="w-full sm:w-auto bg-brand-red text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-bold text-sm md:text-lg hover:scale-105 transition-all shadow-xl shadow-brand-red/20 uppercase tracking-widest">
                     Start Your Project
                  </Link>
               </div>

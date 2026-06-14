@@ -63,7 +63,7 @@ const Services = () => {
   ];
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col">
       <Helmet>
         <title>All Home Maintenance Services in Dubai | Resqhome</title>
         <meta name="description" content="Browse all services — AC repair, plumbing, electrical, painting, ceiling, tile, handyman. Trusted UAE technicians, transparent pricing." />
@@ -72,7 +72,7 @@ const Services = () => {
       <TopBar />
       <Navbar />
 
-      <section className="bg-brand-navy py-24 text-center px-4">
+      <section className="bg-brand-navy py-10 md:py-14 text-center px-4">
         <motion.div initial={{opacity: 0, y: 20}} animate={{opacity: 1, y: 0}} className="max-w-4xl mx-auto space-y-6">
           <h1 className="text-4xl md:text-6xl text-white font-serif">Our Premium Services</h1>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
@@ -81,8 +81,8 @@ const Services = () => {
         </motion.div>
       </section>
 
-      <section className="py-24 px-4 md:px-8 bg-brand-cream">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 gap-12">
+      <section className="py-10 md:py-14 px-4 md:px-8 bg-brand-cream">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 gap-5 md:gap-8">
           {categories.map((cat, i) => (
             <motion.div 
               key={cat.id}
@@ -96,9 +96,9 @@ const Services = () => {
                 <img src={cat.image} alt={cat.name} className="w-full h-full object-contain" loading="lazy" />
                 <div className="absolute inset-0 bg-brand-navy/20"></div>
               </div>
-              <div className="lg:w-3/5 p-8 md:p-12 flex flex-col justify-center">
+              <div className="lg:w-3/5 p-6 md:p-8 flex flex-col justify-center">
                 <cat.icon className="w-12 h-12 text-brand-gold mb-6" />
-                <h2 className="text-3xl md:text-4xl font-serif text-brand-navy mb-4">{cat.name}</h2>
+                <h2 className="text-2xl md:text-3xl font-serif text-brand-navy mb-4">{cat.name}</h2>
                 <p className="text-gray-600 mb-8 max-w-xl leading-relaxed">{cat.desc}</p>
                 
                 <div className="grid grid-cols-2 gap-4 mb-10">

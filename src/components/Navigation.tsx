@@ -57,7 +57,7 @@ export const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-white px-4 md:px-8 flex justify-between items-center shadow-md sticky top-0 z-[100] h-16 md:h-20">
+    <nav className="bg-white px-4 md:px-8 flex justify-between items-center shadow-md sticky top-0 z-[100] h-14 md:h-16">
       <Link to="/" className="flex items-center gap-2 md:gap-3 shrink-0">
         <div className="w-8 h-8 md:w-10 md:h-10 bg-brand-navy rounded-lg flex items-center justify-center border-2 border-brand-gold">
           <span className="text-brand-gold font-bold text-lg md:text-xl">H</span>
@@ -313,7 +313,7 @@ export const Footer = () => {
   ];
 
   return (
-    <footer className="bg-brand-navy text-white pt-16 pb-12 px-8 overflow-hidden">
+    <footer className="bg-brand-navy text-white pt-10 pb-8 px-8 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 mb-16">
           

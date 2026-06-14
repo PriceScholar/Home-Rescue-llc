@@ -101,12 +101,12 @@ const ServiceLocations: React.FC = () => {
   ];
 
   return (
-    <section id="portfolio" className="py-24 bg-gradient-to-b from-white to-brand-cream/30 relative overflow-hidden">
+    <section id="portfolio" className="py-10 md:py-14 bg-gradient-to-b from-white to-brand-cream/30 relative overflow-hidden">
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-brand-gold to-transparent opacity-30"></div>
       
       <div className="max-w-7xl mx-auto px-6">
         {/* Section Header */}
-        <div className="text-center mb-16 space-y-4">
+        <div className="text-center mb-6 md:mb-8 space-y-4">
           <motion.span 
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -140,7 +140,7 @@ const ServiceLocations: React.FC = () => {
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="bg-brand-navy p-8 rounded-[30px] shadow-2xl shadow-brand-navy/20 flex flex-wrap items-center justify-around gap-8 mb-20 border border-brand-gold/10"
+          className="bg-brand-navy p-5 md:p-8 rounded-[30px] shadow-2xl shadow-brand-navy/20 flex flex-wrap items-center justify-around gap-8 mb-6 md:mb-8 border border-brand-gold/10"
         >
           {counters.map((counter, i) => (
             <React.Fragment key={i}>
@@ -154,7 +154,7 @@ const ServiceLocations: React.FC = () => {
         </motion.div>
 
         {/* Locations Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-6 md:mb-8">
           {locations.map((loc) => (
             <motion.div
               key={loc.id}
@@ -225,7 +225,7 @@ const ServiceLocations: React.FC = () => {
           initial={{ opacity: 0, x: -30 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="flex flex-col md:flex-row items-center gap-8 bg-brand-cream/30 p-8 md:p-10 rounded-[30px] border-l-8 border-brand-gold shadow-lg mb-16 max-w-4xl mx-auto"
+          className="flex flex-col md:flex-row items-center gap-8 bg-brand-cream/30 p-5 md:p-8 rounded-[30px] border-l-8 border-brand-gold shadow-lg mb-6 md:mb-8 max-w-4xl mx-auto"
         >
           <div className="w-20 h-20 rounded-full bg-brand-navy flex items-center justify-center text-brand-gold text-4xl shrink-0 shadow-xl shadow-brand-navy/20">
             <ShieldCheck className="w-10 h-10" />
