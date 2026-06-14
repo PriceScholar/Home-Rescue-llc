@@ -311,7 +311,8 @@ export const Footer = () => {
     location.pathname.includes('-ac') || 
     location.pathname.includes('plumbing-') || 
     location.pathname.includes('drain') || 
-    location.pathname.includes('leak');
+    location.pathname.includes('leak') ||
+    location.pathname.includes('pipe');
 
   const socialLinks = [
     { Icon: Facebook, href: '#' },

@@ -36,13 +36,15 @@ const isAcOrPlumbing = (id: string, title?: string): boolean => {
     lowerId.includes('leak') ||
     lowerId.includes('water-heater') ||
     lowerId.includes('sanitary') ||
+    lowerId.includes('pipe') ||
     lowerTitle.includes('ac ') ||
     lowerTitle.includes(' ac') ||
     lowerTitle === 'ac' ||
     lowerTitle.includes('air cond') ||
     lowerTitle.includes('plumbing') ||
     lowerTitle.includes('leak') ||
-    lowerTitle.includes('drain')
+    lowerTitle.includes('drain') ||
+    lowerTitle.includes('pipe')
   );
 };
 

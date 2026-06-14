@@ -12,7 +12,8 @@ export const StickyMobileBar = () => {
     location.pathname.includes('-ac') || 
     location.pathname.includes('plumbing-') || 
     location.pathname.includes('drain') || 
-    location.pathname.includes('leak');
+    location.pathname.includes('leak') ||
+    location.pathname.includes('pipe');
 
   return (
     <div className="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-[#08264B]/95 backdrop-blur-md border-t border-white/15 px-4 py-2.5 flex items-center justify-between gap-3 shadow-[0_-10px_30px_rgba(0,0,0,0.3)]">

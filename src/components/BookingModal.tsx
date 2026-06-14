@@ -117,13 +117,15 @@ const BookingModal: React.FC<BookingModalProps> = ({
     isBookNowMode ||
     (preSelectedService ? (
       preSelectedService.toLowerCase().includes('ac') || 
-      preSelectedService.toLowerCase().includes('plumb')
+      preSelectedService.toLowerCase().includes('plumb') ||
+      preSelectedService.toLowerCase().includes('pipe')
     ) : false) ||
     window.location.pathname.includes('ac-') ||
     window.location.pathname.includes('-ac') ||
     window.location.pathname.includes('plumb') ||
     window.location.pathname.includes('drain') ||
-    window.location.pathname.includes('leak');
+    window.location.pathname.includes('leak') ||
+    window.location.pathname.includes('pipe');
 
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState({
