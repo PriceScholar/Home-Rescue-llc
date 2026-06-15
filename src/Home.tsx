@@ -216,7 +216,7 @@ const Home = () => {
             initial={{opacity: 0, scale: 0.9}}
             animate={{opacity: 1, scale: 1}}
             transition={{duration: 0.8, delay: 0.2}}
-            className="flex-1 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6 w-full"
+            className="hidden lg:grid flex-1 grid-cols-2 sm:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6 w-full"
           >
             {[
               {title: 'Painting Services', icon: 'fa-solid fa-paint-roller', img: '/images/services/service-paint.jpg', link: '/services/paint-work'},
@@ -342,7 +342,7 @@ const Home = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-12 md:py-12 px-6 md:px-8 bg-white relative overflow-hidden">
+      <section className="py-12 md:py-12 px-3 sm:px-6 md:px-8 bg-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto relative z-10 pt-8 md:pt-0">
           <div className="text-center space-y-2 md:space-y-3 mb-8 md:mb-10">
             <motion.div 
@@ -357,7 +357,7 @@ const Home = () => {
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-brand-navy font-serif tracking-tight leading-tight">Complete Solutions <br className="hidden sm:block" /> <span className="text-brand-gold italic">For Every Need</span></h2>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+          <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-2 lg:grid-cols-4 gap-2 sm:gap-4 md:gap-6">
             {homeServices.map((service, i) => (
               <motion.div 
                 key={i}
@@ -365,27 +365,27 @@ const Home = () => {
                 whileInView={{opacity: 1, y: 0}}
                 transition={{delay: i * 0.1}}
                 whileHover={{y: -10}}
-                className="group bg-white rounded-2xl md:rounded-[32px] overflow-hidden shadow-sm hover:shadow-2xl border border-gray-100 flex flex-col h-full transition-all duration-500"
+                className="group bg-white rounded-xl sm:rounded-2xl md:rounded-[32px] overflow-hidden shadow-sm hover:shadow-2xl border border-gray-100 flex flex-col h-full transition-all duration-500"
               >
                 <div className="relative aspect-square sm:aspect-[4/3] overflow-hidden">
                   <img src={service.image} alt={service.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
                   <div className="absolute inset-0 bg-brand-navy/10 group-hover:bg-transparent transition-colors"></div>
-                  <div className="absolute top-3 left-3 md:top-5 md:left-5">
-                    <div className="w-8 h-8 md:w-12 md:h-12 bg-white/95 backdrop-blur-md rounded-xl md:rounded-2xl flex items-center justify-center text-brand-navy shadow-lg group-hover:bg-brand-gold group-hover:text-brand-navy transition-all duration-300">
-                      <i className={cn(service.icon, "text-sm md:text-xl")}></i>
+                  <div className="absolute top-2 left-2 sm:top-3 sm:left-3 md:top-5 md:left-5">
+                    <div className="w-6 h-6 sm:w-8 sm:h-8 md:w-12 md:h-12 bg-white/95 backdrop-blur-md rounded-lg md:rounded-2xl flex items-center justify-center text-brand-navy shadow-lg group-hover:bg-brand-gold group-hover:text-brand-navy transition-all duration-300">
+                      <i className={cn(service.icon, "text-[10px] sm:text-sm md:text-xl")}></i>
                     </div>
                   </div>
                 </div>
-                <div className="p-4 md:p-8 flex flex-col flex-1 gap-1 md:gap-3">
-                  <h3 className="text-sm md:text-lg font-black text-brand-navy leading-tight">{service.title}</h3>
+                <div className="p-2 sm:p-4 md:p-8 flex flex-col flex-1 gap-1 md:gap-3">
+                  <h3 className="text-[10px] sm:text-sm md:text-lg font-black text-brand-navy leading-tight">{service.title}</h3>
                   <p className="hidden md:block text-sm text-gray-500 leading-relaxed font-medium flex-1">
                     {service.subtitle}
                   </p>
                   <Link 
                     to={`/services/${service.id}`}
-                    className="flex items-center gap-1.5 md:gap-2 text-brand-gold font-black text-[8px] md:text-[9px] uppercase tracking-widest group-hover:gap-3 md:group-hover:gap-4 transition-all pt-2 md:pt-4"
+                    className="flex items-center gap-1 sm:gap-2 text-brand-gold font-black text-[7px] sm:text-[8px] md:text-[9px] uppercase tracking-widest group-hover:gap-2 md:group-hover:gap-4 transition-all pt-1 md:pt-4"
                   >
-                    Details <ArrowRight className="w-3 h-3 md:w-4 md:h-4" />
+                    Details <ArrowRight className="w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-4 md:h-4" />
                   </Link>
                 </div>
               </motion.div>
