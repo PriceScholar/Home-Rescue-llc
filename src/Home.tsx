@@ -367,27 +367,28 @@ const Home = () => {
                 whileHover={{y: -10}}
                 className="group bg-white rounded-xl sm:rounded-2xl md:rounded-[32px] overflow-hidden shadow-sm hover:shadow-2xl border border-gray-100 flex flex-col h-full transition-all duration-500"
               >
-                <div className="relative aspect-square sm:aspect-[4/3] overflow-hidden">
-                  <img src={service.image} alt={service.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
-                  <div className="absolute inset-0 bg-brand-navy/10 group-hover:bg-transparent transition-colors"></div>
-                  <div className="absolute top-2 left-2 sm:top-3 sm:left-3 md:top-5 md:left-5">
-                    <div className="w-6 h-6 sm:w-8 sm:h-8 md:w-12 md:h-12 bg-white/95 backdrop-blur-md rounded-lg md:rounded-2xl flex items-center justify-center text-brand-navy shadow-lg group-hover:bg-brand-gold group-hover:text-brand-navy transition-all duration-300">
-                      <i className={cn(service.icon, "text-[10px] sm:text-sm md:text-xl")}></i>
+                <Link to={`/services/${service.id}`} className="flex flex-col h-full w-full">
+                  <div className="relative aspect-square sm:aspect-[4/3] overflow-hidden">
+                    <img src={service.image} alt={service.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
+                    <div className="absolute inset-0 bg-brand-navy/10 group-hover:bg-transparent transition-colors"></div>
+                    <div className="absolute top-2 left-2 sm:top-3 sm:left-3 md:top-5 md:left-5">
+                      <div className="w-6 h-6 sm:w-8 sm:h-8 md:w-12 md:h-12 bg-white/95 backdrop-blur-md rounded-lg md:rounded-2xl flex items-center justify-center text-brand-navy shadow-lg group-hover:bg-brand-gold group-hover:text-brand-navy transition-all duration-300">
+                        <i className={cn(service.icon, "text-[10px] sm:text-sm md:text-xl")}></i>
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="p-2 sm:p-4 md:p-8 flex flex-col flex-1 gap-1 md:gap-3">
-                  <h3 className="text-[10px] sm:text-sm md:text-lg font-black text-brand-navy leading-tight">{service.title}</h3>
-                  <p className="hidden md:block text-sm text-gray-500 leading-relaxed font-medium flex-1">
-                    {service.subtitle}
-                  </p>
-                  <Link 
-                    to={`/services/${service.id}`}
-                    className="flex items-center gap-1 sm:gap-2 text-brand-gold font-black text-[7px] sm:text-[8px] md:text-[9px] uppercase tracking-widest group-hover:gap-2 md:group-hover:gap-4 transition-all pt-1 md:pt-4"
-                  >
-                    Details <ArrowRight className="w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-4 md:h-4" />
-                  </Link>
-                </div>
+                  <div className="p-2 sm:p-4 md:p-8 flex flex-col flex-1 gap-1 md:gap-3">
+                    <h3 className="text-[10px] sm:text-sm md:text-lg font-black text-brand-navy leading-tight">{service.title}</h3>
+                    <p className="hidden md:block text-sm text-gray-500 leading-relaxed font-medium flex-1">
+                      {service.subtitle}
+                    </p>
+                    <div 
+                      className="flex items-center gap-1 sm:gap-2 text-brand-gold font-black text-[7px] sm:text-[8px] md:text-[9px] uppercase tracking-widest group-hover:gap-2 md:group-hover:gap-4 transition-all pt-1 md:pt-4"
+                    >
+                      Details <ArrowRight className="w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-4 md:h-4" />
+                    </div>
+                  </div>
+                </Link>
               </motion.div>
             ))}
           </div>

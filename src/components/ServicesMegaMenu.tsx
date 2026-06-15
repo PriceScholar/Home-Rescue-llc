@@ -71,7 +71,18 @@ export const ServicesMegaMenu = ({ onClose, callNow, openConsultation }: Service
             >
               <div className="mb-10 selection:bg-brand-gold/30">
                 <span className="text-blue-600 text-[10px] font-bold uppercase tracking-[0.2em] block mb-2">OUR SERVICES</span>
-                <h2 className="text-4xl font-serif font-bold text-brand-navy mb-4">{activeCategory.name}</h2>
+                <div className="flex flex-wrap items-baseline gap-4 mb-4">
+                  <Link to={`/services/${activeCategory.id}`} onClick={onClose} className="hover:text-brand-gold transition-colors">
+                    <h2 className="text-4xl font-serif font-bold text-brand-navy hover:text-brand-gold transition-colors">{activeCategory.name}</h2>
+                  </Link>
+                  <Link 
+                    to={`/services/${activeCategory.id}`} 
+                    onClick={onClose}
+                    className="flex items-center gap-1.5 text-xs text-brand-gold hover:text-brand-red font-black uppercase tracking-wider transition-all hover:gap-2.5"
+                  >
+                    View Main Page <ArrowRight className="w-3.5 h-3.5" />
+                  </Link>
+                </div>
                 <div className="w-16 h-1 bg-[#D9A520] mb-6" />
                 <p className="text-gray-500 text-sm leading-relaxed max-w-2xl">{activeCategory.description}</p>
               </div>

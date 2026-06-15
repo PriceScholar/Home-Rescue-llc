@@ -220,18 +220,25 @@ export const Navbar = () => {
                               <div className="flex flex-col px-6 pb-4 pt-1 gap-2">
                                 {serviceCategories.map((cat) => (
                                   <div key={cat.name} className="flex flex-col">
-                                    <button 
-                                      onClick={() => setOpenMobileAccordion(openMobileAccordion === cat.name ? 'services' : cat.name)}
-                                      className="flex justify-between items-center py-2 text-xs text-brand-navy font-bold"
-                                    >
-                                      <div className="flex items-center gap-2">
+                                    <div className="flex justify-between items-center py-1">
+                                      <Link 
+                                        to={`/services/${cat.id}`}
+                                        onClick={() => setIsMenuOpen(false)}
+                                        className="flex items-center gap-2 py-1 text-xs text-brand-navy font-bold hover:text-brand-gold transition-colors flex-1"
+                                      >
                                         <div className="w-5 h-5 rounded flex items-center justify-center shrink-0" style={{backgroundColor: cat.color}}>
                                           <i className={cn(cat.icon as string, "text-[8px] text-white")}></i>
                                         </div>
                                         {cat.name}
-                                      </div>
-                                      <ChevronRight className={cn("w-3.5 h-3.5 text-brand-navy/55", openMobileAccordion === cat.name && "rotate-90")} />
-                                    </button>
+                                      </Link>
+                                      <button 
+                                        onClick={() => setOpenMobileAccordion(openMobileAccordion === cat.name ? 'services' : cat.name)}
+                                        className="p-1.5 text-brand-navy/55 hover:text-brand-navy transition-all rounded hover:bg-gray-100 cursor-pointer"
+                                        aria-label="Toggle Details"
+                                      >
+                                        <ChevronRight className={cn("w-3.5 h-3.5 transition-transform duration-300", openMobileAccordion === cat.name && "rotate-90")} />
+                                      </button>
+                                    </div>
                                     {openMobileAccordion === cat.name && (
                                       <div className="flex flex-col gap-1.5 pl-6 py-1.5">
                                         {cat.subs.map((sub) => (
