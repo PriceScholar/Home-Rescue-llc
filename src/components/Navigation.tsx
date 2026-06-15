@@ -1,7 +1,7 @@
 import React from 'react';
-import {Phone, Mail, MessageCircle, Menu, X, ChevronDown, ChevronRight, Facebook, Instagram, Linkedin, Send, Video, BadgeCheck, MapPin, Clock, ShieldCheck} from 'lucide-react';
+import {Phone, Mail, MessageCircle, Menu, X, ChevronDown, ChevronRight, ChevronLeft, Facebook, Instagram, Linkedin, Send, Video, BadgeCheck, MapPin, Clock, ShieldCheck} from 'lucide-react';
 import {useLanguage} from '../context/LanguageContext';
-import {Link, useLocation} from 'react-router-dom';
+import {Link, useLocation, useNavigate} from 'react-router-dom';
 import {motion, AnimatePresence} from 'motion/react';
 import {cn} from '../lib/utils';
 import { useBooking } from './BookingModal';
@@ -45,28 +45,43 @@ export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const [isServicesOpen, setIsServicesOpen] = React.useState(false);
   const [openMobileAccordion, setOpenMobileAccordion] = React.useState<string | null>(null);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const isHomePage = location.pathname === '/';
 
   const navLinks = [
-    {name: t('nav_home'), path: '/', active: true},
-    {name: t('nav_services'), path: '/services', dropdown: true},
-    {name: t('nav_about'), path: '/about'},
-    {name: 'Credentials', path: '/credentials'},
-    {name: t('nav_portfolio'), path: '/portfolio'},
-    {name: 'Blog', path: '/blog'},
-    {name: t('nav_contact'), path: '/contact'},
+    {name: t('nav_home'), path: '/', active: location.pathname === '/'},
+    {name: t('nav_services'), path: '/services', dropdown: true, active: location.pathname.startsWith('/services')},
+    {name: t('nav_about'), path: '/about', active: location.pathname === '/about'},
+    {name: 'Credentials', path: '/credentials', active: location.pathname === '/credentials'},
+    {name: t('nav_portfolio'), path: '/portfolio', active: location.pathname === '/portfolio'},
+    {name: 'Blog', path: '/blog', active: location.pathname === '/blog'},
+    {name: t('nav_contact'), path: '/contact', active: location.pathname === '/contact'},
   ];
 
   return (
     <nav className="bg-white px-4 md:px-8 flex justify-between items-center shadow-md sticky top-0 z-[100] h-14 md:h-16">
-      <Link to="/" className="flex items-center gap-2 md:gap-3 shrink-0">
-        <div className="w-8 h-8 md:w-10 md:h-10 bg-brand-navy rounded-lg flex items-center justify-center border-2 border-brand-gold">
-          <span className="text-brand-gold font-bold text-lg md:text-xl">H</span>
-        </div>
-        <div>
-          <h1 className="text-lg md:text-xl font-bold text-brand-navy tracking-tight leading-none uppercase">HOME RESCUE</h1>
-          <p className="text-[8px] md:text-[10px] text-brand-gold tracking-[0.2em] font-bold mt-1 uppercase">TECHNICAL SERVICES</p>
-        </div>
-      </Link>
+      <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
+        {!isHomePage && (
+          <button 
+            onClick={() => window.history.length > 1 ? navigate(-1) : navigate('/')} 
+            className="flex items-center justify-center w-8 h-8 md:w-9 md:h-9 rounded-full bg-brand-cream/60 hover:bg-brand-gold/25 text-brand-navy transition-all mr-1 md:mr-2 cursor-pointer border border-gray-100 hover:scale-105 active:scale-95 shadow-sm shrink-0"
+            aria-label="Go Back"
+          >
+            <ChevronLeft className="w-5 h-5 text-brand-gold" />
+          </button>
+        )}
+        <Link to="/" className="flex items-center gap-2 md:gap-3 shrink-0">
+          <div className="w-8 h-8 md:w-10 md:h-10 bg-brand-navy rounded-lg flex items-center justify-center border-2 border-brand-gold">
+            <span className="text-brand-gold font-bold text-lg md:text-xl font-sans">H</span>
+          </div>
+          <div>
+            <h1 className="text-base sm:text-lg md:text-xl font-bold text-brand-navy tracking-tight leading-none uppercase">HOME RESCUE</h1>
+            <p className="text-[7px] sm:text-[8px] md:text-[10px] text-brand-gold tracking-[0.2em] font-bold mt-0.5 sm:mt-1 uppercase">TECHNICAL SERVICES</p>
+          </div>
+        </Link>
+      </div>
 
       {/* Desktop Menu */}
       <div className="hidden lg:flex items-center gap-6 text-[13px] font-bold text-brand-navy h-full antialiased">

@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom
 import {LanguageProvider} from './context/LanguageContext';
 import {BookingProvider} from './components/BookingModal';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
+import ScrollToTop from './components/ScrollToTop';
 import Chatbot from './components/Chatbot';
 import { StickyMobileBar } from './components/StickyMobileBar';
 
@@ -27,6 +28,7 @@ export default function App() {
     <LanguageProvider>
       <BookingProvider>
         <Router>
+          <ScrollToTop />
           <Suspense fallback={<RootLoader />}>
             <Routes>
               <Route path="/" element={<Home />} />
