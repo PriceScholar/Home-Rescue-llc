@@ -167,130 +167,120 @@ export const Navbar = () => {
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div 
-            initial={{x: isRTL ? '-100%' : '100%'}}
-            animate={{x: 0}}
-            exit={{x: isRTL ? '-100%' : '100%'}}
-            className="fixed inset-0 bg-white z-[110] flex flex-col p-6 md:p-8 overflow-y-auto"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
+            className="fixed inset-0 z-[110] flex flex-col items-center justify-start p-4 pt-20 pb-16 overflow-y-auto"
           >
-            <div className="flex justify-between items-center mb-8 md:mb-12">
-              <Link to="/" onClick={() => setIsMenuOpen(false)} className="flex items-center gap-2 md:gap-3">
-                <div className="w-9 h-9 md:w-10 md:h-10 bg-brand-navy rounded-lg flex items-center justify-center border-2 border-brand-gold">
-                  <span className="text-brand-gold font-bold text-lg md:text-xl">H</span>
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-lg md:text-xl font-bold text-brand-navy leading-none">HOME RESCUE</span>
-                  <span className="text-[9px] md:text-[10px] text-brand-gold font-bold tracking-[0.2em]">TECHNICAL SERVICES</span>
-                </div>
-              </Link>
-              <button onClick={() => setIsMenuOpen(false)} className="p-2"><X className="w-6 h-6" /></button>
-            </div>
-            
-            <div className="flex flex-col gap-2 text-lg font-bold">
-              {navLinks.map((link) => (
-                <div key={link.name} className="border-b border-gray-100 flex flex-col">
-                  {link.dropdown ? (
-                    <div className="flex flex-col">
-                      <button 
-                        onClick={() => setOpenMobileAccordion(openMobileAccordion ? null : 'services')}
-                        className="flex justify-between items-center py-4 text-brand-navy uppercase tracking-wide"
-                      >
-                        {link.name} <ChevronDown className={cn("w-5 h-5 transition-transform", openMobileAccordion && "rotate-180")} />
-                      </button>
-                      <AnimatePresence>
-                        {openMobileAccordion && (
-                          <motion.div 
-                            initial={{ height: 0, opacity: 0 }}
-                            animate={{ height: 'auto', opacity: 1 }}
-                            exit={{ height: 0, opacity: 0 }}
-                            className="overflow-hidden"
-                          >
-                            <div className="flex flex-col pl-4 gap-2 pb-4">
-                              {serviceCategories.map((cat) => (
-                                <div key={cat.name} className="flex flex-col">
-                                  <button 
-                                    onClick={() => setOpenMobileAccordion(openMobileAccordion === cat.name ? 'services' : cat.name)}
-                                    className="flex justify-between items-center py-2 text-[14px] text-gray-700 font-bold"
-                                  >
-                                    <div className="flex items-center gap-2">
-                                      <div className="w-6 h-6 rounded flex items-center justify-center" style={{backgroundColor: cat.color}}>
-                                        <i className={cn(cat.icon as string, "text-[10px] text-white")}></i>
+            {/* Translucent background overlay */}
+            <div 
+              className="fixed inset-0 bg-brand-navy/60 backdrop-blur-sm z-0" 
+              onClick={() => setIsMenuOpen(false)} 
+            />
+
+            <div className="relative z-10 w-full flex flex-col items-center gap-4">
+              {/* White card container for navigation links */}
+              <div className="w-full max-w-[340px] bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-100 flex flex-col shrink-0">
+                {navLinks.map((link, idx) => (
+                  <div key={link.name} className={cn("flex flex-col", idx < navLinks.length - 1 && "border-b border-gray-100")}>
+                    {link.dropdown ? (
+                      <div className="flex flex-col">
+                        <button 
+                          onClick={() => setOpenMobileAccordion(openMobileAccordion ? null : 'services')}
+                          className="flex justify-between items-center py-4.5 px-6 text-brand-navy font-extrabold text-[13px] tracking-widest text-left"
+                        >
+                          {link.name} 
+                          <ChevronDown className={cn("w-4 h-4 text-brand-navy/60 transition-transform duration-300", openMobileAccordion && "rotate-180")} />
+                        </button>
+                        
+                        <AnimatePresence>
+                          {openMobileAccordion && (
+                            <motion.div 
+                              initial={{ height: 0, opacity: 0 }}
+                              animate={{ height: 'auto', opacity: 1 }}
+                              exit={{ height: 0, opacity: 0 }}
+                              className="overflow-hidden bg-gray-50/50"
+                            >
+                              <div className="flex flex-col px-6 pb-4 pt-1 gap-2">
+                                {serviceCategories.map((cat) => (
+                                  <div key={cat.name} className="flex flex-col">
+                                    <button 
+                                      onClick={() => setOpenMobileAccordion(openMobileAccordion === cat.name ? 'services' : cat.name)}
+                                      className="flex justify-between items-center py-2 text-xs text-brand-navy font-bold"
+                                    >
+                                      <div className="flex items-center gap-2">
+                                        <div className="w-5 h-5 rounded flex items-center justify-center shrink-0" style={{backgroundColor: cat.color}}>
+                                          <i className={cn(cat.icon as string, "text-[8px] text-white")}></i>
+                                        </div>
+                                        {cat.name}
                                       </div>
-                                      {cat.name}
-                                    </div>
-                                    <ChevronRight className={cn("w-4 h-4", openMobileAccordion === cat.name && "rotate-90")} />
-                                  </button>
-                                  {openMobileAccordion === cat.name && (
-                                    <div className="grid grid-cols-1 gap-1 pl-8 py-2">
-                                      {cat.subs.map((sub) => (
-                                        <Link 
-                                          key={sub.id} 
-                                          to={`/services/${sub.id}`}
-                                          onClick={() => setIsMenuOpen(false)}
-                                          className="text-[12px] py-1.5 text-gray-500 hover:text-brand-red font-medium flex items-center gap-2"
-                                        >
-                                          <div className="w-1.5 h-1.5 rounded-full bg-brand-gold opacity-50" />
-                                          {sub.name}
-                                        </Link>
-                                      ))}
-                                    </div>
-                                  )}
-                                </div>
-                              ))}
-                            </div>
-                          </motion.div>
-                        )}
-                      </AnimatePresence>
-                    </div>
-                  ) : (
-                    <Link to={link.path} onClick={() => setIsMenuOpen(false)} className="py-4 text-brand-navy uppercase tracking-wide">
-                      {link.name}
-                    </Link>
-                  )}
-                </div>
-              ))}
-              
-              <div className="mt-8 flex flex-col gap-4 pb-12">
-                <div className="flex items-center justify-between border border-gray-100 rounded-2xl p-2 bg-gray-50/50 mb-2">
-                  <span className="text-xs font-black text-brand-navy uppercase tracking-widest pl-2">Choose Language</span>
-                  <div className="flex items-center gap-1">
-                    <button
-                      onClick={() => setLanguage('EN')}
-                      className={cn(
-                        "px-4 py-2 rounded-xl text-xs font-black transition-all cursor-pointer",
-                        language === 'EN' ? "bg-brand-navy text-white shadow" : "text-gray-500 hover:text-brand-navy"
-                      )}
-                    >
-                      English
-                    </button>
-                    <button
-                      onClick={() => setLanguage('AR')}
-                      className={cn(
-                        "px-4 py-2 rounded-xl text-xs font-black transition-all cursor-pointer",
-                        language === 'AR' ? "bg-brand-navy text-white shadow" : "text-gray-500 hover:text-brand-navy"
-                      )}
-                    >
-                      العربية
-                    </button>
+                                      <ChevronRight className={cn("w-3.5 h-3.5 text-brand-navy/55", openMobileAccordion === cat.name && "rotate-90")} />
+                                    </button>
+                                    {openMobileAccordion === cat.name && (
+                                      <div className="flex flex-col gap-1.5 pl-6 py-1.5">
+                                        {cat.subs.map((sub) => (
+                                          <Link 
+                                            key={sub.id} 
+                                            to={`/services/${sub.id}`}
+                                            onClick={() => setIsMenuOpen(false)}
+                                            className="text-[11px] py-1 text-gray-500 hover:text-brand-red font-bold flex items-center gap-1.5 transition-colors"
+                                          >
+                                            <div className="w-1.5 h-1.5 rounded-full bg-brand-gold shrink-0" />
+                                            {sub.name}
+                                          </Link>
+                                        ))}
+                                      </div>
+                                    )}
+                                  </div>
+                                ))}
+                              </div>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
+                    ) : (
+                      <Link 
+                        to={link.path} 
+                        onClick={() => setIsMenuOpen(false)} 
+                        className="py-4.5 px-6 text-brand-navy hover:text-brand-gold transition-colors font-extrabold text-[13px] tracking-widest block"
+                      >
+                        {link.name}
+                      </Link>
+                    )}
                   </div>
+                ))}
+              </div>
+
+              {/* Language Selector container underneath */}
+              <div className="w-full max-w-[340px] bg-white rounded-2xl shadow-lg border border-gray-100 py-3 px-6 flex items-center justify-between text-[11px]">
+                <span className="font-extrabold text-[#08264B] tracking-widest text-[9px] uppercase">
+                  CHOOSE LANGUAGE
+                </span>
+                <div className="flex items-center gap-4">
+                  <button
+                    onClick={() => setLanguage('EN')}
+                    className={cn(
+                      "px-4 py-1.5 rounded-full text-[10px] font-black tracking-wider transition-all cursor-pointer",
+                      language === 'EN' 
+                        ? "bg-brand-navy text-white shadow-sm" 
+                        : "text-gray-500 hover:text-brand-navy font-bold"
+                    )}
+                  >
+                    English
+                  </button>
+                  <button
+                    onClick={() => setLanguage('AR')}
+                    className={cn(
+                      "px-4 py-1.5 rounded-full text-[10px] font-black tracking-wider transition-all cursor-pointer",
+                      language === 'AR' 
+                        ? "bg-brand-navy text-white shadow-sm" 
+                        : "text-[#08264B]/80 hover:text-brand-navy font-bold"
+                    )}
+                  >
+                    العربية
+                  </button>
                 </div>
-                <button 
-                  onClick={() => {
-                    setIsMenuOpen(false);
-                    openConsultation();
-                  }}
-                  className="bg-[#C9153B] text-white py-4 rounded-xl flex items-center justify-center gap-2 font-bold shadow-lg"
-                >
-                  <Video className="w-5 h-5" /> {t('free_consultation') || 'FREE CONSULTATION'}
-                </button>
-                <button 
-                  onClick={() => {
-                    setIsMenuOpen(false);
-                    callNow();
-                  }}
-                  className="border-2 border-[#D9A520] text-[#D9A520] py-4 rounded-xl flex items-center justify-center gap-2 font-bold"
-                >
-                  <Phone className="w-5 h-5" /> CALL NOW
-                </button>
               </div>
             </div>
           </motion.div>
