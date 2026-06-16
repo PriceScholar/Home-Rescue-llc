@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Transparent Background -->
+  <rect width="512" height="512" fill="none" />
+
+  <!-- Chimney (placed first so it's layered behind the main shield outline) -->
+  <rect x="335" y="115" width="28" height="65" fill="#08264B" rx="1" />
+
+  <!-- House Shield Outline filled with white and bordered with brand navy -->
+  <path d="M 256,110 L 115,215 L 95,215 L 95,245 L 115,245 L 115,345 C 115,415 175,465 256,465 C 337,465 397,415 397,345 L 397,245 L 417,245 L 417,215 L 397,215 Z" 
+        fill="#ffffff" 
+        stroke="#08264B" 
+        stroke-width="32" 
+        stroke-linejoin="round" 
+        stroke-linecap="round" />
+
+  <!-- 4-Pane Gold Windows (2x2 Grid) -->
+  <rect x="231" y="165" width="20" height="20" fill="#D9A520" rx="2" />
+  <rect x="261" y="165" width="20" height="20" fill="#D9A520" rx="2" />
+  <rect x="231" y="195" width="20" height="20" fill="#D9A520" rx="2" />
+  <rect x="261" y="195" width="20" height="20" fill="#D9A520" rx="2" />
+
+  <!-- Gold Wrench Group (Rotated slightly to the left, pointing upwards) -->
+  <g transform="rotate(-15, 256, 315)">
+    <!-- Wrench Handle -->
+    <rect x="244" y="270" width="24" height="120" fill="#D9A520" rx="10" />
+    
+    <!-- Wrench Head -->
+    <circle cx="256" cy="270" r="42" fill="#D9A520" />
+    
+    <!-- Wrench Inner Cutout (white) -->
+    <circle cx="256" cy="254" r="21" fill="#ffffff" />
+    
+    <!-- Wrench Throat Cutout (white polygon) -->
+    <polygon points="238,215 274,215 274,254 238,254" fill="#ffffff" />
+  </g>
+</svg>
