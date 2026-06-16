@@ -1,6 +1,9 @@
 {
   "rewrites": [
-    { "source": "/((?!.*\\.).*)", "destination": "/index.html" }
+    {
+      "source": "/((?!api/|assets/|static-loader-data/|.*\\.).*)",
+      "destination": "/index.html"
+    }
   ],
   "headers": [
     {
@@ -10,6 +13,10 @@
     {
       "source": "/robots.txt",
       "headers": [{ "key": "Content-Type", "value": "text/plain" }]
+    },
+    {
+      "source": "/static-loader-data/(.*)",
+      "headers": [{ "key": "Content-Type", "value": "application/json" }]
     }
   ]
 }
