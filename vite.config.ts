@@ -19,8 +19,9 @@ export default defineConfig(() => {
       formatting: 'none',
       includedRoutes(paths) {
         const filteredPaths = paths.filter(p => !p.includes(':'));
+        const mappedPaths = filteredPaths.map(p => p === '*' ? '/404' : p);
         const servicePaths = serviceIds.map(id => `/services/${id}`);
-        return [...filteredPaths, ...servicePaths];
+        return [...mappedPaths, ...servicePaths];
       },
     },
     server: {

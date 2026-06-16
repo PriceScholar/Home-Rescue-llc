@@ -12,6 +12,7 @@ const Booking = lazy(() => import('./Booking'));
 const Credentials = lazy(() => import('./Credentials'));
 const Portfolio = lazy(() => import('./Portfolio'));
 const ServiceDetail = lazy(() => import('./ServiceDetail'));
+const NotFound = lazy(() => import('./NotFound'));
 
 export const routes: RouteObject[] = [
   {
@@ -60,7 +61,7 @@ export const routes: RouteObject[] = [
       },
       {
         path: '*',
-        element: <Navigate to="/" replace />,
+        element: <NotFound />,
       }
     ]
   }
