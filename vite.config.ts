@@ -2,13 +2,25 @@ import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 import {defineConfig} from 'vite';
+import { servicesData } from './src/data/servicesData';
 
 export default defineConfig(() => {
+  const serviceIds = Object.keys(servicesData);
+
   return {
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
         '@': path.resolve(__dirname, '.'),
+      },
+    },
+    ssgOptions: {
+      script: 'async',
+      formatting: 'none',
+      includedRoutes(paths) {
+        const filteredPaths = paths.filter(p => !p.includes(':'));
+        const servicePaths = serviceIds.map(id => `/services/${id}`);
+        return [...filteredPaths, ...servicePaths];
       },
     },
     server: {

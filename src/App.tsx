@@ -1,21 +1,11 @@
 import { lazy, Suspense } from 'react';
-import {BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
+import { Outlet, Navigate } from 'react-router-dom';
 import {LanguageProvider} from './context/LanguageContext';
 import {BookingProvider} from './components/BookingModal';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 import ScrollToTop from './components/ScrollToTop';
 import Chatbot from './components/Chatbot';
 import { StickyMobileBar } from './components/StickyMobileBar';
-
-// Lazy loading major pages
-const Home = lazy(() => import('./Home'));
-const Services = lazy(() => import('./Services'));
-const Contact = lazy(() => import('./Contact'));
-const About = lazy(() => import('./About'));
-const Booking = lazy(() => import('./Booking'));
-const Credentials = lazy(() => import('./Credentials'));
-const Portfolio = lazy(() => import('./Portfolio'));
-const ServiceDetail = lazy(() => import('./ServiceDetail'));
 
 const RootLoader = () => (
   <div className="flex items-center justify-center min-h-screen bg-white">
@@ -27,29 +17,15 @@ export default function App() {
   return (
     <LanguageProvider>
       <BookingProvider>
-        <Router>
-          <ScrollToTop />
-          <Suspense fallback={<RootLoader />}>
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/services" element={<Services />} /> 
-              <Route path="/service" element={<Navigate to="/services" replace />} />
-              <Route path="/services/:serviceId" element={<ServiceDetail />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/booking" element={<Booking />} />
-              <Route path="/credentials" element={<Credentials />} />
-              <Route path="/portfolio" element={<Portfolio />} />
-              <Route path="/blog" element={<Home />} />
-              {/* Catch-all route to redirect back to home if a link is broken */}
-              <Route path="*" element={<Navigate to="/" replace />} />
-            </Routes>
-          </Suspense>
-          <FloatingWhatsApp />
-          <Chatbot />
-          <StickyMobileBar />
-        </Router>
+        <ScrollToTop />
+        <Suspense fallback={<RootLoader />}>
+          <Outlet />
+        </Suspense>
+        <FloatingWhatsApp />
+        <Chatbot />
+        <StickyMobileBar />
       </BookingProvider>
     </LanguageProvider>
   );
 }
+
