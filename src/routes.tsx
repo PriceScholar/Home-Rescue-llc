@@ -20,7 +20,7 @@ export const routes: RouteObject[] = [
     element: <App />,
     children: [
       {
-        path: '',
+        index: true,
         element: <Home />,
       },
       {
