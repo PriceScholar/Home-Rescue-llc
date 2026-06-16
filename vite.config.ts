@@ -4,8 +4,9 @@ import path from 'path';
 import {defineConfig} from 'vite';
 import { servicesData } from './src/data/servicesData';
 
-export default defineConfig(() => {
+export default defineConfig((env) => {
   const serviceIds = Object.keys(servicesData);
+  const isSsr = env.isSsrBuild || (env as any).ssrBuild;
 
   return {
     plugins: [react(), tailwindcss()],
@@ -22,6 +23,17 @@ export default defineConfig(() => {
         const mappedPaths = filteredPaths.map(p => p === '*' ? '/404' : p);
         const servicePaths = serviceIds.map(id => `/services/${id}`);
         return [...mappedPaths, ...servicePaths];
+      },
+    },
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks: isSsr ? undefined : {
+            'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+            'framer': ['framer-motion'],
+            'helmet': ['react-helmet-async'],
+          },
+        },
       },
     },
     server: {
