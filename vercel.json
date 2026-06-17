@@ -1,8 +1,10 @@
 {
-  "rewrites": [
+  "cleanUrls": true,
+  "routes": [
+    { "handle": "filesystem" },
     {
-      "source": "/((?!api/|.*\\.).*)",
-      "destination": "/index.html"
+      "src": "/((?!api/|.*\\.).*)",
+      "dest": "/index.html"
     }
   ],
   "headers": [
