@@ -1,24 +1,37 @@
 {
   "cleanUrls": true,
-  "routes": [
-    { "handle": "filesystem" },
+  "rewrites": [
     {
-      "src": "/((?!api/|.*\\.).*)",
-      "dest": "/index.html"
+      "source": "/((?!api/|.*\\.).*)",
+      "destination": "/index.html"
     }
   ],
   "headers": [
     {
       "source": "/sitemap.xml",
-      "headers": [{ "key": "Content-Type", "value": "application/xml" }]
+      "headers": [
+        { "key": "Content-Type", "value": "application/xml" }
+      ]
     },
     {
       "source": "/robots.txt",
-      "headers": [{ "key": "Content-Type", "value": "text/plain" }]
+      "headers": [
+        { "key": "Content-Type", "value": "text/plain" }
+      ]
     },
     {
-      "source": "/(static-loader-data.*)",
-      "headers": [{ "key": "Content-Type", "value": "application/json" }]
+      "source": "/static-loader-data/:path*",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" },
+        { "key": "Content-Type", "value": "application/json" }
+      ]
+    },
+    {
+      "source": "/static-loader-data-manifest-*.json",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" },
+        { "key": "Content-Type", "value": "application/json" }
+      ]
     }
   ]
 }
