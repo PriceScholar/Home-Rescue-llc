@@ -1,7 +1,7 @@
 {
   "rewrites": [
     {
-      "source": "/((?!api/|assets/|static-loader-data/|.*\\.).*)",
+      "source": "/((?!api/|assets/|images/|static-loader-data).*)",
       "destination": "/index.html"
     }
   ],
@@ -15,7 +15,7 @@
       "headers": [{ "key": "Content-Type", "value": "text/plain" }]
     },
     {
-      "source": "/static-loader-data/(.*)",
+      "source": "/(static-loader-data.*)",
       "headers": [{ "key": "Content-Type", "value": "application/json" }]
     }
   ]
