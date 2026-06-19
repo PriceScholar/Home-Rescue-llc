@@ -2,6 +2,7 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { cn } from '../lib/utils';
 import { serviceCategories } from '../data/servicesData';
+import { trackWhatsAppConversion } from '../utils/trackConversion';
 
 import ConsultationModal from './ConsultationModal';
 import LicenseModal from './LicenseModal';
@@ -59,6 +60,7 @@ export const BookingProvider: React.FC<{ children: React.ReactNode }> = ({ child
     
     const encodedMessage = encodeURIComponent(message);
     const whatsappURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+    trackWhatsAppConversion();
     window.open(whatsappURL, '_blank');
   };
 
@@ -332,6 +334,7 @@ Thank you!`;
 
     const encodedMessage = encodeURIComponent(message);
     const whatsappURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
+    trackWhatsAppConversion();
     window.open(whatsappURL, '_blank');
     setIsSuccess(true);
   };

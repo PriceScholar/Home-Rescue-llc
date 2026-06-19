@@ -23,6 +23,7 @@ import { servicesData } from './data/servicesData';
 import { cn } from './lib/utils';
 import { useLanguage } from './context/LanguageContext';
 import { useBooking } from './components/BookingModal';
+import { trackWhatsAppConversion } from './utils/trackConversion';
 
 const isAcOrPlumbing = (id: string, title?: string): boolean => {
   const lowerId = (id || '').toLowerCase();
@@ -347,7 +348,10 @@ const ServiceDetail = () => {
                    {isAcOrPlumbing(data.id, data.title) ? "Book Now" : "Book Free Inspection"}
                 </button>
                 <button 
-                  onClick={() => askExpert(data.title)}
+                  onClick={() => {
+                    trackWhatsAppConversion();
+                    askExpert(data.title);
+                  }}
                   className="flex-1 bg-brand-green text-white px-10 py-5 rounded-full font-bold shadow-2xl hover:shadow-brand-green/20 transition-all flex items-center justify-center gap-3 uppercase text-xs tracking-widest"
                 >
                   <i className="fa-brands fa-whatsapp text-2xl"></i> WhatsApp Expert

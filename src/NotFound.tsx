@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { Home, MessageCircle, Wrench, Calendar, Phone, Info } from 'lucide-react';
+import { trackWhatsAppConversion } from './utils/trackConversion';
 
 export default function NotFound() {
   return (
@@ -49,6 +50,7 @@ export default function NotFound() {
             href="https://wa.me/971524524295"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={trackWhatsAppConversion}
             className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-brand-green text-white hover:bg-brand-green/90 rounded-full font-bold text-sm transition-all duration-300 shadow-lg shadow-brand-green/20 hover:-translate-y-0.5 active:translate-y-0"
           >
             <MessageCircle className="w-4 h-4" />

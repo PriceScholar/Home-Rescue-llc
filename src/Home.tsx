@@ -24,6 +24,7 @@ import {Link} from 'react-router-dom';
 import {cn} from './lib/utils';
 import VerifiedProjects from './components/VerifiedProjects';
 import { serviceCategories } from './data/servicesData';
+import { trackWhatsAppConversion } from './utils/trackConversion';
 
 
 // EDIT: replace with real customer reviews
@@ -172,7 +173,10 @@ const Home = () => {
                 BOOK FREE INSPECTION
               </button>
               <button 
-                onClick={askExpert}
+                onClick={() => {
+                  trackWhatsAppConversion();
+                  askExpert();
+                }}
                 className="bg-[#08264B]/40 backdrop-blur-md border border-white/10 text-white hover:bg-white hover:text-brand-navy px-6 md:px-8 py-3 md:py-4 rounded-2xl font-black text-[10px] md:text-xs uppercase tracking-widest flex items-center justify-center gap-4 transition-all active:scale-95 group"
               >
                 <MessageCircle className="w-5 h-5 text-brand-gold" /> CHAT ON WHATSAPP
@@ -298,7 +302,10 @@ const Home = () => {
                 <button onClick={() => openBooking()} className="flex-1 bg-brand-navy text-white text-[10px] font-black uppercase tracking-widest py-3 px-2 rounded-xl hover:bg-brand-gold hover:text-brand-navy transition-all duration-300 cursor-pointer">
                   Book Form
                 </button>
-                <button onClick={askExpert} className="flex-1 border-2 border-brand-gold text-brand-navy text-[10px] font-black uppercase tracking-widest py-2.5 px-2 rounded-xl hover:bg-brand-gold transition-all duration-300 flex items-center justify-center gap-1 cursor-pointer">
+                <button onClick={() => {
+                  trackWhatsAppConversion();
+                  askExpert();
+                }} className="flex-1 border-2 border-brand-gold text-brand-navy text-[10px] font-black uppercase tracking-widest py-2.5 px-2 rounded-xl hover:bg-brand-gold transition-all duration-300 flex items-center justify-center gap-1 cursor-pointer">
                   WhatsApp
                 </button>
               </div>

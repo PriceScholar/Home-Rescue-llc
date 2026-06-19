@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { useBooking } from './BookingModal';
+import { trackWhatsAppConversion } from '../utils/trackConversion';
 
 interface Message {
   id: number;
@@ -107,6 +108,7 @@ const Chatbot: React.FC = () => {
       openBooking();
     }
     else if (reply === 'WhatsApp Now' || reply === 'WhatsApp') {
+      trackWhatsAppConversion();
       askExpert();
     }
     else if (reply === 'Call Now' || reply === 'Call Emergency') {
@@ -207,7 +209,7 @@ const Chatbot: React.FC = () => {
 
             {/* Footer */}
             <div className="p-2.5 bg-gray-50 text-center border-t border-gray-100">
-              <a href="https://wa.me/971524524295" target="_blank" rel="noreferrer" className="text-[10px] font-bold text-green-600 hover:text-green-700 transition-all flex items-center justify-center gap-1.5">
+              <a href="https://wa.me/971524524295" target="_blank" rel="noreferrer" onClick={trackWhatsAppConversion} className="text-[10px] font-bold text-green-600 hover:text-green-700 transition-all flex items-center justify-center gap-1.5">
                 <i className="fa-brands fa-whatsapp text-xs"></i>
                 CHAT ON WHATSAPP
               </a>

@@ -6,6 +6,7 @@ import { useBooking } from './components/BookingModal';
 import { cn } from './lib/utils';
 import { Link } from 'react-router-dom';
 import VerifiedProjects from './components/VerifiedProjects';
+import { trackWhatsAppConversion } from './utils/trackConversion';
 import { 
   Hotel, 
   MapPin, 
@@ -144,6 +145,7 @@ const Portfolio = () => {
   const openProjectDetail = (projectId: string) => {
     const project = projects.find(p => p.id === projectId);
     const message = `Hi Home Rescue! I want services similar to what you provided at *${project?.name}*. Please contact me with details.`;
+    trackWhatsAppConversion();
     window.open(`https://wa.me/971524524295?text=${encodeURIComponent(message)}`, '_blank');
   };
 

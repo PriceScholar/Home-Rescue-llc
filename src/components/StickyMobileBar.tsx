@@ -2,6 +2,7 @@ import React from 'react';
 import { Phone, MessageCircle, Calendar } from 'lucide-react';
 import { useBooking } from './BookingModal';
 import { useLocation } from 'react-router-dom';
+import { trackWhatsAppConversion } from '../utils/trackConversion';
 
 export const StickyMobileBar = () => {
   const { openBooking, callNow, askExpert } = useBooking();
@@ -28,7 +29,10 @@ export const StickyMobileBar = () => {
 
       {/* WhatsApp CTA */}
       <button 
-        onClick={askExpert}
+        onClick={() => {
+          trackWhatsAppConversion();
+          askExpert();
+        }}
         className="flex-1 bg-green-600 text-white py-3 rounded-xl flex items-center justify-center gap-2 font-black text-[10px] uppercase tracking-wider transition-all active:scale-95 shadow-lg shadow-green-900/15 cursor-pointer"
       >
         <MessageCircle className="w-4 h-4 fill-current" />

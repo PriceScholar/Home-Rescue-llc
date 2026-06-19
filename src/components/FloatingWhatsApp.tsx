@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
+import { trackWhatsAppConversion } from '../utils/trackConversion';
 
 const FloatingWhatsApp: React.FC = () => {
   return (
@@ -7,6 +8,7 @@ const FloatingWhatsApp: React.FC = () => {
       href="https://wa.me/971524524295"
       target="_blank"
       rel="noopener noreferrer"
+      onClick={trackWhatsAppConversion}
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       whileHover={{ scale: 1.1 }}

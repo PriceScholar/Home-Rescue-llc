@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { cn } from '../lib/utils';
+import { trackWhatsAppConversion } from '../utils/trackConversion';
 
 interface ConsultationModalProps {
   isOpen: boolean;
@@ -82,6 +83,7 @@ Thank you! 🙏`;
     const encodedMessage = encodeURIComponent(message);
     const whatsappURL = `https://wa.me/971524524295?text=${encodedMessage}`;
     
+    trackWhatsAppConversion();
     window.open(whatsappURL, '_blank');
     setIsSuccess(true);
   };
