@@ -1,5 +1,5 @@
 import { lazy, Suspense } from 'react';
-import { Outlet, Navigate } from 'react-router-dom';
+import { Outlet, Navigate, useLocation } from 'react-router-dom';
 import {LanguageProvider} from './context/LanguageContext';
 import {BookingProvider} from './components/BookingModal';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
@@ -14,6 +14,10 @@ const RootLoader = () => (
 );
 
 export default function App() {
+  const location = useLocation();
+  const params = new URLSearchParams(location.search);
+  const isAdMode = params.get('ad') === '1';
+
   return (
     <LanguageProvider>
       <BookingProvider>
@@ -21,8 +25,8 @@ export default function App() {
         <Suspense fallback={<RootLoader />}>
           <Outlet />
         </Suspense>
-        <FloatingWhatsApp />
-        <Chatbot />
+        {!isAdMode && <FloatingWhatsApp />}
+        {!isAdMode && <Chatbot />}
         <StickyMobileBar />
       </BookingProvider>
     </LanguageProvider>

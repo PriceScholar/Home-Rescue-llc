@@ -1,6 +1,6 @@
 import React from 'react';
 import {Helmet} from 'react-helmet-async';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useSearchParams } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { 
   ChevronLeft, 
@@ -49,8 +49,59 @@ const isAcOrPlumbing = (id: string, title?: string): boolean => {
   );
 };
 
+const MinimalAdHeader = () => {
+  return (
+    <nav className="bg-white px-4 md:px-8 flex justify-between items-center shadow-md sticky top-0 z-[100] h-14 md:h-16 w-full">
+      {/* Logo Container - non-clickable */}
+      <div className="flex items-center gap-2 md:gap-3 shrink-0 select-none">
+        <div className="w-8 h-8 md:w-10 md:h-10 bg-brand-navy rounded-lg flex items-center justify-center border-2 border-brand-gold">
+          <span className="text-brand-gold font-bold text-lg md:text-xl font-sans">H</span>
+        </div>
+        <div>
+          <h1 className="text-base sm:text-lg md:text-xl font-bold text-brand-navy tracking-tight leading-none uppercase">HOME RESCUE</h1>
+          <p className="text-[7px] sm:text-[8px] md:text-[10px] text-brand-gold tracking-[0.2em] font-bold mt-0.5 sm:mt-1 uppercase">TECHNICAL SERVICES</p>
+        </div>
+      </div>
+
+      {/* Phone CTA only */}
+      <div className="flex items-center">
+        <a 
+          href="tel:+971524524295" 
+          className="bg-[#C9153B] text-white px-6 py-2.5 sm:py-3 rounded-full hover:bg-opacity-90 flex items-center gap-2 shadow-lg text-[11px] sm:text-xs font-bold transition-transform active:scale-95 uppercase tracking-wider"
+        >
+          <Phone className="w-4 h-4" /> CALL NOW
+        </a>
+      </div>
+    </nav>
+  );
+};
+
+const MinimalAdFooter = () => {
+  return (
+    <footer className="bg-brand-navy text-white/60 py-8 px-6 text-center text-xs border-t border-white/5 relative overflow-hidden w-full">
+      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/dark-matter.png')] opacity-10"></div>
+      <div className="relative z-10 max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4">
+        <p className="font-medium text-gray-400">
+          © {new Date().getFullYear()} <span className="text-white font-bold">Home Rescue Technical Services</span>. All Rights Reserved.
+        </p>
+        <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-6 text-[10px] font-bold uppercase tracking-widest text-brand-gold">
+          <a href="tel:+971524524295" className="hover:text-white transition-colors">
+            +971 52 452 4295
+          </a>
+          <span className="hidden sm:inline text-white/20">•</span>
+          <span>Licensed & Insured</span>
+          <span className="hidden sm:inline text-white/20">•</span>
+          <span>Serving All 7 Emirates</span>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
 const ServiceDetail = () => {
   const { serviceId } = useParams<{ serviceId: string }>();
+  const [searchParams] = useSearchParams();
+  const isAdMode = searchParams.get('ad') === '1';
   const { isRTL } = useLanguage();
   const { openBooking, askExpert, callNow } = useBooking();
   const rawData = serviceId ? servicesData[serviceId] : null;
@@ -76,16 +127,22 @@ const ServiceDetail = () => {
   if (!data) {
     return (
       <div className="flex flex-col bg-white">
-        <TopBar />
-        <Navbar />
+        {isAdMode ? <MinimalAdHeader /> : (
+          <>
+            <TopBar />
+            <Navbar />
+          </>
+        )}
         <div className="flex-1 flex flex-col items-center justify-center p-6 md:p-10 text-center">
           <h1 className="text-5xl font-serif text-brand-navy mb-6">Service Excellence</h1>
           <p className="text-gray-500 mb-10 max-w-md leading-relaxed">We are currently refining the details for this technical specialty to ensure a premium experience. Please contact us directly for an immediate expert consultation.</p>
-          <Link to="/" className="bg-brand-navy text-white px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-brand-gold transition-all">
-            Return Home
-          </Link>
+          {!isAdMode && (
+            <Link to="/" className="bg-brand-navy text-white px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest hover:bg-brand-gold transition-all">
+              Return Home
+            </Link>
+          )}
         </div>
-        <Footer />
+        {isAdMode ? <MinimalAdFooter /> : <Footer />}
       </div>
     );
   }
@@ -169,6 +226,7 @@ const ServiceDetail = () => {
         <title>{`${data.title} in Dubai & UAE | Resqhome`}</title>
         <meta name="description" content={`${data.description} Licensed Dubai technicians, fast response, transparent pricing. Book today.`} />
         <link rel="canonical" href={`https://resqhome.ae/services/${data.id}`} />
+        {isAdMode && <meta name="robots" content="noindex" />}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -238,19 +296,25 @@ const ServiceDetail = () => {
           })}
         </script>
       </Helmet>
-      <TopBar />
-      <Navbar />
+      {isAdMode ? <MinimalAdHeader /> : (
+        <>
+          <TopBar />
+          <Navbar />
+        </>
+      )}
 
       {/* Breadcrumb - Minimalist Luxury Style */}
-      <section className="bg-brand-cream/30 py-4 px-4 md:px-8 border-b border-gray-100">
-        <div className="max-w-7xl mx-auto flex items-center gap-2 text-gray-400 text-[10px] font-bold uppercase tracking-widest">
-          <Link to="/" className="hover:text-brand-gold transition-colors">Home</Link>
-          <ChevronRight className="w-3 h-3 opacity-30" />
-          <Link to="/services" className="hover:text-brand-gold transition-colors">Services</Link>
-          <ChevronRight className="w-3 h-3 opacity-30" />
-          <span className="text-brand-navy">{data.title}</span>
-        </div>
-      </section>
+      {!isAdMode && (
+        <section className="bg-brand-cream/30 py-4 px-4 md:px-8 border-b border-gray-100">
+          <div className="max-w-7xl mx-auto flex items-center gap-2 text-gray-400 text-[10px] font-bold uppercase tracking-widest">
+            <Link to="/" className="hover:text-brand-gold transition-colors">Home</Link>
+            <ChevronRight className="w-3 h-3 opacity-30" />
+            <Link to="/services" className="hover:text-brand-gold transition-colors">Services</Link>
+            <ChevronRight className="w-3 h-3 opacity-30" />
+            <span className="text-brand-navy">{data.title}</span>
+          </div>
+        </section>
+      )}
 
       {/* Hero Section */}
       <section className="py-12 md:py-12 px-6 md:px-8 border-b border-gray-50">
@@ -363,50 +427,52 @@ const ServiceDetail = () => {
       </section>
 
       {/* Main Services Grid */}
-      <section className="py-10 md:py-14 px-6 md:px-8 bg-brand-cream/10">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-6 md:mb-10 space-y-3 md:space-y-4">
-            <span className="text-brand-gold font-bold tracking-[0.4em] uppercase text-[9px] md:text-[10px]">What is Included</span>
-            <h2 className="text-3xl md:text-5xl font-serif text-brand-navy font-bold">Scope of Excellence</h2>
-            <div className="w-24 h-[1px] bg-brand-gold mx-auto"></div>
-          </div>
-          
-          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8">
-            {data.subServices.map((sub, i) => {
-              const subId = getSubServiceId(sub.name);
-              const cardContent = (
-                <motion.div 
-                  initial={{opacity: 0, y: 20}}
-                  whileInView={{opacity: 1, y: 0}}
-                  viewport={{once: true}}
-                  transition={{delay: i * 0.1}}
-                  className="bg-white p-5 md:p-8 rounded-3xl md:rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.03)] border border-gray-100 hover:-translate-y-2 transition-all duration-500 h-full group"
-                >
-                  <div className="w-12 h-12 md:w-16 md:h-16 bg-brand-cream flex items-center justify-center rounded-xl md:rounded-2xl text-brand-navy group-hover:bg-brand-navy group-hover:text-white transition-all mb-6 md:mb-8 shadow-[0_10px_30px_rgba(0,0,0,0.05)]">
-                    <i className={cn(sub.icon, "text-xl md:text-2xl text-brand-gold group-hover:text-white transition-colors")}></i>
-                  </div>
-                  <h4 className="text-lg md:text-2xl font-serif font-bold text-brand-navy mb-3 md:mb-4">{sub.name}</h4>
-                  <p className="text-xs md:text-sm text-gray-500 leading-relaxed">{sub.desc}</p>
-                </motion.div>
-              );
-
-              if (subId) {
-                return (
-                  <Link key={i} to={`/services/${subId}`} className="block h-full">
-                    {cardContent}
-                  </Link>
+      {!isAdMode && (
+        <section className="py-10 md:py-14 px-6 md:px-8 bg-brand-cream/10">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-6 md:mb-10 space-y-3 md:space-y-4">
+              <span className="text-brand-gold font-bold tracking-[0.4em] uppercase text-[9px] md:text-[10px]">What is Included</span>
+              <h2 className="text-3xl md:text-5xl font-serif text-brand-navy font-bold">Scope of Excellence</h2>
+              <div className="w-24 h-[1px] bg-brand-gold mx-auto"></div>
+            </div>
+            
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8">
+              {data.subServices.map((sub, i) => {
+                const subId = getSubServiceId(sub.name);
+                const cardContent = (
+                  <motion.div 
+                    initial={{opacity: 0, y: 20}}
+                    whileInView={{opacity: 1, y: 0}}
+                    viewport={{once: true}}
+                    transition={{delay: i * 0.1}}
+                    className="bg-white p-5 md:p-8 rounded-3xl md:rounded-[2.5rem] shadow-[0_20px_50px_rgba(0,0,0,0.03)] border border-gray-100 hover:-translate-y-2 transition-all duration-500 h-full group"
+                  >
+                    <div className="w-12 h-12 md:w-16 md:h-16 bg-brand-cream flex items-center justify-center rounded-xl md:rounded-2xl text-brand-navy group-hover:bg-brand-navy group-hover:text-white transition-all mb-6 md:mb-8 shadow-[0_10px_30px_rgba(0,0,0,0.05)]">
+                      <i className={cn(sub.icon, "text-xl md:text-2xl text-brand-gold group-hover:text-white transition-colors")}></i>
+                    </div>
+                    <h4 className="text-lg md:text-2xl font-serif font-bold text-brand-navy mb-3 md:mb-4">{sub.name}</h4>
+                    <p className="text-xs md:text-sm text-gray-500 leading-relaxed">{sub.desc}</p>
+                  </motion.div>
                 );
-              }
 
-              return (
-                <div key={i} className="h-full">
-                  {cardContent}
-                </div>
-              );
-            })}
+                if (subId) {
+                  return (
+                    <Link key={i} to={`/services/${subId}`} className="block h-full">
+                      {cardContent}
+                    </Link>
+                  );
+                }
+
+                return (
+                  <div key={i} className="h-full">
+                    {cardContent}
+                  </div>
+                );
+              })}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* Process Steps */}
       <section className="py-10 md:py-14 px-6 md:px-8 bg-brand-navy text-white relative overflow-hidden">
@@ -540,7 +606,7 @@ const ServiceDetail = () => {
         </div>
       </section>
 
-      <Footer />
+      {isAdMode ? <MinimalAdFooter /> : <Footer />}
     </div>
   );
 };
