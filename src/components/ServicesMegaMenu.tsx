@@ -28,9 +28,8 @@ export const ServicesMegaMenu = ({ onClose, callNow, openConsultation }: Service
         {/* Left Sidebar Category Menu */}
         <div className="w-[360px] bg-white border-r border-gray-100 py-6 overflow-y-auto">
           {serviceCategories.map((category) => (
-            <button
+            <button aria-label="Close menu"
               key={category.name}
-              aria-label={category.name}
               onClick={() => setActiveCategory(category)}
               className={cn(
                 "w-full flex items-center justify-between px-6 py-4 transition-colors relative group outline-none",

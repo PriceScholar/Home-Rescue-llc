@@ -252,8 +252,7 @@ export const AcCleaningLanding: React.FC<AcCleaningLandingProps> = ({ isAdMode =
 
               {/* Primary & Secondary CTAs */}
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2">
-                <button
-                  aria-label="Book free inspection"
+                <button aria-label="Book free inspection"
                   onClick={scrollToQuote}
                   className="bg-brand-gold hover:bg-[#c99518] text-brand-navy font-black text-sm uppercase tracking-wider py-4 px-8 rounded-xl transition-all duration-300 shadow-xl shadow-yellow-500/10 flex items-center justify-center gap-2.5 active:scale-95 cursor-pointer"
                 >
@@ -326,8 +325,7 @@ export const AcCleaningLanding: React.FC<AcCleaningLandingProps> = ({ isAdMode =
                     <p className="text-xs text-gray-500 max-w-sm mx-auto">
                       Thank you! Our technical coordinator is preparing your tailored quote and will reply via WhatsApp/call immediately.
                     </p>
-                    <button
-                      aria-label="Request another quote"
+                    <button aria-label="Request another quote"
                       onClick={() => setFormSubmitted(false)}
                       className="text-xs text-brand-gold font-bold underline cursor-pointer"
                     >
@@ -411,9 +409,8 @@ export const AcCleaningLanding: React.FC<AcCleaningLandingProps> = ({ isAdMode =
                       />
                     </div>
 
-                    <button
+                    <button aria-label="Submit booking"
                       type="submit"
-                      aria-label="Submit booking"
                       className="w-full bg-brand-navy hover:bg-brand-gold hover:text-brand-navy text-white font-black text-xs uppercase tracking-widest py-3.5 rounded-xl transition-all duration-300 shadow-md flex items-center justify-center gap-2 cursor-pointer mt-2"
                     >
                       <Send className="w-3.5 h-3.5" /> Get a Quote
@@ -540,8 +537,7 @@ export const AcCleaningLanding: React.FC<AcCleaningLandingProps> = ({ isAdMode =
                   Your AC urgently requires professional deep cleaning if you notice any of these symptoms:
                 </p>
               </div>
-              <button
-                aria-label="Book free inspection"
+              <button aria-label="Book free inspection"
                 onClick={() => openBooking('AC Inspection')}
                 className="bg-[#C9153B] hover:bg-red-700 text-white font-black text-xs uppercase tracking-widest px-6 py-3 rounded-xl transition-all shadow-md self-start md:self-auto cursor-pointer"
               >
@@ -636,8 +632,7 @@ export const AcCleaningLanding: React.FC<AcCleaningLandingProps> = ({ isAdMode =
               </div>
 
               <div className="pt-2">
-                <button
-                  aria-label="Book free inspection"
+                <button aria-label="Book free inspection"
                   onClick={() => openBooking('Villa AC Cleaning')}
                   className="bg-brand-navy hover:bg-brand-gold hover:text-brand-navy text-white font-black text-xs uppercase tracking-widest py-3.5 px-8 rounded-xl transition-all shadow-md cursor-pointer"
                 >
@@ -731,8 +726,7 @@ export const AcCleaningLanding: React.FC<AcCleaningLandingProps> = ({ isAdMode =
           </div>
 
           <div className="text-center">
-            <button
-              aria-label="Book free inspection"
+            <button aria-label="Book free inspection"
               onClick={() => openBooking('Commercial AC Cleaning')}
               className="bg-blue-600 hover:bg-blue-700 text-white font-black text-xs uppercase tracking-widest py-3.5 px-8 rounded-xl transition-all shadow-lg shadow-blue-500/10 cursor-pointer"
             >
@@ -921,8 +915,7 @@ export const AcCleaningLanding: React.FC<AcCleaningLandingProps> = ({ isAdMode =
           </div>
 
           <div className="text-center">
-            <button
-              aria-label="Book free inspection"
+            <button aria-label="Book free inspection"
               onClick={scrollToQuote}
               className="bg-brand-gold hover:bg-[#c99518] text-brand-navy font-black text-xs uppercase tracking-widest py-3.5 px-9 rounded-xl transition-all shadow-md active:scale-95 cursor-pointer"
             >
@@ -1120,8 +1113,7 @@ export const AcCleaningLanding: React.FC<AcCleaningLandingProps> = ({ isAdMode =
             <p className="text-xs text-gray-300 max-w-xl mx-auto">
               We offer exclusive discounted bundle rates for villas with 4+ units and scheduled commercial maintenance contracts.
             </p>
-            <button
-              aria-label="Book free inspection"
+            <button aria-label="Book free inspection"
               onClick={scrollToQuote}
               className="bg-brand-gold hover:bg-[#c99518] text-brand-navy font-black text-xs uppercase tracking-widest py-3 px-6 rounded-xl transition-all inline-flex items-center gap-2 cursor-pointer mt-2"
             >
@@ -1194,8 +1186,7 @@ export const AcCleaningLanding: React.FC<AcCleaningLandingProps> = ({ isAdMode =
                   </div>
                 </div>
 
-                <button
-                  aria-label="Book free inspection"
+                <button aria-label="Book free inspection"
                   onClick={() => openBooking('Commercial AC Quote')}
                   className="w-full bg-blue-600 hover:bg-blue-700 text-white font-black text-xs uppercase tracking-widest py-3.5 rounded-xl transition-all shadow-md cursor-pointer mt-2"
                 >
@@ -1372,8 +1363,7 @@ export const AcCleaningLanding: React.FC<AcCleaningLandingProps> = ({ isAdMode =
                 key={idx}
                 className="border border-gray-200 rounded-2xl overflow-hidden transition-colors"
               >
-                <button
-                  aria-label={faq.q}
+                <button aria-label="Show more"
                   onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
                   className="w-full text-left px-5 py-4 flex items-center justify-between gap-4 font-bold text-sm text-brand-navy hover:text-brand-gold bg-gray-50/50"
                 >
@@ -1443,8 +1433,7 @@ export const AcCleaningLanding: React.FC<AcCleaningLandingProps> = ({ isAdMode =
                 <MessageCircle className="w-4 h-4 fill-current" /> 💬 WhatsApp Us
               </a>
 
-              <button
-                aria-label="Book free inspection"
+              <button aria-label="Book free inspection"
                 onClick={scrollToQuote}
                 className="w-full sm:w-auto bg-brand-gold hover:bg-[#c99518] text-brand-navy font-black text-xs uppercase tracking-widest py-4 px-8 rounded-xl transition-all shadow-lg flex items-center justify-center gap-2 cursor-pointer"
               >
