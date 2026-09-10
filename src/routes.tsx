@@ -12,6 +12,7 @@ const Booking = lazy(() => import('./Booking'));
 const Credentials = lazy(() => import('./Credentials'));
 const Portfolio = lazy(() => import('./Portfolio'));
 const ServiceDetail = lazy(() => import('./ServiceDetail'));
+const ThankYou = lazy(() => import('./ThankYou'));
 const NotFound = lazy(() => import('./NotFound'));
 
 export const routes: RouteObject[] = [
@@ -54,6 +55,14 @@ export const routes: RouteObject[] = [
       {
         path: 'booking',
         element: <Booking />,
+      },
+      {
+        path: 'thank-you',
+        element: <ThankYou />,
+      },
+      {
+        path: 'thankyou',
+        element: <Navigate to="/thank-you" replace />,
       },
       {
         path: 'credentials',

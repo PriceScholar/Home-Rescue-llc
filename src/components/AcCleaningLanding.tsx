@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   Phone, 
@@ -89,6 +89,7 @@ const MinimalAdFooter = () => {
 };
 
 export const AcCleaningLanding: React.FC<AcCleaningLandingProps> = ({ isAdMode = false }) => {
+  const navigate = useNavigate();
   const { openBooking, callNow, askExpert } = useBooking();
 
   // Quote form state
@@ -121,9 +122,14 @@ export const AcCleaningLanding: React.FC<AcCleaningLandingProps> = ({ isAdMode =
       `• Preferred Date: ${formData.date || 'Earliest available'}`
     );
 
-    setTimeout(() => {
+    try {
       window.open(`https://wa.me/971524524295?text=${message}`, '_blank');
-    }, 600);
+    } catch {
+      // ignore popup issues
+    }
+
+    const redirectPath = isAdMode ? '/thank-you?ad=1' : '/thank-you';
+    navigate(redirectPath);
   };
 
   const scrollToQuote = () => {
