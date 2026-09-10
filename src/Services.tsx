@@ -16,6 +16,8 @@ const getSubId = (name: string): string => {
     'New AC Installation': 'new-ac-installation',
     'AC Ducting': 'ac-ducting',
     'Gas Refilling': 'ac-gas-refilling',
+    'AC Cleaning Dubai': 'ac-cleaning-dubai',
+    'AC Cleaning': 'ac-cleaning-dubai',
     'Sanitary Services': 'sanitary-services',
     'Leakage Repair': 'leakage-repair',
     'Bathroom Fitting': 'bathroom-plumbing',
@@ -52,7 +54,7 @@ const Services = () => {
   const { openBooking } = useBooking();
   const categories = [
     {id: 'paint-work', name: 'Painting Services', icon: Paintbrush, image: '/images/services/service-paint.jpg', desc: 'Premium interior and exterior painting services with high-quality industrial grade materials.', subs: ['Villa Painting', 'Interior Painting', 'Exterior Painting', 'Texture Painting']},
-    {id: 'ac-maintenance', name: 'AC Maintenance', icon: Wind, image: '/images/services/service-ac.jpg', desc: 'Complete AC cooling solutions, cleaning, and preventative maintenance for Dubai heat.', subs: ['Emergency AC Repair', 'New AC Installation', 'AC Ducting', 'Gas Refilling']},
+    {id: 'ac-maintenance', name: 'AC Maintenance', icon: Wind, image: '/images/services/service-ac.jpg', desc: 'Complete AC cooling solutions, cleaning, and preventative maintenance for Dubai heat.', subs: ['Emergency AC Repair', 'New AC Installation', 'AC Ducting', 'Gas Refilling', 'AC Cleaning Dubai']},
     {id: 'plumbing-services', name: 'Plumbing Works', icon: Droplets, image: '/images/services/service-plumbing.jpg', desc: 'Expert plumbing repairs, leak detection, and sanitary installations for luxury properties.', subs: ['Sanitary Services', 'Leakage Repair', 'Bathroom Fitting', 'Water Heaters']},
     {id: 'electrical-services', name: 'Electrical Works', icon: Zap, image: '/images/services/service-electrical.jpg', desc: 'DEWA certified electrical maintenance and smart home installations.', subs: ['Home Wiring', 'Interior/Exterior Light', 'Circuit Breakers', 'Dewa Approvals']},
     {id: 'tile-wooden', name: 'Tile & Wooden', icon: Grid2x2, image: '/images/services/service-tile.jpg', desc: 'Premium tile fixing and marble polishing to give your floor a royal look.', subs: ['Marble Installation', 'Granite Work', 'Porcelain Tiles', 'Interlock Stones']},

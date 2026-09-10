@@ -24,6 +24,7 @@ import { cn } from './lib/utils';
 import { useLanguage } from './context/LanguageContext';
 import { useBooking } from './components/BookingModal';
 import { trackWhatsAppConversion } from './utils/trackConversion';
+import { AcCleaningLanding } from './components/AcCleaningLanding';
 
 const isAcOrPlumbing = (id: string, title?: string): boolean => {
   const lowerId = (id || '').toLowerCase();
@@ -102,6 +103,11 @@ const ServiceDetail = () => {
   const { serviceId } = useParams<{ serviceId: string }>();
   const [searchParams] = useSearchParams();
   const isAdMode = searchParams.get('ad') === '1';
+
+  if (serviceId === 'ac-cleaning-dubai' || serviceId === 'ac-cleaning') {
+    return <AcCleaningLanding isAdMode={isAdMode} />;
+  }
+
   const { isRTL } = useLanguage();
   const { openBooking, askExpert, callNow } = useBooking();
   const rawData = serviceId ? servicesData[serviceId] : null;

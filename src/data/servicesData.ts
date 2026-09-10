@@ -261,6 +261,96 @@ export const servicesData: Record<string, ServiceData> = {
     warranty: 'Quality Assured',
     subServices: [], process: [], packages: [], faqs: [], reviews: []
   },
+  'ac-cleaning-dubai': {
+    id: 'ac-cleaning-dubai',
+    title: 'AC Cleaning Services Dubai',
+    tagline: 'VILLAS & COMMERCIAL PROPERTIES',
+    description: 'Professional AC cleaning services in Dubai for villas and commercial properties. Improve cooling performance, air quality and energy efficiency with deep coil, blower, and filter cleaning.',
+    image: '/images/services/service-ac.jpg',
+    estimateDuration: '1-3 Hours',
+    material: 'Eco-Friendly Coil Foam & Disinfectant',
+    technician: 'Certified HVAC Technicians',
+    warranty: '100% Cooling & Cleanliness Guarantee',
+    subServices: [
+      { name: 'Split AC Cleaning', icon: 'fa-solid fa-snowflake', desc: 'Deep cleaning of indoor AC units, filters, blower and accessible components.' },
+      { name: 'AC Deep Cleaning', icon: 'fa-solid fa-spray-can-sparkles', desc: 'Comprehensive chemical restoration for heavily contaminated systems.' },
+      { name: 'AC Filter Cleaning', icon: 'fa-solid fa-filter', desc: 'Removal of accumulated dust, pollen, and debris from filters.' },
+      { name: 'AC Coil Cleaning', icon: 'fa-solid fa-fan', desc: 'Restores airflow and heat exchange efficiency across cooling fins.' },
+      { name: 'AC Blower Cleaning', icon: 'fa-solid fa-wind', desc: 'Removal of thick dust cakes and fungal mold from blower fan wheel.' },
+      { name: 'AC Drain Cleaning', icon: 'fa-solid fa-droplet', desc: 'Pressurized clearing of clogged drain trays and pipes to stop leaks.' },
+      { name: 'Duct AC Cleaning', icon: 'fa-solid fa-duct', desc: 'Sanitization and motorized brush vacuuming for ducted cooling.' },
+      { name: 'Central AC Cleaning', icon: 'fa-solid fa-building', desc: 'For villas and large properties requiring valve and strainer maintenance.' },
+      { name: 'Cassette AC Cleaning', icon: 'fa-solid fa-boxes-stacked', desc: 'Ceiling-mounted unit precision wash with water catchment funnels.' },
+      { name: 'Commercial AC Cleaning', icon: 'fa-solid fa-briefcase', desc: 'Scheduled maintenance programs for offices, restaurants, and retail.' }
+    ],
+    process: [
+      { step: '01', title: 'Contact Us', desc: 'Call or WhatsApp us with your property details and number of AC units.' },
+      { step: '02', title: 'Get a Quote', desc: 'We confirm service requirements and provide clear upfront pricing.' },
+      { step: '03', title: 'We Clean Your AC', desc: 'Trained technician arrives and performs thorough deep cleaning.' }
+    ],
+    packages: [
+      { name: 'Split AC Cleaning', price: 'AED 150', recommended: false, features: ['Filters & Blower Wash', 'Coil Foam Spray', 'Drain Flushing', 'Airflow Inspection'] },
+      { name: 'AC Deep Cleaning', price: 'AED 250', recommended: true, features: ['Full Disassembly', 'High-Pressure Coil Wash', 'Antibacterial Sanitization', 'Gas & Temp Split Test'] },
+      { name: 'Duct & Central AC', price: 'From AED 350', recommended: false, features: ['Duct Sanitization', 'Motor Inspection', 'Strainer Clean', 'Villa Multi-Unit Bundle'] }
+    ],
+    faqs: [
+      { question: 'How much does AC cleaning cost in Dubai?', answer: 'Split AC cleaning starts from AED 150 per unit. Deep cleaning starts from AED 250. Multi-unit villa and commercial packages receive special volume discounts.' },
+      { question: 'How often should AC units be cleaned?', answer: 'Every 3 to 6 months for residential villas/apartments, and every 1 to 2 months for commercial kitchens and high-traffic offices.' },
+      { question: 'Do you clean ACs in villas?', answer: 'Yes, we specialize in luxury villas across Emirates Hills, Dubai Hills, Palm Jumeirah, Arabian Ranches, and JVC.' },
+      { question: 'Do you provide commercial AC cleaning?', answer: 'Yes, for offices, restaurants, retail shops, clinics, hotels, and warehouses.' },
+      { question: 'Does AC cleaning improve cooling?', answer: 'Yes! Removing dirt from coils and blower fans restores unrestricted airflow and drops room temperature significantly faster.' }
+    ],
+    reviews: [
+      { name: 'Hamad Al Nuaimi', location: 'Emirates Hills Villa', text: 'The technician arrived on time and did a very thorough cleaning. Our AC airflow improved noticeably.', rating: 5 },
+      { name: 'Marcus S.', location: 'Business Bay', text: 'Outstanding service for our restaurant. Removed all odor and dust from cassette units with zero mess.', rating: 5 },
+      { name: 'Sarah Jenkins', location: 'Dubai Hills Estate', text: 'Booked villa deep cleaning for 5 ducted units. Huge difference in air quality. Highly recommend!', rating: 5 }
+    ]
+  },
+  'ac-cleaning': {
+    id: 'ac-cleaning',
+    title: 'AC Cleaning Services Dubai',
+    tagline: 'VILLAS & COMMERCIAL PROPERTIES',
+    description: 'Professional AC cleaning services in Dubai for villas and commercial properties. Improve cooling performance, air quality and energy efficiency with deep coil, blower, and filter cleaning.',
+    image: '/images/services/service-ac.jpg',
+    estimateDuration: '1-3 Hours',
+    material: 'Eco-Friendly Coil Foam & Disinfectant',
+    technician: 'Certified HVAC Technicians',
+    warranty: '100% Cooling & Cleanliness Guarantee',
+    subServices: [
+      { name: 'Split AC Cleaning', icon: 'fa-solid fa-snowflake', desc: 'Deep cleaning of indoor AC units, filters, blower and accessible components.' },
+      { name: 'AC Deep Cleaning', icon: 'fa-solid fa-spray-can-sparkles', desc: 'Comprehensive chemical restoration for heavily contaminated systems.' },
+      { name: 'AC Filter Cleaning', icon: 'fa-solid fa-filter', desc: 'Removal of accumulated dust, pollen, and debris from filters.' },
+      { name: 'AC Coil Cleaning', icon: 'fa-solid fa-fan', desc: 'Restores airflow and heat exchange efficiency across cooling fins.' },
+      { name: 'AC Blower Cleaning', icon: 'fa-solid fa-wind', desc: 'Removal of thick dust cakes and fungal mold from blower fan wheel.' },
+      { name: 'AC Drain Cleaning', icon: 'fa-solid fa-droplet', desc: 'Pressurized clearing of clogged drain trays and pipes to stop leaks.' },
+      { name: 'Duct AC Cleaning', icon: 'fa-solid fa-duct', desc: 'Sanitization and motorized brush vacuuming for ducted cooling.' },
+      { name: 'Central AC Cleaning', icon: 'fa-solid fa-building', desc: 'For villas and large properties requiring valve and strainer maintenance.' },
+      { name: 'Cassette AC Cleaning', icon: 'fa-solid fa-boxes-stacked', desc: 'Ceiling-mounted unit precision wash with water catchment funnels.' },
+      { name: 'Commercial AC Cleaning', icon: 'fa-solid fa-briefcase', desc: 'Scheduled maintenance programs for offices, restaurants, and retail.' }
+    ],
+    process: [
+      { step: '01', title: 'Contact Us', desc: 'Call or WhatsApp us with your property details and number of AC units.' },
+      { step: '02', title: 'Get a Quote', desc: 'We confirm service requirements and provide clear upfront pricing.' },
+      { step: '03', title: 'We Clean Your AC', desc: 'Trained technician arrives and performs thorough deep cleaning.' }
+    ],
+    packages: [
+      { name: 'Split AC Cleaning', price: 'AED 150', recommended: false, features: ['Filters & Blower Wash', 'Coil Foam Spray', 'Drain Flushing', 'Airflow Inspection'] },
+      { name: 'AC Deep Cleaning', price: 'AED 250', recommended: true, features: ['Full Disassembly', 'High-Pressure Coil Wash', 'Antibacterial Sanitization', 'Gas & Temp Split Test'] },
+      { name: 'Duct & Central AC', price: 'From AED 350', recommended: false, features: ['Duct Sanitization', 'Motor Inspection', 'Strainer Clean', 'Villa Multi-Unit Bundle'] }
+    ],
+    faqs: [
+      { question: 'How much does AC cleaning cost in Dubai?', answer: 'Split AC cleaning starts from AED 150 per unit. Deep cleaning starts from AED 250. Multi-unit villa and commercial packages receive special volume discounts.' },
+      { question: 'How often should AC units be cleaned?', answer: 'Every 3 to 6 months for residential villas/apartments, and every 1 to 2 months for commercial kitchens and high-traffic offices.' },
+      { question: 'Do you clean ACs in villas?', answer: 'Yes, we specialize in luxury villas across Emirates Hills, Dubai Hills, Palm Jumeirah, Arabian Ranches, and JVC.' },
+      { question: 'Do you provide commercial AC cleaning?', answer: 'Yes, for offices, restaurants, retail shops, clinics, hotels, and warehouses.' },
+      { question: 'Does AC cleaning improve cooling?', answer: 'Yes! Removing dirt from coils and blower fans restores unrestricted airflow and drops room temperature significantly faster.' }
+    ],
+    reviews: [
+      { name: 'Hamad Al Nuaimi', location: 'Emirates Hills Villa', text: 'The technician arrived on time and did a very thorough cleaning. Our AC airflow improved noticeably.', rating: 5 },
+      { name: 'Marcus S.', location: 'Business Bay', text: 'Outstanding service for our restaurant. Removed all odor and dust from cassette units with zero mess.', rating: 5 },
+      { name: 'Sarah Jenkins', location: 'Dubai Hills Estate', text: 'Booked villa deep cleaning for 5 ducted units. Huge difference in air quality. Highly recommend!', rating: 5 }
+    ]
+  },
 
   // --- PLUMBING ---
   'sanitary-services': {
@@ -1476,7 +1566,8 @@ export const serviceCategories = [
       {name: 'Chilled Water AC', id: 'chilled-water-ac', icon: 'fa-solid fa-temperature-low', desc: 'Centralized cooling systems.'},
       {name: 'AC Annual Contracts', id: 'ac-contracts', icon: 'fa-solid fa-file-contract', desc: 'Planned maintenance and care.'},
       {name: 'AC Gas Refilling', id: 'ac-gas-refilling', icon: 'fa-solid fa-gas-pump', desc: 'R22 / R410A gas refilling.'},
-      {name: 'AC Filter Replacement', id: 'ac-filter-replacement', icon: 'fa-solid fa-filter', desc: 'Clean air, better performance.'}
+      {name: 'AC Filter Replacement', id: 'ac-filter-replacement', icon: 'fa-solid fa-filter', desc: 'Clean air, better performance.'},
+      {name: 'AC Cleaning Dubai', id: 'ac-cleaning-dubai', icon: 'fa-solid fa-spray-can-sparkles', desc: 'Professional villa & commercial AC cleaning.'}
     ]
   },
   {
