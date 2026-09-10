@@ -607,6 +607,24 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://resqhome.ae/services/ac-cleaning</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://resqhome.ae/services/ac-cleaning-dubai</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://resqhome.ae/thank-you</loc>
+    <lastmod>2026-09-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.1</priority>
+  </url>
+  <url>
     <loc>https://resqhome.ae/about</loc>
     <lastmod>2026-05-30</lastmod>
     <changefreq>monthly</changefreq>
