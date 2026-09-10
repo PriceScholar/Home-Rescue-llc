@@ -151,7 +151,10 @@ const VerifiedProjects = () => {
               </p>
             </div>
             <div className="flex flex-col gap-4 w-full md:w-auto">
-              <button className="bg-brand-gold text-brand-navy px-10 py-5 rounded-full font-bold text-sm tracking-widest hover:bg-white transition-all shadow-xl shadow-brand-gold/20 whitespace-nowrap">
+              <button 
+                aria-label="View full document"
+                className="bg-brand-gold text-brand-navy px-10 py-5 rounded-full font-bold text-sm tracking-widest hover:bg-white transition-all shadow-xl shadow-brand-gold/20 whitespace-nowrap"
+              >
                 MORE PROVED PROJECTS
               </button>
             </div>
@@ -170,6 +173,7 @@ const VerifiedProjects = () => {
             onClick={() => setSelectedImg(null)}
           >
             <button 
+              aria-label="Close"
               className="absolute top-8 right-8 text-white hover:text-brand-gold transition-colors z-[110]"
               onClick={(e) => { e.stopPropagation(); setSelectedImg(null); }}
             >

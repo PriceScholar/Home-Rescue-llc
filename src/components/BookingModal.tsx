@@ -362,6 +362,7 @@ Thank you!`;
             className="relative bg-white w-full max-w-[600px] rounded-[30px] shadow-2xl overflow-hidden max-h-[90vh] flex flex-col"
           >
             <button 
+              aria-label="Close"
               onClick={onClose}
               className="absolute top-6 right-6 w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-brand-red hover:text-white transition-all z-10"
             >
@@ -503,6 +504,7 @@ Thank you!`;
                                 {selectedServices.length > 0 && (
                                   <button
                                     type="button"
+                                    aria-label="Clear All"
                                     onClick={clearAllServices}
                                     className="text-brand-red hover:text-brand-navy font-black uppercase tracking-wider cursor-pointer transition-colors"
                                   >
@@ -539,6 +541,7 @@ Thank you!`;
                         <div className="pt-6">
                           <button 
                             type="button" 
+                            aria-label="Next"
                             onClick={nextStep}
                             className="w-full bg-brand-navy text-white font-bold py-4 rounded-xl hover:bg-brand-red transition-all flex items-center justify-center gap-2 group"
                           >
@@ -594,13 +597,17 @@ Thank you!`;
 
                         <div className="flex gap-4 pt-6">
                           <button 
-                            type="button" onClick={prevStep}
+                            type="button" 
+                            aria-label="Previous"
+                            onClick={prevStep}
                             className="flex-1 bg-gray-100 text-gray-600 font-bold py-4 rounded-xl hover:bg-gray-200 transition-all"
                           >
                             Back
                           </button>
                           <button 
-                            type="button" onClick={nextStep}
+                            type="button" 
+                            aria-label="Next"
+                            onClick={nextStep}
                             className="flex-[2] bg-brand-navy text-white font-bold py-4 rounded-xl hover:bg-brand-red transition-all"
                           >
                             Next Step
@@ -656,13 +663,16 @@ Thank you!`;
 
                         <div className="flex gap-4 pt-4">
                           <button 
-                            type="button" onClick={prevStep}
+                            type="button" 
+                            aria-label="Previous"
+                            onClick={prevStep}
                             className="flex-1 bg-gray-100 text-gray-600 font-bold py-4 rounded-xl hover:bg-gray-200 transition-all"
                           >
                             Back
                           </button>
                           <button 
                             type="submit"
+                            aria-label="Submit booking"
                             className="flex-[2] bg-brand-green text-white font-bold py-4 rounded-xl hover:scale-[1.02] transition-all flex items-center justify-center gap-2 shadow-lg shadow-green-500/20"
                           >
                             <i className="fa-brands fa-whatsapp text-xl"></i>
@@ -694,6 +704,7 @@ Thank you!`;
                       <i className="fa-solid fa-phone"></i> Call Us Now
                     </a>
                     <button 
+                      aria-label="Close"
                       onClick={onClose}
                       className="bg-gray-100 text-gray-600 px-8 py-4 rounded-xl font-bold hover:bg-gray-200 transition-all"
                     >

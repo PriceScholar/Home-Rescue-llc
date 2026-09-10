@@ -30,6 +30,7 @@ const LicenseModal: React.FC<LicenseModalProps> = ({ isOpen, onClose }) => {
             className="relative bg-white w-full max-w-[800px] rounded-[30px] shadow-2xl overflow-hidden max-h-[95vh] flex flex-col"
           >
             <button 
+              aria-label="Close"
               onClick={onClose}
               className="absolute top-6 right-6 w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center hover:bg-brand-red hover:text-white transition-all z-10 text-xl"
             >
@@ -146,6 +147,7 @@ const LicenseModal: React.FC<LicenseModalProps> = ({ isOpen, onClose }) => {
               {/* Actions */}
               <div className="flex flex-col sm:flex-row gap-4">
                 <button 
+                  aria-label="View full document"
                   className="flex-1 bg-brand-navy text-white font-bold py-5 rounded-2xl hover:bg-brand-red transition-all flex items-center justify-center gap-3 shadow-lg group"
                   onClick={() => alert('Download functionality would go here. In a real app, this would be a link to the PDF file.')}
                 >
@@ -153,6 +155,7 @@ const LicenseModal: React.FC<LicenseModalProps> = ({ isOpen, onClose }) => {
                   Download License
                 </button>
                 <button 
+                  aria-label="Close"
                   onClick={onClose}
                   className="flex-1 bg-gray-100 text-gray-600 font-bold py-5 rounded-2xl hover:bg-gray-200 transition-all uppercase tracking-widest"
                 >
@@ -173,6 +176,7 @@ const LicenseModal: React.FC<LicenseModalProps> = ({ isOpen, onClose }) => {
                 onClick={() => setIsLightboxOpen(false)}
               >
                 <button 
+                  aria-label="Close"
                   className="absolute top-10 right-10 w-12 h-12 bg-white/10 text-white rounded-full flex items-center justify-center text-2xl hover:bg-brand-red transition-all"
                   onClick={() => setIsLightboxOpen(false)}
                 >

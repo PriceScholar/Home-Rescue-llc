@@ -30,6 +30,7 @@ export const ServicesMegaMenu = ({ onClose, callNow, openConsultation }: Service
           {serviceCategories.map((category) => (
             <button
               key={category.name}
+              aria-label={category.name}
               onClick={() => setActiveCategory(category)}
               className={cn(
                 "w-full flex items-center justify-between px-6 py-4 transition-colors relative group outline-none",

@@ -6,6 +6,7 @@ import FloatingWhatsApp from './components/FloatingWhatsApp';
 import ScrollToTop from './components/ScrollToTop';
 import Chatbot from './components/Chatbot';
 import { StickyMobileBar } from './components/StickyMobileBar';
+import ErrorBoundary from './components/ErrorBoundary';
 
 const RootLoader = () => (
   <div className="flex items-center justify-center min-h-screen bg-white">
@@ -19,17 +20,19 @@ export default function App() {
   const isAdMode = params.get('ad') === '1';
 
   return (
-    <LanguageProvider>
-      <BookingProvider>
-        <ScrollToTop />
-        <Suspense fallback={<RootLoader />}>
-          <Outlet />
-        </Suspense>
-        {!isAdMode && <FloatingWhatsApp />}
-        {!isAdMode && <Chatbot />}
-        <StickyMobileBar />
-      </BookingProvider>
-    </LanguageProvider>
+    <ErrorBoundary>
+      <LanguageProvider>
+        <BookingProvider>
+          <ScrollToTop />
+          <Suspense fallback={<RootLoader />}>
+            <Outlet />
+          </Suspense>
+          {!isAdMode && <FloatingWhatsApp />}
+          {!isAdMode && <Chatbot />}
+          <StickyMobileBar />
+        </BookingProvider>
+      </LanguageProvider>
+    </ErrorBoundary>
   );
 }
 

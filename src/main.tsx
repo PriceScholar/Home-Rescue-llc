@@ -1,6 +1,7 @@
 import { ViteReactSSG } from 'vite-react-ssg';
 import { routes } from './routes.tsx';
 import './index.css';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 // Prevent vite-react-ssg from fetching the static loader manifest and breaking client hydration
 if (typeof window !== 'undefined') {
