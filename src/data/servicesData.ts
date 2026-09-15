@@ -188,7 +188,19 @@ export const servicesData: Record<string, ServiceData> = {
     technician: 'Certified AC Installers',
     warranty: '1-Year Installation Warranty',
     subServices: [], process: [], packages: [
-      {name: 'Split AC', price: 'AED 450', recommended: true, features: ['Mounting', 'Gas Charge', 'Testing']}
+      {
+        name: 'Diagnosis',
+        price: 'AED 99',
+        recommended: false,
+        features: ['On-site inspection', 'Problem identification', 'Written diagnosis report', 'No obligation quote']
+      },
+      {
+        name: 'Standard Service',
+        price: 'From AED 250',
+        recommended: true,
+        features: ['Full repair/service', 'Parts & labour included', 'Gas top-up if needed', '90-day warranty']
+      },
+{name: 'Split AC', price: 'AED 450', recommended: true, features: ['Mounting', 'Gas Charge', 'Testing']}
     ],
     faqs: [], reviews: []
   },
@@ -203,7 +215,19 @@ export const servicesData: Record<string, ServiceData> = {
     technician: 'Ducting Specialists',
     warranty: '2-Year Warranty',
     subServices: [], process: [], packages: [
-      {name: 'Standard', price: 'From AED 1500', recommended: true, features: ['Airflow Design', 'Flawless Installation']}
+      {
+        name: 'Diagnosis',
+        price: 'AED 99',
+        recommended: false,
+        features: ['On-site inspection', 'Problem identification', 'Written diagnosis report', 'No obligation quote']
+      },
+      {
+        name: 'Standard Service',
+        price: 'From AED 250',
+        recommended: true,
+        features: ['Full repair/service', 'Parts & labour included', 'Gas top-up if needed', '90-day warranty']
+      },
+{name: 'Standard', price: 'From AED 1500', recommended: true, features: ['Airflow Design', 'Flawless Installation']}
     ],
     faqs: [], reviews: []
   },
@@ -218,7 +242,19 @@ export const servicesData: Record<string, ServiceData> = {
     technician: 'Maintenace Team',
     warranty: '90-Day Cooling Guarantee',
     subServices: [], process: [], packages: [
-      {name: 'One-Time', price: 'AED 150', recommended: true, features: ['Deep Coil Wash', 'Gas Check', 'Drain Clear']}
+      {
+        name: 'Diagnosis',
+        price: 'AED 99',
+        recommended: false,
+        features: ['On-site inspection', 'Problem identification', 'Written diagnosis report', 'No obligation quote']
+      },
+      {
+        name: 'Standard Service',
+        price: 'From AED 250',
+        recommended: true,
+        features: ['Full repair/service', 'Parts & labour included', 'Gas top-up if needed', '90-day warranty']
+      },
+{name: 'One-Time', price: 'AED 150', recommended: true, features: ['Deep Coil Wash', 'Gas Check', 'Drain Clear']}
     ],
     faqs: [], reviews: []
   },
@@ -233,7 +269,19 @@ export const servicesData: Record<string, ServiceData> = {
     technician: 'Industrial HVAC Team',
     warranty: '1-Year Service Warranty',
     subServices: [], process: [], packages: [
-      {name: 'Standard', price: 'From AED 500', recommended: true, features: ['Chiller Water Check', 'Actuator Fix']}
+      {
+        name: 'Diagnosis',
+        price: 'AED 99',
+        recommended: false,
+        features: ['On-site inspection', 'Problem identification', 'Written diagnosis report', 'No obligation quote']
+      },
+      {
+        name: 'Standard Service',
+        price: 'From AED 250',
+        recommended: true,
+        features: ['Full repair/service', 'Parts & labour included', 'Gas top-up if needed', '90-day warranty']
+      },
+{name: 'Standard', price: 'From AED 500', recommended: true, features: ['Chiller Water Check', 'Actuator Fix']}
     ],
     faqs: [], reviews: []
   },
@@ -247,7 +295,20 @@ export const servicesData: Record<string, ServiceData> = {
     material: 'R410A / R22 Gas',
     technician: 'HVAC Specialists',
     warranty: 'Season Guarantee',
-    subServices: [], process: [], packages: [], faqs: [], reviews: []
+    subServices: [], process: [], packages: [
+      {
+        name: 'Diagnosis',
+        price: 'AED 99',
+        recommended: false,
+        features: ['On-site inspection', 'Problem identification', 'Written diagnosis report', 'No obligation quote']
+      },
+      {
+        name: 'Standard Service',
+        price: 'From AED 250',
+        recommended: true,
+        features: ['Full repair/service', 'Parts & labour included', 'Gas top-up if needed', '90-day warranty']
+      }
+    ], faqs: [], reviews: []
   },
   'ac-filter-replacement': {
     id: 'ac-filter-replacement',
@@ -259,7 +320,20 @@ export const servicesData: Record<string, ServiceData> = {
     material: 'High-Density Filters',
     technician: 'Maintenance Techs',
     warranty: 'Quality Assured',
-    subServices: [], process: [], packages: [], faqs: [], reviews: []
+    subServices: [], process: [], packages: [
+      {
+        name: 'Diagnosis',
+        price: 'AED 99',
+        recommended: false,
+        features: ['On-site inspection', 'Problem identification', 'Written diagnosis report', 'No obligation quote']
+      },
+      {
+        name: 'Standard Service',
+        price: 'From AED 250',
+        recommended: true,
+        features: ['Full repair/service', 'Parts & labour included', 'Gas top-up if needed', '90-day warranty']
+      }
+    ], faqs: [], reviews: []
   },
   'ac-cleaning-dubai': {
     id: 'ac-cleaning-dubai',
@@ -289,7 +363,19 @@ export const servicesData: Record<string, ServiceData> = {
       { step: '03', title: 'We Clean Your AC', desc: 'Trained technician arrives and performs thorough deep cleaning.' }
     ],
     packages: [
-      { name: 'Split AC Cleaning', price: 'AED 150', recommended: false, features: ['Filters & Blower Wash', 'Coil Foam Spray', 'Drain Flushing', 'Airflow Inspection'] },
+      {
+        name: 'Diagnosis',
+        price: 'AED 99',
+        recommended: false,
+        features: ['On-site inspection', 'Problem identification', 'Written diagnosis report', 'No obligation quote']
+      },
+      {
+        name: 'Standard Service',
+        price: 'From AED 250',
+        recommended: true,
+        features: ['Full repair/service', 'Parts & labour included', 'Gas top-up if needed', '90-day warranty']
+      },
+{ name: 'Split AC Cleaning', price: 'AED 150', recommended: false, features: ['Filters & Blower Wash', 'Coil Foam Spray', 'Drain Flushing', 'Airflow Inspection'] },
       { name: 'AC Deep Cleaning', price: 'AED 250', recommended: true, features: ['Full Disassembly', 'High-Pressure Coil Wash', 'Antibacterial Sanitization', 'Gas & Temp Split Test'] },
       { name: 'Duct & Central AC', price: 'From AED 350', recommended: false, features: ['Duct Sanitization', 'Motor Inspection', 'Strainer Clean', 'Villa Multi-Unit Bundle'] }
     ],
@@ -334,7 +420,19 @@ export const servicesData: Record<string, ServiceData> = {
       { step: '03', title: 'We Clean Your AC', desc: 'Trained technician arrives and performs thorough deep cleaning.' }
     ],
     packages: [
-      { name: 'Split AC Cleaning', price: 'AED 150', recommended: false, features: ['Filters & Blower Wash', 'Coil Foam Spray', 'Drain Flushing', 'Airflow Inspection'] },
+      {
+        name: 'Diagnosis',
+        price: 'AED 99',
+        recommended: false,
+        features: ['On-site inspection', 'Problem identification', 'Written diagnosis report', 'No obligation quote']
+      },
+      {
+        name: 'Standard Service',
+        price: 'From AED 250',
+        recommended: true,
+        features: ['Full repair/service', 'Parts & labour included', 'Gas top-up if needed', '90-day warranty']
+      },
+{ name: 'Split AC Cleaning', price: 'AED 150', recommended: false, features: ['Filters & Blower Wash', 'Coil Foam Spray', 'Drain Flushing', 'Airflow Inspection'] },
       { name: 'AC Deep Cleaning', price: 'AED 250', recommended: true, features: ['Full Disassembly', 'High-Pressure Coil Wash', 'Antibacterial Sanitization', 'Gas & Temp Split Test'] },
       { name: 'Duct & Central AC', price: 'From AED 350', recommended: false, features: ['Duct Sanitization', 'Motor Inspection', 'Strainer Clean', 'Villa Multi-Unit Bundle'] }
     ],
@@ -364,7 +462,19 @@ export const servicesData: Record<string, ServiceData> = {
     technician: 'Licensed Plumbers',
     warranty: '1-Year Fix Warranty',
     subServices: [], process: [], packages: [
-      {name: 'Basic Fix', price: 'AED 150', recommended: true, features: ['Mechanism Fix', 'Sealant Work']}
+      {
+        name: 'Inspection',
+        price: 'AED 50',
+        recommended: false,
+        features: ['On-site inspection', 'Problem identification', 'Written quote provided', 'No obligation']
+      },
+      {
+        name: 'Standard Service',
+        price: 'From AED 150',
+        recommended: true,
+        features: ['Full repair/installation', 'Parts & labour included', 'Leak-free guarantee', '1-year warranty']
+      },
+{name: 'Basic Fix', price: 'AED 150', recommended: true, features: ['Mechanism Fix', 'Sealant Work']}
     ],
     faqs: [], reviews: []
   },
@@ -379,7 +489,19 @@ export const servicesData: Record<string, ServiceData> = {
     technician: 'Sanitary Specialists',
     warranty: '3-Month No-Block Guarantee',
     subServices: [], process: [], packages: [
-      {name: 'Hydro-Jet', price: 'AED 450', recommended: true, features: ['CCTV Inspection', 'Deep Jet Flush']}
+      {
+        name: 'Inspection',
+        price: 'AED 50',
+        recommended: false,
+        features: ['On-site inspection', 'Problem identification', 'Written quote provided', 'No obligation']
+      },
+      {
+        name: 'Standard Service',
+        price: 'From AED 150',
+        recommended: true,
+        features: ['Full repair/installation', 'Parts & labour included', 'Leak-free guarantee', '1-year warranty']
+      },
+{name: 'Hydro-Jet', price: 'AED 450', recommended: true, features: ['CCTV Inspection', 'Deep Jet Flush']}
     ],
     faqs: [], reviews: []
   },
@@ -394,7 +516,19 @@ export const servicesData: Record<string, ServiceData> = {
     technician: 'Lead Plumbers',
     warranty: '1-Year Leak Warranty',
     subServices: [], process: [], packages: [
-      {name: 'Standard', price: 'From AED 350', recommended: true, features: ['Sonar Detection', 'Precision Fix']}
+      {
+        name: 'Inspection',
+        price: 'AED 50',
+        recommended: false,
+        features: ['On-site inspection', 'Problem identification', 'Written quote provided', 'No obligation']
+      },
+      {
+        name: 'Standard Service',
+        price: 'From AED 150',
+        recommended: true,
+        features: ['Full repair/installation', 'Parts & labour included', 'Leak-free guarantee', '1-year warranty']
+      },
+{name: 'Standard', price: 'From AED 350', recommended: true, features: ['Sonar Detection', 'Precision Fix']}
     ],
     faqs: [], reviews: []
   },
@@ -409,7 +543,19 @@ export const servicesData: Record<string, ServiceData> = {
     technician: 'Certified Plumbers',
     warranty: '5-Year Tank Warranty',
     subServices: [], process: [], packages: [
-      {name: 'Full Install', price: 'AED 650', recommended: true, features: ['New Heater', 'Installation', 'Testing']}
+      {
+        name: 'Inspection',
+        price: 'AED 50',
+        recommended: false,
+        features: ['On-site inspection', 'Problem identification', 'Written quote provided', 'No obligation']
+      },
+      {
+        name: 'Standard Service',
+        price: 'From AED 150',
+        recommended: true,
+        features: ['Full repair/installation', 'Parts & labour included', 'Leak-free guarantee', '1-year warranty']
+      },
+{name: 'Full Install', price: 'AED 650', recommended: true, features: ['New Heater', 'Installation', 'Testing']}
     ],
     faqs: [], reviews: []
   },
@@ -424,7 +570,19 @@ export const servicesData: Record<string, ServiceData> = {
     technician: 'Senior Plumbers',
     warranty: '2-Year Service Warranty',
     subServices: [], process: [], packages: [
-      {name: 'Renovation', price: 'AED 2500+', recommended: true, features: ['Full Re-piping', 'New Fixtures']}
+      {
+        name: 'Inspection',
+        price: 'AED 50',
+        recommended: false,
+        features: ['On-site inspection', 'Problem identification', 'Written quote provided', 'No obligation']
+      },
+      {
+        name: 'Standard Service',
+        price: 'From AED 150',
+        recommended: true,
+        features: ['Full repair/installation', 'Parts & labour included', 'Leak-free guarantee', '1-year warranty']
+      },
+{name: 'Renovation', price: 'AED 2500+', recommended: true, features: ['Full Re-piping', 'New Fixtures']}
     ],
     faqs: [], reviews: []
   },
@@ -439,7 +597,19 @@ export const servicesData: Record<string, ServiceData> = {
     technician: 'Kitchen Specialists',
     warranty: '1-Year Warranty',
     subServices: [], process: [], packages: [
-      {name: 'Mixer Install', price: 'AED 150', recommended: true, features: ['Mixer Fix', 'Drain Connect']}
+      {
+        name: 'Inspection',
+        price: 'AED 50',
+        recommended: false,
+        features: ['On-site inspection', 'Problem identification', 'Written quote provided', 'No obligation']
+      },
+      {
+        name: 'Standard Service',
+        price: 'From AED 150',
+        recommended: true,
+        features: ['Full repair/installation', 'Parts & labour included', 'Leak-free guarantee', '1-year warranty']
+      },
+{name: 'Mixer Install', price: 'AED 150', recommended: true, features: ['Mixer Fix', 'Drain Connect']}
     ],
     faqs: [], reviews: []
   },
@@ -454,7 +624,19 @@ export const servicesData: Record<string, ServiceData> = {
     technician: 'Senior Plumbers',
     warranty: '2-Year Warranty',
     subServices: [], process: [], packages: [
-      {name: 'Standard', price: 'AED 800+', recommended: true, features: ['Full Installation', 'Pressure Testing']}
+      {
+        name: 'Inspection',
+        price: 'AED 50',
+        recommended: false,
+        features: ['On-site inspection', 'Problem identification', 'Written quote provided', 'No obligation']
+      },
+      {
+        name: 'Standard Service',
+        price: 'From AED 150',
+        recommended: true,
+        features: ['Full repair/installation', 'Parts & labour included', 'Leak-free guarantee', '1-year warranty']
+      },
+{name: 'Standard', price: 'AED 800+', recommended: true, features: ['Full Installation', 'Pressure Testing']}
     ],
     faqs: [], reviews: []
   },
@@ -469,7 +651,19 @@ export const servicesData: Record<string, ServiceData> = {
     technician: 'Emergency Team',
     warranty: 'Service Warranty',
     subServices: [], process: [], packages: [
-      {name: 'Emergency Call', price: 'AED 200', recommended: true, features: ['24/7 Availability', 'Quick Fix']}
+      {
+        name: 'Inspection',
+        price: 'AED 50',
+        recommended: false,
+        features: ['On-site inspection', 'Problem identification', 'Written quote provided', 'No obligation']
+      },
+      {
+        name: 'Standard Service',
+        price: 'From AED 150',
+        recommended: true,
+        features: ['Full repair/installation', 'Parts & labour included', 'Leak-free guarantee', '1-year warranty']
+      },
+{name: 'Emergency Call', price: 'AED 200', recommended: true, features: ['24/7 Availability', 'Quick Fix']}
     ],
     faqs: [], reviews: []
   },
@@ -486,7 +680,19 @@ export const servicesData: Record<string, ServiceData> = {
     technician: 'DEWA Approved Electricians',
     warranty: '2-Year Work Warranty',
     subServices: [], process: [], packages: [
-       {name: 'DB Dressing', price: 'AED 800', recommended: true, features: ['Labeling', 'Ferruling', 'Load Balance']}
+      {
+        name: 'Inspection',
+        price: 'AED 50',
+        recommended: false,
+        features: ['On-site inspection', 'Safety check', 'Written quote provided', 'No obligation']
+      },
+      {
+        name: 'Standard Service',
+        price: 'From AED 150',
+        recommended: true,
+        features: ['Full electrical work', 'DEWA-approved technician', 'Tested & certified', '1-year warranty']
+      },
+{name: 'DB Dressing', price: 'AED 800', recommended: true, features: ['Labeling', 'Ferruling', 'Load Balance']}
     ],
     faqs: [], reviews: []
   },
@@ -501,7 +707,19 @@ export const servicesData: Record<string, ServiceData> = {
     technician: 'Lighting Specialists',
     warranty: '1-Year Wiring Warranty',
     subServices: [], process: [], packages: [
-      {name: 'Standard', price: 'From AED 350', recommended: true, features: ['Ceiling Spots', 'Concealed LED']}
+      {
+        name: 'Inspection',
+        price: 'AED 50',
+        recommended: false,
+        features: ['On-site inspection', 'Safety check', 'Written quote provided', 'No obligation']
+      },
+      {
+        name: 'Standard Service',
+        price: 'From AED 150',
+        recommended: true,
+        features: ['Full electrical work', 'DEWA-approved technician', 'Tested & certified', '1-year warranty']
+      },
+{name: 'Standard', price: 'From AED 350', recommended: true, features: ['Ceiling Spots', 'Concealed LED']}
     ],
     faqs: [], reviews: []
   },
@@ -516,7 +734,19 @@ export const servicesData: Record<string, ServiceData> = {
     technician: 'Senior Electricians',
     warranty: '5-Year Reliability Warranty',
     subServices: [], process: [], packages: [
-      {name: 'Standard', price: 'Custom Quote', recommended: true, features: ['Full Conduit Check', 'New Wiring']}
+      {
+        name: 'Inspection',
+        price: 'AED 50',
+        recommended: false,
+        features: ['On-site inspection', 'Safety check', 'Written quote provided', 'No obligation']
+      },
+      {
+        name: 'Standard Service',
+        price: 'From AED 150',
+        recommended: true,
+        features: ['Full electrical work', 'DEWA-approved technician', 'Tested & certified', '1-year warranty']
+      },
+{name: 'Standard', price: 'Custom Quote', recommended: true, features: ['Full Conduit Check', 'New Wiring']}
     ],
     faqs: [], reviews: []
   },
@@ -531,7 +761,19 @@ export const servicesData: Record<string, ServiceData> = {
     technician: 'Safety Electricians',
     warranty: '1-Year Component Warranty',
     subServices: [], process: [], packages: [
-      {name: 'Fix Trip', price: 'AED 150', recommended: true, features: ['Isolation', 'Breaker Fix']}
+      {
+        name: 'Inspection',
+        price: 'AED 50',
+        recommended: false,
+        features: ['On-site inspection', 'Safety check', 'Written quote provided', 'No obligation']
+      },
+      {
+        name: 'Standard Service',
+        price: 'From AED 150',
+        recommended: true,
+        features: ['Full electrical work', 'DEWA-approved technician', 'Tested & certified', '1-year warranty']
+      },
+{name: 'Fix Trip', price: 'AED 150', recommended: true, features: ['Isolation', 'Breaker Fix']}
     ],
     faqs: [], reviews: []
   },
@@ -546,7 +788,19 @@ export const servicesData: Record<string, ServiceData> = {
     technician: 'Smart Tech Team',
     warranty: '1-Year App Warranty',
     subServices: [], process: [], packages: [
-      {name: 'Living Room App', price: 'AED 800', recommended: true, features: ['Smart Lights', 'AC Control']}
+      {
+        name: 'Inspection',
+        price: 'AED 50',
+        recommended: false,
+        features: ['On-site inspection', 'Safety check', 'Written quote provided', 'No obligation']
+      },
+      {
+        name: 'Standard Service',
+        price: 'From AED 150',
+        recommended: true,
+        features: ['Full electrical work', 'DEWA-approved technician', 'Tested & certified', '1-year warranty']
+      },
+{name: 'Living Room App', price: 'AED 800', recommended: true, features: ['Smart Lights', 'AC Control']}
     ],
     faqs: [], reviews: []
   },
@@ -561,7 +815,19 @@ export const servicesData: Record<string, ServiceData> = {
     technician: 'Fixture Specialists',
     warranty: '1-Year Mounting Warranty',
     subServices: [], process: [], packages: [
-      {name: 'Standard', price: 'AED 250', recommended: true, features: ['Assembly', 'Secure Mounting']}
+      {
+        name: 'Inspection',
+        price: 'AED 50',
+        recommended: false,
+        features: ['On-site inspection', 'Safety check', 'Written quote provided', 'No obligation']
+      },
+      {
+        name: 'Standard Service',
+        price: 'From AED 150',
+        recommended: true,
+        features: ['Full electrical work', 'DEWA-approved technician', 'Tested & certified', '1-year warranty']
+      },
+{name: 'Standard', price: 'AED 250', recommended: true, features: ['Assembly', 'Secure Mounting']}
     ],
     faqs: [], reviews: []
   },
@@ -776,7 +1042,20 @@ export const servicesData: Record<string, ServiceData> = {
     material: 'GI Ducting',
     technician: 'Senior HVAC Team',
     warranty: '2-Year Warranty',
-    subServices: [], process: [], packages: [], faqs: [], reviews: []
+    subServices: [], process: [], packages: [
+      {
+        name: 'Diagnosis',
+        price: 'AED 99',
+        recommended: false,
+        features: ['On-site inspection', 'Problem identification', 'Written diagnosis report', 'No obligation quote']
+      },
+      {
+        name: 'Standard Service',
+        price: 'From AED 250',
+        recommended: true,
+        features: ['Full repair/service', 'Parts & labour included', 'Gas top-up if needed', '90-day warranty']
+      }
+    ], faqs: [], reviews: []
   },
   'chilled-water-ac': {
     id: 'chilled-water-ac',
@@ -788,7 +1067,20 @@ export const servicesData: Record<string, ServiceData> = {
     material: 'Brass Valves',
     technician: 'Industrial HVAC Specialists',
     warranty: '1-Year Warranty',
-    subServices: [], process: [], packages: [], faqs: [], reviews: []
+    subServices: [], process: [], packages: [
+      {
+        name: 'Diagnosis',
+        price: 'AED 99',
+        recommended: false,
+        features: ['On-site inspection', 'Problem identification', 'Written diagnosis report', 'No obligation quote']
+      },
+      {
+        name: 'Standard Service',
+        price: 'From AED 250',
+        recommended: true,
+        features: ['Full repair/service', 'Parts & labour included', 'Gas top-up if needed', '90-day warranty']
+      }
+    ], faqs: [], reviews: []
   },
   'ac-contracts': {
     id: 'ac-contracts',
@@ -800,7 +1092,20 @@ export const servicesData: Record<string, ServiceData> = {
     material: 'All Spares Included',
     technician: 'Contract Fleet',
     warranty: 'Continuous Coverage',
-    subServices: [], process: [], packages: [], faqs: [], reviews: []
+    subServices: [], process: [], packages: [
+      {
+        name: 'Diagnosis',
+        price: 'AED 99',
+        recommended: false,
+        features: ['On-site inspection', 'Problem identification', 'Written diagnosis report', 'No obligation quote']
+      },
+      {
+        name: 'Standard Service',
+        price: 'From AED 250',
+        recommended: true,
+        features: ['Full repair/service', 'Parts & labour included', 'Gas top-up if needed', '90-day warranty']
+      }
+    ], faqs: [], reviews: []
   },
   'office-electrical': {
     id: 'office-electrical',
@@ -812,7 +1117,20 @@ export const servicesData: Record<string, ServiceData> = {
     material: 'Data & Power Cables',
     technician: 'Commerical Electricians',
     warranty: '2-Year Warranty',
-    subServices: [], process: [], packages: [], faqs: [], reviews: []
+    subServices: [], process: [], packages: [
+      {
+        name: 'Inspection',
+        price: 'AED 50',
+        recommended: false,
+        features: ['On-site inspection', 'Safety check', 'Written quote provided', 'No obligation']
+      },
+      {
+        name: 'Standard Service',
+        price: 'From AED 150',
+        recommended: true,
+        features: ['Full electrical work', 'DEWA-approved technician', 'Tested & certified', '1-year warranty']
+      }
+    ], faqs: [], reviews: []
   },
   'dewa': {
     id: 'dewa',
@@ -824,7 +1142,20 @@ export const servicesData: Record<string, ServiceData> = {
     material: 'Documentation',
     technician: 'Approved Engineers',
     warranty: 'Success Guaranteed',
-    subServices: [], process: [], packages: [], faqs: [], reviews: []
+    subServices: [], process: [], packages: [
+      {
+        name: 'Inspection',
+        price: 'AED 50',
+        recommended: false,
+        features: ['On-site inspection', 'Safety check', 'Written quote provided', 'No obligation']
+      },
+      {
+        name: 'Standard Service',
+        price: 'From AED 150',
+        recommended: true,
+        features: ['Full electrical work', 'DEWA-approved technician', 'Tested & certified', '1-year warranty']
+      }
+    ], faqs: [], reviews: []
   },
   'kitchen-hood': {
     id: 'kitchen-hood',
@@ -1420,7 +1751,20 @@ export const servicesData: Record<string, ServiceData> = {
       {name: 'Drain Cleaning', icon: 'fa-solid fa-sink', desc: 'Blockage removal.'},
       {name: 'Water Heaters', icon: 'fa-solid fa-fire', desc: 'Install & Replace.'}
     ],
-    process: [], packages: [], faqs: [], reviews: []
+    process: [], packages: [
+      {
+        name: 'Inspection',
+        price: 'AED 50',
+        recommended: false,
+        features: ['On-site inspection', 'Problem identification', 'Written quote provided', 'No obligation']
+      },
+      {
+        name: 'Standard Service',
+        price: 'From AED 150',
+        recommended: true,
+        features: ['Full repair/installation', 'Parts & labour included', 'Leak-free guarantee', '1-year warranty']
+      }
+    ], faqs: [], reviews: []
   },
   'electrical-services': {
     id: 'electrical-services',
@@ -1438,7 +1782,20 @@ export const servicesData: Record<string, ServiceData> = {
       {name: 'Fault Repair', icon: 'fa-solid fa-bolt', desc: 'Short circuit fixing.'},
       {name: 'Smart Home', icon: 'fa-solid fa-house-laptop', desc: 'Automation solutions.'}
     ],
-    process: [], packages: [], faqs: [], reviews: []
+    process: [], packages: [
+      {
+        name: 'Inspection',
+        price: 'AED 50',
+        recommended: false,
+        features: ['On-site inspection', 'Safety check', 'Written quote provided', 'No obligation']
+      },
+      {
+        name: 'Standard Service',
+        price: 'From AED 150',
+        recommended: true,
+        features: ['Full electrical work', 'DEWA-approved technician', 'Tested & certified', '1-year warranty']
+      }
+    ], faqs: [], reviews: []
   },
   'ceiling-work': {
     id: 'ceiling-work',
