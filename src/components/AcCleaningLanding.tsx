@@ -647,7 +647,7 @@ export const AcCleaningLanding: React.FC<AcCleaningLandingProps> = ({ isAdMode =
                 <img
                   src="/images/services/subs/emergency-ac-repair.jpg"
                   alt="Villa AC Cleaning Dubai"
-                  className="w-full h-[440px] object-cover"
+                  className="w-full aspect-[4/5] object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/80 via-transparent to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6 text-white space-y-2">

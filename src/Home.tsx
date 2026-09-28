@@ -235,7 +235,7 @@ const Home = () => {
                 to={s.link}
                 className="group relative aspect-square rounded-2xl md:rounded-[28px] overflow-hidden shadow-2xl border border-white/5 bg-brand-navy block transform hover:-translate-y-1 transition-all duration-300"
               >
-                <img src={s.img} alt={s.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80" />
+                <img src={s.img} alt={s.title} className="w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-700 opacity-80" />
                 <div className="absolute inset-0 bg-[#08264B]/40 group-hover:bg-transparent transition-colors" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#08264B] via-[#08264B]/20 to-transparent opacity-90" />
                 <div className="absolute bottom-0 left-0 right-0 p-3 md:p-5 flex items-center gap-2 md:gap-3">
@@ -375,7 +375,7 @@ const Home = () => {
                 className="group bg-white rounded-xl sm:rounded-2xl md:rounded-[32px] overflow-hidden shadow-sm hover:shadow-2xl border border-gray-100 flex flex-col h-full transition-all duration-500"
               >
                 <Link to={`/services/${service.id}`} className="flex flex-col h-full w-full">
-                  <div className="relative aspect-square sm:aspect-[4/3] overflow-hidden">
+                  <div className="relative aspect-[4/5] overflow-hidden">
                     <img src={service.image} alt={service.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" loading="lazy" />
                     <div className="absolute inset-0 bg-brand-navy/10 group-hover:bg-transparent transition-colors"></div>
                     <div className="absolute top-2 left-2 sm:top-3 sm:left-3 md:top-5 md:left-5">

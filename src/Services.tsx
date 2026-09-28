@@ -2,7 +2,7 @@ import React from 'react';
 import {Helmet} from 'react-helmet-async';
 import {TopBar, Navbar, Footer} from './components/Navigation';
 import {motion} from 'motion/react';
-import {Paintbrush, Wind, Droplets, Zap, Grid2x2, Hammer, ChevronRight, PenTool, Layout} from 'lucide-react';
+import {Paintbrush, Wind, Droplets, Zap, Grid2x2, Hammer, ChevronRight, PenTool, Layout, House} from 'lucide-react';
 import {Link} from 'react-router-dom';
 import {useBooking} from './components/BookingModal';
 
@@ -45,7 +45,10 @@ const getSubId = (name: string): string => {
     'Preventive Checks': 'preventive-maintenance',
     'Minor Plumbing': 'minor-plumbing',
     'Wall Repair': 'wall-repair',
-    'Property Upkeep': 'property-upkeep'
+    'Property Upkeep': 'property-upkeep',
+    'Washroom Remodeling': 'washroom-remodeling',
+    'Kitchen Redesign': 'kitchen-redesign',
+    'Apartment Renovation': 'apartment-renovation'
   };
   return map[name] || name.toLowerCase().replace(/\s+/g, '-');
 };
@@ -61,7 +64,8 @@ const Services = () => {
     {id: 'handyman-more', name: 'Handyman & More', icon: Hammer, image: '/images/services/service-handyman.jpg', desc: 'Professional handyman for all your home improvements and quick fixes.', subs: ['TV Installation', 'Curtain Hanging', 'Furniture Assembly', 'Door Repair']},
     {id: 'ceiling-work', name: 'Ceiling & Gypsum', icon: Layout, image: '/images/services/service-ceiling.jpg', desc: 'Modern gypsum and false ceiling designs for elegant interiors.', subs: ['Gypsum Ceiling', 'False Ceiling', 'POP Design', 'Cove Lighting']},
     {id: 'lighting-work', name: 'Lighting Work', icon: Zap, image: '/images/services/service-lighting.jpg', desc: 'Specialized lighting solutions, chandeliers installation, and smart home lighting setup.', subs: ['LED Installation', 'Chandelier Hanging', 'Outdoor Lights', 'Smart Setup']},
-    {id: 'home-general-maintenance', name: 'Home General Maintenance', icon: PenTool, image: '/images/services/service-maintenance.jpg', desc: 'Regular preventive maintenance and small repairs to keep your property in top condition.', subs: ['Preventive Checks', 'Minor Plumbing', 'Wall Repair', 'Property Upkeep']}
+    {id: 'home-general-maintenance', name: 'Home General Maintenance', icon: PenTool, image: '/images/services/service-maintenance.jpg', desc: 'Regular preventive maintenance and small repairs to keep your property in top condition.', subs: ['Preventive Checks', 'Minor Plumbing', 'Wall Repair', 'Property Upkeep']},
+    {id: 'renovation-remodeling', name: 'Renovation & Remodeling', icon: House, image: '/images/services/subs/villa-painting.jpg', desc: 'Washroom remodeling, kitchen redesign and full apartment renovation — one team, one fixed quote.', subs: ['Washroom Remodeling', 'Kitchen Redesign', 'Apartment Renovation']}
   ];
 
   return (

@@ -337,7 +337,7 @@ const ServiceDetail = () => {
             <motion.div 
               initial={{opacity: 0, x: -30}} 
               animate={{opacity: 1, x: 0}}
-              className="relative rounded-3xl md:rounded-[2.5rem] overflow-hidden shadow-2xl bg-gray-100 aspect-video sm:aspect-square lg:aspect-auto lg:h-[600px]"
+              className="relative rounded-3xl md:rounded-[2.5rem] overflow-hidden shadow-2xl bg-gray-100 aspect-[4/5] w-full max-w-[520px] mx-auto"
             >
               <img 
                 src={`/images/services/subs/${data.id}.jpg`} 

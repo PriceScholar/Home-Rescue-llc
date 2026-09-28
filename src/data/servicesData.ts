@@ -1883,6 +1883,148 @@ export const servicesData: Record<string, ServiceData> = {
     ],
     process: [], packages: [], faqs: [], reviews: []
   }
+  ,
+
+  // --- RENOVATION & REMODELING ---
+  'renovation-remodeling': {
+    id: 'renovation-remodeling',
+    title: 'Renovation & Remodeling',
+    tagline: 'COMPLETE HOME TRANSFORMATIONS',
+    description: 'Washroom remodeling, kitchen redesign and full apartment renovation across Dubai and the UAE — planned, built and finished by one licensed team with a fixed, itemised quote.',
+    image: '/images/services/subs/villa-painting.jpg',
+    estimateDuration: 'Varies by Scope',
+    material: 'Premium Tiles, Quartz & Fittings',
+    technician: 'Renovation Project Team',
+    warranty: '1-Year Workmanship Warranty',
+    subServices: [
+      {name: 'Washroom Remodeling', icon: 'fa-solid fa-bath', desc: 'Refresh or full washroom rebuild.'},
+      {name: 'Kitchen Redesign', icon: 'fa-solid fa-kitchen-set', desc: 'New cabinets, countertops & layout.'},
+      {name: 'Apartment Renovation', icon: 'fa-solid fa-house-chimney', desc: 'Complete apartment makeover.'}
+    ],
+    process: [
+      {step: '01', title: 'Free Site Visit', desc: 'We measure the space and understand your requirements.'},
+      {step: '02', title: 'Design & Fixed Quote', desc: 'Material options and an itemised quote — no hidden charges.'},
+      {step: '03', title: 'Execution', desc: 'Our team completes the work on an agreed schedule.'},
+      {step: '04', title: 'Handover & Snagging', desc: 'Final inspection, fixes and clean handover.'}
+    ],
+    packages: [
+      {name: 'Site Visit & Quote', price: 'Free', recommended: false, features: ['On-site measurement', 'Design & material advice', 'Itemised fixed quote', 'No obligation']},
+      {name: 'Renovation Projects', price: 'From AED 7,500', recommended: true, features: ['Washroom, kitchen or full apartment', 'Materials & labour included', 'One project team', '1-year workmanship warranty']}
+    ],
+    faqs: [],
+    reviews: []
+  },
+  'washroom-remodeling': {
+    id: 'washroom-remodeling',
+    title: 'Washroom Remodeling',
+    tagline: 'TECHNICAL SERVICE DETAIL',
+    description: 'Complete washroom remodeling in Dubai — new tiles, sanitaryware, waterproofing, shower glass and vanity units. From a quick refresh to a full rebuild with a fixed, itemised quote.',
+    image: '/images/services/subs/bathroom-plumbing.jpg',
+    estimateDuration: '5 Days – 4 Weeks',
+    material: 'Porcelain Tiles & Premium Sanitaryware',
+    technician: 'Renovation Project Team',
+    warranty: '1-Year Workmanship Warranty',
+    subServices: [
+      {name: 'Tiling & Flooring', icon: 'fa-solid fa-table-cells-large', desc: 'Wall and floor tiles, laid level and sealed.'},
+      {name: 'Sanitaryware Installation', icon: 'fa-solid fa-toilet', desc: 'WC, basin, mixers and shower sets.'},
+      {name: 'Waterproofing', icon: 'fa-solid fa-droplet', desc: 'Membrane in wet areas, tested before tiling.'},
+      {name: 'Shower Glass Enclosure', icon: 'fa-solid fa-shower', desc: 'Frameless or framed glass partitions.'},
+      {name: 'Vanity & Mirror Units', icon: 'fa-solid fa-bath', desc: 'Vanity cabinets, mirrors and storage.'},
+      {name: 'Lighting & Ventilation', icon: 'fa-solid fa-lightbulb', desc: 'LED lighting and exhaust fans.'}
+    ],
+    process: [
+      {step: '01', title: 'Free Site Visit', desc: 'We measure the space and understand your requirements.'},
+      {step: '02', title: 'Design & Fixed Quote', desc: 'Material options and an itemised quote — no hidden charges.'},
+      {step: '03', title: 'Execution', desc: 'Our team completes the work on an agreed schedule.'},
+      {step: '04', title: 'Handover & Snagging', desc: 'Final inspection, fixes and clean handover.'}
+    ],
+    packages: [
+      {name: 'Site Visit & Quote', price: 'Free', recommended: false, features: ['On-site measurement', 'Tile & fitting advice', 'Itemised fixed quote', 'No obligation']},
+      {name: 'Washroom Refresh', price: 'From AED 8,500', recommended: true, features: ['New wall & floor tiles', 'New sanitaryware & fittings', 'Waterproofing in wet areas', 'Plumbing check & testing']},
+      {name: 'Full Remodel', price: 'From AED 18,000', recommended: false, features: ['Complete strip-out & rebuild', 'Concealed plumbing & layout options', 'Glass shower enclosure', 'Lighting, ventilation & finishing']}
+    ],
+    faqs: [
+      {question: 'How long does a washroom remodel take?', answer: 'A refresh usually takes 5–10 working days. A full remodel with layout changes typically takes 2–4 weeks. We confirm the exact timeline in your quote after the site visit.'},
+      {question: 'Do I need building approval?', answer: 'Most Dubai buildings require an NOC from building management or the developer before renovation work. We guide you through what is needed; structural changes may also need authority approval.'},
+      {question: 'Is waterproofing included?', answer: 'Yes. Every washroom remodel includes a waterproofing membrane in the wet areas, tested before tiling.'},
+      {question: 'Can I choose my own tiles and fittings?', answer: 'Yes. You can supply your own, or we can recommend options for your budget. The quote shows material allowances clearly.'}
+    ],
+    reviews: []
+  },
+  'kitchen-redesign': {
+    id: 'kitchen-redesign',
+    title: 'Kitchen Redesign',
+    tagline: 'TECHNICAL SERVICE DETAIL',
+    description: 'Kitchen redesign and renovation in Dubai — custom cabinets, quartz or granite countertops, backsplash, plumbing, electrical and lighting. Refresh your existing kitchen or rebuild it completely.',
+    image: '/images/services/subs/kitchen-plumbing.jpg',
+    estimateDuration: '1 – 5 Weeks',
+    material: 'Custom Cabinets & Quartz / Granite',
+    technician: 'Renovation Project Team',
+    warranty: '1-Year Workmanship Warranty',
+    subServices: [
+      {name: 'Custom Cabinets', icon: 'fa-solid fa-kitchen-set', desc: 'Made-to-measure cabinets and storage.'},
+      {name: 'Countertops', icon: 'fa-solid fa-ruler-combined', desc: 'Quartz, granite, marble or laminate.'},
+      {name: 'Backsplash Tiling', icon: 'fa-solid fa-table-cells-large', desc: 'Easy-clean, stylish splashbacks.'},
+      {name: 'Sink & Plumbing', icon: 'fa-solid fa-sink', desc: 'Sinks, mixers and water connections.'},
+      {name: 'Appliance Installation', icon: 'fa-solid fa-plug', desc: 'Hob, hood, oven and dishwasher fitting.'},
+      {name: 'Kitchen Lighting', icon: 'fa-solid fa-lightbulb', desc: 'Under-cabinet and ceiling LED lighting.'}
+    ],
+    process: [
+      {step: '01', title: 'Free Site Visit', desc: 'We measure the space and understand your requirements.'},
+      {step: '02', title: 'Design & Fixed Quote', desc: 'Material options and an itemised quote — no hidden charges.'},
+      {step: '03', title: 'Execution', desc: 'Our team completes the work on an agreed schedule.'},
+      {step: '04', title: 'Handover & Snagging', desc: 'Final inspection, fixes and clean handover.'}
+    ],
+    packages: [
+      {name: 'Site Visit & Design Advice', price: 'Free', recommended: false, features: ['On-site measurement', 'Layout & material advice', 'Itemised fixed quote', 'No obligation']},
+      {name: 'Kitchen Refresh', price: 'From AED 7,500', recommended: true, features: ['Cabinet door replacement or refacing', 'New countertop', 'Backsplash & fittings', 'Paint & finishing']},
+      {name: 'Full Kitchen Redesign', price: 'From AED 25,000', recommended: false, features: ['New custom cabinets', 'Quartz or granite countertop', 'Plumbing & electrical upgrade', 'Lighting & flooring']}
+    ],
+    faqs: [
+      {question: 'How long does a kitchen redesign take?', answer: 'A kitchen refresh takes around 1–2 weeks. A full redesign with new cabinets usually takes 3–5 weeks, depending on materials and scope.'},
+      {question: 'Can you keep my existing layout?', answer: 'Yes. Keeping plumbing and electrical points in place is the most cost-effective option, and we will advise if moving them makes sense.'},
+      {question: 'What countertop options do you offer?', answer: 'Quartz, granite, marble and high-quality laminate. We show options that fit your budget during the site visit.'},
+      {question: 'Can I use my kitchen during the work?', answer: 'Usually not during the main works. We plan the schedule to keep downtime as short as possible.'}
+    ],
+    reviews: []
+  },
+  'apartment-renovation': {
+    id: 'apartment-renovation',
+    title: 'Apartment Renovation',
+    tagline: 'TECHNICAL SERVICE DETAIL',
+    description: 'Full apartment renovation in Dubai — painting, flooring, false ceiling, lighting, kitchen and bathroom upgrades, electrical and plumbing — managed by one team from site visit to handover.',
+    image: '/images/services/subs/interior-painting.jpg',
+    estimateDuration: '2 – 10 Weeks',
+    material: 'Premium Paints, Tiles & Fittings',
+    technician: 'Renovation Project Team',
+    warranty: '1-Year Workmanship Warranty',
+    subServices: [
+      {name: 'Painting & Wall Finishes', icon: 'fa-solid fa-paint-roller', desc: 'Fresh paint and feature walls.'},
+      {name: 'Flooring', icon: 'fa-solid fa-table-cells-large', desc: 'Tiles, marble or parquet flooring.'},
+      {name: 'False Ceiling & Lighting', icon: 'fa-solid fa-lightbulb', desc: 'Gypsum ceilings with LED lighting.'},
+      {name: 'Kitchen & Bathroom Upgrades', icon: 'fa-solid fa-sink', desc: 'Modern kitchens and washrooms.'},
+      {name: 'Electrical & Plumbing', icon: 'fa-solid fa-plug', desc: 'Safe, tested wiring and plumbing.'},
+      {name: 'Doors & Joinery', icon: 'fa-solid fa-door-open', desc: 'Doors, wardrobes and fitted storage.'}
+    ],
+    process: [
+      {step: '01', title: 'Free Site Visit', desc: 'We measure the space and understand your requirements.'},
+      {step: '02', title: 'Design & Fixed Quote', desc: 'Material options and an itemised quote — no hidden charges.'},
+      {step: '03', title: 'Execution', desc: 'Our team completes the work on an agreed schedule.'},
+      {step: '04', title: 'Handover & Snagging', desc: 'Final inspection, fixes and clean handover.'}
+    ],
+    packages: [
+      {name: 'Site Visit & BOQ', price: 'Free', recommended: false, features: ['Full apartment walkthrough', 'Scope & material advice', 'Itemised fixed quote (BOQ)', 'No obligation']},
+      {name: 'Apartment Refresh', price: 'From AED 25,000', recommended: true, features: ['Studio / 1-bedroom', 'Painting & minor repairs', 'Flooring & lighting updates', 'Fixture replacements']},
+      {name: 'Full Renovation', price: 'From AED 60,000', recommended: false, features: ['1–2 bedroom apartments', 'Kitchen & bathroom upgrades', 'Flooring, ceiling & painting', 'Electrical & plumbing works']}
+    ],
+    faqs: [
+      {question: 'How much does apartment renovation cost in Dubai?', answer: 'A light studio or 1-bedroom refresh starts from AED 25,000, and a full 1–2 bedroom renovation starts from AED 60,000. The final price depends on size, condition and finishes — we give an itemised fixed quote after a free site visit.'},
+      {question: 'How long does it take?', answer: 'A light refresh usually takes 2–4 weeks. A full renovation typically takes 6–10 weeks, depending on scope and building approvals.'},
+      {question: 'Can I stay in the apartment during work?', answer: 'For light refresh work, often yes, room by room. For full renovations we recommend moving out during the main works.'},
+      {question: 'Do you help with the building NOC?', answer: 'Yes. We help prepare the documents and coordinate with building management for the NOC.'}
+    ],
+    reviews: []
+  }
 }
 
 export const serviceCategories = [
@@ -2065,6 +2207,22 @@ export const serviceCategories = [
       {name: 'Silicone & Sealant', id: 'silicone-sealant', icon: 'fa-solid fa-broom', desc: 'Apply or replace silicone and sealants for a watertight finish.'},
       {name: 'Fixture Replacement', id: 'fixture-replacement', icon: 'fa-solid fa-faucet', desc: 'Replace worn-out fixtures and improve home functionality.'},
       {name: 'Property Upkeep', id: 'property-upkeep', icon: 'fa-solid fa-house-medical', desc: 'General home upkeep for a clean, safe and well-maintained space.'}
+    ]
+  }
+  ,
+  {
+    name: 'Renovation & Remodeling',
+    id: 'renovation-remodeling',
+    icon: 'fa-solid fa-trowel-bricks',
+    color: '#0F766E',
+    activeColor: '#EEF6FF',
+    description: 'Washroom remodeling, kitchen redesign and full apartment renovation — one licensed team, one fixed quote, from site visit to handover.',
+    image: '/images/services/subs/villa-painting.jpg',
+    promoTitle: 'Transform Your Home, Beautifully',
+    subs: [
+      {name: 'Washroom Remodeling', id: 'washroom-remodeling', icon: 'fa-solid fa-bath', desc: 'Refresh or full washroom rebuild.'},
+      {name: 'Kitchen Redesign', id: 'kitchen-redesign', icon: 'fa-solid fa-kitchen-set', desc: 'New cabinets, countertops & layout.'},
+      {name: 'Apartment Renovation', id: 'apartment-renovation', icon: 'fa-solid fa-house-chimney', desc: 'Complete apartment makeover.'}
     ]
   }
 ];
