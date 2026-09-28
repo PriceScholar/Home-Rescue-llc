@@ -77,7 +77,7 @@ export const Navbar = () => {
             <span className="text-brand-gold font-bold text-lg md:text-xl font-sans">H</span>
           </div>
           <div>
-            <h1 className="text-base sm:text-lg md:text-xl font-bold text-brand-navy tracking-tight leading-none uppercase">HOME RESCUE</h1>
+            <span className="text-base sm:text-lg md:text-xl font-bold text-brand-navy tracking-tight leading-none uppercase">HOME RESCUE</span>
             <p className="text-[11px] sm:text-[11px] md:text-[11px] text-brand-gold tracking-[0.2em] font-bold mt-0.5 sm:mt-1 uppercase">TECHNICAL SERVICES</p>
           </div>
         </Link>
@@ -363,7 +363,7 @@ export const Footer = () => {
 
           {/* Column 2: Our Services */}
           <div className="lg:pl-8">
-            <h4 className="text-md font-serif font-black mb-8 text-brand-gold uppercase tracking-widest leading-none">Our Services</h4>
+            <h3 className="text-md font-serif font-black mb-8 text-brand-gold uppercase tracking-widest leading-none">Our Services</h3>
             <ul className="space-y-3.5 text-[13px] text-gray-400">
               {[
                 { name: 'Painting Services', id: 'paint-work' },
@@ -386,7 +386,7 @@ export const Footer = () => {
 
           {/* Column 3: Quick Links */}
           <div className="lg:pl-4">
-            <h4 className="text-md font-serif font-black mb-8 text-brand-gold uppercase tracking-widest leading-none">Quick Links</h4>
+            <h3 className="text-md font-serif font-black mb-8 text-brand-gold uppercase tracking-widest leading-none">Quick Links</h3>
             <ul className="space-y-3.5 text-[13px] text-gray-400">
               {[
                 { name: 'About Us', path: '/about' },
@@ -407,7 +407,7 @@ export const Footer = () => {
 
           {/* Column 4: Contact Us */}
           <div className="space-y-6 lg:pl-4">
-            <h4 className="text-md font-serif font-black mb-6 lg:mb-8 text-brand-gold uppercase tracking-widest leading-none">Contact Us</h4>
+            <h3 className="text-md font-serif font-black mb-6 lg:mb-8 text-brand-gold uppercase tracking-widest leading-none">Contact Us</h3>
             <div className="space-y-4 md:space-y-5">
               <a href="tel:+971524524295" className="flex items-center gap-4 group">
                 <div className="w-9 h-9 rounded-xl bg-white/5 flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-brand-navy transition-all">
@@ -447,7 +447,7 @@ export const Footer = () => {
 
           {/* Column 5: License */}
           <div className="space-y-8 lg:border-l lg:border-white/10 lg:pl-10">
-            <h4 className="text-md font-serif font-black mb-8 text-brand-gold uppercase tracking-widest leading-none">Dubai Licensed</h4>
+            <h3 className="text-md font-serif font-black mb-8 text-brand-gold uppercase tracking-widest leading-none">Dubai Licensed</h3>
             <div className="space-y-6">
               <div className="space-y-2 opacity-80">
                 <div className="text-gray-400 text-xs leading-relaxed">

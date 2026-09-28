@@ -66,7 +66,7 @@ const MinimalAdHeader = () => {
           <span className="text-brand-gold font-bold text-lg md:text-xl font-sans">H</span>
         </div>
         <div>
-          <h1 className="text-base sm:text-lg md:text-xl font-bold text-brand-navy tracking-tight leading-none uppercase">HOME RESCUE</h1>
+          <span className="text-base sm:text-lg md:text-xl font-bold text-brand-navy tracking-tight leading-none uppercase">HOME RESCUE</span>
           <p className="text-[11px] sm:text-[11px] md:text-[11px] text-brand-gold tracking-[0.2em] font-bold mt-0.5 sm:mt-1 uppercase">TECHNICAL SERVICES</p>
         </div>
       </div>

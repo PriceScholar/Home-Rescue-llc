@@ -428,7 +428,7 @@ const Home = () => {
               { title: 'Electrical Works', price: 'AED 200', desc: 'Starting from, power diagnostics/fitting fixtures' },
             ].map((p, i) => (
               <div key={i} className="bg-white rounded-[32px] p-6 md:p-8 border border-gray-100 shadow-sm flex flex-col items-center text-center group hover:border-brand-gold transition-colors duration-300">
-                <h4 className="text-sm md:text-base font-black text-brand-navy uppercase tracking-wide mb-2">{p.title}</h4>
+                <h3 className="text-sm md:text-base font-black text-brand-navy uppercase tracking-wide mb-2">{p.title}</h3>
                 <div className="text-3xl md:text-4xl font-serif font-black text-brand-gold mb-3">{p.price}</div>
                 <p className="text-[11px] md:text-xs text-gray-400 font-bold tracking-tight uppercase leading-relaxed mt-2 select-none">
                   {p.desc}
@@ -485,10 +485,10 @@ const Home = () => {
                     <item.icon className="w-6 h-6 md:w-9 md:h-9" />
                   </div>
                   <div className="space-y-1 md:space-y-2">
-                    <h4 className="text-white font-black text-sm md:text-lg tracking-tight leading-tight flex flex-col items-center">
+                    <h3 className="text-white font-black text-sm md:text-lg tracking-tight leading-tight flex flex-col items-center">
                       <span>{item.title}</span>
                       {item.onClick && <span className="text-[11px] text-brand-gold font-bold italic tracking-wider uppercase mt-1">(View Proof)</span>}
-                    </h4>
+                    </h3>
                     <p className="text-[11px] md:text-[11px] text-gray-400 font-bold uppercase tracking-wider leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
