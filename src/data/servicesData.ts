@@ -1908,7 +1908,7 @@ export const servicesData: Record<string, ServiceData> = {
       {step: '04', title: 'Handover & Snagging', desc: 'Final inspection, fixes and clean handover.'}
     ],
     packages: [
-      {name: 'Site Visit & Quote', price: 'Free', recommended: false, features: ['On-site measurement', 'Design & material advice', 'Itemised fixed quote', 'No obligation']},
+      {name: 'Site Visit & Quote', price: 'From AED 150', recommended: false, features: ['On-site measurement', 'Design & material advice', 'Itemised fixed quote', 'No obligation']},
       {name: 'Renovation Projects', price: 'From AED 7,500', recommended: true, features: ['Washroom, kitchen or full apartment', 'Materials & labour included', 'One project team', '1-year workmanship warranty']}
     ],
     faqs: [],
@@ -1939,7 +1939,7 @@ export const servicesData: Record<string, ServiceData> = {
       {step: '04', title: 'Handover & Snagging', desc: 'Final inspection, fixes and clean handover.'}
     ],
     packages: [
-      {name: 'Site Visit & Quote', price: 'Free', recommended: false, features: ['On-site measurement', 'Tile & fitting advice', 'Itemised fixed quote', 'No obligation']},
+      {name: 'Site Visit & Quote', price: 'From AED 150', recommended: false, features: ['On-site measurement', 'Tile & fitting advice', 'Itemised fixed quote', 'No obligation']},
       {name: 'Washroom Refresh', price: 'From AED 8,500', recommended: true, features: ['New wall & floor tiles', 'New sanitaryware & fittings', 'Waterproofing in wet areas', 'Plumbing check & testing']},
       {name: 'Full Remodel', price: 'From AED 18,000', recommended: false, features: ['Complete strip-out & rebuild', 'Concealed plumbing & layout options', 'Glass shower enclosure', 'Lighting, ventilation & finishing']}
     ],
@@ -1976,7 +1976,7 @@ export const servicesData: Record<string, ServiceData> = {
       {step: '04', title: 'Handover & Snagging', desc: 'Final inspection, fixes and clean handover.'}
     ],
     packages: [
-      {name: 'Site Visit & Design Advice', price: 'Free', recommended: false, features: ['On-site measurement', 'Layout & material advice', 'Itemised fixed quote', 'No obligation']},
+      {name: 'Site Visit & Design Advice', price: 'From AED 150', recommended: false, features: ['On-site measurement', 'Layout & material advice', 'Itemised fixed quote', 'No obligation']},
       {name: 'Kitchen Refresh', price: 'From AED 7,500', recommended: true, features: ['Cabinet door replacement or refacing', 'New countertop', 'Backsplash & fittings', 'Paint & finishing']},
       {name: 'Full Kitchen Redesign', price: 'From AED 25,000', recommended: false, features: ['New custom cabinets', 'Quartz or granite countertop', 'Plumbing & electrical upgrade', 'Lighting & flooring']}
     ],
@@ -2013,7 +2013,7 @@ export const servicesData: Record<string, ServiceData> = {
       {step: '04', title: 'Handover & Snagging', desc: 'Final inspection, fixes and clean handover.'}
     ],
     packages: [
-      {name: 'Site Visit & BOQ', price: 'Free', recommended: false, features: ['Full apartment walkthrough', 'Scope & material advice', 'Itemised fixed quote (BOQ)', 'No obligation']},
+      {name: 'Site Visit & BOQ', price: 'From AED 150', recommended: false, features: ['Full apartment walkthrough', 'Scope & material advice', 'Itemised fixed quote (BOQ)', 'No obligation']},
       {name: 'Apartment Refresh', price: 'From AED 25,000', recommended: true, features: ['Studio / 1-bedroom', 'Painting & minor repairs', 'Flooring & lighting updates', 'Fixture replacements']},
       {name: 'Full Renovation', price: 'From AED 60,000', recommended: false, features: ['1–2 bedroom apartments', 'Kitchen & bathroom upgrades', 'Flooring, ceiling & painting', 'Electrical & plumbing works']}
     ],
