@@ -37,6 +37,7 @@ import { TopBar, Navbar, Footer } from './Navigation';
 import { useBooking } from './BookingModal';
 import { trackWhatsAppConversion } from '../utils/trackConversion';
 import { cn } from '../lib/utils';
+import AcBrandsSection from './AcBrandsSection';
 
 interface AcCleaningLandingProps {
   isAdMode?: boolean;
@@ -820,6 +821,8 @@ export const AcCleaningLanding: React.FC<AcCleaningLandingProps> = ({ isAdMode =
           </div>
         </div>
       </section>
+
+      <AcBrandsSection />
 
       {/* 7. "WHAT'S INCLUDED?" */}
       <section className="py-14 md:py-20 px-4 md:px-8 bg-brand-navy text-white relative overflow-hidden">

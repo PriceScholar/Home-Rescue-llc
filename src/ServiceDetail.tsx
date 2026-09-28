@@ -25,6 +25,13 @@ import { useLanguage } from './context/LanguageContext';
 import { useBooking } from './components/BookingModal';
 import { trackWhatsAppConversion } from './utils/trackConversion';
 import { AcCleaningLanding } from './components/AcCleaningLanding';
+import AcBrandsSection from './components/AcBrandsSection';
+
+const AC_BRAND_SERVICE_IDS = [
+  'ac-maintenance', 'emergency-ac-repair', 'new-ac-installation',
+  'ac-ducting', 'central-ac', 'ac-gas-refilling', 'ac-filter-replacement',
+  'duct-type-ac-install', 'chilled-water-ac', 'ac-contracts'
+];
 
 const isAcOrPlumbing = (id: string, title?: string): boolean => {
   const lowerId = (id || '').toLowerCase();
@@ -479,6 +486,8 @@ const ServiceDetail = () => {
           </div>
         </section>
       )}
+
+      {AC_BRAND_SERVICE_IDS.includes(data.id) && <AcBrandsSection />}
 
       {/* Process Steps */}
       <section className="py-10 md:py-14 px-6 md:px-8 bg-brand-navy text-white relative overflow-hidden">
