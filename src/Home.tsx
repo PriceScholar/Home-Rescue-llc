@@ -143,17 +143,17 @@ const Home = () => {
           <div className="absolute inset-0 bg-gradient-to-t from-[#08264B] via-transparent to-transparent opacity-70"></div>
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8 w-full flex flex-col lg:flex-row items-center gap-8 lg:gap-12 pt-6 md:pt-8 pb-16 md:pb-20 lg:pb-20">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8 w-full flex flex-col lg:flex-row items-center gap-8 lg:gap-12 pt-8 md:pt-12 pb-24 md:pb-32 lg:pb-28">
           
           {/* Left Content */}
           <motion.div 
             initial={{opacity: 0, x: -30}}
             animate={{opacity: 1, x: 0}}
             transition={{duration: 0.8}}
-            className="flex-1 space-y-4 md:space-y-6 text-center lg:text-left bg-[#08264B]/20 lg:bg-transparent p-4 md:p-6 lg:p-0 rounded-3xl backdrop-blur-[1px] lg:backdrop-blur-0"
+            className="flex-1 space-y-6 md:space-y-10 text-center lg:text-left bg-[#08264B]/20 lg:bg-transparent p-4 md:p-6 lg:p-0 rounded-3xl backdrop-blur-[1px] lg:backdrop-blur-0"
           >
-            <div className="space-y-2 md:space-y-3">
-              <span className="text-brand-gold font-black tracking-[0.25em] uppercase text-[11px] md:text-[12px] block opacity-95 drop-shadow">Premium Technical Services</span>
+            <div className="space-y-3 md:space-y-4">
+              <span className="text-brand-gold font-black tracking-[0.25em] uppercase text-[11px] md:text-[11px] block opacity-95 drop-shadow">Premium Technical Services</span>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-serif font-black leading-[1.1] text-white tracking-tighter drop-shadow-xl">
                 Premium Technical <br className="hidden sm:block" />
                 Solutions Across <span className="text-brand-gold">UAE</span>
@@ -167,7 +167,7 @@ const Home = () => {
             <div className="flex flex-col sm:flex-row flex-wrap justify-center lg:justify-start gap-4 md:gap-5 pt-2">
               <button 
                 onClick={() => openBooking()}
-                className="flex-1 bg-brand-gold text-brand-navy hover:bg-[#c4941c] px-6 md:px-8 py-3 md:py-4 rounded-2xl font-black text-[11px] md:text-xs uppercase tracking-widest flex items-center justify-center gap-4 shadow-[0_20px_40px_-10px_rgba(217,165,32,0.4)] transition-all active:scale-95"
+                className="bg-brand-gold text-brand-navy hover:bg-[#c4941c] px-6 md:px-8 py-3 md:py-4 rounded-2xl font-black text-[11px] md:text-xs uppercase tracking-widest flex items-center justify-center gap-4 shadow-[0_20px_40px_-10px_rgba(217,165,32,0.4)] transition-all active:scale-95"
               >
                 <i className="fa-solid fa-calendar-check text-lg md:text-xl"></i>
                 BOOK FREE INSPECTION
@@ -177,14 +177,14 @@ const Home = () => {
                   trackWhatsAppConversion();
                   askExpert();
                 }}
-                className="flex-1 bg-[#08264B]/40 backdrop-blur-md border border-white/10 text-white hover:bg-white hover:text-brand-navy px-6 md:px-8 py-3 md:py-4 rounded-2xl font-black text-[11px] md:text-xs uppercase tracking-widest flex items-center justify-center gap-4 transition-all active:scale-95 group"
+                className="bg-[#08264B]/40 backdrop-blur-md border border-white/10 text-white hover:bg-white hover:text-brand-navy px-6 md:px-8 py-3 md:py-4 rounded-2xl font-black text-[11px] md:text-xs uppercase tracking-widest flex items-center justify-center gap-4 transition-all active:scale-95 group"
               >
                 <MessageCircle className="w-5 h-5 text-brand-gold" /> CHAT ON WHATSAPP
               </button>
             </div>
 
             {/* Emergency & Reassurance Badges */}
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-2 pt-1 text-white text-[11px] md:text-xs uppercase tracking-wider font-bold select-none">
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-1 text-white text-[11px] md:text-xs uppercase tracking-wider font-bold select-none">
               <div className="bg-[#C9153B] text-white px-4 py-2 rounded-full border border-red-500/20 flex items-center gap-2 animate-pulse shadow-md">
                 <span className="w-2 h-2 rounded-full bg-white block"></span>
                 <span>24/7 Emergency · Technician at your door in 1–2 hours</span>
@@ -195,20 +195,20 @@ const Home = () => {
               </div>
             </div>
 
-            <div className="flex flex-wrap justify-center lg:justify-start gap-x-6 md:gap-x-10 gap-y-4 md:gap-y-6 pt-4 md:pt-6 border-t border-white/10">
-              <div className="flex items-center gap-2 text-[11px] md:text-[12px] font-black uppercase text-white tracking-widest group">
+            <div className="flex flex-wrap justify-center lg:justify-start gap-x-6 md:gap-x-10 gap-y-4 md:gap-y-6 pt-8 md:pt-10 border-t border-white/10">
+              <div className="flex items-center gap-2 text-[11px] md:text-[11px] font-black uppercase text-white tracking-widest group">
                 <Users className="w-3.5 h-3.5 md:w-4 md:h-4 text-brand-gold" />
                 Professionals
               </div>
-              <div className="flex items-center gap-2 text-[11px] md:text-[12px] font-black uppercase text-white tracking-widest group">
+              <div className="flex items-center gap-2 text-[11px] md:text-[11px] font-black uppercase text-white tracking-widest group">
                 <Clock className="w-3.5 h-3.5 md:w-4 md:h-4 text-brand-gold" />
                 On-Time
               </div>
-              <div className="flex items-center gap-2 text-[11px] md:text-[12px] font-black uppercase text-white tracking-widest group">
+              <div className="flex items-center gap-2 text-[11px] md:text-[11px] font-black uppercase text-white tracking-widest group">
                 <ShieldCheck className="w-3.5 h-3.5 md:w-4 md:h-4 text-brand-gold" />
                 Guaranteed
               </div>
-              <div className="flex items-center gap-2 text-[11px] md:text-[12px] font-black uppercase text-white tracking-widest group">
+              <div className="flex items-center gap-2 text-[11px] md:text-[11px] font-black uppercase text-white tracking-widest group">
                 <Award className="w-3.5 h-3.5 md:w-4 md:h-4 text-brand-gold" />
                 Affordable
               </div>
@@ -233,16 +233,16 @@ const Home = () => {
               <Link 
                 key={i} 
                 to={s.link}
-                className="group relative aspect-square rounded-2xl overflow-hidden shadow-2xl border border-white/5 bg-brand-navy block transform hover:-translate-y-1 transition-all duration-300"
+                className="group relative aspect-square rounded-2xl md:rounded-[28px] overflow-hidden shadow-2xl border border-white/5 bg-brand-navy block transform hover:-translate-y-1 transition-all duration-300"
               >
                 <img src={s.img} alt={s.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 opacity-80" />
                 <div className="absolute inset-0 bg-[#08264B]/40 group-hover:bg-transparent transition-colors" />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#08264B] via-[#08264B]/20 to-transparent opacity-90" />
                 <div className="absolute bottom-0 left-0 right-0 p-3 md:p-5 flex items-center gap-2 md:gap-3">
-                   <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg md:rounded-xl bg-brand-gold flex items-center justify-center text-brand-navy text-xs md:text-sm shadow-lg shrink-0">
+                   <div className="w-8 h-8 md:w-10 md:h-10 rounded-lg md:rounded-xl bg-brand-gold flex items-center justify-center text-brand-navy text-[12px] md:text-[14px] shadow-lg shrink-0">
                      <i className={s.icon}></i>
                    </div>
-                   <span className="text-white text-[11px] md:text-[13px] font-black uppercase tracking-widest leading-tight">{s.title}</span>
+                   <span className="text-white text-[11px] md:text-[11px] font-black uppercase tracking-widest leading-tight">{s.title}</span>
                 </div>
               </Link>
             ))}
@@ -252,7 +252,7 @@ const Home = () => {
 
       {/* Stats Banner (Overlapping) */}
       <div className="relative -mt-16 md:-mt-24 lg:-mt-20 left-0 right-0 z-30 px-4 md:px-8">
-        <div className="max-w-7xl mx-auto bg-white rounded-2xl md:rounded-3xl p-5 md:p-8 lg:p-10 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.15)] border border-gray-100/50">
+        <div className="max-w-7xl mx-auto bg-white rounded-[32px] md:rounded-[40px] p-5 md:p-8 lg:p-10 shadow-[0_30px_60px_-15px_rgba(0,0,0,0.15)] border border-gray-100/50">
            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 lg:divide-x divide-gray-100">
              {[
                {label: 'Projects Done', val: '1000+', icon: <Building2 />},
@@ -261,12 +261,12 @@ const Home = () => {
                {label: 'Emirates', val: '7', icon: <MapPin />},
              ].map((st, i) => (
                <div key={i} className="flex flex-col sm:flex-row items-center gap-2 md:gap-6 group lg:px-4 xl:px-8 text-center sm:text-left">
-                 <div className="w-10 h-10 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-xl md:rounded-2xl bg-brand-gold/5 flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-brand-navy transition-all duration-300 shrink-0 border border-brand-gold/5">
+                 <div className="w-10 h-10 sm:w-16 sm:h-16 lg:w-20 lg:h-20 rounded-xl md:rounded-[28px] bg-brand-gold/5 flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-brand-navy transition-all duration-300 shrink-0 border border-brand-gold/5">
                     {React.cloneElement(st.icon as React.ReactElement, { className: "w-5 h-5 md:w-8 md:h-8 lg:w-10 lg:h-10" })}
                  </div>
                  <div className="space-y-0">
                    <div className="text-xl sm:text-3xl lg:text-4xl xl:text-5xl font-black text-brand-navy tracking-tighter leading-none">{st.val}</div>
-                   <div className="text-[10px] md:text-[11px] text-gray-400 font-bold uppercase tracking-[0.2em] leading-none pt-1">{st.label}</div>
+                   <div className="text-[11px] md:text-[11px] text-gray-400 font-bold uppercase tracking-[0.2em] leading-none pt-1">{st.label}</div>
                  </div>
                </div>
              ))}
@@ -278,7 +278,7 @@ const Home = () => {
       <section className="py-12 md:py-12 px-6 md:px-8 bg-[#faf9f6]/30 border-b border-gray-50 relative">
         <div className="max-w-7xl mx-auto pt-10 md:pt-14 relative z-10">
           <div className="text-center space-y-2 md:space-y-3 mb-8 md:mb-10">
-            <span className="text-brand-gold font-black tracking-[0.4em] uppercase text-[10px] md:text-[11px] block">3 SIMPLE STEPS</span>
+            <span className="text-brand-gold font-black tracking-[0.4em] uppercase text-[11px] md:text-[11px] block">3 SIMPLE STEPS</span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl text-brand-navy font-serif font-black uppercase tracking-tight">
               How It <span className="text-brand-gold italic">Works</span>
             </h2>
@@ -287,7 +287,7 @@ const Home = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
             {/* Step 1 */}
-            <div className="bg-white rounded-2xl p-8 md:p-10 border border-gray-100 shadow-sm flex flex-col items-center text-center relative group hover:shadow-xl transition-all duration-300">
+            <div className="bg-white rounded-[32px] p-8 md:p-10 border border-gray-100 shadow-sm flex flex-col items-center text-center relative group hover:shadow-xl transition-all duration-300">
               <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-brand-gold text-brand-navy font-black flex items-center justify-center text-lg border-4 border-white shadow-md select-none">
                 1
               </div>
@@ -299,20 +299,20 @@ const Home = () => {
                 Fill out our quick form or instantly chat with our team on WhatsApp to schedule your visit.
               </p>
               <div className="flex gap-2 w-full mt-auto">
-                <button onClick={() => openBooking()} className="flex-1 border-2 border-brand-navy text-brand-navy hover:bg-brand-navy hover:text-white text-[12px] font-black uppercase tracking-widest py-3 px-2 rounded-xl transition-all duration-300 cursor-pointer">
+                <button onClick={() => openBooking()} className="flex-1 bg-brand-gold text-brand-navy font-black text-[12px] uppercase tracking-widest py-3.5 rounded-xl hover:bg-[#c4941c] transition-all duration-300 cursor-pointer active:scale-95">
                   Book Form
                 </button>
                 <button onClick={() => {
                   trackWhatsAppConversion();
                   askExpert();
-                }} className="flex-1 border-2 border-brand-gold text-brand-navy text-[12px] font-black uppercase tracking-widest py-2.5 px-2 rounded-xl hover:bg-brand-gold transition-all duration-300 flex items-center justify-center gap-1 cursor-pointer">
+                }} className="flex-1 border-2 border-brand-gold text-brand-navy font-black text-[12px] uppercase tracking-widest py-3 px-2 rounded-xl hover:bg-brand-gold transition-all duration-300 flex items-center justify-center gap-1 cursor-pointer">
                   WhatsApp
                 </button>
               </div>
             </div>
 
             {/* Step 2 */}
-            <div className="bg-white rounded-2xl p-8 md:p-10 border border-gray-100 shadow-sm flex flex-col items-center text-center relative group hover:shadow-xl transition-all duration-300">
+            <div className="bg-white rounded-[32px] p-8 md:p-10 border border-gray-100 shadow-sm flex flex-col items-center text-center relative group hover:shadow-xl transition-all duration-300">
               <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-brand-gold text-brand-navy font-black flex items-center justify-center text-lg border-4 border-white shadow-md select-none">
                 2
               </div>
@@ -323,13 +323,13 @@ const Home = () => {
               <p className="text-sm text-gray-500 leading-relaxed font-bold opacity-70 mb-6 flex-1">
                 Our certified specialist arrives at your doorstep in 1–2 hours with all necessary tools.
               </p>
-              <button onClick={() => openBooking()} className="w-full border-2 border-brand-red text-brand-red hover:bg-brand-red hover:text-white font-black text-[12px] uppercase tracking-widest py-3 rounded-xl transition-all duration-300 mt-auto cursor-pointer">
+              <button onClick={() => openBooking()} className="w-full bg-brand-gold text-brand-navy font-black text-[12px] uppercase tracking-widest py-3.5 rounded-xl hover:bg-[#c4941c] transition-all duration-300 mt-auto cursor-pointer active:scale-95">
                 Track / Request Call
               </button>
             </div>
 
             {/* Step 3 */}
-            <div className="bg-white rounded-2xl p-8 md:p-10 border border-gray-100 shadow-sm flex flex-col items-center text-center relative group hover:shadow-xl transition-all duration-300">
+            <div className="bg-white rounded-[32px] p-8 md:p-10 border border-gray-100 shadow-sm flex flex-col items-center text-center relative group hover:shadow-xl transition-all duration-300">
               <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-brand-gold text-brand-navy font-black flex items-center justify-center text-lg border-4 border-white shadow-md select-none">
                 3
               </div>
@@ -340,7 +340,7 @@ const Home = () => {
               <p className="text-sm text-gray-500 leading-relaxed font-bold opacity-70 mb-6 flex-1">
                 We complete the job efficiently, leave your space pristine, backed by our 100% guarantee.
               </p>
-              <button onClick={callNow} className="w-full text-brand-navy font-bold hover:text-brand-gold underline underline-offset-4 text-[12px] uppercase tracking-widest py-3.5 transition-all duration-300 mt-auto cursor-pointer">
+              <button onClick={callNow} className="w-full bg-brand-gold text-brand-navy font-black text-[12px] uppercase tracking-widest py-3.5 rounded-xl hover:bg-[#c4941c] transition-all duration-300 mt-auto cursor-pointer active:scale-95">
                 Call Emergency 24/7
               </button>
             </div>
@@ -358,7 +358,7 @@ const Home = () => {
               className="inline-flex items-center gap-3"
             >
               <div className="w-8 md:w-10 h-px bg-brand-gold"></div>
-              <span className="text-brand-gold font-black tracking-[0.4em] uppercase text-[10px] md:text-[11px]">Our Services</span>
+              <span className="text-brand-gold font-black tracking-[0.4em] uppercase text-[11px] md:text-[11px]">Our Services</span>
               <div className="w-8 md:w-10 h-px bg-brand-gold"></div>
             </motion.div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-brand-navy font-serif tracking-tight leading-tight">Complete Solutions <br className="hidden sm:block" /> <span className="text-brand-gold italic">For Every Need</span></h2>
@@ -372,7 +372,7 @@ const Home = () => {
                 whileInView={{opacity: 1, y: 0}}
                 transition={{delay: i * 0.1}}
                 whileHover={{y: -10}}
-                className="group bg-white rounded-xl sm:rounded-2xl md:rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl border border-gray-100 flex flex-col h-full transition-all duration-500"
+                className="group bg-white rounded-xl sm:rounded-2xl md:rounded-[32px] overflow-hidden shadow-sm hover:shadow-2xl border border-gray-100 flex flex-col h-full transition-all duration-500"
               >
                 <Link to={`/services/${service.id}`} className="flex flex-col h-full w-full">
                   <div className="relative aspect-square sm:aspect-[4/3] overflow-hidden">
@@ -385,12 +385,12 @@ const Home = () => {
                     </div>
                   </div>
                   <div className="p-2 sm:p-4 md:p-8 flex flex-col flex-1 gap-1 md:gap-3">
-                    <h3 className="text-[10px] sm:text-sm md:text-lg font-black text-brand-navy leading-tight">{service.title}</h3>
+                    <h3 className="text-[11px] sm:text-sm md:text-lg font-black text-brand-navy leading-tight">{service.title}</h3>
                     <p className="hidden md:block text-sm text-gray-500 leading-relaxed font-medium flex-1">
                       {service.subtitle}
                     </p>
                     <div 
-                      className="flex items-center gap-1 sm:gap-2 text-brand-gold font-black text-[10px] sm:text-[10px] md:text-[11px] uppercase tracking-widest group-hover:gap-2 md:group-hover:gap-4 transition-all pt-1 md:pt-4"
+                      className="flex items-center gap-1 sm:gap-2 text-brand-gold font-black text-[11px] sm:text-[11px] md:text-[11px] uppercase tracking-widest group-hover:gap-2 md:group-hover:gap-4 transition-all pt-1 md:pt-4"
                     >
                       Details <ArrowRight className="w-2.5 h-2.5 sm:w-3 sm:h-3 md:w-4 md:h-4" />
                     </div>
@@ -412,7 +412,7 @@ const Home = () => {
       <section className="py-12 md:py-12 px-6 md:px-8 bg-brand-cream/5 border-t border-b border-gray-100">
         <div className="max-w-7xl mx-auto">
           <div className="text-center space-y-2 md:space-y-3 mb-8 md:mb-10">
-            <span className="text-brand-gold font-black tracking-[0.4em] uppercase text-[10px] md:text-[11px] block">CLEAR ESTIMATES</span>
+            <span className="text-brand-gold font-black tracking-[0.4em] uppercase text-[11px] md:text-[11px] block">CLEAR ESTIMATES</span>
             <h2 className="text-3xl sm:text-4xl md:text-5xl text-brand-navy font-serif font-black uppercase tracking-tight">
               Transparent Starting <span className="text-brand-gold italic">Prices</span>
             </h2>
@@ -427,8 +427,8 @@ const Home = () => {
               { title: 'Painting Works', price: 'AED 200', desc: 'Starting from, room-based or selective wall works font-medium' },
               { title: 'Electrical Works', price: 'AED 200', desc: 'Starting from, power diagnostics/fitting fixtures' },
             ].map((p, i) => (
-              <div key={i} className="bg-white rounded-2xl p-6 md:p-8 border border-gray-100 shadow-sm flex flex-col items-center text-center group hover:border-brand-gold transition-colors duration-300">
-                <h3 className="text-sm md:text-base font-black text-brand-navy uppercase tracking-wide mb-2">{p.title}</h3>
+              <div key={i} className="bg-white rounded-[32px] p-6 md:p-8 border border-gray-100 shadow-sm flex flex-col items-center text-center group hover:border-brand-gold transition-colors duration-300">
+                <h4 className="text-sm md:text-base font-black text-brand-navy uppercase tracking-wide mb-2">{p.title}</h4>
                 <div className="text-3xl md:text-4xl font-serif font-black text-brand-gold mb-3">{p.price}</div>
                 <p className="text-[11px] md:text-xs text-gray-400 font-bold tracking-tight uppercase leading-relaxed mt-2 select-none">
                   {p.desc}
@@ -437,7 +437,7 @@ const Home = () => {
             ))}
           </div>
 
-          <div className="bg-brand-navy text-white rounded-3xl p-8 md:p-12 text-center max-w-4xl mx-auto border border-white/5 shadow-2xl relative overflow-hidden">
+          <div className="bg-brand-navy text-white rounded-[40px] p-8 md:p-12 text-center max-w-4xl mx-auto border border-white/5 shadow-2xl relative overflow-hidden">
             <div className="absolute top-0 right-0 w-32 h-32 opacity-10 pointer-events-none" style={{ backgroundImage: "radial-gradient(circle, white 1px, transparent 1px)", backgroundSize: "12px 12px" }}></div>
             <p className="text-sm md:text-lg font-black tracking-wide text-brand-gold uppercase mb-4">★ Quality Handyman Reassurance</p>
             <h3 className="text-xl md:text-2xl font-serif font-black uppercase mb-6 leading-relaxed">
@@ -458,9 +458,9 @@ const Home = () => {
         <div className="max-w-7xl mx-auto space-y-6 md:space-y-10">
           
           {/* Why Choose Banner */}
-          <div className="bg-[#08264B] rounded-3xl p-5 md:p-8 lg:p-10 shadow-3xl relative overflow-hidden">
+          <div className="bg-[#08264B] rounded-[40px] md:rounded-[60px] p-5 md:p-8 lg:p-10 shadow-3xl relative overflow-hidden">
             <div className="text-center mb-4 md:mb-6">
-              <h2 className="text-white text-xl sm:text-2xl md:text-4xl font-serif font-black tracking-widest leading-tight">
+              <h2 className="text-white text-xl sm:text-2xl md:text-4xl font-serif font-black uppercase tracking-widest leading-tight">
                 Why Choose <br className="sm:hidden" /> <span className="text-brand-gold">Home Rescue</span>?
               </h2>
             </div>
@@ -481,15 +481,15 @@ const Home = () => {
                     item.onClick && "cursor-pointer hover:scale-105"
                   )}
                 >
-                  <div className="w-12 h-12 md:w-16 md:h-16 bg-brand-gold/10 border border-brand-gold/20 rounded-2xl flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-brand-navy transition-all duration-300">
+                  <div className="w-12 h-12 md:w-16 md:h-16 bg-brand-gold/10 border border-brand-gold/20 rounded-2xl md:rounded-3xl flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-brand-navy transition-all duration-300">
                     <item.icon className="w-6 h-6 md:w-9 md:h-9" />
                   </div>
                   <div className="space-y-1 md:space-y-2">
-                    <h3 className="text-white font-black text-sm md:text-lg tracking-tight leading-tight flex flex-col items-center">
+                    <h4 className="text-white font-black text-sm md:text-lg tracking-tight leading-tight flex flex-col items-center">
                       <span>{item.title}</span>
                       {item.onClick && <span className="text-[11px] text-brand-gold font-bold italic tracking-wider uppercase mt-1">(View Proof)</span>}
-                    </h3>
-                    <p className="text-[10px] md:text-[12px] text-gray-400 font-bold uppercase tracking-wider leading-relaxed">{item.desc}</p>
+                    </h4>
+                    <p className="text-[11px] md:text-[11px] text-gray-400 font-bold uppercase tracking-wider leading-relaxed">{item.desc}</p>
                   </div>
                 </div>
               ))}
@@ -500,7 +500,7 @@ const Home = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
             
             {/* Before / After Our Work */}
-            <div className="bg-white rounded-3xl p-5 md:p-8 border border-gray-100 shadow-sm flex flex-col items-center h-full">
+            <div className="bg-white rounded-[60px] p-5 md:p-8 border border-gray-100 shadow-sm flex flex-col items-center h-full">
               <h3 className="text-brand-navy text-2xl md:text-3xl font-serif font-black mb-6 md:mb-8 uppercase tracking-tighter text-center">
                 Before / After Our Work
               </h3>
@@ -513,7 +513,7 @@ const Home = () => {
                   { title: 'Ceiling Fix', img: 'https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?q=80&w=600&fit=crop' }
                 ].map((work, i) => (
                   <div key={i} className="space-y-4">
-                    <div className="aspect-[4/3] rounded-2xl overflow-hidden relative shadow-lg group">
+                    <div className="aspect-[4/5.5] rounded-[24px] md:rounded-[32px] overflow-hidden relative shadow-lg group">
                       <img 
                         src={work.img} 
                         alt={work.title} 
@@ -523,11 +523,11 @@ const Home = () => {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                       <div className="absolute bottom-2 left-2 right-2 md:bottom-3 md:left-3 md:right-3 flex justify-between gap-1">
-                        <span className="bg-white/90 backdrop-blur-sm text-brand-navy text-[10px] md:text-[11px] font-black uppercase px-2 py-0.5 md:py-1 rounded-lg">Before</span>
-                        <span className="bg-brand-gold text-brand-navy text-[10px] md:text-[11px] font-black uppercase px-2 py-0.5 md:py-1 rounded-lg">After</span>
+                        <span className="bg-white/90 backdrop-blur-sm text-brand-navy text-[11px] md:text-[11px] font-black uppercase px-2 py-0.5 md:py-1 rounded-lg">Before</span>
+                        <span className="bg-brand-gold text-brand-navy text-[11px] md:text-[11px] font-black uppercase px-2 py-0.5 md:py-1 rounded-lg">After</span>
                       </div>
                     </div>
-                    <p className="text-[11px] md:text-[13px] font-black text-brand-navy text-center uppercase tracking-[0.1em]">{work.title}</p>
+                    <p className="text-[11px] md:text-[11px] font-black text-brand-navy text-center uppercase tracking-[0.1em]">{work.title}</p>
                   </div>
                 ))}
               </div>
@@ -538,7 +538,7 @@ const Home = () => {
             </div>
 
             {/* Verified Corporate Projects */}
-            <div className="bg-white rounded-3xl p-5 md:p-8 border border-gray-100 shadow-sm flex flex-col items-center h-full">
+            <div className="bg-white rounded-[60px] p-5 md:p-8 border border-gray-100 shadow-sm flex flex-col items-center h-full">
               <h3 className="text-brand-navy text-2xl md:text-3xl font-serif font-black mb-6 md:mb-8 uppercase tracking-tighter text-center">
                 Corporate Portfolio
               </h3>
@@ -551,15 +551,15 @@ const Home = () => {
                   { title: 'Nakheel Mall', sub: 'Palm Jumeirah', img: 'https://images.unsplash.com/photo-1518684079-3c830dcef090?q=80&w=600&fit=crop' }
                 ].map((proj, i) => (
                   <div key={i} className="space-y-4">
-                    <div className="aspect-[4/3] rounded-2xl overflow-hidden relative shadow-lg group">
+                    <div className="aspect-[4/5.5] rounded-[24px] md:rounded-[32px] overflow-hidden relative shadow-lg group">
                       <img src={proj.img} alt={proj.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" 
                         onError={(e) => { (e.target as HTMLImageElement).src = `https://placehold.co/400x550/08264B/D9A520?text=${encodeURIComponent(proj.title)}` }}
                         loading="lazy"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
                       <div className="absolute bottom-2 left-2 right-2 md:bottom-3 md:left-3 md:right-3 flex flex-col gap-0.5">
-                        <span className="text-white text-[10px] md:text-[11px] font-black uppercase tracking-wider leading-none">{proj.title}</span>
-                        <span className="text-brand-gold text-[10px] md:text-[11px] font-bold uppercase tracking-widest">{proj.sub}</span>
+                        <span className="text-white text-[11px] md:text-[11px] font-black uppercase tracking-wider leading-none">{proj.title}</span>
+                        <span className="text-brand-gold text-[11px] md:text-[11px] font-bold uppercase tracking-widest">{proj.sub}</span>
                       </div>
                     </div>
                   </div>
@@ -588,7 +588,7 @@ const Home = () => {
                 <div className="flex gap-0.5 text-brand-gold">
                   {[1,2,3,4,5].map(s => <Star key={s} className="w-3 h-3 md:w-4 md:h-4 fill-current" />)}
                 </div>
-                <span className="font-black text-brand-navy text-[11px] md:text-[13px] uppercase tracking-wider">4.9/5 Rating</span>
+                <span className="font-black text-brand-navy text-[11px] md:text-[11px] uppercase tracking-wider">4.9/5 Rating</span>
               </div>
             </div>
           </div>
@@ -597,11 +597,11 @@ const Home = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {testimonials.map((review, i) => (
                 <motion.div 
-                  key={i} 
+                  key={i}
                   initial={{opacity: 0, y: 20}}
                   whileInView={{opacity: 1, y: 0}}
                   transition={{delay: i * 0.1}}
-                  className="bg-white p-5 md:p-8 rounded-2xl shadow-sm border border-gray-100 flex flex-col h-full gap-4"
+                  className="bg-white p-5 md:p-8 rounded-[40px] shadow-sm border border-gray-100 flex flex-col h-full gap-4"
                 >
                   <div className="flex items-center gap-4">
                     <img src={`https://i.pravatar.cc/150?u=${review.name}`} alt={review.name} className="w-14 h-14 rounded-2xl object-cover border-2 border-brand-gold/10" loading="lazy" />
@@ -609,7 +609,7 @@ const Home = () => {
                       {[1, 2, 3, 4, 5].map(s => <Star key={s} className="w-3 h-3 fill-current" />)}
                     </div>
                   </div>
-                  <p className="text-gray-600 text-sm leading-relaxed font-medium flex-1 italic opacity-90">"{review.text}"</p>
+                  <p className="text-gray-600 text-[14px] leading-relaxed font-medium flex-1 italic opacity-90">"{review.text}"</p>
                   <div className="pt-4 border-t border-gray-50">
                     <div className="font-black text-brand-navy text-sm uppercase tracking-tight">{review.name}</div>
                     <div className="text-[11px] text-gray-400 font-black uppercase tracking-[0.15em] pt-0.5">{review.loc}</div>
@@ -654,7 +654,7 @@ const Home = () => {
       <section className="py-12 md:py-12 px-6 md:px-8 bg-[#faf9f6]/35 border-t border-b border-gray-100">
         <div className="max-w-4xl mx-auto">
           <div className="text-center space-y-2 md:space-y-3 mb-8 md:mb-10">
-            <span className="text-brand-gold font-black tracking-[0.4em] uppercase text-[10px] md:text-[11px] block">GOT QUESTIONS?</span>
+            <span className="text-brand-gold font-black tracking-[0.4em] uppercase text-[11px] md:text-[11px] block">GOT QUESTIONS?</span>
             <h2 className="text-2xl sm:text-3xl md:text-4xl text-brand-navy font-serif font-black uppercase tracking-tight">
               Frequently Asked <span className="text-brand-gold italic">Questions</span>
             </h2>
@@ -690,12 +690,12 @@ const Home = () => {
             ].map((item, idx) => {
               const isOpen = openFaq === idx;
               return (
-                <div key={idx} className="border border-gray-100 rounded-2xl overflow-hidden bg-[#fafafa]">
+                <div key={idx} className="border border-gray-100 rounded-[24px] overflow-hidden bg-[#fafafa]">
                   <button
                     onClick={() => setOpenFaq(isOpen ? null : idx)}
                     className="w-full flex items-center justify-between p-6 text-left font-black text-brand-navy text-sm md:text-base tracking-tight hover:text-brand-gold transition-colors duration-200 outline-none cursor-pointer"
                   >
-                    <h3 className="text-sm md:text-base font-black uppercase">{item.q}</h3>
+                    <span className="uppercase">{item.q}</span>
                     <span className="text-brand-gold text-lg md:text-xl font-black shrink-0 ml-4">
                       {isOpen ? "−" : "+"}
                     </span>
@@ -719,10 +719,10 @@ const Home = () => {
 
       {/* Unified UAE & CTA Section */}
       <section className="px-6 md:px-8 pb-10 md:pb-14">
-        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row rounded-3xl overflow-hidden shadow-2xl border border-gray-100/10">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row rounded-3xl md:rounded-[50px] overflow-hidden shadow-2xl border border-gray-100/10">
           {/* Left: UAE Coverage */}
-          <div className="lg:w-1/2 bg-[#08264B] p-5 md:p-8 lg:p-10 text-center flex flex-col justify-center gap-6 md:gap-8 py-12 md:py-16">
-            <h2 className="text-white text-2xl md:text-3xl font-serif font-black tracking-widest leading-tight mb-8">
+          <div className="lg:w-1/2 bg-[#08264B] p-5 md:p-8 lg:p-10 text-center flex flex-col justify-center gap-6 md:gap-8">
+            <h2 className="text-white text-2xl md:text-3xl font-serif font-black uppercase tracking-widest leading-tight">
               Proudly Serving <br className="hidden sm:block" /> All 7 Emirates
             </h2>
             <div className="grid grid-cols-4 sm:grid-cols-7 lg:grid-cols-4 xl:grid-cols-7 gap-y-6 md:gap-y-10 gap-x-4 md:gap-x-6 justify-center">
@@ -735,11 +735,11 @@ const Home = () => {
                 {name: 'Fujairah', icon: 'fa-solid fa-umbrella-beach'},
                 {name: 'UAE', icon: 'fa-solid fa-globe'}
               ].map((emirate) => (
-                <div key={emirate.name} className="flex flex-col items-center gap-3 md:gap-4 p-4 md:p-5 transition-transform hover:scale-110">
+                <div key={emirate.name} className="flex flex-col items-center gap-3 md:gap-4 transition-transform hover:scale-110">
                   <div className="w-10 h-10 md:w-14 md:h-14 bg-white/5 rounded-xl md:rounded-2xl flex items-center justify-center text-white/30 border border-white/5 shrink-0">
                      <i className={cn(emirate.icon, "text-lg md:text-2xl")}></i>
                   </div>
-                  <span className="text-[10px] md:text-[11px] text-gray-400 font-black uppercase tracking-[0.2em]">{emirate.name}</span>
+                  <span className="text-[11px] md:text-[11px] text-gray-400 font-black uppercase tracking-[0.2em]">{emirate.name}</span>
                 </div>
               ))}
             </div>
@@ -748,7 +748,7 @@ const Home = () => {
           {/* Right: GET FREE QUOTE */}
           <div className="lg:w-1/2 bg-brand-gold p-5 md:p-8 lg:p-10 text-center flex flex-col justify-center gap-6 md:gap-8">
             <div className="space-y-2 md:space-y-3">
-              <h2 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-black tracking-tighter leading-none">
+              <h2 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-serif font-black uppercase tracking-tighter leading-none">
                 Get Your Free <br className="hidden sm:block" /> Quote Today!
               </h2>
               <p className="text-white font-bold text-sm md:text-lg max-w-md mx-auto opacity-90">

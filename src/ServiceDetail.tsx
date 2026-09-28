@@ -67,7 +67,7 @@ const MinimalAdHeader = () => {
         </div>
         <div>
           <h1 className="text-base sm:text-lg md:text-xl font-bold text-brand-navy tracking-tight leading-none uppercase">HOME RESCUE</h1>
-          <p className="text-[7px] sm:text-[8px] md:text-[10px] text-brand-gold tracking-[0.2em] font-bold mt-0.5 sm:mt-1 uppercase">TECHNICAL SERVICES</p>
+          <p className="text-[11px] sm:text-[11px] md:text-[11px] text-brand-gold tracking-[0.2em] font-bold mt-0.5 sm:mt-1 uppercase">TECHNICAL SERVICES</p>
         </div>
       </div>
 
@@ -92,7 +92,7 @@ const MinimalAdFooter = () => {
         <p className="font-medium text-gray-400">
           © {new Date().getFullYear()} <span className="text-white font-bold">Home Rescue Technical Services</span>. All Rights Reserved.
         </p>
-        <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-6 text-[10px] font-bold uppercase tracking-widest text-brand-gold">
+        <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-6 text-[11px] font-bold uppercase tracking-widest text-brand-gold">
           <a href="tel:+971524524295" className="hover:text-white transition-colors">
             +971 52 452 4295
           </a>
@@ -319,7 +319,7 @@ const ServiceDetail = () => {
       {/* Breadcrumb - Minimalist Luxury Style */}
       {!isAdMode && (
         <section className="bg-brand-cream/30 py-4 px-4 md:px-8 border-b border-gray-100">
-          <div className="max-w-7xl mx-auto flex items-center gap-2 text-gray-400 text-[10px] font-bold uppercase tracking-widest">
+          <div className="max-w-7xl mx-auto flex items-center gap-2 text-gray-400 text-[11px] font-bold uppercase tracking-widest">
             <Link to="/" className="hover:text-brand-gold transition-colors">Home</Link>
             <ChevronRight className="w-3 h-3 opacity-30" />
             <Link to="/services" className="hover:text-brand-gold transition-colors">Services</Link>
@@ -365,7 +365,7 @@ const ServiceDetail = () => {
                   className="flex items-center gap-3"
                 >
                   <div className="w-8 h-[1px] bg-brand-red"></div>
-                  <span className="text-brand-red font-bold text-[9px] md:text-[10px] uppercase tracking-[0.3em] rounded">
+                  <span className="text-brand-red font-bold text-[11px] md:text-[11px] uppercase tracking-[0.3em] rounded">
                     Bespoke Technical Solution
                   </span>
                 </motion.div>
@@ -404,7 +404,7 @@ const ServiceDetail = () => {
                       <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-brand-cream/50 flex items-center justify-center text-brand-gold group-hover:bg-brand-navy group-hover:text-white transition-all">
                         {row.icon}
                       </div>
-                      <span className="text-[9px] md:text-[11px] font-bold text-gray-400 tracking-[0.2em] uppercase">{row.label}</span>
+                      <span className="text-[11px] md:text-[11px] font-bold text-gray-400 tracking-[0.2em] uppercase">{row.label}</span>
                     </div>
                     <span className="text-xs md:text-sm font-bold text-brand-navy uppercase tracking-wider">{row.value}</span>
                   </div>
@@ -444,7 +444,7 @@ const ServiceDetail = () => {
         <section className="py-10 md:py-14 px-6 md:px-8 bg-brand-cream/10">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-6 md:mb-10 space-y-3 md:space-y-4">
-              <span className="text-brand-gold font-bold tracking-[0.4em] uppercase text-[9px] md:text-[10px]">What is Included</span>
+              <span className="text-brand-gold font-bold tracking-[0.4em] uppercase text-[11px] md:text-[11px]">What is Included</span>
               <h2 className="text-3xl md:text-5xl font-serif text-brand-navy font-bold">Scope of Excellence</h2>
               <div className="w-24 h-[1px] bg-brand-gold mx-auto"></div>
             </div>
@@ -494,7 +494,7 @@ const ServiceDetail = () => {
         <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/dark-matter.png')] opacity-20"></div>
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-6 md:mb-10 space-y-3 md:space-y-4">
-            <span className="text-brand-gold font-bold tracking-[0.4em] uppercase text-[9px] md:text-[10px] opacity-60">The Workflow</span>
+            <span className="text-brand-gold font-bold tracking-[0.4em] uppercase text-[11px] md:text-[11px] opacity-60">The Workflow</span>
             <h2 className="text-3xl md:text-6xl font-serif font-bold">Our Technical Process</h2>
           </div>
           
@@ -545,7 +545,7 @@ const ServiceDetail = () => {
               )}
             >
               {pkg.recommended && (
-                <div className="absolute top-0 right-0 bg-brand-gold text-brand-navy px-8 py-3 rounded-bl-[2rem] font-bold text-[10px] uppercase tracking-widest">
+                <div className="absolute top-0 right-0 bg-brand-gold text-brand-navy px-8 py-3 rounded-bl-[2rem] font-bold text-[11px] uppercase tracking-widest">
                   Premier Choice
                 </div>
               )}

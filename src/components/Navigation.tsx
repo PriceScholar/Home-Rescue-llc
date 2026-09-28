@@ -11,7 +11,7 @@ import {serviceCategories} from '../data/servicesData';
 
 export const TopBar = () => {
   return (
-    <div className="bg-brand-navy text-white h-auto py-2 md:h-10 px-4 md:px-8 flex flex-col md:flex-row justify-between items-center text-[11px] md:text-[12px] font-bold tracking-wider relative z-[120] gap-2 md:gap-0">
+    <div className="bg-brand-navy text-white h-auto py-2 md:h-10 px-4 md:px-8 flex flex-col md:flex-row justify-between items-center text-[11px] md:text-[11px] font-bold tracking-wider relative z-[120] gap-2 md:gap-0">
       <div className="flex gap-4 md:gap-8 items-center">
         <div className="flex items-center gap-2 text-brand-gold">
           <BadgeCheck className="w-3 h-3 shrink-0" /> 
@@ -77,8 +77,8 @@ export const Navbar = () => {
             <span className="text-brand-gold font-bold text-lg md:text-xl font-sans">H</span>
           </div>
           <div>
-            <span className="text-base sm:text-lg md:text-xl font-bold text-brand-navy tracking-tight leading-none uppercase">HOME RESCUE</span>
-            <p className="text-[10px] sm:text-[11px] md:text-[12px] text-brand-gold tracking-[0.2em] font-bold mt-0.5 sm:mt-1 uppercase">TECHNICAL SERVICES</p>
+            <h1 className="text-base sm:text-lg md:text-xl font-bold text-brand-navy tracking-tight leading-none uppercase">HOME RESCUE</h1>
+            <p className="text-[11px] sm:text-[11px] md:text-[11px] text-brand-gold tracking-[0.2em] font-bold mt-0.5 sm:mt-1 uppercase">TECHNICAL SERVICES</p>
           </div>
         </Link>
       </div>
@@ -122,7 +122,7 @@ export const Navbar = () => {
             <button
               onClick={() => setLanguage('EN')}
               className={cn(
-                "px-2.5 py-1 rounded-full text-[12px] font-black tracking-wider transition-all cursor-pointer",
+                "px-2.5 py-1 rounded-full text-[11px] font-black tracking-wider transition-all cursor-pointer",
                 language === 'EN' ? "bg-brand-navy text-white shadow-sm" : "text-gray-500 hover:text-brand-navy"
               )}
             >
@@ -131,7 +131,7 @@ export const Navbar = () => {
             <button
               onClick={() => setLanguage('AR')}
               className={cn(
-                "px-2.5 py-1 rounded-full text-[12px] font-black tracking-wider transition-all cursor-pointer",
+                "px-2.5 py-1 rounded-full text-[11px] font-black tracking-wider transition-all cursor-pointer",
                 language === 'AR' ? "bg-brand-navy text-white shadow-sm" : "text-gray-500 hover:text-brand-navy"
               )}
             >
@@ -283,7 +283,7 @@ export const Navbar = () => {
                   <button
                     onClick={() => setLanguage('EN')}
                     className={cn(
-                      "px-4 py-1.5 rounded-full text-[12px] font-black tracking-wider transition-all cursor-pointer",
+                      "px-4 py-1.5 rounded-full text-[11px] font-black tracking-wider transition-all cursor-pointer",
                       language === 'EN' 
                         ? "bg-brand-navy text-white shadow-sm" 
                         : "text-gray-500 hover:text-brand-navy font-bold"
@@ -294,7 +294,7 @@ export const Navbar = () => {
                   <button
                     onClick={() => setLanguage('AR')}
                     className={cn(
-                      "px-4 py-1.5 rounded-full text-[12px] font-black tracking-wider transition-all cursor-pointer",
+                      "px-4 py-1.5 rounded-full text-[11px] font-black tracking-wider transition-all cursor-pointer",
                       language === 'AR' 
                         ? "bg-brand-navy text-white shadow-sm" 
                         : "text-[#08264B]/80 hover:text-brand-navy font-bold"
@@ -439,7 +439,7 @@ export const Footer = () => {
             </div>
             <button 
               onClick={() => openBooking(undefined, isAcOrPlumbingPath)}
-              className="w-full bg-white text-brand-navy py-4 rounded-xl font-black text-[12px] uppercase tracking-[0.2em] hover:bg-brand-gold transition-all shadow-xl active:scale-95"
+              className="w-full bg-white text-brand-navy py-4 rounded-xl font-black text-[11px] uppercase tracking-[0.2em] hover:bg-brand-gold transition-all shadow-xl active:scale-95"
             >
               {isAcOrPlumbingPath ? "Book Now" : "Book Free Inspection"}
             </button>
@@ -447,10 +447,10 @@ export const Footer = () => {
 
           {/* Column 5: License */}
           <div className="space-y-8 lg:border-l lg:border-white/10 lg:pl-10">
-            <h3 className="text-md font-serif font-black mb-8 text-brand-gold uppercase tracking-widest leading-none">Dubai Licensed</h3>
-            <div className="space-y-6 flex flex-col items-start">
-              <div className="space-y-4 opacity-80">
-                <div className="text-gray-400 text-xs leading-relaxed mt-2">
+            <h4 className="text-md font-serif font-black mb-8 text-brand-gold uppercase tracking-widest leading-none">Dubai Licensed</h4>
+            <div className="space-y-6">
+              <div className="space-y-2 opacity-80">
+                <div className="text-gray-400 text-xs leading-relaxed">
                   License No: <span className="text-white font-bold">1191464</span>
                 </div>
                 <div className="text-gray-300 text-[11px] leading-relaxed font-bold uppercase tracking-wider">
@@ -459,11 +459,11 @@ export const Footer = () => {
               </div>
               <button 
                 onClick={openLicense}
-                className="w-full border border-white/20 text-white py-4 rounded-xl font-black text-[12px] uppercase tracking-[0.2em] hover:bg-white hover:text-brand-navy transition-all active:scale-95"
+                className="w-full border border-white/20 text-white py-4 rounded-xl font-black text-[11px] uppercase tracking-[0.2em] hover:bg-white hover:text-brand-navy transition-all active:scale-95"
               >
                 View License
               </button>
-              <div className="pt-4 flex items-start gap-4 mt-2">
+              <div className="pt-4 flex items-center gap-4">
                 <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center border border-white/10 shrink-0">
                    <ShieldCheck className="w-6 h-6 text-brand-gold" />
                 </div>
