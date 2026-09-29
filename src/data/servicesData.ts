@@ -1902,7 +1902,7 @@ export const servicesData: Record<string, ServiceData> = {
       {name: 'Apartment Renovation', icon: 'fa-solid fa-house-chimney', desc: 'Complete apartment makeover.'}
     ],
     process: [
-      {step: '01', title: 'Free Site Visit', desc: 'We measure the space and understand your requirements.'},
+      {step: '01', title: 'Site Visit', desc: 'We measure the space and understand your requirements.'},
       {step: '02', title: 'Design & Fixed Quote', desc: 'Material options and an itemised quote — no hidden charges.'},
       {step: '03', title: 'Execution', desc: 'Our team completes the work on an agreed schedule.'},
       {step: '04', title: 'Handover & Snagging', desc: 'Final inspection, fixes and clean handover.'}
@@ -1933,7 +1933,7 @@ export const servicesData: Record<string, ServiceData> = {
       {name: 'Lighting & Ventilation', icon: 'fa-solid fa-lightbulb', desc: 'LED lighting and exhaust fans.'}
     ],
     process: [
-      {step: '01', title: 'Free Site Visit', desc: 'We measure the space and understand your requirements.'},
+      {step: '01', title: 'Site Visit', desc: 'We measure the space and understand your requirements.'},
       {step: '02', title: 'Design & Fixed Quote', desc: 'Material options and an itemised quote — no hidden charges.'},
       {step: '03', title: 'Execution', desc: 'Our team completes the work on an agreed schedule.'},
       {step: '04', title: 'Handover & Snagging', desc: 'Final inspection, fixes and clean handover.'}
@@ -1970,7 +1970,7 @@ export const servicesData: Record<string, ServiceData> = {
       {name: 'Kitchen Lighting', icon: 'fa-solid fa-lightbulb', desc: 'Under-cabinet and ceiling LED lighting.'}
     ],
     process: [
-      {step: '01', title: 'Free Site Visit', desc: 'We measure the space and understand your requirements.'},
+      {step: '01', title: 'Site Visit', desc: 'We measure the space and understand your requirements.'},
       {step: '02', title: 'Design & Fixed Quote', desc: 'Material options and an itemised quote — no hidden charges.'},
       {step: '03', title: 'Execution', desc: 'Our team completes the work on an agreed schedule.'},
       {step: '04', title: 'Handover & Snagging', desc: 'Final inspection, fixes and clean handover.'}
@@ -2007,7 +2007,7 @@ export const servicesData: Record<string, ServiceData> = {
       {name: 'Doors & Joinery', icon: 'fa-solid fa-door-open', desc: 'Doors, wardrobes and fitted storage.'}
     ],
     process: [
-      {step: '01', title: 'Free Site Visit', desc: 'We measure the space and understand your requirements.'},
+      {step: '01', title: 'Site Visit', desc: 'We measure the space and understand your requirements.'},
       {step: '02', title: 'Design & Fixed Quote', desc: 'Material options and an itemised quote — no hidden charges.'},
       {step: '03', title: 'Execution', desc: 'Our team completes the work on an agreed schedule.'},
       {step: '04', title: 'Handover & Snagging', desc: 'Final inspection, fixes and clean handover.'}
@@ -2018,7 +2018,7 @@ export const servicesData: Record<string, ServiceData> = {
       {name: 'Full Renovation', price: 'From AED 60,000', recommended: false, features: ['1–2 bedroom apartments', 'Kitchen & bathroom upgrades', 'Flooring, ceiling & painting', 'Electrical & plumbing works']}
     ],
     faqs: [
-      {question: 'How much does apartment renovation cost in Dubai?', answer: 'A light studio or 1-bedroom refresh starts from AED 25,000, and a full 1–2 bedroom renovation starts from AED 60,000. The final price depends on size, condition and finishes — we give an itemised fixed quote after a free site visit.'},
+      {question: 'How much does apartment renovation cost in Dubai?', answer: 'A light studio or 1-bedroom refresh starts from AED 25,000, and a full 1–2 bedroom renovation starts from AED 60,000. The final price depends on size, condition and finishes — we give an itemised fixed quote after the site visit.'},
       {question: 'How long does it take?', answer: 'A light refresh usually takes 2–4 weeks. A full renovation typically takes 6–10 weeks, depending on scope and building approvals.'},
       {question: 'Can I stay in the apartment during work?', answer: 'For light refresh work, often yes, room by room. For full renovations we recommend moving out during the main works.'},
       {question: 'Do you help with the building NOC?', answer: 'Yes. We help prepare the documents and coordinate with building management for the NOC.'}
