@@ -48,7 +48,7 @@ const getSubId = (name: string): string => {
     'Property Upkeep': 'property-upkeep',
     'Washroom Remodeling': 'washroom-remodeling',
     'Kitchen Redesign': 'kitchen-redesign',
-    'Apartment Renovation': 'apartment-renovation'
+    'Villa Renovation': 'villa-renovation'
   };
   return map[name] || name.toLowerCase().replace(/\s+/g, '-');
 };
@@ -65,7 +65,7 @@ const Services = () => {
     {id: 'ceiling-work', name: 'Ceiling & Gypsum', icon: Layout, image: '/images/services/service-ceiling.jpg', desc: 'Modern gypsum and false ceiling designs for elegant interiors.', subs: ['Gypsum Ceiling', 'False Ceiling', 'POP Design', 'Cove Lighting']},
     {id: 'lighting-work', name: 'Lighting Work', icon: Zap, image: '/images/services/service-lighting.jpg', desc: 'Specialized lighting solutions, chandeliers installation, and smart home lighting setup.', subs: ['LED Installation', 'Chandelier Hanging', 'Outdoor Lights', 'Smart Setup']},
     {id: 'home-general-maintenance', name: 'Home General Maintenance', icon: PenTool, image: '/images/services/service-maintenance.jpg', desc: 'Regular preventive maintenance and small repairs to keep your property in top condition.', subs: ['Preventive Checks', 'Minor Plumbing', 'Wall Repair', 'Property Upkeep']},
-    {id: 'renovation-remodeling', name: 'Renovation & Remodeling', icon: House, image: '/images/services/subs/villa-painting.jpg', desc: 'Washroom remodeling, kitchen redesign and full apartment renovation — one team, one fixed quote.', subs: ['Washroom Remodeling', 'Kitchen Redesign', 'Apartment Renovation']}
+    {id: 'renovation-remodeling', name: 'Renovation & Remodeling', icon: House, image: '/images/services/subs/villa-painting.jpg', desc: 'Washroom remodeling, kitchen redesign and full villa renovation — one team, one fixed quote.', subs: ['Washroom Remodeling', 'Kitchen Redesign', 'Villa Renovation']}
   ];
 
   return (

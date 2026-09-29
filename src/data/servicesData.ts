@@ -1890,7 +1890,7 @@ export const servicesData: Record<string, ServiceData> = {
     id: 'renovation-remodeling',
     title: 'Renovation & Remodeling',
     tagline: 'COMPLETE HOME TRANSFORMATIONS',
-    description: 'Washroom remodeling, kitchen redesign and full apartment renovation across Dubai and the UAE — planned, built and finished by one licensed team with a fixed, itemised quote.',
+    description: 'Washroom remodeling, kitchen redesign and full villa renovation across Dubai and the UAE — planned, built and finished by one licensed team with a fixed, itemised quote.',
     image: '/images/services/subs/villa-painting.jpg',
     estimateDuration: 'Varies by Scope',
     material: 'Premium Tiles, Quartz & Fittings',
@@ -1899,7 +1899,7 @@ export const servicesData: Record<string, ServiceData> = {
     subServices: [
       {name: 'Washroom Remodeling', icon: 'fa-solid fa-bath', desc: 'Refresh or full washroom rebuild.'},
       {name: 'Kitchen Redesign', icon: 'fa-solid fa-kitchen-set', desc: 'New cabinets, countertops & layout.'},
-      {name: 'Apartment Renovation', icon: 'fa-solid fa-house-chimney', desc: 'Complete apartment makeover.'}
+      {name: 'Villa Renovation', icon: 'fa-solid fa-house-chimney', desc: 'Complete villa makeover.'}
     ],
     process: [
       {step: '01', title: 'Site Visit', desc: 'We measure the space and understand your requirements.'},
@@ -1909,7 +1909,7 @@ export const servicesData: Record<string, ServiceData> = {
     ],
     packages: [
       {name: 'Site Visit & Quote', price: 'From AED 150', recommended: false, features: ['On-site measurement', 'Design & material advice', 'Itemised fixed quote', 'No obligation']},
-      {name: 'Renovation Projects', price: 'From AED 7,500', recommended: true, features: ['Washroom, kitchen or full apartment', 'Materials & labour included', 'One project team', '1-year workmanship warranty']}
+      {name: 'Renovation Projects', price: 'From AED 7,500', recommended: true, features: ['Washroom, kitchen or full villa', 'Materials & labour included', 'One project team', '1-year workmanship warranty']}
     ],
     faqs: [],
     reviews: []
@@ -1988,23 +1988,23 @@ export const servicesData: Record<string, ServiceData> = {
     ],
     reviews: []
   },
-  'apartment-renovation': {
-    id: 'apartment-renovation',
-    title: 'Apartment Renovation',
+  'villa-renovation': {
+    id: 'villa-renovation',
+    title: 'Villa Renovation',
     tagline: 'TECHNICAL SERVICE DETAIL',
-    description: 'Full apartment renovation in Dubai — painting, flooring, false ceiling, lighting, kitchen and bathroom upgrades, electrical and plumbing — managed by one team from site visit to handover.',
-    image: '/images/services/subs/interior-painting.jpg',
-    estimateDuration: '2 – 10 Weeks',
-    material: 'Premium Paints, Tiles & Fittings',
+    description: 'Complete villa renovation in Dubai — painting, flooring, false ceilings, lighting, kitchen and bathroom upgrades, electrical and plumbing — managed by one licensed team from site visit to handover.',
+    image: '/images/services/subs/villa-renovation.jpg',
+    estimateDuration: '4 – 16 Weeks',
+    material: 'Premium Paints, Tiles, Marble & Fittings',
     technician: 'Renovation Project Team',
     warranty: '1-Year Workmanship Warranty',
     subServices: [
-      {name: 'Painting & Wall Finishes', icon: 'fa-solid fa-paint-roller', desc: 'Fresh paint and feature walls.'},
-      {name: 'Flooring', icon: 'fa-solid fa-table-cells-large', desc: 'Tiles, marble or parquet flooring.'},
+      {name: 'Interior & Exterior Painting', icon: 'fa-solid fa-paint-roller', desc: 'Fresh paint inside and outside the villa.'},
+      {name: 'Flooring & Marble', icon: 'fa-solid fa-table-cells-large', desc: 'Tiles, marble or parquet flooring.'},
       {name: 'False Ceiling & Lighting', icon: 'fa-solid fa-lightbulb', desc: 'Gypsum ceilings with LED lighting.'},
       {name: 'Kitchen & Bathroom Upgrades', icon: 'fa-solid fa-sink', desc: 'Modern kitchens and washrooms.'},
       {name: 'Electrical & Plumbing', icon: 'fa-solid fa-plug', desc: 'Safe, tested wiring and plumbing.'},
-      {name: 'Doors & Joinery', icon: 'fa-solid fa-door-open', desc: 'Doors, wardrobes and fitted storage.'}
+      {name: 'Doors, Wardrobes & Joinery', icon: 'fa-solid fa-door-open', desc: 'Doors, wardrobes and fitted storage.'}
     ],
     process: [
       {step: '01', title: 'Site Visit', desc: 'We measure the space and understand your requirements.'},
@@ -2013,15 +2013,15 @@ export const servicesData: Record<string, ServiceData> = {
       {step: '04', title: 'Handover & Snagging', desc: 'Final inspection, fixes and clean handover.'}
     ],
     packages: [
-      {name: 'Site Visit & BOQ', price: 'From AED 150', recommended: false, features: ['Full apartment walkthrough', 'Scope & material advice', 'Itemised fixed quote (BOQ)', 'No obligation']},
-      {name: 'Apartment Refresh', price: 'From AED 25,000', recommended: true, features: ['Studio / 1-bedroom', 'Painting & minor repairs', 'Flooring & lighting updates', 'Fixture replacements']},
-      {name: 'Full Renovation', price: 'From AED 60,000', recommended: false, features: ['1–2 bedroom apartments', 'Kitchen & bathroom upgrades', 'Flooring, ceiling & painting', 'Electrical & plumbing works']}
+      {name: 'Site Visit & BOQ', price: 'From AED 150', recommended: false, features: ['Full villa walkthrough', 'Scope & material advice', 'Itemised fixed quote (BOQ)', 'No obligation']},
+      {name: 'Villa Refresh', price: 'From AED 50,000', recommended: true, features: ['Interior & exterior painting', 'Minor repairs & touch-ups', 'Lighting & fixture updates', 'Finishing & handover clean']},
+      {name: 'Full Villa Renovation', price: 'From AED 150,000', recommended: false, features: ['Kitchen & bathroom upgrades', 'Flooring & false ceilings', 'Electrical & plumbing works', 'Painting & complete finishing']}
     ],
     faqs: [
-      {question: 'How much does apartment renovation cost in Dubai?', answer: 'A light studio or 1-bedroom refresh starts from AED 25,000, and a full 1–2 bedroom renovation starts from AED 60,000. The final price depends on size, condition and finishes — we give an itemised fixed quote after the site visit.'},
-      {question: 'How long does it take?', answer: 'A light refresh usually takes 2–4 weeks. A full renovation typically takes 6–10 weeks, depending on scope and building approvals.'},
-      {question: 'Can I stay in the apartment during work?', answer: 'For light refresh work, often yes, room by room. For full renovations we recommend moving out during the main works.'},
-      {question: 'Do you help with the building NOC?', answer: 'Yes. We help prepare the documents and coordinate with building management for the NOC.'}
+      {question: 'How much does villa renovation cost in Dubai?', answer: 'A villa refresh (painting, repairs and lighting updates) starts from AED 50,000, and a full villa renovation starts from AED 150,000. The final price depends on villa size, condition and finishes — we give an itemised fixed quote (BOQ) after the site visit.'},
+      {question: 'How long does a villa renovation take?', answer: 'A villa refresh usually takes 3–6 weeks. A full renovation typically takes 10–16 weeks, depending on scope, custom items and approvals.'},
+      {question: 'Can we stay in the villa during the work?', answer: 'For refresh work we can often work zone by zone while you stay. For full renovations we recommend moving out during the main works for safety and speed.'},
+      {question: 'Do you help with approvals and the NOC?', answer: 'Yes. We help prepare the documents and coordinate with the community or developer for the NOC. Structural or layout changes may also need authority approval, and we guide you through it.'}
     ],
     reviews: []
   }
@@ -2216,13 +2216,13 @@ export const serviceCategories = [
     icon: 'fa-solid fa-trowel-bricks',
     color: '#0F766E',
     activeColor: '#EEF6FF',
-    description: 'Washroom remodeling, kitchen redesign and full apartment renovation — one licensed team, one fixed quote, from site visit to handover.',
+    description: 'Washroom remodeling, kitchen redesign and full villa renovation — one licensed team, one fixed quote, from site visit to handover.',
     image: '/images/services/subs/villa-painting.jpg',
     promoTitle: 'Transform Your Home, Beautifully',
     subs: [
       {name: 'Washroom Remodeling', id: 'washroom-remodeling', icon: 'fa-solid fa-bath', desc: 'Refresh or full washroom rebuild.'},
       {name: 'Kitchen Redesign', id: 'kitchen-redesign', icon: 'fa-solid fa-kitchen-set', desc: 'New cabinets, countertops & layout.'},
-      {name: 'Apartment Renovation', id: 'apartment-renovation', icon: 'fa-solid fa-house-chimney', desc: 'Complete apartment makeover.'}
+      {name: 'Villa Renovation', id: 'villa-renovation', icon: 'fa-solid fa-house-chimney', desc: 'Complete villa makeover.'}
     ]
   }
 ];
