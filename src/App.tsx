@@ -1,4 +1,4 @@
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
 import { Outlet, Navigate, useLocation } from 'react-router-dom';
 import {LanguageProvider} from './context/LanguageContext';
 import {BookingProvider} from './components/BookingModal';
@@ -7,6 +7,7 @@ import ScrollToTop from './components/ScrollToTop';
 import Chatbot from './components/Chatbot';
 import { StickyMobileBar } from './components/StickyMobileBar';
 import ErrorBoundary from './components/ErrorBoundary';
+import { initGlobalButtonTracking } from './utils/trackConversion';
 
 const RootLoader = () => (
   <div className="flex items-center justify-center min-h-screen bg-white">
@@ -18,6 +19,11 @@ export default function App() {
   const location = useLocation();
   const params = new URLSearchParams(location.search);
   const isAdMode = params.get('ad') === '1';
+
+  // Global listener to ensure every single button, link, and CTA across the whole app is tracked in GTM
+  useEffect(() => {
+    return initGlobalButtonTracking();
+  }, []);
 
   return (
     <ErrorBoundary>

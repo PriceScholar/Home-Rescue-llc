@@ -35,7 +35,7 @@ import {
 } from 'lucide-react';
 import { TopBar, Navbar, Footer } from './Navigation';
 import { useBooking } from './BookingModal';
-import { trackWhatsAppConversion } from '../utils/trackConversion';
+import { trackWhatsAppConversion, trackPhoneConversion, trackFormSubmit } from '../utils/trackConversion';
 import { cn } from '../lib/utils';
 import AcBrandsSection from './AcBrandsSection';
 
@@ -59,6 +59,7 @@ const MinimalAdHeader = () => {
       <div className="flex items-center">
         <a 
           href="tel:+971524524295" 
+          onClick={trackPhoneConversion}
           className="bg-[#C9153B] text-white px-6 py-2.5 sm:py-3 rounded-full hover:bg-opacity-90 flex items-center gap-2 shadow-lg text-[11px] sm:text-xs font-bold transition-transform active:scale-95 uppercase tracking-wider"
         >
           <Phone className="w-4 h-4" /> CALL NOW
@@ -76,7 +77,7 @@ const MinimalAdFooter = () => {
           © {new Date().getFullYear()} <span className="text-white font-bold">Home Rescue Technical Services</span>. All Rights Reserved.
         </p>
         <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-6 text-[10px] font-bold uppercase tracking-widest text-brand-gold">
-          <a href="tel:+971524524295" className="hover:text-white transition-colors">
+          <a href="tel:+971524524295" onClick={trackPhoneConversion} className="hover:text-white transition-colors">
             +971 52 452 4295
           </a>
           <span className="hidden sm:inline text-white/20">•</span>
@@ -112,6 +113,11 @@ export const AcCleaningLanding: React.FC<AcCleaningLandingProps> = ({ isAdMode =
 
     // Track WhatsApp conversion & open WhatsApp with pre-filled message
     trackWhatsAppConversion();
+    trackFormSubmit('AC Quote Form', {
+      property_type: formData.propertyType,
+      units: formData.units,
+      date: formData.date
+    });
     setFormSubmitted(true);
 
     const message = encodeURIComponent(
@@ -1420,7 +1426,10 @@ export const AcCleaningLanding: React.FC<AcCleaningLandingProps> = ({ isAdMode =
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
               <a
                 href="tel:+971524524295"
-                onClick={callNow}
+                onClick={() => {
+                  trackPhoneConversion();
+                  callNow();
+                }}
                 className="w-full sm:w-auto bg-[#C9153B] hover:bg-red-700 text-white font-black text-xs uppercase tracking-widest py-4 px-8 rounded-xl transition-all shadow-lg flex items-center justify-center gap-2"
               >
                 <Phone className="w-4 h-4 fill-current" /> 📞 Call Now: +971 52 452 4295

@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { cn } from '../lib/utils';
 import { serviceCategories } from '../data/servicesData';
-import { trackWhatsAppConversion } from '../utils/trackConversion';
+import { trackWhatsAppConversion, trackPhoneConversion, trackBookingClick, trackFormSubmit, trackGtmEvent } from '../utils/trackConversion';
 
 import ConsultationModal from './ConsultationModal';
 import LicenseModal from './LicenseModal';
@@ -40,6 +40,7 @@ export const BookingProvider: React.FC<{ children: React.ReactNode }> = ({ child
   const [isBookNowMode, setIsBookNowMode] = useState(false);
 
   const openBooking = (serviceName?: string, isBookNow?: boolean) => {
+    trackBookingClick(serviceName, isBookNow ? 'Book Now' : 'Book Free Inspection');
     setPreSelectedService(serviceName);
     setIsBookNowMode(!!isBookNow);
     setIsOpen(true);
@@ -65,6 +66,7 @@ export const BookingProvider: React.FC<{ children: React.ReactNode }> = ({ child
   };
 
   const callNow = () => {
+    trackPhoneConversion();
     window.location.href = 'tel:+971524524295';
   };
 
@@ -335,6 +337,11 @@ Thank you!`;
     const encodedMessage = encodeURIComponent(message);
     const whatsappURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodedMessage}`;
     trackWhatsAppConversion();
+    trackFormSubmit('Booking Form', {
+      service: formData.service || formData.category || 'General',
+      property_type: formData.propertyType,
+      date: formData.date
+    });
     window.open(whatsappURL, '_blank');
     setIsSuccess(true);
   };
@@ -692,6 +699,7 @@ Thank you!`;
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <a 
                       href="tel:+971524524295"
+                      onClick={trackPhoneConversion}
                       className="bg-brand-red text-white px-8 py-4 rounded-xl font-bold hover:bg-brand-navy transition-all flex items-center justify-center gap-2"
                     >
                       <i className="fa-solid fa-phone"></i> Call Us Now

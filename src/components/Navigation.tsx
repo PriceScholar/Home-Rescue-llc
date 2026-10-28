@@ -8,6 +8,7 @@ import { useBooking } from './BookingModal';
 import CoverageBanner from './CoverageBanner';
 import {ServicesMegaMenu} from './ServicesMegaMenu';
 import {serviceCategories} from '../data/servicesData';
+import { trackPhoneConversion } from '../utils/trackConversion';
 
 export const TopBar = () => {
   return (
@@ -23,7 +24,7 @@ export const TopBar = () => {
         </div>
       </div>
       <div className="flex gap-4 md:gap-8 items-center">
-        <a href="tel:+971524524295" className="flex items-center gap-2 hover:text-brand-gold transition-colors">
+        <a href="tel:+971524524295" onClick={trackPhoneConversion} className="flex items-center gap-2 hover:text-brand-gold transition-colors">
           <Phone className="w-3 h-3 text-brand-gold shrink-0" /> +971 52 452 4295
         </a>
         <a href="mailto:info@homerescue.ae" className="hidden sm:flex items-center gap-2 hover:text-brand-gold transition-colors">
@@ -409,7 +410,7 @@ export const Footer = () => {
           <div className="space-y-6 lg:pl-4">
             <h3 className="text-md font-serif font-black mb-6 lg:mb-8 text-brand-gold uppercase tracking-widest leading-none">Contact Us</h3>
             <div className="space-y-4 md:space-y-5">
-              <a href="tel:+971524524295" className="flex items-center gap-4 group">
+              <a href="tel:+971524524295" onClick={trackPhoneConversion} className="flex items-center gap-4 group">
                 <div className="w-9 h-9 rounded-xl bg-white/5 flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-brand-navy transition-all">
                   <Phone className="w-4 h-4" />
                 </div>

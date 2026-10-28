@@ -14,6 +14,7 @@ import {
   Check
 } from 'lucide-react';
 import { TopBar, Navbar, Footer } from './components/Navigation';
+import { trackWhatsAppConversion, trackPhoneConversion } from './utils/trackConversion';
 
 const MinimalAdHeader = () => {
   return (
@@ -33,12 +34,14 @@ const MinimalAdHeader = () => {
           href="https://wa.me/971524524295?text=Hello%20Home%20Rescue!%20I%20just%20requested%20an%20AC%20cleaning%20quote%20and%20would%20like%20to%20follow%20up."
           target="_blank"
           rel="noopener noreferrer"
+          onClick={trackWhatsAppConversion}
           className="hidden sm:inline-flex bg-[#25D366] text-white px-4 py-2 sm:py-2.5 rounded-full hover:bg-opacity-95 items-center gap-2 shadow-sm text-xs font-bold transition-transform active:scale-95 uppercase tracking-wider"
         >
           <MessageCircle className="w-3.5 h-3.5 fill-current" /> WhatsApp
         </a>
         <a 
           href="tel:+971524524295" 
+          onClick={trackPhoneConversion}
           className="bg-[#C9153B] text-white px-4 sm:px-6 py-2 sm:py-2.5 rounded-full hover:bg-opacity-90 flex items-center gap-1.5 sm:gap-2 shadow-md text-xs sm:text-xs font-bold transition-transform active:scale-95 uppercase tracking-wider"
         >
           <Phone className="w-3.5 h-3.5" /> <span>CALL NOW</span>
@@ -56,7 +59,7 @@ const MinimalAdFooter = () => {
           © {new Date().getFullYear()} <span className="text-white font-bold">Home Rescue Technical Services</span>. All Rights Reserved.
         </p>
         <div className="flex flex-wrap justify-center items-center gap-2 sm:gap-6 text-[10px] font-bold uppercase tracking-widest text-brand-gold">
-          <a href="tel:+971524524295" className="hover:text-white transition-colors">
+          <a href="tel:+971524524295" onClick={trackPhoneConversion} className="hover:text-white transition-colors">
             +971 52 452 4295
           </a>
           <span className="hidden sm:inline text-white/20">•</span>
@@ -198,6 +201,7 @@ const ThankYou = () => {
                 href="https://wa.me/971524524295?text=Hello%20Home%20Rescue!%20I%20just%20submitted%20a%20quote%20request%20for%20AC%20Cleaning%20and%20would%20like%20to%20follow%20up."
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={trackWhatsAppConversion}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#25D366] hover:bg-[#20bd5a] text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-black text-xs sm:text-sm uppercase tracking-wider shadow-md hover:shadow-lg transition-all active:scale-95 cursor-pointer"
               >
                 <MessageCircle className="w-4 h-4 fill-current" />
@@ -206,6 +210,7 @@ const ThankYou = () => {
 
               <a 
                 href="tel:+971524524295"
+                onClick={trackPhoneConversion}
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 bg-[#0D1B2A] hover:bg-[#152e4a] text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-black text-xs sm:text-sm uppercase tracking-wider shadow-md hover:shadow-lg transition-all active:scale-95 cursor-pointer"
               >
                 <Phone className="w-4 h-4" />

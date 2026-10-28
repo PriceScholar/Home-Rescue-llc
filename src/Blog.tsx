@@ -14,7 +14,7 @@ import {
   Clock 
 } from 'lucide-react';
 import { useBooking } from './components/BookingModal';
-import { trackWhatsAppConversion } from './utils/trackConversion';
+import { trackWhatsAppConversion, trackFormSubmit } from './utils/trackConversion';
 
 const Blog: React.FC = () => {
   const { openBooking } = useBooking();
@@ -24,6 +24,7 @@ const Blog: React.FC = () => {
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
     if (!email.trim()) return;
+    trackFormSubmit('Blog Newsletter Subscribe', { email });
     setSubscribed(true);
   };
 

@@ -4,12 +4,14 @@ import {TopBar, Navbar, Footer} from './components/Navigation';
 import {motion} from 'motion/react';
 import {Phone, Mail, MapPin, Send, MessageCircle, Clock} from 'lucide-react';
 import {useBooking} from './components/BookingModal';
+import { trackWhatsAppConversion, trackPhoneConversion, trackFormSubmit } from './utils/trackConversion';
 
 const Contact = () => {
   const { callNow, askExpert, openBooking } = useBooking();
   
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    trackFormSubmit('Contact Page Message Form');
     openBooking();
   };
 
@@ -39,8 +41,12 @@ const Contact = () => {
                  <Phone className="w-6 h-6 md:w-8 md:h-8" />
                </div>
                <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-4">Call Us</h3>
-               <p className="text-brand-navy mb-4 md:mb-6 font-bold text-base md:text-lg">+971 52 452 4295</p>
-               <button onClick={callNow} className="text-brand-red font-black text-[10px] md:text-xs uppercase tracking-widest hover:underline">CALL NOW</button>
+               <p className="text-brand-navy mb-4 md:mb-6 font-bold text-base md:text-lg">
+                 <a href="tel:+971524524295" onClick={trackPhoneConversion} className="hover:text-brand-red transition-colors">
+                   +971 52 452 4295
+                 </a>
+               </p>
+               <button onClick={callNow} className="text-brand-red font-black text-[10px] md:text-xs uppercase tracking-widest hover:underline cursor-pointer">CALL NOW</button>
              </motion.div>
 
              <motion.div whileHover={{y: -5}} className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 text-center flex flex-col items-center">
@@ -48,8 +54,12 @@ const Contact = () => {
                  <MessageCircle className="w-6 h-6 md:w-8 md:h-8" />
                </div>
                <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-4">WhatsApp</h3>
-               <p className="text-brand-navy mb-4 md:mb-6 font-bold text-base md:text-lg">+971 52 452 4295</p>
-               <button onClick={() => askExpert()} className="text-brand-green font-black text-[10px] md:text-xs uppercase tracking-widest hover:underline">TEXT US</button>
+               <p className="text-brand-navy mb-4 md:mb-6 font-bold text-base md:text-lg">
+                 <a href="https://wa.me/971524524295" target="_blank" rel="noopener noreferrer" onClick={trackWhatsAppConversion} className="hover:text-brand-green transition-colors">
+                   +971 52 452 4295
+                 </a>
+               </p>
+               <button onClick={() => askExpert()} className="text-brand-green font-black text-[10px] md:text-xs uppercase tracking-widest hover:underline cursor-pointer">TEXT US</button>
              </motion.div>
 
              <motion.div whileHover={{y: -5}} className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 text-center flex flex-col items-center sm:col-span-2 lg:col-span-1">

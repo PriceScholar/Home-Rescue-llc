@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { cn } from '../lib/utils';
-import { trackWhatsAppConversion } from '../utils/trackConversion';
+import { trackWhatsAppConversion, trackFormSubmit } from '../utils/trackConversion';
 
 interface ConsultationModalProps {
   isOpen: boolean;
@@ -84,6 +84,10 @@ Thank you! 🙏`;
     const whatsappURL = `https://wa.me/971524524295?text=${encodedMessage}`;
     
     trackWhatsAppConversion();
+    trackFormSubmit('Consultation Form', {
+      service: formData.service,
+      date: formData.date
+    });
     window.open(whatsappURL, '_blank');
     setIsSuccess(true);
   };

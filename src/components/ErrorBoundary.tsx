@@ -1,4 +1,5 @@
 import React, { Component, ErrorInfo, ReactNode } from 'react';
+import { trackWhatsAppConversion } from '../utils/trackConversion';
 
 interface Props { children: ReactNode; }
 interface State { hasError: boolean; }
@@ -48,6 +49,9 @@ export class ErrorBoundary extends Component<Props, State> {
             </button>
             <a
               href="https://wa.me/971524524295"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={trackWhatsAppConversion}
               aria-label="Contact us on WhatsApp"
               style={{ background: '#1FA463', color: '#fff',
                 padding: '12px 24px', borderRadius: '12px',
