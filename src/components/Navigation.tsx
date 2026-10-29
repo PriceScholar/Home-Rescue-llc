@@ -24,7 +24,12 @@ export const TopBar = () => {
         </div>
       </div>
       <div className="flex gap-4 md:gap-8 items-center">
-        <a href="tel:+971524524295" onClick={trackPhoneConversion} className="flex items-center gap-2 hover:text-brand-gold transition-colors">
+        <a 
+          href="tel:+971524524295" 
+          onClick={() => trackPhoneConversion('TopBar Phone')} 
+          data-gtm-label="TopBar Phone"
+          className="flex items-center gap-2 hover:text-brand-gold transition-colors"
+        >
           <Phone className="w-3 h-3 text-brand-gold shrink-0" /> +971 52 452 4295
         </a>
         <a href="mailto:info@homerescue.ae" className="hidden sm:flex items-center gap-2 hover:text-brand-gold transition-colors">
@@ -141,16 +146,19 @@ export const Navbar = () => {
           </div>
           <button 
             onClick={openConsultation}
-            className="border-2 border-[#C9153B] text-[#C9153B] px-5 py-2.5 rounded-full hover:bg-[#C9153B] hover:text-white transition-all text-xs font-bold flex items-center gap-2"
+            data-gtm-label="Free Consultation - Navbar"
+            className="border-2 border-[#C9153B] text-[#C9153B] px-5 py-2.5 rounded-full hover:bg-[#C9153B] hover:text-white transition-all text-xs font-bold flex items-center gap-2 cursor-pointer"
           >
             <Video className="w-4 h-4" /> {t('free_consultation') || 'FREE CONSULTATION'}
           </button>
-          <button 
-            onClick={callNow}
-            className="bg-[#C9153B] text-white px-6 py-3 rounded-full hover:bg-opacity-90 flex items-center gap-2 shadow-lg text-xs font-bold transition-transform active:scale-95"
+          <a 
+            href="tel:+971524524295"
+            onClick={() => trackPhoneConversion('Call Now - Navbar')}
+            data-gtm-label="Call Now - Navbar"
+            className="bg-[#C9153B] text-white px-6 py-3 rounded-full hover:bg-opacity-90 flex items-center gap-2 shadow-lg text-xs font-bold transition-transform active:scale-95 cursor-pointer"
           >
             <Phone className="w-4 h-4" /> CALL NOW
-          </button>
+          </a>
         </div>
       </div>
 
@@ -410,7 +418,12 @@ export const Footer = () => {
           <div className="space-y-6 lg:pl-4">
             <h3 className="text-md font-serif font-black mb-6 lg:mb-8 text-brand-gold uppercase tracking-widest leading-none">Contact Us</h3>
             <div className="space-y-4 md:space-y-5">
-              <a href="tel:+971524524295" onClick={trackPhoneConversion} className="flex items-center gap-4 group">
+              <a 
+                href="tel:+971524524295" 
+                onClick={() => trackPhoneConversion('Footer Phone')} 
+                data-gtm-label="Footer Phone"
+                className="flex items-center gap-4 group"
+              >
                 <div className="w-9 h-9 rounded-xl bg-white/5 flex items-center justify-center text-brand-gold group-hover:bg-brand-gold group-hover:text-brand-navy transition-all">
                   <Phone className="w-4 h-4" />
                 </div>
@@ -440,7 +453,8 @@ export const Footer = () => {
             </div>
             <button 
               onClick={() => openBooking(undefined, isAcOrPlumbingPath)}
-              className="w-full bg-white text-brand-navy py-4 rounded-xl font-black text-[11px] uppercase tracking-[0.2em] hover:bg-brand-gold transition-all shadow-xl active:scale-95"
+              data-gtm-label={isAcOrPlumbingPath ? "Book Now - Footer" : "Book Free Inspection - Footer"}
+              className="w-full bg-white text-brand-navy py-4 rounded-xl font-black text-[11px] uppercase tracking-[0.2em] hover:bg-brand-gold transition-all shadow-xl active:scale-95 cursor-pointer"
             >
               {isAcOrPlumbingPath ? "Book Now" : "Book Free Inspection"}
             </button>

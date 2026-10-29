@@ -42,11 +42,18 @@ const Contact = () => {
                </div>
                <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-4">Call Us</h3>
                <p className="text-brand-navy mb-4 md:mb-6 font-bold text-base md:text-lg">
-                 <a href="tel:+971524524295" onClick={trackPhoneConversion} className="hover:text-brand-red transition-colors">
+                 <a href="tel:+971524524295" onClick={() => trackPhoneConversion('Phone Link - Contact Page')} data-gtm-label="Phone Link - Contact Page" className="hover:text-brand-red transition-colors">
                    +971 52 452 4295
                  </a>
                </p>
-               <button onClick={callNow} className="text-brand-red font-black text-[10px] md:text-xs uppercase tracking-widest hover:underline cursor-pointer">CALL NOW</button>
+               <a 
+                 href="tel:+971524524295" 
+                 onClick={() => trackPhoneConversion('Call Now - Contact Page')} 
+                 data-gtm-label="Call Now - Contact Page" 
+                 className="text-brand-red font-black text-[10px] md:text-xs uppercase tracking-widest hover:underline cursor-pointer inline-block"
+               >
+                 CALL NOW
+               </a>
              </motion.div>
 
              <motion.div whileHover={{y: -5}} className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 text-center flex flex-col items-center">
@@ -55,11 +62,20 @@ const Contact = () => {
                </div>
                <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-4">WhatsApp</h3>
                <p className="text-brand-navy mb-4 md:mb-6 font-bold text-base md:text-lg">
-                 <a href="https://wa.me/971524524295" target="_blank" rel="noopener noreferrer" onClick={trackWhatsAppConversion} className="hover:text-brand-green transition-colors">
+                 <a href="https://wa.me/971524524295?text=Hi%20Home%20Rescue!%20%F0%9F%91%8B%0A%0AI'm%20interested%20in%20your%20services.%20Please%20contact%20me%20to%20discuss%20my%20needs.%0A%0AThank%20you!" target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsAppConversion('WhatsApp Link - Contact Page')} data-gtm-label="WhatsApp Link - Contact Page" className="hover:text-brand-green transition-colors">
                    +971 52 452 4295
                  </a>
                </p>
-               <button onClick={() => askExpert()} className="text-brand-green font-black text-[10px] md:text-xs uppercase tracking-widest hover:underline cursor-pointer">TEXT US</button>
+               <a 
+                 href="https://wa.me/971524524295?text=Hi%20Home%20Rescue!%20%F0%9F%91%8B%0A%0AI'm%20interested%20in%20your%20services.%20Please%20contact%20me%20to%20discuss%20my%20needs.%0A%0AThank%20you!" 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 onClick={() => trackWhatsAppConversion('Text Us - Contact Page')} 
+                 data-gtm-label="Text Us - Contact Page" 
+                 className="text-brand-green font-black text-[10px] md:text-xs uppercase tracking-widest hover:underline cursor-pointer inline-block"
+               >
+                 TEXT US
+               </a>
              </motion.div>
 
              <motion.div whileHover={{y: -5}} className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-gray-100 text-center flex flex-col items-center sm:col-span-2 lg:col-span-1">

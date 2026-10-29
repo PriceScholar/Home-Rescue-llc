@@ -59,7 +59,8 @@ const MinimalAdHeader = () => {
       <div className="flex items-center">
         <a 
           href="tel:+971524524295" 
-          onClick={trackPhoneConversion}
+          onClick={() => trackPhoneConversion('Call Now - AC Header')}
+          data-gtm-label="Call Now - AC Header"
           className="bg-[#C9153B] text-white px-6 py-2.5 sm:py-3 rounded-full hover:bg-opacity-90 flex items-center gap-2 shadow-lg text-[11px] sm:text-xs font-bold transition-transform active:scale-95 uppercase tracking-wider"
         >
           <Phone className="w-4 h-4" /> CALL NOW
@@ -77,7 +78,7 @@ const MinimalAdFooter = () => {
           © {new Date().getFullYear()} <span className="text-white font-bold">Home Rescue Technical Services</span>. All Rights Reserved.
         </p>
         <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-6 text-[10px] font-bold uppercase tracking-widest text-brand-gold">
-          <a href="tel:+971524524295" onClick={trackPhoneConversion} className="hover:text-white transition-colors">
+          <a href="tel:+971524524295" onClick={() => trackPhoneConversion('Phone - AC Footer')} data-gtm-label="Phone - AC Footer" className="hover:text-white transition-colors">
             +971 52 452 4295
           </a>
           <span className="hidden sm:inline text-white/20">•</span>
@@ -261,6 +262,7 @@ export const AcCleaningLanding: React.FC<AcCleaningLandingProps> = ({ isAdMode =
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-2">
                 <button aria-label="Book free inspection"
                   onClick={scrollToQuote}
+                  data-gtm-label="Book AC Cleaning Now - Hero"
                   className="bg-brand-gold hover:bg-[#c99518] text-brand-navy font-black text-sm uppercase tracking-wider py-4 px-8 rounded-xl transition-all duration-300 shadow-xl shadow-yellow-500/10 flex items-center justify-center gap-2.5 active:scale-95 cursor-pointer"
                 >
                   <Calendar className="w-4 h-4" /> Book AC Cleaning Now
@@ -270,7 +272,8 @@ export const AcCleaningLanding: React.FC<AcCleaningLandingProps> = ({ isAdMode =
                   href="https://wa.me/971524524295?text=Hello%20Resqhome!%20I%20would%20like%20to%20book%20an%20AC%20Cleaning%20service%20in%20Dubai."
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={trackWhatsAppConversion}
+                  onClick={() => trackWhatsAppConversion('WhatsApp Us - Hero')}
+                  data-gtm-label="WhatsApp Us - Hero"
                   className="bg-green-600 hover:bg-green-700 text-white font-black text-sm uppercase tracking-wider py-4 px-8 rounded-xl transition-all duration-300 shadow-xl shadow-green-900/20 flex items-center justify-center gap-2.5 active:scale-95 cursor-pointer"
                 >
                   <MessageCircle className="w-4 h-4 fill-current" /> WhatsApp Us
@@ -1426,11 +1429,9 @@ export const AcCleaningLanding: React.FC<AcCleaningLandingProps> = ({ isAdMode =
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
               <a
                 href="tel:+971524524295"
-                onClick={() => {
-                  trackPhoneConversion();
-                  callNow();
-                }}
-                className="w-full sm:w-auto bg-[#C9153B] hover:bg-red-700 text-white font-black text-xs uppercase tracking-widest py-4 px-8 rounded-xl transition-all shadow-lg flex items-center justify-center gap-2"
+                onClick={() => trackPhoneConversion('Call Now - AC Cleaning Bottom')}
+                data-gtm-label="Call Now - AC Cleaning Bottom"
+                className="w-full sm:w-auto bg-[#C9153B] hover:bg-red-700 text-white font-black text-xs uppercase tracking-widest py-4 px-8 rounded-xl transition-all shadow-lg flex items-center justify-center gap-2 cursor-pointer"
               >
                 <Phone className="w-4 h-4 fill-current" /> 📞 Call Now: +971 52 452 4295
               </a>
@@ -1439,14 +1440,16 @@ export const AcCleaningLanding: React.FC<AcCleaningLandingProps> = ({ isAdMode =
                 href="https://wa.me/971524524295?text=Hello%20Resqhome!%20I%20would%20like%20to%20book%20an%20AC%20Cleaning%20service%20in%20Dubai."
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={trackWhatsAppConversion}
-                className="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white font-black text-xs uppercase tracking-widest py-4 px-8 rounded-xl transition-all shadow-lg flex items-center justify-center gap-2"
+                onClick={() => trackWhatsAppConversion('WhatsApp Us - AC Cleaning Bottom')}
+                data-gtm-label="WhatsApp Us - AC Cleaning Bottom"
+                className="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white font-black text-xs uppercase tracking-widest py-4 px-8 rounded-xl transition-all shadow-lg flex items-center justify-center gap-2 cursor-pointer"
               >
                 <MessageCircle className="w-4 h-4 fill-current" /> 💬 WhatsApp Us
               </a>
 
               <button aria-label="Book free inspection"
                 onClick={scrollToQuote}
+                data-gtm-label="Request a Quote - AC Cleaning Bottom"
                 className="w-full sm:w-auto bg-brand-gold hover:bg-[#c99518] text-brand-navy font-black text-xs uppercase tracking-widest py-4 px-8 rounded-xl transition-all shadow-lg flex items-center justify-center gap-2 cursor-pointer"
               >
                 <Calendar className="w-4 h-4" /> Request a Quote

@@ -209,7 +209,14 @@ const Chatbot: React.FC = () => {
 
             {/* Footer */}
             <div className="p-2.5 bg-gray-50 text-center border-t border-gray-100">
-              <a href="https://wa.me/971524524295" target="_blank" rel="noreferrer" onClick={trackWhatsAppConversion} className="text-[10px] font-bold text-green-600 hover:text-green-700 transition-all flex items-center justify-center gap-1.5">
+              <a 
+                href="https://wa.me/971524524295?text=Hi%20Home%20Rescue!%20%F0%9F%91%8B%0A%0AI'm%20interested%20in%20your%20services.%20Please%20contact%20me%20to%20discuss%20my%20needs.%0A%0AThank%20you!" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                onClick={() => trackWhatsAppConversion('Chatbot WhatsApp')} 
+                data-gtm-label="Chatbot WhatsApp"
+                className="text-[10px] font-bold text-green-600 hover:text-green-700 transition-all flex items-center justify-center gap-1.5"
+              >
                 <i className="fa-brands fa-whatsapp text-xs"></i>
                 CHAT ON WHATSAPP
               </a>

@@ -24,7 +24,7 @@ import {Link} from 'react-router-dom';
 import {cn} from './lib/utils';
 import VerifiedProjects from './components/VerifiedProjects';
 import { serviceCategories } from './data/servicesData';
-import { trackWhatsAppConversion } from './utils/trackConversion';
+import { trackWhatsAppConversion, trackPhoneConversion } from './utils/trackConversion';
 
 
 // EDIT: replace with real customer reviews
@@ -167,20 +167,22 @@ const Home = () => {
             <div className="flex flex-col sm:flex-row flex-wrap justify-center lg:justify-start gap-4 md:gap-5 pt-2">
               <button 
                 onClick={() => openBooking()}
-                className="bg-brand-gold text-brand-navy hover:bg-[#c4941c] px-6 md:px-8 py-3 md:py-4 rounded-2xl font-black text-[11px] md:text-xs uppercase tracking-widest flex items-center justify-center gap-4 shadow-[0_20px_40px_-10px_rgba(217,165,32,0.4)] transition-all active:scale-95"
+                data-gtm-label="Book Free Inspection - Hero"
+                className="bg-brand-gold text-brand-navy hover:bg-[#c4941c] px-6 md:px-8 py-3 md:py-4 rounded-2xl font-black text-[11px] md:text-xs uppercase tracking-widest flex items-center justify-center gap-4 shadow-[0_20px_40px_-10px_rgba(217,165,32,0.4)] transition-all active:scale-95 cursor-pointer"
               >
                 <i className="fa-solid fa-calendar-check text-lg md:text-xl"></i>
                 BOOK FREE INSPECTION
               </button>
-              <button 
-                onClick={() => {
-                  trackWhatsAppConversion();
-                  askExpert();
-                }}
-                className="bg-[#08264B]/40 backdrop-blur-md border border-white/10 text-white hover:bg-white hover:text-brand-navy px-6 md:px-8 py-3 md:py-4 rounded-2xl font-black text-[11px] md:text-xs uppercase tracking-widest flex items-center justify-center gap-4 transition-all active:scale-95 group"
+              <a 
+                href="https://wa.me/971524524295?text=Hi%20Home%20Rescue!%20%F0%9F%91%8B%0A%0AI'm%20interested%20in%20your%20services.%20Please%20contact%20me%20to%20discuss%20my%20needs.%0A%0AThank%20you!"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackWhatsAppConversion('Chat on WhatsApp - Hero')}
+                data-gtm-label="Chat on WhatsApp - Hero"
+                className="bg-[#08264B]/40 backdrop-blur-md border border-white/10 text-white hover:bg-white hover:text-brand-navy px-6 md:px-8 py-3 md:py-4 rounded-2xl font-black text-[11px] md:text-xs uppercase tracking-widest flex items-center justify-center gap-4 transition-all active:scale-95 group cursor-pointer"
               >
                 <MessageCircle className="w-5 h-5 text-brand-gold" /> CHAT ON WHATSAPP
-              </button>
+              </a>
             </div>
 
             {/* Emergency & Reassurance Badges */}
@@ -299,15 +301,23 @@ const Home = () => {
                 Fill out our quick form or instantly chat with our team on WhatsApp to schedule your visit.
               </p>
               <div className="flex gap-2 w-full mt-auto">
-                <button onClick={() => openBooking()} className="flex-1 bg-brand-gold text-brand-navy font-black text-[12px] uppercase tracking-widest py-3.5 rounded-xl hover:bg-[#c4941c] transition-all duration-300 cursor-pointer active:scale-95">
+                <button 
+                  onClick={() => openBooking()} 
+                  data-gtm-label="Book Form - Step 1"
+                  className="flex-1 bg-brand-gold text-brand-navy font-black text-[12px] uppercase tracking-widest py-3.5 rounded-xl hover:bg-[#c4941c] transition-all duration-300 cursor-pointer active:scale-95"
+                >
                   Book Form
                 </button>
-                <button onClick={() => {
-                  trackWhatsAppConversion();
-                  askExpert();
-                }} className="flex-1 border-2 border-brand-gold text-brand-navy font-black text-[12px] uppercase tracking-widest py-3 px-2 rounded-xl hover:bg-brand-gold transition-all duration-300 flex items-center justify-center gap-1 cursor-pointer">
+                <a 
+                  href="https://wa.me/971524524295?text=Hi%20Home%20Rescue!%20%F0%9F%91%8B%0A%0AI'm%20interested%20in%20your%20services.%20Please%20contact%20me%20to%20discuss%20my%20needs.%0A%0AThank%20you!"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackWhatsAppConversion('WhatsApp - Step 1')}
+                  data-gtm-label="WhatsApp - Step 1"
+                  className="flex-1 border-2 border-brand-gold text-brand-navy font-black text-[12px] uppercase tracking-widest py-3 px-2 rounded-xl hover:bg-brand-gold transition-all duration-300 flex items-center justify-center gap-1 cursor-pointer text-center"
+                >
                   WhatsApp
-                </button>
+                </a>
               </div>
             </div>
 
@@ -323,7 +333,11 @@ const Home = () => {
               <p className="text-sm text-gray-500 leading-relaxed font-bold opacity-70 mb-6 flex-1">
                 Our certified specialist arrives at your doorstep in 1–2 hours with all necessary tools.
               </p>
-              <button onClick={() => openBooking()} className="w-full bg-brand-gold text-brand-navy font-black text-[12px] uppercase tracking-widest py-3.5 rounded-xl hover:bg-[#c4941c] transition-all duration-300 mt-auto cursor-pointer active:scale-95">
+              <button 
+                onClick={() => openBooking()} 
+                data-gtm-label="Track / Request Call - Step 2"
+                className="w-full bg-brand-gold text-brand-navy font-black text-[12px] uppercase tracking-widest py-3.5 rounded-xl hover:bg-[#c4941c] transition-all duration-300 mt-auto cursor-pointer active:scale-95"
+              >
                 Track / Request Call
               </button>
             </div>
@@ -340,9 +354,14 @@ const Home = () => {
               <p className="text-sm text-gray-500 leading-relaxed font-bold opacity-70 mb-6 flex-1">
                 We complete the job efficiently, leave your space pristine, backed by our 100% guarantee.
               </p>
-              <button onClick={callNow} className="w-full bg-brand-gold text-brand-navy font-black text-[12px] uppercase tracking-widest py-3.5 rounded-xl hover:bg-[#c4941c] transition-all duration-300 mt-auto cursor-pointer active:scale-95">
+              <a 
+                href="tel:+971524524295"
+                onClick={() => trackPhoneConversion('Call Emergency 24/7 - Step 3')}
+                data-gtm-label="Call Emergency 24/7"
+                className="w-full bg-brand-gold text-brand-navy font-black text-[12px] uppercase tracking-widest py-3.5 rounded-xl hover:bg-[#c4941c] transition-all duration-300 mt-auto cursor-pointer active:scale-95 flex items-center justify-center text-center"
+              >
                 Call Emergency 24/7
-              </button>
+              </a>
             </div>
           </div>
         </div>
@@ -756,18 +775,24 @@ const Home = () => {
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4 md:gap-5 pt-2 md:pt-4 justify-center">
-               <button 
-                 onClick={callNow}
-                 className="bg-white text-brand-navy px-6 md:px-9 py-3 md:py-4 rounded-2xl font-black text-[11px] md:text-xs uppercase tracking-widest hover:bg-brand-navy hover:text-white transition-all shadow-xl flex items-center justify-center gap-3 active:scale-95"
+               <a 
+                 href="tel:+971524524295"
+                 onClick={() => trackPhoneConversion('Call Now - Bottom CTA')}
+                 data-gtm-label="Call Now - Bottom CTA"
+                 className="bg-white text-brand-navy px-6 md:px-9 py-3 md:py-4 rounded-2xl font-black text-[11px] md:text-xs uppercase tracking-widest hover:bg-brand-navy hover:text-white transition-all shadow-xl flex items-center justify-center gap-3 active:scale-95 cursor-pointer text-center"
                >
                  <Phone className="w-5 h-5" /> CALL NOW
-               </button>
-               <button 
-                 onClick={askExpert}
-                 className="bg-brand-navy text-white px-6 md:px-9 py-3 md:py-4 rounded-2xl font-black text-[11px] md:text-xs uppercase tracking-widest hover:bg-white hover:text-brand-navy transition-all shadow-xl flex items-center justify-center gap-3 active:scale-95"
+               </a>
+               <a 
+                 href="https://wa.me/971524524295?text=Hi%20Home%20Rescue!%20%F0%9F%91%8B%0A%0AI'm%20interested%20in%20your%20services.%20Please%20contact%20me%20to%20discuss%20my%20needs.%0A%0AThank%20you!"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 onClick={() => trackWhatsAppConversion('WhatsApp Us - Bottom CTA')}
+                 data-gtm-label="WhatsApp Us - Bottom CTA"
+                 className="bg-brand-navy text-white px-6 md:px-9 py-3 md:py-4 rounded-2xl font-black text-[11px] md:text-xs uppercase tracking-widest hover:bg-white hover:text-brand-navy transition-all shadow-xl flex items-center justify-center gap-3 active:scale-95 cursor-pointer text-center"
                >
                  <MessageCircle className="w-5 h-5 text-brand-gold" /> WHATSAPP US
-               </button>
+               </a>
             </div>
           </div>
         </div>

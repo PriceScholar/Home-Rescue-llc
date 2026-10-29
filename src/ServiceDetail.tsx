@@ -421,19 +421,21 @@ const ServiceDetail = () => {
               >
                 <button 
                   onClick={() => openBooking(data.title, isAcOrPlumbing(data.id, data.title))}
-                  className="flex-1 bg-brand-navy text-white px-10 py-5 rounded-full font-bold shadow-2xl hover:bg-brand-red transition-all flex items-center justify-center gap-3 uppercase text-xs tracking-widest"
+                  data-gtm-label={isAcOrPlumbing(data.id, data.title) ? "Book Now" : "Book Free Inspection"}
+                  className="flex-1 bg-brand-navy text-white px-10 py-5 rounded-full font-bold shadow-2xl hover:bg-brand-red transition-all flex items-center justify-center gap-3 uppercase text-xs tracking-widest cursor-pointer"
                 >
                    {isAcOrPlumbing(data.id, data.title) ? "Book Now" : "Book Free Inspection"}
                 </button>
-                <button 
-                  onClick={() => {
-                    trackWhatsAppConversion();
-                    askExpert(data.title);
-                  }}
-                  className="flex-1 bg-brand-green text-white px-10 py-5 rounded-full font-bold shadow-2xl hover:shadow-brand-green/20 transition-all flex items-center justify-center gap-3 uppercase text-xs tracking-widest"
+                <a 
+                  href={`https://wa.me/971524524295?text=${encodeURIComponent(`Hi Home Rescue! 👋\n\nI have a question about *${data.title}* service.\n\nPlease contact me with more details.\n\nThank you!`)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={() => trackWhatsAppConversion(`WhatsApp Expert - ${data.title}`)}
+                  data-gtm-label={`WhatsApp Expert - ${data.title}`}
+                  className="flex-1 bg-brand-green text-white px-10 py-5 rounded-full font-bold shadow-2xl hover:shadow-brand-green/20 transition-all flex items-center justify-center gap-3 uppercase text-xs tracking-widest cursor-pointer"
                 >
                   <i className="fa-brands fa-whatsapp text-2xl"></i> WhatsApp Expert
-                </button>
+                </a>
               </motion.div>
             </div>
           </div>
@@ -611,12 +613,14 @@ const ServiceDetail = () => {
             <h2 className="text-3xl md:text-7xl font-serif font-bold leading-tight">Elite Support for Premier Properties</h2>
             <p className="text-lg md:text-xl text-white/60">Professional technical rescue at your doorstep. We service all major areas in Dubai.</p>
             <div className="flex flex-wrap justify-center gap-4 md:gap-6 pt-4 md:pt-6">
-              <button 
-                onClick={callNow}
-                className="w-full sm:w-auto bg-brand-red text-white px-7 md:px-9 py-3 md:py-4 rounded-full font-bold text-sm md:text-lg hover:bg-white hover:text-brand-navy transition-all shadow-2xl flex items-center justify-center gap-4 uppercase tracking-widest"
+              <a 
+                href="tel:+971524524295"
+                onClick={() => trackPhoneConversion('Call Direct - Service Detail')}
+                data-gtm-label="Call Direct - Service Detail"
+                className="w-full sm:w-auto bg-brand-red text-white px-7 md:px-9 py-3 md:py-4 rounded-full font-bold text-sm md:text-lg hover:bg-white hover:text-brand-navy transition-all shadow-2xl flex items-center justify-center gap-4 uppercase tracking-widest cursor-pointer"
               >
                 <Phone className="w-5 h-5 md:w-6 md:h-6" /> Call Direct
-              </button>
+              </a>
             </div>
           </div>
         </div>

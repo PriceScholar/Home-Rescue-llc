@@ -5,10 +5,11 @@ import { trackWhatsAppConversion } from '../utils/trackConversion';
 const FloatingWhatsApp: React.FC = () => {
   return (
     <motion.a
-      href="https://wa.me/971524524295"
+      href="https://wa.me/971524524295?text=Hi%20Home%20Rescue!%20%F0%9F%91%8B%0A%0AI'm%20interested%20in%20your%20services.%20Please%20contact%20me%20to%20discuss%20my%20needs.%0A%0AThank%20you!"
       target="_blank"
       rel="noopener noreferrer"
-      onClick={trackWhatsAppConversion}
+      onClick={() => trackWhatsAppConversion('Floating WhatsApp')}
+      data-gtm-label="Floating WhatsApp"
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       whileHover={{ scale: 1.1 }}

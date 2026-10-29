@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { useBooking } from './BookingModal';
 import { Hotel, Umbrella, Car, Building, Building2, ShieldCheck, CalendarCheck, MapPin, ChevronRight, CircleCheck } from 'lucide-react';
+import { trackWhatsAppConversion } from '../utils/trackConversion';
 
 const ServiceLocations: React.FC = () => {
   const { openBooking, askExpert } = useBooking();
@@ -252,16 +253,21 @@ const ServiceLocations: React.FC = () => {
             <div className="flex flex-wrap justify-center gap-4 pt-4">
               <button 
                 onClick={() => openBooking()}
-                className="bg-brand-red text-white px-8 py-4 rounded-full font-bold hover:scale-105 transition-all shadow-xl shadow-brand-red/30 flex items-center gap-2"
+                data-gtm-label="Book Free Consultation - Locations"
+                className="bg-brand-red text-white px-8 py-4 rounded-full font-bold hover:scale-105 transition-all shadow-xl shadow-brand-red/30 flex items-center gap-2 cursor-pointer"
               >
                 <CalendarCheck className="w-5 h-5" /> Book Free Consultation
               </button>
-              <button 
-                onClick={() => askExpert()}
-                className="bg-brand-green text-white px-8 py-4 rounded-full font-bold hover:scale-105 transition-all shadow-xl shadow-brand-green/30 flex items-center gap-2"
+              <a 
+                href="https://wa.me/971524524295?text=Hi%20Home%20Rescue!%20%F0%9F%91%8B%0A%0AI'm%20interested%20in%20your%20services.%20Please%20contact%20me%20to%20discuss%20my%20needs.%0A%0AThank%20you!"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => trackWhatsAppConversion('Chat on WhatsApp - Locations')}
+                data-gtm-label="Chat on WhatsApp - Locations"
+                className="bg-brand-green text-white px-8 py-4 rounded-full font-bold hover:scale-105 transition-all shadow-xl shadow-brand-green/30 flex items-center gap-2 cursor-pointer"
               >
                 <i className="fa-brands fa-whatsapp text-xl"></i> Chat on WhatsApp
-              </button>
+              </a>
             </div>
           </div>
         </motion.div>
