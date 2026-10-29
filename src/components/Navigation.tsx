@@ -36,9 +36,9 @@ export const TopBar = () => {
           <Mail className="w-3 h-3 text-brand-gold shrink-0" /> info@homerescue.ae
         </a>
         <div className="hidden md:flex gap-4 border-l border-white/10 pl-6 h-full items-center">
-          <a href="#" className="hover:text-brand-gold transition-colors"><Facebook className="w-3 h-3" /></a>
-          <a href="#" className="hover:text-brand-gold transition-colors"><Instagram className="w-3 h-3" /></a>
-          <a href="#" className="hover:text-brand-gold transition-colors"><Linkedin className="w-3 h-3" /></a>
+          
+          
+          
         </div>
       </div>
     </div>
@@ -336,9 +336,9 @@ export const Footer = () => {
     location.pathname.includes('pipe');
 
   const socialLinks = [
-    { Icon: Facebook, href: '#' },
-    { Icon: Instagram, href: '#' },
-    { Icon: Linkedin, href: '#' },
+    
+    
+    
     { Icon: Mail, href: 'mailto:info@homerescue.ae' }
   ];
 
@@ -404,7 +404,7 @@ export const Footer = () => {
                 { name: 'Credentials', path: '/credentials' },
                 { name: 'Contact Us', path: '/contact' },
                 { name: 'Our Blog', path: '/blog' },
-                { name: 'Privacy Policy', path: '#' }
+                { name: 'Contact & Privacy Enquiries', path: '/contact' }
               ].map((link) => (
                 <li key={link.name} className="group">
                   <Link to={link.path} className="hover:text-white transition-all flex items-center gap-2.5 font-bold">
@@ -499,9 +499,9 @@ export const Footer = () => {
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6 text-[11px] font-bold text-gray-500 uppercase tracking-widest">
           <p>© {new Date().getFullYear()} Home Rescue Technical Services. All Rights Reserved.</p>
           <div className="flex gap-6">
-             <Link to="#" className="hover:text-white transition-colors">Terms</Link>
-             <Link to="#" className="hover:text-white transition-colors">Privacy</Link>
-             <Link to="#" className="hover:text-white transition-colors">Sitemap</Link>
+             
+             
+             <a href="/sitemap.xml" className="hover:text-white transition-colors">Sitemap</a>
           </div>
         </div>
       </div>
