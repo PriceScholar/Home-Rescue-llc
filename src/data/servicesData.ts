@@ -2024,8 +2024,483 @@ export const servicesData: Record<string, ServiceData> = {
       {question: 'Do you help with approvals and the NOC?', answer: 'Yes. We help prepare the documents and coordinate with the community or developer for the NOC. Structural or layout changes may also need authority approval, and we guide you through it.'}
     ],
     reviews: []
+  },
+
+  // --- WOODEN WORK (CUSTOM CARPENTRY & JOINERY) ---
+  'wooden-work': {
+    id: 'wooden-work',
+    title: 'Wooden Work & Custom Carpentry in Dubai',
+    tagline: 'BESPOKE CARPENTRY & JOINERY',
+    description: 'Thoughtfully crafted wooden solutions for kitchens, bedrooms, living spaces, and outdoor areas. Resqhome helps transform your ideas into practical, beautifully finished spaces with custom carpentry tailored to your home.',
+    image: '/images/wooden-work/wooden-work-overview.webp',
+    estimateDuration: 'Project-Based Schedule',
+    material: 'Selected Hardwoods, Marine Ply, Fine Veneers & Premium Fittings',
+    technician: 'Master Joiners & Carpenters',
+    warranty: 'Comprehensive Workmanship Guarantee',
+    subServices: [
+      { name: 'Kitchen Carpentry', icon: 'fa-solid fa-kitchen-set', desc: 'Practical kitchen cabinets, storage, and woodwork tailored to your space.' },
+      { name: 'Bespoke Kitchen', icon: 'fa-solid fa-compass-drafting', desc: 'Individually designed kitchens with coordinated cabinetry and refined finishes.' },
+      { name: 'Wardrobes & Cupboards', icon: 'fa-solid fa-door-closed', desc: 'Made-to-measure storage that keeps your home beautifully organised.' },
+      { name: 'Walk-in Closets', icon: 'fa-solid fa-shirt', desc: 'Personalised closet layouts with considered hanging, shelving, and drawer space.' },
+      { name: 'Dressing Rooms', icon: 'fa-solid fa-vest-patches', desc: 'Elegant dressing spaces with fitted storage, vanity areas, and thoughtful details.' },
+      { name: 'Custom Furniture', icon: 'fa-solid fa-couch', desc: 'Furniture designed around your dimensions, style, and everyday needs.' },
+      { name: 'Bedroom Furniture', icon: 'fa-solid fa-bed', desc: 'Coordinated beds, bedside units, dressers, and storage for restful spaces.' },
+      { name: 'TV Units & Entertainment Units', icon: 'fa-solid fa-tv', desc: 'Fitted media units with smart storage and neatly managed cables.' },
+      { name: 'Outdoor Furniture', icon: 'fa-solid fa-umbrella-beach', desc: 'Custom furniture for comfortable terraces, gardens, balconies, and patios.' }
+    ],
+    process: [
+      { step: '01', title: 'Consultation & Measurement', desc: 'We visit your property across Dubai to record accurate dimensions, inspect layout clearances, and understand your functional requirements.' },
+      { step: '02', title: 'Design & Material Selection', desc: 'Review customized joinery plans, choose timber types, finishes, and hardware fittings with fixed itemised project estimates.' },
+      { step: '03', title: 'Precision Workshop Crafting', desc: 'Our master carpenters fabricate your custom woodwork in our workshop using calibrated tooling and premium materials.' },
+      { step: '04', title: 'Fitting & Clean Handover', desc: 'Careful on-site installation, door alignment, hardware adjustment, and a clean handover with zero mess left behind.' }
+    ],
+    packages: [
+      {
+        name: 'Design Consultation & Measurement',
+        price: 'Free Initial Survey',
+        recommended: false,
+        features: ['In-person space measurement', 'Wood & finish recommendations', 'Layout assessment', 'No-obligation discussion']
+      },
+      {
+        name: 'Tailored Carpentry Project',
+        price: 'Custom Quotation',
+        recommended: true,
+        features: ['Made-to-measure joinery', '3D design & elevation review', 'Premium hardware & finishes', 'Professional installation & cleanup']
+      }
+    ],
+    faqs: [
+      { question: 'How do you provide quotations for custom wooden work in Dubai?', answer: 'Every quotation is tailored based on precise on-site measurements, choice of materials (such as solid hardwood, moisture-resistant MDF, or marine plywood), hardware specifications, and finish selection. We provide a clear, itemised proposal before commencing work.' },
+      { question: 'What wood materials are recommended for Dubai\'s climate?', answer: 'For indoor joinery, high-density moisture-resistant MDF, birch plywood, and natural wood veneers are ideal. For outdoor applications, we recommend weather-hardened hardwoods such as teak or iroko, finished with UV- and moisture-resistant coatings.' },
+      { question: 'How long does custom woodwork fabrication and installation take?', answer: 'Timelines depend on the scope and complexity of the project. Typically, individual units or wardrobe modifications take 1 to 2 weeks, while full bespoke kitchens or dressing rooms take 3 to 5 weeks from approved shop drawings to final installation.' },
+      { question: 'Can you match existing finishes and room colors?', answer: 'Yes. During our on-site consultation, we examine your existing room aesthetics, wall paints, and existing woodwork to provide matching stain samples, veneers, or RAL-coded lacquer finishes.' },
+      { question: 'Do you handle installation and cleanup in Dubai villas and apartments?', answer: 'Yes. Our carpentry team manages all on-site assembly, anchoring, hinge and drawer runner calibration, and protects your floors and furniture throughout installation, leaving your home spotless.' }
+    ],
+    reviews: []
+  },
+
+  'kitchen-carpentry': {
+    id: 'kitchen-carpentry',
+    title: 'Kitchen Carpentry',
+    tagline: 'PRACTICAL WOODWORK & STORAGE',
+    description: 'Practical kitchen cabinets, storage, and woodwork tailored to your space. Expert upgrades for cupboard doors, drawers, shelving, and pantry storage with precision clearances.',
+    image: '/images/wooden-work/kitchen-carpentry.webp',
+    estimateDuration: '3–7 Working Days',
+    material: 'Moisture-Resistant Marine Ply & German Soft-Close Hardware',
+    technician: 'Senior Kitchen Joiners',
+    warranty: 'Workmanship & Alignment Guarantee',
+    subServices: [
+      { name: 'Fitted Kitchen Cabinets', icon: 'fa-solid fa-kitchen-set', desc: 'Made-to-measure base and overhead wall units optimized for everyday kitchen ergonomics.' },
+      { name: 'Cupboard Door Upgrades', icon: 'fa-solid fa-door-closed', desc: 'Refacing or replacing tired cabinet doors with modern shaker, slab, or fluted wood profiles.' },
+      { name: 'Smooth Drawer Systems', icon: 'fa-solid fa-table-cells-large', desc: 'Heavy-duty soft-close drawer runners with customized internal cutlery and pot organizers.' },
+      { name: 'Pantry & Pull-Out Storage', icon: 'fa-solid fa-boxes-stacked', desc: 'Maximizing vertical kitchen space with tall pull-out larders and corner carousel mechanisms.' },
+      { name: 'Appliance Clearances & Housing', icon: 'fa-solid fa-ruler-combined', desc: 'Precise carpenter adjustments to safely accommodate ovens, microwaves, dishwashers, and hoods.' },
+      { name: 'Moisture Protection Sealing', icon: 'fa-solid fa-droplet', desc: 'Edge-banding and sealing joints around sink and dishwasher zones to prevent wood swelling.' }
+    ],
+    process: [
+      { step: '01', title: 'Measurement & Assessment', desc: 'Detailed survey of kitchen dimensions, plumbing locations, appliance clearances, and moisture zones.' },
+      { step: '02', title: 'Hardware & Material Selection', desc: 'Selection of moisture-resistant core boards, exterior veneers or laminates, and soft-close hinges.' },
+      { step: '03', title: 'Precision Workshop Fabrication', desc: 'Accurate CNC cutting, edge-banding, and pre-assembly in our workshop to minimize on-site disruption.' },
+      { step: '04', title: 'Fitting & Hardware Calibration', desc: 'Secure wall anchoring, door alignment, drawer leveling, and thorough clean-up.' }
+    ],
+    packages: [
+      {
+        name: 'Kitchen Survey & Measurement',
+        price: 'Free Initial Survey',
+        recommended: false,
+        features: ['Clearance & dimension check', 'Hardware & storage advice', 'Detailed layout estimate', 'No obligation']
+      },
+      {
+        name: 'Kitchen Carpentry Package',
+        price: 'Custom Quotation',
+        recommended: true,
+        features: ['Fitted cabinet woodwork', 'Soft-close hardware included', 'Moisture-resistant materials', 'Complete installation & cleanup']
+      }
+    ],
+    faqs: [
+      { question: 'Can you modify or add cabinets to my existing kitchen?', answer: 'Yes. We frequently build matching supplementary cabinets, add pull-out pantry towers, or replace damaged cabinet doors and drawer runners without needing to rebuild the entire kitchen.' },
+      { question: 'How do you protect kitchen carpentry against moisture and humidity in Dubai?', answer: 'We use premium moisture-resistant (MR) grade core boards and marine-grade plywood in wet zones, combined with heat-sealed 2mm PVC or ABS edge banding and waterproof PU adhesives.' },
+      { question: 'What hardware and hinges do you use for kitchen drawers and doors?', answer: 'We fit premium European soft-close hinges and concealed drawer runners (such as Blum, Hettich, or Hafele) rated for high daily use cycles.' },
+      { question: 'How long does typical kitchen carpentry take?', answer: 'Cabinet additions or door refacing usually take 3 to 7 working days. We manufacture the components off-site so on-site installation usually takes only 1 to 2 days.' }
+    ],
+    reviews: []
+  },
+
+  'bespoke-kitchen': {
+    id: 'bespoke-kitchen',
+    title: 'Bespoke Kitchen',
+    tagline: 'INDIVIDUALLY DESIGNED LUXURY KITCHENS',
+    description: 'Individually designed kitchens with coordinated cabinetry, architectural kitchen islands, and refined finishes tailored around your cooking habits and lifestyle.',
+    image: '/images/wooden-work/bespoke-kitchen.webp',
+    estimateDuration: '3–5 Weeks',
+    material: 'Architectural Hardwood Veneers, Quartz Core & Concealed Joinery',
+    technician: 'Bespoke Kitchen Project Team',
+    warranty: 'Comprehensive Joinery Warranty',
+    subServices: [
+      { name: 'Coordinated Cabinet Architecture', icon: 'fa-solid fa-kitchen-set', desc: 'Complete floor-to-ceiling cabinetry designed as a unified aesthetic statement.' },
+      { name: 'Architectural Kitchen Islands', icon: 'fa-solid fa-table', desc: 'Freestanding or integrated central islands with breakfast bar seating and hidden storage.' },
+      { name: 'Integrated Concealed Pantries', icon: 'fa-solid fa-door-closed', desc: 'Secret pantry doors seamlessly blended into tall cabinetry runs for a clutter-free look.' },
+      { name: 'Fluted & Handleless Profiles', icon: 'fa-solid fa-sliders', desc: 'Modern J-pull, push-to-open, or bespoke brass shadow gaps for ultra-clean lines.' },
+      { name: 'Appliance Integration Housing', icon: 'fa-solid fa-plug', desc: 'Custom-built housing for column fridges, double ovens, wine coolers, and induction setups.' },
+      { name: 'Custom Lighting Channelling', icon: 'fa-solid fa-lightbulb', desc: 'Concealed LED routing under overhead units and inside illuminated glass-front display cabinets.' }
+    ],
+    process: [
+      { step: '01', title: 'Lifestyle & Space Consultation', desc: 'We evaluate your kitchen layout, cooking patterns, storage requirements, and architectural vision.' },
+      { step: '02', title: '3D Kitchen Concept & Shop Drawings', desc: 'Full elevation plans detailing cabinetry runs, worktop coordination, and appliance housing.' },
+      { step: '03', title: 'Bespoke Manufacturing', desc: 'Precision crafting of bespoke carcasses, fronts, and internal organizers using premium materials.' },
+      { step: '04', title: 'Installation & Trade Coordination', desc: 'Master carpentry fitting coordinated with your worktop and appliance specialists for a seamless finish.' }
+    ],
+    packages: [
+      {
+        name: 'Design Consultation & BOQ',
+        price: 'Free Initial Survey',
+        recommended: false,
+        features: ['Space walkthrough & ergonomics review', 'Material & finish curation', 'Preliminary layout design', 'No obligation']
+      },
+      {
+        name: 'Bespoke Kitchen Joinery',
+        price: 'Custom Quotation',
+        recommended: true,
+        features: ['Complete bespoke cabinetry', 'Coordinated island & tall units', 'Concealed LED channels & joinery', 'Full installation & trade coordination']
+      }
+    ],
+    faqs: [
+      { question: 'How is a bespoke kitchen different from standard kitchen carpentry?', answer: 'A bespoke kitchen is engineered from scratch around your specific room dimensions, workflow, and aesthetic vision—with custom carcass depths, continuous grain matching, and bespoke internal fittings—rather than standard modular units or minor repairs.' },
+      { question: 'Do you supply worktops, plumbing, and appliances?', answer: 'Our core expertise is bespoke cabinetry, architectural joinery, and installation. We coordinate closely with countertop fabricators (quartz, granite, porcelain) and licensed plumbers/electricians, which are quoted according to your agreed project scope.' },
+      { question: 'Can you design kitchens for open-plan Dubai villas?', answer: 'Yes. We specialize in luxury open-plan kitchens for villas in Dubai Hills, Palm Jumeirah, Arabian Ranches, and Emirates Hills, creating seamless aesthetic transitions between the kitchen and living spaces.' },
+      { question: 'What finishes are most popular for bespoke kitchens in Dubai?', answer: 'Natural oak and walnut veneers, ultra-matte anti-fingerprint lacquers, fluted wood accents, and warm bronze metallic trim are currently very popular.' }
+    ],
+    reviews: []
+  },
+
+  'wardrobes-cupboards': {
+    id: 'wardrobes-cupboards',
+    title: 'Wardrobes & Cupboards',
+    tagline: 'MADE-TO-MEASURE STORAGE SOLUTIONS',
+    description: 'Made-to-measure storage that keeps your home beautifully organised. Custom fitted wardrobes, freestanding cupboards, and smart internal layouts tailored to your exact room dimensions.',
+    image: '/images/wooden-work/wardrobes-cupboards.webp',
+    estimateDuration: '1–3 Weeks',
+    material: 'High-Density Melamine Board, Solid Timber Accents & Aluminum Profiles',
+    technician: 'Wardrobe Joinery Specialists',
+    warranty: 'Hardware & Structure Warranty',
+    subServices: [
+      { name: 'Floor-to-Ceiling Wardrobes', icon: 'fa-solid fa-door-closed', desc: 'Maximizing vertical room height with zero wasted dead space above the wardrobe.' },
+      { name: 'Hinged & Sliding Door Systems', icon: 'fa-solid fa-arrows-left-right', desc: 'Smooth glide sliding mechanisms or 110-degree soft-closing hinged doors.' },
+      { name: 'Specialized Hanging Zones', icon: 'fa-solid fa-shirt', desc: 'Double-height hanging for shirts, long-drop hanging for dresses, and pull-down wardrobe rails.' },
+      { name: 'Fitted Drawer Stacks', icon: 'fa-solid fa-table-cells-large', desc: 'Integrated velvet-lined accessory drawers, jewelry trays, and soft-close storage.' },
+      { name: 'Custom Shoe & Bag Shelving', icon: 'fa-solid fa-boxes-stacked', desc: 'Angled shoe racks with front lips and dedicated handbag cubbies with ambient backlighting.' },
+      { name: 'Freestanding Coordinated Cupboards', icon: 'fa-solid fa-couch', desc: 'Standalone storage units styled to match your existing bedroom joinery.' }
+    ],
+    process: [
+      { step: '01', title: 'Wardrobe Inventory & Survey', desc: 'We measure your room dimensions, ceiling heights, door clearances, and discuss your storage inventory.' },
+      { step: '02', title: 'Internal Compartment Planning', desc: 'Customizing hanging, shelf, and drawer ratios to suit your personal clothing collection.' },
+      { step: '03', title: 'Precision Joinery Manufacturing', desc: 'Building rigid cabinet carcasses and durable door panels with heavy-duty aluminum tracks.' },
+      { step: '04', title: 'Installation & Alignment', desc: 'Laser-leveled assembly, ceiling scribing, door plumb adjustment, and soft-close calibration.' }
+    ],
+    packages: [
+      {
+        name: 'Storage Assessment & Survey',
+        price: 'Free Initial Survey',
+        recommended: false,
+        features: ['Room dimension & clearance check', 'Internal layout recommendations', 'Material & finish sample review', 'No obligation']
+      },
+      {
+        name: 'Fitted Wardrobe Project',
+        price: 'Custom Quotation',
+        recommended: true,
+        features: ['Made-to-measure wardrobe structure', 'Hinged or sliding doors', 'Custom internal drawers & rails', 'Complete fitting & alignment']
+      }
+    ],
+    faqs: [
+      { question: 'Which is better for Dubai bedrooms: sliding or hinged wardrobe doors?', answer: 'Sliding doors are ideal for tighter bedrooms because they require zero swing clearance in front of the wardrobe. Hinged doors offer the advantage of viewing your entire wardrobe contents simultaneously when opened.' },
+      { question: 'Can wardrobes be built flush to irregular ceilings or skirting boards?', answer: 'Yes. We hand-scribe filler strips and cornice moldings on site so your fitted wardrobe looks seamlessly integrated into the room architecture.' },
+      { question: 'What materials do you use for wardrobe carcasses?', answer: 'We use durable, anti-bacterial melamine-faced chipboard (MFC) or high-density fiberboard with tough PVC edging for internal durability, finished with lacquer, veneer, or textured panels on exterior doors.' },
+      { question: 'How much clothing can a custom wardrobe accommodate?', answer: 'Because every unit is made to measure, we typically increase practical storage capacity by 30% to 50% compared to off-the-shelf retail furniture.' }
+    ],
+    reviews: []
+  },
+
+  'walk-in-closets': {
+    id: 'walk-in-closets',
+    title: 'Walk-in Closets',
+    tagline: 'PERSONALISED LUXURY CLOSETS',
+    description: 'Personalised closet layouts with considered hanging, shelving, and drawer space. Transform dedicated dressing areas into master suite sanctuaries with bespoke joinery and integrated displays.',
+    image: '/images/wooden-work/walk-in-closets.webp',
+    estimateDuration: '2–4 Weeks',
+    material: 'Architectural Veneer, Glass Doors & LED Integrated Profiles',
+    technician: 'Master Closet Craftsmen',
+    warranty: 'Structure & Finish Warranty',
+    subServices: [
+      { name: 'Island & Central Dressing Display', icon: 'fa-solid fa-gem', desc: 'Central closet islands with glass-top watch display drawers and accessory storage.' },
+      { name: 'Illuminated Open Bay Storage', icon: 'fa-solid fa-lightbulb', desc: 'Deep shelf bays with integrated recessed warm LED strip lighting.' },
+      { name: 'Glass-Fronted Display Cabinets', icon: 'fa-solid fa-border-none', desc: 'Smoked or reeded glass aluminum-frame doors protecting luxury garments from dust.' },
+      { name: 'Dedicated Shoe Galleries', icon: 'fa-solid fa-shoe-prints', desc: 'Backlit display shelves designed for footwear, sneakers, and designer heels.' },
+      { name: 'Bespoke Drawer Organizers', icon: 'fa-solid fa-table-cells-large', desc: 'Handcrafted wood dividers for watches, jewelry, sunglasses, ties, and cufflinks.' },
+      { name: 'Full-Length Dressing Mirrors', icon: 'fa-solid fa-vest-patches', desc: 'Integrated floor-to-ceiling mirror panels with edge-lit ambient illumination.' }
+    ],
+    process: [
+      { step: '01', title: 'Architectural Walkthrough', desc: 'Assessing room circulation, natural light, doorway swings, and customer wardrobe volume.' },
+      { step: '02', title: 'Modular Zone Planning', desc: 'Balancing his-and-hers sections, display zones, and concealed storage.' },
+      { step: '03', title: 'Workshop Pre-Fabrication', desc: 'Crafting custom cabinetry, routing concealed wiring channels, and fitting glass panels.' },
+      { step: '04', title: 'Master Installation', desc: 'Careful assembly, leveling, lighting hookup, hardware adjustment, and final detailing.' }
+    ],
+    packages: [
+      {
+        name: 'Walk-in Closet Consultation',
+        price: 'Free Initial Survey',
+        recommended: false,
+        features: ['Room walkthrough & circulation plan', 'Storage volume analysis', 'Lighting & finish recommendations', 'No obligation']
+      },
+      {
+        name: 'Complete Walk-in Closet',
+        price: 'Custom Quotation',
+        recommended: true,
+        features: ['Floor-to-ceiling joinery', 'Integrated LED channels & shelving', 'Central island or vanity option', 'Master installation & detailing']
+      }
+    ],
+    faqs: [
+      { question: 'How much space is needed for a functional walk-in closet?', answer: 'A comfortable walk-in closet needs at least 1.8 to 2.4 meters of width to allow 60cm cabinet depth along the walls and at least 90cm of central walkway clearance.' },
+      { question: 'Can you incorporate integrated LED lighting?', answer: 'Yes. We route hidden wiring channels and aluminum profile diffusers behind shelves and hanging rods, which can be connected to motion sensors or door switches subject to agreed scope.' },
+      { question: 'Do you offer glass-fronted closet doors?', answer: 'Yes. We fabricate slim aluminum-framed doors with clear, bronze, smoked, or fluted glass with dust-seal brush strips.' },
+      { question: 'Can you design a walk-in closet for an existing bedroom alcove?', answer: 'Absolutely. We often divide master bedroom corners or unutilized spaces with custom partitions and full-height joinery.' }
+    ],
+    reviews: []
+  },
+
+  'dressing-rooms': {
+    id: 'dressing-rooms',
+    title: 'Dressing Rooms',
+    tagline: 'ELEGANT FITTED DRESSING SUITES',
+    description: 'Elegant dressing spaces with fitted storage, vanity areas, and thoughtful details. A seamless blend of bespoke cabinetry, vanity tables, illuminated mirrors, and coordinated seating.',
+    image: '/images/wooden-work/dressing-rooms.webp',
+    estimateDuration: '3–5 Weeks',
+    material: 'Hardwood, Velvet Lining, Fluted Panels & Architectural Hardware',
+    technician: 'Luxury Interior Joiners',
+    warranty: 'Full Joinery Warranty',
+    subServices: [
+      { name: 'Bespoke Vanity Desks', icon: 'fa-solid fa-couch', desc: 'Custom vanity tables with cable-managed hair styling drawers, marble tops, and velvet drawers.' },
+      { name: 'Illuminated Dressing Mirrors', icon: 'fa-solid fa-sun', desc: 'Full-length and desktop vanity mirrors with dimmable high-CRI cosmetic lighting.' },
+      { name: 'Integrated Ottoman & Seating Storage', icon: 'fa-solid fa-chair', desc: 'Coordinated wooden banquettes and upholstered vanity seating with hidden storage.' },
+      { name: 'Concealed Jewelry & Safe Units', icon: 'fa-solid fa-lock', desc: 'Hidden compartments and velvet-lined lockable jewelry drawers for valuables.' },
+      { name: 'Coordinated Wardrobe Enclosures', icon: 'fa-solid fa-door-closed', desc: 'Seamlessly connected wardrobe banks matching the vanity wood grain and finish.' },
+      { name: 'Perfume & Beauty Display Nooks', icon: 'fa-solid fa-spray-can', desc: 'Recessed open niches with mirror backs and glass shelving for beauty collections.' }
+    ],
+    process: [
+      { step: '01', title: 'Room Design Consultation', desc: 'We study your dressing room space, vanity requirements, mirror placement, and electrical needs.' },
+      { step: '02', title: 'Detailed Joinery Elevations', desc: 'Full architectural drawings combining vanity ergonomics, storage bays, and seating.' },
+      { step: '03', title: 'Precision Crafting', desc: 'Building vanity units, routing cable conduits, and crafting matching decorative trim.' },
+      { step: '04', title: 'Fitting & Detailing', desc: 'Installation, mirror mounting, handle fixing, and comprehensive inspection.' }
+    ],
+    packages: [
+      {
+        name: 'Dressing Room Survey',
+        price: 'Free Initial Survey',
+        recommended: false,
+        features: ['In-person room measurement', 'Vanity & storage planning', 'Material & mirror consultations', 'No obligation']
+      },
+      {
+        name: 'Bespoke Dressing Suite',
+        price: 'Custom Quotation',
+        recommended: true,
+        features: ['Fitted wardrobes & vanity table', 'Mirror & lighting coordination', 'Custom velvet-lined drawers', 'Complete installation & finish']
+      }
+    ],
+    faqs: [
+      { question: 'How does a dressing room differ from a walk-in closet?', answer: 'A walk-in closet prioritizes maximum clothing storage volume, whereas a bespoke dressing room is a complete personal retreat integrating vanity tables, makeup mirrors, seating, specialized accessory drawers, and ambient styling.' },
+      { question: 'Do you supply the mirrors and electrical work for the vanity?', answer: 'We build and fit the custom vanity joinery and mirror frames. Mirror glass, integrated lighting, and socket wiring are coordinated and included according to the agreed project scope.' },
+      { question: 'Can the vanity have power outlets inside the drawers?', answer: 'Yes. We frequently build internal power strips into deep pull-out drawers for hairdryers, curling wands, and shavers to keep countertops clean.' },
+      { question: 'What finishes work best in luxury Dubai dressing rooms?', answer: 'Warm taupe or cashmere lacquer, natural white oak, brushed champagne brass accents, and fluted paneling are client favorites in Dubai.' }
+    ],
+    reviews: []
+  },
+
+  'custom-furniture': {
+    id: 'custom-furniture',
+    title: 'Custom Furniture',
+    tagline: 'COMMISSIONED WOODEN FURNITURE',
+    description: 'Furniture designed around your dimensions, style, and everyday needs. Handcrafted dining tables, desks, consoles, credenzas, and bespoke display units built by master carpenters.',
+    image: '/images/wooden-work/custom-furniture.webp',
+    estimateDuration: '2–3 Weeks',
+    material: 'Solid Oak, Walnut, Ash, Teak & Metal Hardware Accents',
+    technician: 'Master Furniture Artisans',
+    warranty: 'Craftsmanship & Structural Guarantee',
+    subServices: [
+      { name: 'Dining & Conference Tables', icon: 'fa-solid fa-table', desc: 'Solid timber tables built with live-edge or clean architectural bevels to your exact seating capacity.' },
+      { name: 'Executive Desks & Workspaces', icon: 'fa-solid fa-briefcase', desc: 'Ergonomic home office desks with concealed cable trays, pencil drawers, and matching credenzas.' },
+      { name: 'Entryway Consoles & Credenzas', icon: 'fa-solid fa-border-all', desc: 'Slimline statement consoles featuring fluted wood, book-matched veneers, and brass handles.' },
+      { name: 'Custom Bookshelves & Libraries', icon: 'fa-solid fa-book', desc: 'Geometric or floor-to-ceiling wooden libraries built to house book collections and sculptures.' },
+      { name: 'Coffee Tables & Side Units', icon: 'fa-solid fa-couch', desc: 'Coordinated living room tables crafted from solid wood, marble inserts, or fluted pedestals.' },
+      { name: 'Bespoke Storage Benches', icon: 'fa-solid fa-chair', desc: 'Hallway and window storage benches with lift-up seating and soft-close stays.' }
+    ],
+    process: [
+      { step: '01', title: 'Design Brief & Dimensions', desc: 'We take exact space measurements and discuss your aesthetic inspirations, wood species, and use cases.' },
+      { step: '02', title: 'Material & Finish Samples', desc: 'You approve physical timber samples, stain options (matte, satin, natural oil), and edge details.' },
+      { step: '03', title: 'Handcrafted Carpentry', desc: 'Traditional joinery techniques (mortise-and-tenon, dowels, precision miter cuts) executed with care.' },
+      { step: '04', title: 'Delivery & Placement', desc: 'White-glove delivery, assembly, floor-protection padding, and final polish in your home.' }
+    ],
+    packages: [
+      {
+        name: 'Design Consultation & Sampling',
+        price: 'Free Initial Survey',
+        recommended: false,
+        features: ['Dimension & proportion review', 'Wood species & finish samples', 'Concept sketch & quotation', 'No obligation']
+      },
+      {
+        name: 'Commissioned Furniture Piece',
+        price: 'Custom Quotation',
+        recommended: true,
+        features: ['Handcrafted solid timber or veneer', 'Custom dimensions & ergonomics', 'Premium protective hard-wax/lacquer', 'White-glove delivery & placement']
+      }
+    ],
+    faqs: [
+      { question: 'What wood species can I choose for custom furniture?', answer: 'We work with European Oak, American Walnut, Ash, Teak, and premium engineered cores with architectural grade veneers depending on your style and budget.' },
+      { question: 'How do you protect solid wood furniture from Dubai\'s AC and humidity changes?', answer: 'We kiln-dry timber to 8–10% moisture content and use specialized expansion allowances in joinery, finished with high-performance polyurethane or natural hard-wax oils.' },
+      { question: 'Can you build furniture to match a photo or sketch I have?', answer: 'Yes. We frequently turn client sketches, architect drawings, or reference photos into engineered shop drawings and finished furniture.' },
+      { question: 'What is the typical lead time for a custom dining table or desk?', answer: 'Typically 2 to 3 weeks from approved timber selection and dimensions to final delivery and installation.' }
+    ],
+    reviews: []
+  },
+
+  'bedroom-furniture': {
+    id: 'bedroom-furniture',
+    title: 'Bedroom Furniture',
+    tagline: 'COORDINATED RESTFUL RETREATS',
+    description: 'Coordinated beds, bedside units, dressers, and storage for restful spaces. Made-to-measure timber bed frames, floating nightstands, and matching chests of drawers.',
+    image: '/images/wooden-work/bedroom-furniture.webp',
+    estimateDuration: '2–4 Weeks',
+    material: 'Selected Solid Woods, Veneered Panels & Premium Soft-Close Runners',
+    technician: 'Bedroom Joinery Craftsmen',
+    warranty: 'Structure & Finish Warranty',
+    subServices: [
+      { name: 'Bespoke Platform Beds & Frames', icon: 'fa-solid fa-bed', desc: 'Custom wooden bed bases built for King, Super King, or custom mattress sizes with heavy-duty internal slats.' },
+      { name: 'Integrated Headboard Walls', icon: 'fa-solid fa-border-all', desc: 'Full-width timber headboards with fluted slats, integrated reading light channels, and switch cutouts.' },
+      { name: 'Floating Bedside Tables', icon: 'fa-solid fa-table', desc: 'Wall-hung nightstands with concealed wireless charger integration and soft-close drawers.' },
+      { name: 'Chests of Drawers & Dressers', icon: 'fa-solid fa-boxes-stacked', desc: 'Multi-drawer storage units proportioned to your wall space with smooth Blum runners.' },
+      { name: 'Under-Bed Storage Solutions', icon: 'fa-solid fa-box-open', desc: 'Hydraulic lift-up gas struts or deep wooden rolling drawers maximizing dead space under the bed.' },
+      { name: 'Coordinated Bedroom Mirrors', icon: 'fa-solid fa-circle', desc: 'Matching solid wood framed mirrors and vanity shelves designed as a harmonious set.' }
+    ],
+    process: [
+      { step: '01', title: 'Room Measurement & Planning', desc: 'Measuring room proportions, mattress dimensions, power socket locations, and walking clearances.' },
+      { step: '02', title: 'Coordinated Suite Design', desc: 'Presenting matching bed frame, headboard, and bedside table elevations with finish options.' },
+      { step: '03', title: 'Precision Fabrication', desc: 'Joinery crafting in our workshop with reinforced corner bracing and hand-finished timber edges.' },
+      { step: '04', title: 'Assembly & Room Placement', desc: 'Rigid on-site bed assembly, wall mounting of headboard and nightstands, and complete cleanup.' }
+    ],
+    packages: [
+      {
+        name: 'Bedroom Survey & Sizing',
+        price: 'Free Initial Survey',
+        recommended: false,
+        features: ['Room dimension check', 'Mattress & socket clearance review', 'Timber finish sampling', 'No obligation']
+      },
+      {
+        name: 'Custom Bedroom Suite',
+        price: 'Custom Quotation',
+        recommended: true,
+        features: ['Made-to-measure bed frame & headboard', 'Matching bedside units / dresser', 'Heavy-duty structural joinery', 'Full delivery, assembly & cleanup']
+      }
+    ],
+    faqs: [
+      { question: 'Can you build bed frames for non-standard or oversized mattresses?', answer: 'Yes. We custom-build platform beds for UAE standard sizes (King, Queen, Super King) as well as custom European and American dimensions.' },
+      { question: 'Can nightstands be mounted floating on the wall?', answer: 'Yes. Floating nightstands make vacuuming easy and create a sleek modern aesthetic. We securely anchor them to solid masonry or reinforced drywall.' },
+      { question: 'Can headboards incorporate reading lights and electrical switches?', answer: 'Yes. We pre-route electrical channels and cutouts in the wood panels so your electrician can connect switches and sconces seamlessly.' },
+      { question: 'What finishes are most durable for bedroom furniture?', answer: 'We recommend matte polyurethane or UV-cured acrylic lacquers that resist cup rings, scratches, and everyday handling while accentuating natural wood grains.' }
+    ],
+    reviews: []
+  },
+
+  'tv-entertainment-units': {
+    id: 'tv-entertainment-units',
+    title: 'TV Units & Entertainment Units',
+    tagline: 'FITTED MEDIA WALLS & STORAGE',
+    description: 'Fitted media units with smart storage and neatly managed cables. Floating credenzas, slatted wood feature walls, and custom entertainment joinery designed for modern TVs and home theater equipment.',
+    image: '/images/wooden-work/tv-entertainment-units.webp',
+    estimateDuration: '1–3 Weeks',
+    material: 'Moisture-Resistant MDF, Fluted Wood Slats, Quartz Tops & Metal Inlays',
+    technician: 'Media Joinery Specialists',
+    warranty: 'Mounting & Workmanship Warranty',
+    subServices: [
+      { name: 'Full-Height Media Feature Walls', icon: 'fa-solid fa-tv', desc: 'Floor-to-ceiling slatted wood or paneling creating an impressive focal point for your living room.' },
+      { name: 'Floating Lowline Credenzas', icon: 'fa-solid fa-bars', desc: 'Sleek wall-hung TV cabinets with push-to-open flap doors and soundbar shelves.' },
+      { name: 'Concealed Cable Routing', icon: 'fa-solid fa-network-wired', desc: 'Internal brush plates, chase channels, and magnetic access panels to hide all power and HDMI cords.' },
+      { name: 'Ventilated Device Cabinets', icon: 'fa-solid fa-wind', desc: 'Perforated or slatted doors allowing IR remote signals and cool airflow for gaming consoles and receivers.' },
+      { name: 'Integrated LED Backlighting', icon: 'fa-solid fa-lightbulb', desc: 'Subtle ambient perimeter lighting around the TV screen and floating credenza base.' },
+      { name: 'Display Shelving & Niches', icon: 'fa-solid fa-cubes', desc: 'Open wooden display niches with glass shelves and downlights for decor and books.' }
+    ],
+    process: [
+      { step: '01', title: 'Wall & Device Survey', desc: 'Inspecting wall construction (concrete vs gypsum), TV size, gaming consoles, and power point locations.' },
+      { step: '02', title: 'Shop Drawings & Cable Plan', desc: 'Detailed drawings showing mounting heights, cable conduits, ventilation slots, and cabinet divisions.' },
+      { step: '03', title: 'Workshop Fabrication', desc: 'Precision cutting, fluting, lacquering, and pre-wiring preparation for smooth installation.' },
+      { step: '04', title: 'Installation & Wall Anchoring', desc: 'Heavy-duty structural mounting, panel leveling, TV bracket alignment, and cable concealment.' }
+    ],
+    packages: [
+      {
+        name: 'Media Wall Consultation',
+        price: 'Free Initial Survey',
+        recommended: false,
+        features: ['Wall condition & wiring check', 'TV & console dimension survey', 'Finish & slat design samples', 'No obligation']
+      },
+      {
+        name: 'Custom Media Unit Package',
+        price: 'Custom Quotation',
+        recommended: true,
+        features: ['Fitted media wall or floating credenza', 'Full cable management & ventilation', 'Integrated LED lighting channels', 'Heavy-duty wall mounting & setup']
+      }
+    ],
+    faqs: [
+      { question: 'Can a heavy TV and unit be safely mounted on a drywall partition in Dubai?', answer: 'Yes. We locate internal metal studs and reinforce the drywall with internal marine plywood backing plates to safely carry the load of large 75-inch to 85-inch TVs and heavy cabinetry.' },
+      { question: 'How do you conceal unsightly cords and cables?', answer: 'We build concealed cable chases inside the wooden panels with brush faceplates and magnetic access doors so cords run invisibly between the TV and lowline cabinet.' },
+      { question: 'Will my PlayStation, Xbox, and receiver overheat inside closed cabinets?', answer: 'We design dedicated ventilation cutouts in the cabinet base and rear, and use slatted, acoustic fabric, or perforated doors that let heat escape and allow remote signals to pass through.' },
+      { question: 'Can you integrate electric fireplaces or soundbars?', answer: 'Yes. We can incorporate certified electric fireplace inserts and tailored recessed soundbar niches directly into the joinery.' }
+    ],
+    reviews: []
+  },
+
+  'outdoor-furniture': {
+    id: 'outdoor-furniture',
+    title: 'Outdoor Furniture',
+    tagline: 'WEATHER-RESISTANT PATIO & GARDEN WOODWORK',
+    description: 'Custom furniture for comfortable terraces, gardens, balconies, and patios. Teak dining sets, pergolas benches, lounge seating, and planters crafted to withstand Dubai\'s sun and humidity.',
+    image: '/images/wooden-work/outdoor-furniture.webp',
+    estimateDuration: '2–4 Weeks',
+    material: 'Burma / Grade-A Teak, Iroko Hardwood, Marine Stainless Hardware',
+    technician: 'Outdoor Timber Specialists',
+    warranty: 'Outdoor Craftsmanship Warranty',
+    subServices: [
+      { name: 'Teak Dining Tables & Benches', icon: 'fa-solid fa-table', desc: 'Solid outdoor dining tables built with expansion slats to breathe under extreme summer temperatures.' },
+      { name: 'Custom Terrace Lounge Seating', icon: 'fa-solid fa-couch', desc: 'L-shaped and sectional modular wooden sofa bases paired with water-resistant cushions.' },
+      { name: 'Sun Loungers & Daybeds', icon: 'fa-solid fa-umbrella-beach', desc: 'Adjustable wooden poolside loungers with integrated wheels and weather-durable hardware.' },
+      { name: 'Balcony Coffee Sets & Consoles', icon: 'fa-solid fa-chair', desc: 'Compact wooden seating and bar tables designed specifically for apartment balconies.' },
+      { name: 'Wooden Planter Boxes & Trellises', icon: 'fa-solid fa-tree', desc: 'Custom-sized planter troughs lined with drainage membranes for terrace greenery.' },
+      { name: 'Outdoor Bar Counters & Stools', icon: 'fa-solid fa-wine-glass', desc: 'Weather-proof wooden bar counters and stools for outdoor BBQ and entertaining areas.' }
+    ],
+    process: [
+      { step: '01', title: 'Outdoor Space Assessment', desc: 'Inspecting sun exposure, humidity levels, irrigation proximity, and available patio space.' },
+      { step: '02', title: 'Timber Selection & Design', desc: 'Choosing high-oil hardwoods like Teak or Iroko and specifying slatted drainage details.' },
+      { step: '03', title: 'Marine-Grade Fabrication', desc: 'Assembling with Grade 316 stainless steel fasteners, waterproof D4 glue, and UV protective sealers.' },
+      { step: '04', title: 'Delivery & Outdoor Maintenance Guide', desc: 'Careful patio placement, leveling, and instructions for seasonal oiling and upkeep.' }
+    ],
+    packages: [
+      {
+        name: 'Patio & Garden Survey',
+        price: 'Free Initial Survey',
+        recommended: false,
+        features: ['Sun & exposure assessment', 'Patio dimension check', 'Teak & hardwood samples', 'No obligation']
+      },
+      {
+        name: 'Custom Outdoor Joinery',
+        price: 'Custom Quotation',
+        recommended: true,
+        features: ['Grade-A Teak or Iroko hardwood', 'Marine-grade 316 stainless hardware', 'UV-resistant protective finish', 'Patio delivery & placement']
+      }
+    ],
+    faqs: [
+      { question: 'How do your wooden outdoor pieces survive Dubai\'s extreme heat and humidity?', answer: 'We exclusively utilize dense, naturally oily hardwoods like Teak and Iroko, assembled with expansion gaps, marine-grade stainless steel fixings, and breathable UV-protective oils that allow timber to expand and contract without warping.' },
+      { question: 'Is any outdoor wood completely maintenance-free in Dubai?', answer: 'No wood is completely maintenance-free under Dubai\'s harsh sun and dust. High-grade teak naturally silvers over time, but an annual wash and light coat of teak oil will preserve its rich golden-brown hue for decades.' },
+      { question: 'Do you supply cushions with outdoor lounge seating?', answer: 'We build the custom wooden furniture bases and frames. We can also coordinate weather-resistant Sunbrella fabric outdoor cushions upon request during your project consultation.' },
+      { question: 'Can you build custom furniture to fit specific balcony dimensions?', answer: 'Yes. We frequently build space-efficient balcony benches, fold-down tables, and planters customized to exact apartment balcony widths across Downtown, Marina, and JBR.' }
+    ],
+    reviews: []
   }
-}
+};
 
 export const serviceCategories = [
   {
@@ -2223,6 +2698,27 @@ export const serviceCategories = [
       {name: 'Washroom Remodeling', id: 'washroom-remodeling', icon: 'fa-solid fa-bath', desc: 'Refresh or full washroom rebuild.'},
       {name: 'Kitchen Redesign', id: 'kitchen-redesign', icon: 'fa-solid fa-kitchen-set', desc: 'New cabinets, countertops & layout.'},
       {name: 'Villa Renovation', id: 'villa-renovation', icon: 'fa-solid fa-house-chimney', desc: 'Complete villa makeover.'}
+    ]
+  },
+  {
+    name: 'Wooden Work',
+    id: 'wooden-work',
+    icon: 'fa-solid fa-hammer',
+    color: '#08264B',
+    activeColor: '#EEF6FF',
+    description: 'Thoughtfully crafted wooden solutions for kitchens, bedrooms, living spaces, and outdoor areas. Resqhome helps transform your ideas into practical, beautifully finished spaces with custom carpentry tailored to your home.',
+    image: '/images/wooden-work/wooden-work-overview.webp',
+    promoTitle: 'Bespoke Carpentry & Joinery In Dubai',
+    subs: [
+      {name: 'Kitchen Carpentry', id: 'kitchen-carpentry', icon: 'fa-solid fa-kitchen-set', desc: 'Practical kitchen cabinets, storage, and woodwork tailored to your space.'},
+      {name: 'Bespoke Kitchen', id: 'bespoke-kitchen', icon: 'fa-solid fa-compass-drafting', desc: 'Individually designed kitchens with coordinated cabinetry and refined finishes.'},
+      {name: 'Wardrobes & Cupboards', id: 'wardrobes-cupboards', icon: 'fa-solid fa-door-closed', desc: 'Made-to-measure storage that keeps your home beautifully organised.'},
+      {name: 'Walk-in Closets', id: 'walk-in-closets', icon: 'fa-solid fa-shirt', desc: 'Personalised closet layouts with considered hanging, shelving, and drawer space.'},
+      {name: 'Dressing Rooms', id: 'dressing-rooms', icon: 'fa-solid fa-vest-patches', desc: 'Elegant dressing spaces with fitted storage, vanity areas, and thoughtful details.'},
+      {name: 'Custom Furniture', id: 'custom-furniture', icon: 'fa-solid fa-couch', desc: 'Furniture designed around your dimensions, style, and everyday needs.'},
+      {name: 'Bedroom Furniture', id: 'bedroom-furniture', icon: 'fa-solid fa-bed', desc: 'Coordinated beds, bedside units, dressers, and storage for restful spaces.'},
+      {name: 'TV Units & Entertainment Units', id: 'tv-entertainment-units', icon: 'fa-solid fa-tv', desc: 'Fitted media units with smart storage and neatly managed cables.'},
+      {name: 'Outdoor Furniture', id: 'outdoor-furniture', icon: 'fa-solid fa-umbrella-beach', desc: 'Custom furniture for comfortable terraces, gardens, balconies, and patios.'}
     ]
   }
 ];

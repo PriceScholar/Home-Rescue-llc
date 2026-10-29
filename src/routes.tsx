@@ -42,6 +42,14 @@ export const routes: RouteObject[] = [
         element: <ServiceDetail />,
       },
       {
+        path: 'wooden-work',
+        element: <ServiceDetail serviceIdOverride="wooden-work" />,
+      },
+      {
+        path: 'wooden-work/:subServiceId',
+        element: <ServiceDetail />,
+      },
+      {
         path: 'ac-cleaning-dubai',
         element: <Navigate to="/services/ac-cleaning-dubai" replace />,
       },
@@ -89,8 +97,21 @@ export const routes: RouteObject[] = [
   }
 ];
 
-// Helper to get static paths for all 99 service pages
+// Helper to get static paths for all service pages
 export async function getStaticPaths() {
-  return Object.keys(servicesData).map(id => `/services/${id}`);
+  const servicePaths = Object.keys(servicesData).map(id => `/services/${id}`);
+  const woodenPaths = [
+    '/wooden-work',
+    '/wooden-work/kitchen-carpentry',
+    '/wooden-work/bespoke-kitchen',
+    '/wooden-work/wardrobes-cupboards',
+    '/wooden-work/walk-in-closets',
+    '/wooden-work/dressing-rooms',
+    '/wooden-work/custom-furniture',
+    '/wooden-work/bedroom-furniture',
+    '/wooden-work/tv-entertainment-units',
+    '/wooden-work/outdoor-furniture'
+  ];
+  return [...servicePaths, ...woodenPaths];
 }
 

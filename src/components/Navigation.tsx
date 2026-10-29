@@ -380,6 +380,7 @@ export const Footer = () => {
                 { name: 'Plumbing Services', id: 'plumbing-services' },
                 { name: 'Electrical Services', id: 'electrical-services' },
                 { name: 'Ceiling Works', id: 'ceiling-work' },
+                { name: 'Wooden Work', id: 'wooden-work' },
                 { name: 'Handyman Services', id: 'handyman-more' },
                 { name: 'Lighting Work', id: 'lighting-work' },
                 { name: 'Home Maintenance', id: 'home-general-maintenance' }

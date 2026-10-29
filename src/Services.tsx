@@ -48,7 +48,16 @@ const getSubId = (name: string): string => {
     'Property Upkeep': 'property-upkeep',
     'Washroom Remodeling': 'washroom-remodeling',
     'Kitchen Redesign': 'kitchen-redesign',
-    'Villa Renovation': 'villa-renovation'
+    'Villa Renovation': 'villa-renovation',
+    'Kitchen Carpentry': 'kitchen-carpentry',
+    'Bespoke Kitchen': 'bespoke-kitchen',
+    'Wardrobes & Cupboards': 'wardrobes-cupboards',
+    'Walk-in Closets': 'walk-in-closets',
+    'Dressing Rooms': 'dressing-rooms',
+    'Custom Furniture': 'custom-furniture',
+    'Bedroom Furniture': 'bedroom-furniture',
+    'TV Units & Entertainment Units': 'tv-entertainment-units',
+    'Outdoor Furniture': 'outdoor-furniture'
   };
   return map[name] || name.toLowerCase().replace(/\s+/g, '-');
 };
@@ -61,6 +70,7 @@ const Services = () => {
     {id: 'plumbing-services', name: 'Plumbing Works', icon: Droplets, image: '/images/services/service-plumbing.jpg', desc: 'Expert plumbing repairs, leak detection, and sanitary installations for luxury properties.', subs: ['Sanitary Services', 'Leakage Repair', 'Bathroom Fitting', 'Water Heaters']},
     {id: 'electrical-services', name: 'Electrical Works', icon: Zap, image: '/images/services/service-electrical.jpg', desc: 'DEWA certified electrical maintenance and smart home installations.', subs: ['Home Wiring', 'Interior/Exterior Light', 'Circuit Breakers', 'Dewa Approvals']},
     {id: 'tile-wooden', name: 'Tile & Wooden', icon: Grid2x2, image: '/images/services/service-tile.jpg', desc: 'Premium tile fixing and marble polishing to give your floor a royal look.', subs: ['Marble Installation', 'Granite Work', 'Porcelain Tiles', 'Interlock Stones']},
+    {id: 'wooden-work', name: 'Wooden Work', icon: Hammer, image: '/images/wooden-work/wooden-work-overview.webp', desc: 'Thoughtfully crafted wooden solutions for kitchens, bedrooms, living spaces, and outdoor areas with custom carpentry tailored to your home.', subs: ['Kitchen Carpentry', 'Bespoke Kitchen', 'Wardrobes & Cupboards', 'Walk-in Closets', 'Dressing Rooms', 'Custom Furniture', 'Bedroom Furniture', 'TV Units & Entertainment Units', 'Outdoor Furniture']},
     {id: 'handyman-more', name: 'Handyman & More', icon: Hammer, image: '/images/services/service-handyman.jpg', desc: 'Professional handyman for all your home improvements and quick fixes.', subs: ['TV Installation', 'Curtain Hanging', 'Furniture Assembly', 'Door Repair']},
     {id: 'ceiling-work', name: 'Ceiling & Gypsum', icon: Layout, image: '/images/services/service-ceiling.jpg', desc: 'Modern gypsum and false ceiling designs for elegant interiors.', subs: ['Gypsum Ceiling', 'False Ceiling', 'POP Design', 'Cove Lighting']},
     {id: 'lighting-work', name: 'Lighting Work', icon: Zap, image: '/images/services/service-lighting.jpg', desc: 'Specialized lighting solutions, chandeliers installation, and smart home lighting setup.', subs: ['LED Installation', 'Chandelier Hanging', 'Outdoor Lights', 'Smart Setup']},

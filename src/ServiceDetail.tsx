@@ -1,6 +1,6 @@
 import React from 'react';
 import {Helmet} from 'react-helmet-async';
-import { useParams, Link, useSearchParams } from 'react-router-dom';
+import { useParams, Link, useSearchParams, useLocation } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { 
   ChevronLeft, 
@@ -107,22 +107,43 @@ const MinimalAdFooter = () => {
   );
 };
 
-const ServiceDetail = () => {
-  const { serviceId } = useParams<{ serviceId: string }>();
+interface ServiceDetailProps {
+  serviceIdOverride?: string;
+}
+
+const WOODEN_WORK_SUBS = [
+  'kitchen-carpentry', 'bespoke-kitchen', 'wardrobes-cupboards',
+  'walk-in-closets', 'dressing-rooms', 'custom-furniture',
+  'bedroom-furniture', 'tv-entertainment-units', 'outdoor-furniture'
+];
+
+const ServiceDetail: React.FC<ServiceDetailProps> = ({ serviceIdOverride }) => {
+  const { serviceId, subServiceId } = useParams<{ serviceId?: string; subServiceId?: string }>();
   const [searchParams] = useSearchParams();
+  const location = useLocation();
   const isAdMode = searchParams.get('ad') === '1';
 
-  if (serviceId === 'ac-cleaning-dubai' || serviceId === 'ac-cleaning') {
+  const cleanPath = location.pathname.replace(/\/$/, '');
+  const isDirectWoodenWorkRoot = cleanPath === '/wooden-work';
+  const effectiveId = serviceIdOverride 
+    || subServiceId 
+    || (isDirectWoodenWorkRoot ? 'wooden-work' : serviceId);
+
+  if (effectiveId === 'ac-cleaning-dubai' || effectiveId === 'ac-cleaning') {
     return <AcCleaningLanding isAdMode={isAdMode} />;
   }
 
   const { isRTL } = useLanguage();
   const { openBooking, askExpert, callNow } = useBooking();
-  const rawData = serviceId ? servicesData[serviceId] : null;
+  const rawData = effectiveId ? servicesData[effectiveId] : null;
+
+  const isWoodenWorkCategory = effectiveId === 'wooden-work';
+  const isWoodenWorkSub = WOODEN_WORK_SUBS.includes(effectiveId || '');
+  const isWoodenWorkSection = isWoodenWorkCategory || isWoodenWorkSub || location.pathname.startsWith('/wooden-work');
 
   // Graceful fallback for all service data fields to prevent errors on incomplete/sub-service items
   const data = rawData ? {
-    id: rawData.id || serviceId || "service",
+    id: rawData.id || effectiveId || "service",
     title: rawData.title || "Premium Service",
     tagline: rawData.tagline || "TECHNICAL SERVICE DETAIL",
     description: rawData.description || "Premium home services in Dubai & UAE. Licensed Dubai technicians, fast response, transparent pricing. Book today.",
@@ -204,6 +225,17 @@ const ServiceDetail = () => {
       'wall repair': 'wall-repair',
       'minor repair': 'minor-plumbing',
       'light repair': 'light-repair',
+      'kitchen carpentry': 'kitchen-carpentry',
+      'bespoke kitchen': 'bespoke-kitchen',
+      'wardrobes & cupboards': 'wardrobes-cupboards',
+      'wardrobes and cupboards': 'wardrobes-cupboards',
+      'walk-in closets': 'walk-in-closets',
+      'dressing rooms': 'dressing-rooms',
+      'custom furniture': 'custom-furniture',
+      'bedroom furniture': 'bedroom-furniture',
+      'tv units & entertainment units': 'tv-entertainment-units',
+      'tv units and entertainment units': 'tv-entertainment-units',
+      'outdoor furniture': 'outdoor-furniture',
     };
 
     if (customMapping[cleanSubName]) {
@@ -234,12 +266,16 @@ const ServiceDetail = () => {
     return looseMatchedKey || null;
   };
 
+  const canonicalUrl = location.pathname.startsWith('/wooden-work')
+    ? `https://resqhome.ae${cleanPath}`
+    : `https://resqhome.ae/services/${data.id}`;
+
   return (
     <div className="flex flex-col bg-white">
       <Helmet>
-        <title>{`${data.title} in Dubai & UAE | Resqhome`}</title>
+        <title>{data.title.includes('in Dubai') ? `${data.title} & UAE | Resqhome` : `${data.title} in Dubai & UAE | Resqhome`}</title>
         <meta name="description" content={`${data.description} Licensed Dubai technicians, fast response, transparent pricing. Book today.`} />
-        <link rel="canonical" href={`https://resqhome.ae/services/${data.id}`} />
+        <link rel="canonical" href={canonicalUrl} />
         {isAdMode && <meta name="robots" content="noindex" />}
         <script type="application/ld+json">
           {JSON.stringify({
@@ -287,7 +323,51 @@ const ServiceDetail = () => {
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
-            "itemListElement": [
+            "itemListElement": isWoodenWorkSub ? [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://resqhome.ae"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Services",
+                "item": "https://resqhome.ae/services"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Wooden Work",
+                "item": "https://resqhome.ae/wooden-work"
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "name": data.title,
+                "item": canonicalUrl
+              }
+            ] : isWoodenWorkCategory ? [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://resqhome.ae"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Services",
+                "item": "https://resqhome.ae/services"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Wooden Work",
+                "item": "https://resqhome.ae/wooden-work"
+              }
+            ] : [
               {
                 "@type": "ListItem",
                 "position": 1,
@@ -320,12 +400,22 @@ const ServiceDetail = () => {
       {/* Breadcrumb - Minimalist Luxury Style */}
       {!isAdMode && (
         <section className="bg-brand-cream/30 py-4 px-4 md:px-8 border-b border-gray-100">
-          <div className="max-w-7xl mx-auto flex items-center gap-2 text-gray-400 text-[11px] font-bold uppercase tracking-widest">
+          <div className="max-w-7xl mx-auto flex items-center gap-2 text-gray-400 text-[11px] font-bold uppercase tracking-widest flex-wrap">
             <Link to="/" className="hover:text-brand-gold transition-colors">Home</Link>
             <ChevronRight className="w-3 h-3 opacity-30" />
             <Link to="/services" className="hover:text-brand-gold transition-colors">Services</Link>
             <ChevronRight className="w-3 h-3 opacity-30" />
-            <span className="text-brand-navy">{data.title}</span>
+            {isWoodenWorkSub ? (
+              <>
+                <Link to="/wooden-work" className="hover:text-brand-gold transition-colors">Wooden Work</Link>
+                <ChevronRight className="w-3 h-3 opacity-30" />
+                <span className="text-brand-navy">{data.title}</span>
+              </>
+            ) : isWoodenWorkCategory ? (
+              <span className="text-brand-navy">Wooden Work</span>
+            ) : (
+              <span className="text-brand-navy">{data.title}</span>
+            )}
           </div>
         </section>
       )}
@@ -338,12 +428,20 @@ const ServiceDetail = () => {
             <motion.div 
               initial={{opacity: 0, x: -30}} 
               animate={{opacity: 1, x: 0}}
-              className="relative rounded-3xl md:rounded-[2.5rem] overflow-hidden shadow-2xl bg-gray-100 aspect-[4/5] w-full max-w-[520px] mx-auto"
+              className={cn(
+                "relative rounded-3xl md:rounded-[2.5rem] overflow-hidden shadow-2xl bg-gray-100 aspect-[4/5] w-full max-w-[520px] mx-auto",
+                isWoodenWorkSection && "bg-[#08264B]/5"
+              )}
             >
               <img 
-                src={`/images/services/subs/${data.id}.jpg`} 
-                alt={data.title}
-                className="w-full h-full object-cover"
+                src={isWoodenWorkSection && data.image ? data.image : `/images/services/subs/${data.id}.jpg`} 
+                alt={`${data.title} - Resqhome Dubai Technical Services`}
+                width={1122}
+                height={1402}
+                className={cn(
+                  "w-full h-full",
+                  isWoodenWorkSection ? "object-contain object-top" : "object-cover"
+                )}
                 onError={(e) => {
                   const target = e.target as HTMLImageElement;
                   if (target.src.includes('/images/services/subs/')) {
@@ -354,7 +452,9 @@ const ServiceDetail = () => {
                   }
                 }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+              {!isWoodenWorkSection && (
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+              )}
             </motion.div>
 
             {/* Right Column: Content */}
@@ -472,8 +572,11 @@ const ServiceDetail = () => {
                 );
 
                 if (subId) {
+                  const targetUrl = (isWoodenWorkSection || isWoodenWorkCategory) 
+                    ? `/wooden-work/${subId}` 
+                    : `/services/${subId}`;
                   return (
-                    <Link key={i} to={`/services/${subId}`} className="block h-full">
+                    <Link key={i} to={targetUrl} className="block h-full">
                       {cardContent}
                     </Link>
                   );
@@ -601,6 +704,50 @@ const ServiceDetail = () => {
           </div>
         </div>
       </section>
+
+      {/* Sibling Wooden Work Services for Child Pages */}
+      {isWoodenWorkSub && (
+        <section className="py-10 md:py-14 px-6 md:px-8 bg-brand-cream/10 border-t border-gray-100">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-6 md:mb-10 space-y-3 md:space-y-4">
+              <span className="text-brand-gold font-bold tracking-[0.4em] uppercase text-[11px] md:text-[11px]">Explore More Joinery</span>
+              <h2 className="text-3xl md:text-5xl font-serif text-brand-navy font-bold">Related Wooden Work Services</h2>
+              <div className="w-24 h-[1px] bg-brand-gold mx-auto"></div>
+              <p className="text-gray-500 text-sm max-w-2xl mx-auto">Discover our complementary bespoke carpentry and custom joinery solutions crafted for Dubai homes.</p>
+            </div>
+            
+            <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+              {WOODEN_WORK_SUBS.filter(sId => sId !== data.id).map((sId) => {
+                const sibling = servicesData[sId];
+                if (!sibling) return null;
+                return (
+                  <Link 
+                    key={sId} 
+                    to={`/wooden-work/${sId}`}
+                    className="bg-white p-5 md:p-6 rounded-2xl md:rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all group flex flex-col justify-between"
+                  >
+                    <div>
+                      <div className="w-10 h-10 md:w-12 md:h-12 bg-blue-50 text-brand-navy rounded-xl flex items-center justify-center mb-4 group-hover:bg-brand-navy group-hover:text-white transition-all">
+                        <i className="fa-solid fa-hammer text-brand-gold group-hover:text-white text-lg"></i>
+                      </div>
+                      <h4 className="text-base md:text-lg font-serif font-bold text-brand-navy group-hover:text-brand-red transition-colors mb-2">{sibling.title.replace(' in Dubai', '')}</h4>
+                      <p className="text-xs text-gray-500 leading-relaxed line-clamp-2">{sibling.description}</p>
+                    </div>
+                    <div className="flex items-center gap-1.5 text-xs text-brand-gold font-bold uppercase tracking-wider mt-4 group-hover:gap-2.5 transition-all">
+                      View Service <ChevronRight className="w-3.5 h-3.5" />
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+            <div className="text-center mt-8">
+              <Link to="/wooden-work" className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-brand-navy hover:text-brand-gold transition-colors">
+                <ChevronLeft className="w-4 h-4" /> Back to Wooden Work Overview
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Proof Section */}
       <VerifiedProjects />
