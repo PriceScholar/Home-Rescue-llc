@@ -22,7 +22,8 @@ export default defineConfig((env) => {
         const filteredPaths = paths.filter(p => !p.includes(':'));
         const mappedPaths = filteredPaths.map(p => p === '*' ? '/404' : p);
         const servicePaths = serviceIds.map(id => `/services/${id}`);
-        return [...mappedPaths, ...servicePaths];
+        const woodenPaths = ['kitchen-carpentry', 'bespoke-kitchen', 'wardrobes-cupboards', 'walk-in-closets', 'dressing-rooms', 'custom-furniture', 'bedroom-furniture', 'tv-entertainment-units', 'outdoor-furniture'].map(id => `/wooden-work/${id}`);
+        return [...new Set([...mappedPaths, ...servicePaths, ...woodenPaths])];
       },
     },
     build: {

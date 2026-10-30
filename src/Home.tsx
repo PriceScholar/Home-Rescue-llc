@@ -132,7 +132,7 @@ const Home = () => {
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <img 
-            src="/work_site_1.png" 
+            src="/work_site_1.webp" 
             alt="Premium luxury Dubai villa interior with Burj Khalifa view" 
             className="w-full h-full object-cover opacity-95 object-center md:object-right transition-opacity duration-500"
             referrerPolicy="no-referrer"
@@ -443,7 +443,7 @@ const Home = () => {
             {[
               { title: 'AC Services', price: 'AED 99', desc: 'Starting from, includes basic checking & mini servicing' },
               { title: 'Plumbing Works', price: 'AED 150', desc: 'Starting from, includes leak diagnostics/fitting fix' },
-              { title: 'Painting Works', price: 'AED 200', desc: 'Starting from, room-based or selective wall works font-medium' },
+              { title: 'Painting Works', price: 'AED 200', desc: 'Starting from, room-based or selective wall works' },
               { title: 'Electrical Works', price: 'AED 200', desc: 'Starting from, power diagnostics/fitting fixtures' },
             ].map((p, i) => (
               <div key={i} className="bg-white rounded-[32px] p-6 md:p-8 border border-gray-100 shadow-sm flex flex-col items-center text-center group hover:border-brand-gold transition-colors duration-300">
@@ -564,8 +564,8 @@ const Home = () => {
               
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 w-full mb-6 md:mb-8 flex-1">
                 {[
-                  { title: 'Radisson Blu', sub: 'Dubai Deira', img: '/park-inn-po-1.jpg' },
-                  { title: 'M Gallery', sub: 'Palm Jumeirah', img: '/m-gallery-po-1.jpg' },
+                  { title: 'Radisson Blu', sub: 'Dubai Deira', img: '/park-inn-po-1.webp' },
+                  { title: 'M Gallery', sub: 'Palm Jumeirah', img: '/m-gallery-po-1.webp' },
                   { title: 'Emaar Villas', sub: 'Dubai Hills', img: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?q=80&w=600&fit=crop' },
                   { title: 'Nakheel Mall', sub: 'Palm Jumeirah', img: 'https://images.unsplash.com/photo-1518684079-3c830dcef090?q=80&w=600&fit=crop' }
                 ].map((proj, i) => (
@@ -623,7 +623,7 @@ const Home = () => {
                   className="bg-white p-5 md:p-8 rounded-[40px] shadow-sm border border-gray-100 flex flex-col h-full gap-4"
                 >
                   <div className="flex items-center gap-4">
-                    <img src={`https://i.pravatar.cc/150?u=${review.name}`} alt={review.name} className="w-14 h-14 rounded-2xl object-cover border-2 border-brand-gold/10" loading="lazy" />
+                    <span aria-hidden="true" className="w-14 h-14 rounded-2xl bg-brand-navy text-white flex items-center justify-center">{review.name.charAt(0)}</span>
                     <div className="flex gap-0.5 text-brand-gold">
                       {[1, 2, 3, 4, 5].map(s => <Star key={s} className="w-3 h-3 fill-current" />)}
                     </div>

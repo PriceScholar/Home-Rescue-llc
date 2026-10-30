@@ -149,6 +149,7 @@ const BookingModal: React.FC<BookingModalProps> = ({
     notes: ''
   });
   const [isSuccess, setIsSuccess] = useState(false);
+  const [whatsAppDraftUrl, setWhatsAppDraftUrl] = useState('');
   const [errors, setErrors] = useState<string[]>([]);
 
   const selectedServices = formData.service
@@ -342,7 +343,8 @@ Thank you!`;
       property_type: formData.propertyType,
       date: formData.date
     });
-    window.open(whatsappURL, '_blank');
+    setWhatsAppDraftUrl(whatsappURL);
+    window.open(whatsappURL, '_blank', 'noopener,noreferrer');
     setIsSuccess(true);
   };
 
@@ -446,17 +448,7 @@ Thank you!`;
                           >
                             <option value="">-- Choose Category --</option>
                             {serviceCategories
-                              .filter(cat => {
-                                if (!isAcOrPlumbingQuery) {
-                                  const isAcOrPlumb = 
-                                    cat.id === 'ac-maintenance' || 
-                                    cat.id === 'plumbing-services' || 
-                                    cat.name.toLowerCase().includes('ac') || 
-                                    cat.name.toLowerCase().includes('plumb');
-                                  return !isAcOrPlumb;
-                                }
-                                return true;
-                              })
+                              
                               .map(cat => (
                                 <option key={cat.name} value={cat.name}>{cat.name}</option>
                               ))}
@@ -692,9 +684,10 @@ Thank you!`;
                   >
                     <i className="fa-solid fa-check"></i>
                   </motion.div>
-                  <h2 className="text-4xl font-serif font-bold text-brand-navy mb-4">Booking Confirmed!</h2>
+                  <h2 className="text-4xl font-serif font-bold text-brand-navy mb-4">Continue in WhatsApp</h2>
+                  <a href={whatsAppDraftUrl} target="_blank" rel="noopener noreferrer" className="inline-block underline mb-4">Open WhatsApp message</a>
                   <p className="text-gray-600 mb-8 max-w-md mx-auto">
-                    Tap send in WhatsApp to confirm — we'll reply within 30 minutes.
+                    Your request is ready. Tap Send in WhatsApp to submit it. Our team will confirm availability and your booking.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">
                     <a 

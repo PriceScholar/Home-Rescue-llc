@@ -3,16 +3,20 @@ import {Helmet} from 'react-helmet-async';
 import {TopBar, Navbar, Footer} from './components/Navigation';
 import {motion} from 'motion/react';
 import {Phone, Mail, MapPin, Send, MessageCircle, Clock} from 'lucide-react';
+import {useLanguage} from './context/LanguageContext';
 import {useBooking} from './components/BookingModal';
 import { trackWhatsAppConversion, trackPhoneConversion, trackFormSubmit } from './utils/trackConversion';
 
 const Contact = () => {
+  const { isRTL } = useLanguage();
   const { callNow, askExpert, openBooking } = useBooking();
   
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    trackFormSubmit('Contact Page Message Form');
-    openBooking();
+    const fields = new FormData(e.currentTarget as HTMLFormElement);
+    const message = ['Resqhome enquiry', ...Array.from(fields.entries()).map(([key, value]) => `${key}: ${value}`)].join('\n');
+    window.open(`https://wa.me/971524524295?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
+    trackWhatsAppConversion('Contact enquiry handoff');
   };
 
   return (
@@ -28,7 +32,7 @@ const Contact = () => {
       <section className="bg-brand-navy py-12 md:py-12 text-center px-6 md:px-4 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-48 h-48 md:w-64 md:h-64 bg-brand-gold/10 rounded-full blur-[80px] md:blur-[100px]"></div>
         <motion.div initial={{opacity: 0, y: 20}} animate={{opacity: 1, y: 0}} className="relative z-10 max-w-4xl mx-auto space-y-3 md:space-y-4">
-           <h1 className="text-3xl sm:text-4xl md:text-6xl text-white font-serif font-bold tracking-tight uppercase">Get In Touch</h1>
+           <h1 className="text-3xl sm:text-4xl md:text-6xl text-white font-serif font-bold tracking-tight uppercase">{isRTL ? 'تواصل معنا' : 'Get In Touch'}</h1>
            <p className="text-gray-400 text-sm md:text-lg max-w-2xl mx-auto opacity-70">We're available 24/7 for emergency repairs across all UAE. Send us a message or call directly.</p>
         </motion.div>
       </section>
@@ -82,7 +86,7 @@ const Contact = () => {
                <div className="w-12 h-12 md:w-16 md:h-16 bg-brand-gold/10 rounded-full flex items-center justify-center text-brand-gold mx-auto mb-4 md:mb-6">
                  <MapPin className="w-6 h-6 md:w-8 md:h-8" />
                </div>
-               <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-4">Our Office</h3>
+               <h3 className="text-lg md:text-xl font-bold mb-2 md:mb-4">{isRTL ? 'مكتبنا' : 'Our Office'}</h3>
                <p className="text-gray-500 mb-4 md:mb-6 leading-relaxed text-sm md:text-base">Al Nahda 1, Dubai,<br />United Arab Emirates</p>
                <a href="https://maps.google.com" target="_blank" rel="noreferrer" className="text-brand-navy font-black text-[10px] md:text-xs uppercase tracking-widest hover:underline">VIEW ON MAP</a>
              </motion.div>
@@ -91,7 +95,7 @@ const Contact = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-10 bg-white rounded-3xl md:rounded-[40px] p-6 md:p-10 shadow-xl border border-gray-50">
             <div className="space-y-6 md:space-y-8">
               <div>
-                <h2 className="text-2xl md:text-4xl font-serif text-brand-navy mb-4 md:mb-6 font-bold leading-tight">Send Us A Message</h2>
+                <h2 className="text-2xl md:text-4xl font-serif text-brand-navy mb-4 md:mb-6 font-bold leading-tight">{isRTL ? 'أرسل لنا رسالة' : 'Send Us A Message'}</h2>
                 <p className="text-gray-500 leading-relaxed text-xs md:text-base">Whether you have a question about a service, pricing, or need an urgent rescue for your home, our team is here to help.</p>
               </div>
 
@@ -99,14 +103,14 @@ const Contact = () => {
                  <div className="flex items-center gap-4">
                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-brand-navy text-white flex items-center justify-center shrink-0"><Clock className="w-5 h-5 md:w-6 md:h-6" /></div>
                    <div>
-                     <div className="font-bold text-brand-navy text-sm md:text-base">Office Hours</div>
+                     <div className="font-bold text-brand-navy text-sm md:text-base">{isRTL ? 'ساعات العمل' : 'Office Hours'}</div>
                      <div className="text-[10px] md:text-sm text-gray-500 uppercase tracking-wider font-bold">Mon - Sat: 9:00 AM - 6:00 PM</div>
                    </div>
                  </div>
                  <div className="flex items-center gap-4">
                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-brand-gold text-white flex items-center justify-center shrink-0"><Mail className="w-5 h-5 md:w-6 md:h-6" /></div>
                    <div>
-                     <div className="font-bold text-brand-navy text-sm md:text-base">Email Support</div>
+                     <div className="font-bold text-brand-navy text-sm md:text-base">{isRTL ? 'البريد الإلكتروني' : 'Email Support'}</div>
                      <div className="text-[10px] md:text-sm text-gray-500 uppercase tracking-wider font-bold">info@homerescue.ae</div>
                    </div>
                  </div>
@@ -115,11 +119,11 @@ const Contact = () => {
 
             <form className="space-y-4" onSubmit={handleFormSubmit}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                 <input type="text" placeholder="Your Name" className="w-full bg-brand-cream border-none rounded-xl p-4 focus:ring-2 focus:ring-brand-gold transition-all outline-none" required />
-                 <input type="tel" placeholder="Phone Number" className="w-full bg-brand-cream border-none rounded-xl p-4 focus:ring-2 focus:ring-brand-gold transition-all outline-none" required />
+                 <input type="text" name="Name" aria-label="Name" placeholder="Your Name" className="w-full bg-brand-cream border-none rounded-xl p-4 focus:ring-2 focus:ring-brand-gold transition-all outline-none" required />
+                 <input type="tel" name="Phone" aria-label="Phone" placeholder="Phone Number" className="w-full bg-brand-cream border-none rounded-xl p-4 focus:ring-2 focus:ring-brand-gold transition-all outline-none" required />
               </div>
-              <input type="email" placeholder="Email Address" className="w-full bg-brand-cream border-none rounded-xl p-4 focus:ring-2 focus:ring-brand-gold transition-all outline-none" required />
-              <select className="w-full bg-brand-cream border-none rounded-xl p-4 focus:ring-2 focus:ring-brand-gold transition-all outline-none text-gray-500">
+              <input type="email" name="Email" aria-label="Email" placeholder="Email Address" className="w-full bg-brand-cream border-none rounded-xl p-4 focus:ring-2 focus:ring-brand-gold transition-all outline-none" required />
+              <select name="Service" aria-label="Service" className="w-full bg-brand-cream border-none rounded-xl p-4 focus:ring-2 focus:ring-brand-gold transition-all outline-none text-gray-500">
                 <option value="">Select Service</option>
                 <option value="paint">Painting</option>
                 <option value="ac">AC Maintenance</option>
@@ -127,9 +131,9 @@ const Contact = () => {
                 <option value="electrical">Electrical</option>
                 <option value="other">Other</option>
               </select>
-              <textarea placeholder="Tell us more about your requirements..." rows={5} className="w-full bg-brand-cream border-none rounded-xl p-4 focus:ring-2 focus:ring-brand-gold transition-all outline-none" required></textarea>
+              <textarea name="Message" aria-label="Message" placeholder="Tell us more about your requirements..." rows={5} className="w-full bg-brand-cream border-none rounded-xl p-4 focus:ring-2 focus:ring-brand-gold transition-all outline-none" required></textarea>
               <button type="submit" className="btn-primary w-full py-5 text-xl bg-brand-red flex items-center justify-center gap-3">
-                <Send className="w-6 h-6" /> SEND MESSAGE
+                <Send className="w-6 h-6" /> CONTINUE IN WHATSAPP
               </button>
             </form>
           </div>

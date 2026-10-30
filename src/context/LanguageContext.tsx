@@ -11,6 +11,7 @@ interface LanguageContextType {
 
 const translations: Record<Language, Record<string, string>> = {
   EN: {
+    free_consultation: "FREE CONSULTATION",
     hero_title: "Premium Home Solutions Across UAE",
     hero_subtitle: "Rescue Your Home. Restore Your Comfort.",
     get_quote: "GET FREE QUOTE",
@@ -32,6 +33,7 @@ const translations: Record<Language, Record<string, string>> = {
     how_it_works: "Our Simple Process",
   },
   AR: {
+    free_consultation: "استشارة مجانية",
     hero_title: "حلول منزلية متميزة في جميع أنحاء الإمارات",
     hero_subtitle: "أنقذ منزلك. استعد راحتك",
     get_quote: "احصل على عرض سعر مجاني",
